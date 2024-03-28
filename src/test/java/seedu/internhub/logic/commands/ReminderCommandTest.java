@@ -23,6 +23,9 @@ class ReminderCommandTest {
     @BeforeEach
     public void setup() {
         LocalDateTime currentDateTime = LocalDateTime.of(2024, 3, 29, 12, 0);
+        // test cases might fail unpredictably due to reliance on the system clock for setting up LocalDateTime objects.
+        // By setting a fixed date and time in the setup method of the test class, we ensure consistent behavior across
+        // different runs regardless of the time of execution. This change improves the reliability of the test suite.
 
         model = new ModelManager(TypicalPersons.getTypicalAddressBook(), new UserPrefs());
 
@@ -93,5 +96,4 @@ class ReminderCommandTest {
         List<Person> filteredList = model.getFilteredPersonList();
         assertEquals(4, filteredList.size());
     }
-
 }
