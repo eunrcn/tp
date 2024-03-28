@@ -62,7 +62,7 @@ class ReminderCommandTest {
     }
 
     @Test
-    public void count_list_size_after_1_day() {
+    public void countListSizeAfter1Day() {
         int numberOfDays = 1;
         new ReminderCommand(numberOfDays).execute(model);
 
@@ -71,7 +71,7 @@ class ReminderCommandTest {
     }
 
     @Test
-    public void count_list_size_after_4_days() {
+    public void countListSizeAfter4Day() {
         int numberOfDays = 4;
         new ReminderCommand(numberOfDays).execute(model);
 
@@ -80,7 +80,7 @@ class ReminderCommandTest {
     }
 
     @Test
-    public void count_list_size_after_6_days() {
+    public void countListSizeAfter6Day() {
         int numberOfDays = 6;
         new ReminderCommand(numberOfDays).execute(model);
 
@@ -89,7 +89,7 @@ class ReminderCommandTest {
     }
 
     @Test
-    public void count_list_size_after_8_days() {
+    public void countListSizeAfter8Day() {
         int numberOfDays = 8;
         new ReminderCommand(numberOfDays).execute(model);
 
