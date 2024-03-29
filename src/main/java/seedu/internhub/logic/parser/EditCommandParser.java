@@ -3,7 +3,11 @@ package seedu.internhub.logic.parser;
 import static java.util.Objects.requireNonNull;
 import static seedu.internhub.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
+import java.util.logging.Logger;
+
+import seedu.internhub.commons.core.LogsCenter;
 import seedu.internhub.commons.core.index.Index;
+import seedu.internhub.logic.LogicManager;
 import seedu.internhub.logic.commands.EditCommand;
 import seedu.internhub.logic.parser.exceptions.ParseException;
 import seedu.internhub.model.person.InterviewDate;
@@ -13,6 +17,8 @@ import seedu.internhub.model.person.InterviewDate;
  * Parses input arguments and creates a new EditCommand object
  */
 public class EditCommandParser implements Parser<EditCommand> {
+
+    private final Logger logger = LogsCenter.getLogger(LogicManager.class);
 
     /**
      * Parses the given {@code String} of arguments in the context of the EditCommand
@@ -87,6 +93,7 @@ public class EditCommandParser implements Parser<EditCommand> {
             editPersonDescriptor.setNote(ParserUtil.parseNote(argMultimap.getValue(CliSyntax.PREFIX_NOTE).get()));
         }
         if (!editPersonDescriptor.isAnyFieldEdited()) {
+            logger.info("At least one field to edit must be provided");
             throw new ParseException(EditCommand.MESSAGE_NOT_EDITED);
         }
 
