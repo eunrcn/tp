@@ -227,7 +227,7 @@ The following steps outline how the Note Command feature operates:
 - Cons:
     - Edit will **OVERWRITE** old data
 
-**Alternative 2 (Current Implementation) : Create `note` command
+**Alternative 2 (Current Implementation) : Create `note` command**
 - Pros:
     - Allows for editing and updating existing note content
     - Will not overwrite old data
@@ -235,7 +235,7 @@ The following steps outline how the Note Command feature operates:
     - An additional command has to be implemented
     - Essentially an abstracted & glorified edit feature
 
-<puml src="diagrams/NoteSequenceDiagram.puml" />
+<puml src="diagrams/NoteSequenceDiagram.puml" width="600" />
 
 ### \[Proposed\] Undo/redo feature
 
