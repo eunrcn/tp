@@ -235,7 +235,7 @@ The following steps outline how the Note Command feature operates:
     - An additional command has to be implemented
     - Essentially an abstracted & glorified edit feature
 
-<puml src="diagrams/NoteSequenceDiagram.puml" width="300" />
+<puml src="diagrams/NoteSequenceDiagram.puml" />
 
 ### \[Proposed\] Undo/redo feature
 
