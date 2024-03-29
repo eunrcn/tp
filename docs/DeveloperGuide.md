@@ -191,6 +191,52 @@ The Diagram below shows the sequence diagram for AddCommand. All Initialization 
 
 <puml src="diagrams/AddSequenceDiagram.puml" />
 
+### Note Command
+
+#### Implementation
+The Note Command feature allows users to retrieve the note attribute of a contact based on its index and reflects it in the Command Box as an edit command, enabling users to make changes to the note seamlessly.
+
+The following steps outline how the Note Command feature operates:
+
+1. Command Parsing
+    - When a user inputs the `note` command followed by an `index`, the `NoteCommandParser` is invoked to parse this input
+    - The index provided is extracted from the input string
+2. Execution
+    - Upon parsing, the `NoteCommand` is instantiated with the parsed index.
+    - The `NoteCommand#execute(Model model)` is then called, passing the current application model
+3. Index validation
+    - Within the `execute` method, the validity of the index entered is checked. This involves ensuring the index falls within the current range of the contact list
+    - If index is invalid, a `CommandException` is thrown with an error message
+4. Note Retrieval
+    - Assuming the index is valid, the `NoteCommand` retrieves the **filtered list of contacts** (`List<Person>`) from the model
+    - The note content of the contact corresponding to the provided index is then fetched.
+5. Command Result
+    - Upon retrieving the note content, the `NoteCommand` constructs a new `CommandResult` with the following params :
+        - **feedbackToUser** : `edit [INDEX of Contact] n/{existing note}`
+        - **personToView** : `Current company contact`
+6. Reflecting the feedback on Command Box
+    - In `CommandBox#handleCommandEntered()`, if the `feedbackToUser` of the CommandResult object starts with `edit ` (ie our note Command Result), we set the text of the command box to be the `feedbackToUser`
+
+<puml src="diagrams/NoteCommandClassDiagram.puml" width="300" />
+
+#### Implementation
+**Alternative 1 : Use edit to make changes to note attribute**
+- Pros:
+    - Easier implementation
+    - No need for new command to be created
+- Cons:
+    - Edit will **OVERWRITE** old data
+
+**Alternative 2 (Current Implementation) : Create `note` command**
+- Pros:
+    - Allows for editing and updating existing note content
+    - Will not overwrite old data
+- Cons:
+    - An additional command has to be implemented
+    - Essentially an abstracted & glorified edit feature
+
+<puml src="diagrams/NoteSequenceDiagram.puml" width="600" />
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
