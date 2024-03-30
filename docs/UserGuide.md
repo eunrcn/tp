@@ -14,40 +14,59 @@ It provides detailed instructions on installation, usage, and navigation, ensuri
 
 ## Who can use InternHub ?
 InternHub is designed for undergraduates, professors, and career guidance officers seeking a streamlined approach to managing internship contacts.
-InternHub is crafted with the intention of being user-friendly for individuals with varying levels of computer experience.
+InternHub is crafted with the intention of being **user-friendly** for individuals with varying levels of computer experience.
 We trust that you'll find the interface intuitive and easy to navigate, whether you're a tech-savvy enthusiast or just starting to explore desktop applications.
 We're here to support you every step of the way on your internship management journey!
+
+For users who are **new to InternHub**, click [here](#introduction-to-the-user-guide) for a helpful starting point !
+
+Experienced users can jump straight to exploring our [features](#features) !
 
 <!-- * Table of Contents -->
 <page-nav-print />
 
 --------------------------------------------------------------------------------------------------------------------
+## Introduction to the User Guide
+Our team at InternHub have carefully designed this user guide to be your one-stop solution for everything related to InternHub !
+
+### Icons used
+
+| Icons   | Representation                                |
+|---------|-----------------------------------------------|
+| Note    | Additional useful information                 |
+| Caution | Provides warnings on some potential errors    |
+| Tip     | Nifty tricks to make your experience smoother |
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Quick start
 
-1. **Check Java Version & Install Java**
+1. Check Java Version & Install Java
     - For this application, your system is required to have Java 11 installed
     - To check if you have Java installed, open your command prompt or terminal and type : `java -version`
-      - If Java is installed, you will see the version number in the output : `openjdk version "11.0.22" 2024-01-16 LTS`
+      - If Java is installed, you will see the version number in the output :
+      - <img src="images/quickstart/java-installation.png" >
     - If Java is not installed or your version does not match as the output above :
       - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download jdk-11 & follow the download instructions
       - For **mac** users, download the jdk-11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu)
 
-2. Download the latest `addressbook.jar` from [here](https://github.com/se-edu/addressbook-level3/releases).
+2. Download the latest `internhub.jar` from [here](https://github.com/se-edu/addressbook-level3/releases).
 
 3. Copy the file to the folder you want to use as the _home folder_ for your InternHub.
-    - The home folder refers to the directory or location on your computer where you want to store the files and data related to InternHub
-    - This folder will serve as the central location where InternHub will read and write its files, such as configuration files, databases, or any other files it may use.
+    - The home folder will serve as InternHub's central location
+    - This folder is where InternHub will keep all its important files and saved data
 
 4. Once you have set up the _home folder_, right-click on the _home folder_ and click copy to copy the path to this directory.
 
-5. Type `cd ` and paste the _home folder_ path, your command should look something like this : `cd /Users/john/home folder`, then hit enter.
+5. Open up a new terminal or command prompt window
 
-4. Now in the same command prompt or terminal window, enter the `java -jar addressbook.jar` command to run the application.<br>
+6. Type `cd ` and paste the _home folder_ path, your command should look something like this : `cd /Users/john/home folder`, then hit enter.
+
+7. Now in the same command prompt or terminal window, enter the `java -jar internhub.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
-5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+8. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `list` : Lists all contacts.
@@ -61,7 +80,22 @@ We're here to support you every step of the way on your internship management jo
 
    * `exit` : Exits the app.
 
-6. Refer to the [Features](#features) below for details of each command.
+9. Refer to the [Features](#features) for details of each command.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Getting familiar with the UI of InternHub
+
+_Add Latest UI with labels to mark the CommandBox, ResultBox, List of Contacts, View Panel_
+
+- **Command Box** 
+  - This is where you enter the commands !
+- **Result Display** 
+  - The output message after each command is displayed here
+- **List of Contacts** 
+  - The panel displays list of all internship company contacts
+- **View Panel** 
+  - The panel displays the internship company contact card
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -127,7 +161,8 @@ Format: `View INDEX`
 * Views the contact at the specified `INDEX`. The index refers to the index number shown in the displayed contact list. The index **must be a positive integer** 1, 2, 3, …​
 
 Example:
-*  `view 3` Shows the company name of the 3rd contact on the view panel.
+*  `view 3` Displays the company card of the 3rd contact in the list on the view panel.
+* **INSERT PICTURE OF view 3 WITH LABEL !**
 
 ### Editing a contact : `edit`
 
