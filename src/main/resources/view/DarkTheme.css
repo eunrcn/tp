@@ -6,7 +6,7 @@
     background-color: #383838; /* Used in the default.html file */
 }
 
-.label {
+.label { //file and help
     -fx-font-size: 11pt;
     -fx-font-family: Arial;
     -fx-text-fill: #555555;
@@ -70,7 +70,7 @@
     -fx-border-width: 2;
     -fx-background-radius: 0;
     -fx-background-color: #1d1d1d;
-    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-family: Arial;
     -fx-font-size: 11pt;
     -fx-text-fill: #d8d8d8;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
@@ -199,7 +199,7 @@
 
 .menu-bar .label {
     -fx-font-size: 14pt;
-    -fx-font-family: "Segoe UI Light";
+    -fx-font-family: Arial;
     -fx-text-fill: black;
     -fx-opacity: 0.9;
 }
@@ -221,7 +221,7 @@
     -fx-border-color: #383838;
     -fx-border-insets: 0;
     -fx-border-width: 1;
-    -fx-font-family: "Segoe UI Light";
+    -fx-font-family: Arial;
     -fx-font-size: 13pt;
     -fx-text-fill: black;
 }
@@ -230,7 +230,7 @@
 
 .result-display {
     -fx-background-color: #1d1d1d;
-    -fx-font-family: "Segoe UI Light";
+    -fx-font-family: Arial;
     -fx-font-size: 13pt;
     -fx-text-fill: black;
 }
@@ -255,6 +255,8 @@
     -fx-padding: 5;
     -fx-border-color: black;
     -fx-border-width: 1px;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
 }
 
 .table-view .column-header-background {
@@ -275,7 +277,7 @@
 
 .table-view .column-header .label {
     -fx-font-size: 20pt;
-    -fx-font-family: "Segoe UI Light";
+    -fx-font-family: Arial;
     -fx-text-fill: white;
     -fx-alignment: center-left;
     -fx-opacity: 1;
@@ -360,7 +362,7 @@
 }
 
 .status-bar .label {
-    -fx-font-family: "Segoe UI Light";
+    -fx-font-family: Arial;
     -fx-text-fill: black;
     -fx-padding: 4px;
     -fx-pref-height: 30px;
