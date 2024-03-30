@@ -9,12 +9,12 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import seedu.internhub.model.AddressBook;
 import seedu.internhub.model.Model;
 import seedu.internhub.model.ModelManager;
 import seedu.internhub.model.UserPrefs;
 import seedu.internhub.model.person.Person;
 import seedu.internhub.testutil.PersonBuilder;
-import seedu.internhub.testutil.TypicalPersons;
 
 class ReminderCommandTest {
 
@@ -22,31 +22,36 @@ class ReminderCommandTest {
 
     @BeforeEach
     public void setup() {
-        LocalDateTime currentDateTime = LocalDateTime.of(2024, 3, 29, 12, 0);
+
         // test cases might fail unpredictably due to reliance on the system clock for setting up LocalDateTime objects.
         // By setting a fixed date and time in the setup method of the test class, we ensure consistent behavior across
         // different runs regardless of the time of execution. This change improves the reliability of the test suite.
 
-        model = new ModelManager(TypicalPersons.getTypicalAddressBook(), new UserPrefs());
-
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HHmm");
+        String plus1Days = LocalDateTime.now().plusDays(1).format(formatter);
+        String plus4Days = LocalDateTime.now().plusDays(4).format(formatter);
+        String plus6Days = LocalDateTime.now().plusDays(6).format(formatter);
+        String plus8Days = LocalDateTime.now().plusDays(8).format(formatter);
         Person alice = new PersonBuilder().withName("Alice")
-                .withInterviewDate(currentDateTime.plusDays(1).format(formatter))
+                .withInterviewDate(plus1Days)
                 .build();
         Person bob = new PersonBuilder().withName("Bob")
-                .withInterviewDate(currentDateTime.plusDays(4).format(formatter))
+                .withInterviewDate(plus4Days)
                 .build();
         Person charlie = new PersonBuilder().withName("Charlie")
-                .withInterviewDate(currentDateTime.plusDays(6).format(formatter))
+                .withInterviewDate(plus6Days)
                 .build();
         Person dave = new PersonBuilder().withName("Dave")
-                .withInterviewDate(currentDateTime.plusDays(8).format(formatter))
+                .withInterviewDate(plus8Days)
                 .build();
 
-        model.addPerson(alice);
-        model.addPerson(bob);
-        model.addPerson(charlie);
-        model.addPerson(dave);
+        AddressBook ab = new AddressBook();
+        ab.addPerson(alice);
+        ab.addPerson(bob);
+        ab.addPerson(charlie);
+        ab.addPerson(dave);
+
+        model = new ModelManager(ab, new UserPrefs());
     }
 
     @Test
@@ -65,7 +70,6 @@ class ReminderCommandTest {
     public void countListSizeAfter1Day() {
         int numberOfDays = 1;
         new ReminderCommand(numberOfDays).execute(model);
-
         List<Person> filteredList = model.getFilteredPersonList();
         assertEquals(1, filteredList.size());
     }
