@@ -3,7 +3,7 @@
 
 .background {
     -fx-background-color: derive(#1d1d1d, 20%);
-    background-color: #bae1ff; /* Used in the default.html file */
+    background-color: #bae1ff;
 }
 
 .label { //file and help
