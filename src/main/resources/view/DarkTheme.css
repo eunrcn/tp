@@ -3,7 +3,7 @@
 
 .background {
     -fx-background-color: derive(#1d1d1d, 20%);
-    background-color: #383838; /* Used in the default.html file */
+    background-color: #bae1ff; /* Used in the default.html file */
 }
 
 .label { //file and help
@@ -45,17 +45,17 @@
 }
 
 .stack-pane {
-     -fx-background-color: derive(#1d1d1d, 20%);
+     -fx-background-color: derive(#bae1ff, 20%);
 }
 
 .grid-pane {
-    -fx-background-color: derive(#1d1d1d, 30%);
-    -fx-border-color: derive(#1d1d1d, 30%);
+    -fx-background-color: derive(#bae1ff, 30%);
+    -fx-border-color: derive(#bae1ff, 30%);
     -fx-border-width: 1px;
 }
 
 .grid-pane .stack-pane {
-    -fx-background-color: derive(#1d1d1d, 30%);
+    -fx-background-color: derive(#bae1ff, 30%);
 }
 
 
@@ -101,11 +101,11 @@
 
 .button:default {
     -fx-background-color: -fx-focus-color;
-    -fx-text-fill: #ffffff;
+    -fx-text-fill: #bae1ff;
 }
 
 .button:default:hover {
-    -fx-background-color: derive(-fx-focus-color, 30%);
+    -fx-background-color: derive(#bae1ff, 30%);
 
 }
 
@@ -186,7 +186,7 @@
 /*----------------------------------------- Menu Style ------------------------------------------------------*/
 
 .context-menu {
-    -fx-background-color: derive(black, 50%);
+    -fx-background-color: derive(#bae1ff, 50%);
 }
 
 .context-menu .label {
@@ -218,7 +218,7 @@
 #commandTextField {
     -fx-background-color: #ffdfba; // orange
     -fx-background-insets: 0;
-    -fx-border-color: #383838;
+    -fx-border-color: #1d1d1d;
     -fx-border-insets: 0;
     -fx-border-width: 1;
     -fx-font-family: Arial;
@@ -229,14 +229,14 @@
 /*----------------------------------------- Result Display Style -----------------------------------------------------*/
 
 .result-display {
-    -fx-background-color: #1d1d1d;
+    -fx-background-color: #1d1d1d; // border for user output
     -fx-font-family: Arial;
     -fx-font-size: 13pt;
     -fx-text-fill: black;
 }
 
 .result-display .label {
-    -fx-text-fill: black !important;
+    -fx-text-fill: #bae1ff; // blue
 }
 
 #resultDisplay .content {
@@ -247,32 +247,37 @@
 /*-------------------------------------------- Left Table Style ------------------------------------------------------*/
 
 .table-view {
-    -fx-base: #fab9b3;
+    -fx-base: #bae1ff;
     -fx-control-inner-background: #fab9b3;
-    -fx-background-color: blue;
-    -fx-table-cell-border-color: transparent;
-    -fx-table-header-border-color: transparent;
     -fx-padding: 5;
-    -fx-border-color: black;
-    -fx-border-width: 1px;
     -fx-background-radius: 10px;
-    -fx-border-radius: 10px;
+    -fx-background-color: #bae1ff;
+
+    /* Curved corners */
+    -fx-border-radius: 10px; // no effect
+}
+
+/* when table is empty, ui shows gray instead of blue*/
+.table-view:empty {
+    -fx-background-color: #bae1ff !important; // no effect
 }
 
 .table-view .column-header-background {
-    -fx-background-color: transparent;
+    -fx-background-color: #bae1ff; // no effect
 }
 
 .table-view .column-header, .table-view .filler {
     -fx-size: 35;
     -fx-border-width: 0 0 1 0;
-    -fx-background-color: transparent;
+    -fx-background-color: #bae1ff; // no effect
+    /*
     -fx-border-color:
         transparent
         transparent
         derive(-fx-base, 80%)
         transparent;
-    -fx-border-insets: 0 10 1 0;
+
+    -fx-border-insets: 0 10 1 0;*/
 }
 
 .table-view .column-header .label {
@@ -280,7 +285,7 @@
     -fx-font-family: Arial;
     -fx-text-fill: white;
     -fx-alignment: center-left;
-    -fx-opacity: 1;
+    /* -fx-opacity: 1; */
 }
 
 .table-view:focused .table-row-cell:filled:focused:selected {
@@ -292,13 +297,17 @@
 .list-view {
     -fx-background-insets: 0;
     -fx-padding: 0;
-    -fx-background-color: derive(#1d1d1d, 20%);
+    -fx-background-color: derive(#bae1ff, 20%); // empty left table will default to blue
+    /* -fx-background-radius: 10px;  Curved corners */
+    -fx-border-color: black; /* Set border color to black */
+    /* -fx-border-radius: 10px;  Curved corners for borders */
 }
 
 .list-cell {
     -fx-label-padding: 0 0 0 0;
     -fx-graphic-text-gap : 0;
     -fx-padding: 0 0 0 0;
+
 }
 
 .list-cell:filled:even {
@@ -306,7 +315,7 @@
 }
 
 .list-cell:filled:odd {
-    -fx-background-color: #ffdfba; //orange
+    -fx-background-color: #fff7ed; //lighter orange
 }
 
 .list-cell:filled:selected {
@@ -385,6 +394,7 @@
     -fx-font-weight: bold;
     -fx-font-size: 32px;
     -fx-text-fill: black;
+    -fx-underline: true; /* Underline text */
 }
 
 .cell-subHeader {
@@ -414,11 +424,10 @@
     -fx-text-fill: white;
     -fx-padding: 15;
     -fx-background-color: #E23838; //less bright red - coral
-    -fx-border-color: black;
-    -fx-border-width: 1px;
-    -fx-border-radius: 10px;
-    -fx-background-radius: 10;
     -fx-alignment: CENTER;
+    -fx-background-radius: 10px; /* Curved corners */
+    -fx-border-color: black; /* Set border color to black */
+    -fx-border-radius: 10px; /* Curved corners for borders */
 }
 
 .cell-tag {
@@ -438,4 +447,6 @@
     -fx-background-color: #ffdfba; //orange view
     -fx-background-radius: 10;
     -width: 450;
+    -fx-border-color: black; /* Set border color to black */
+    -fx-border-radius: 10px; /* Curved corners for borders */
 }
