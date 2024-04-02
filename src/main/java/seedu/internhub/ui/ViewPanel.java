@@ -80,7 +80,7 @@ public class ViewPanel extends UiPart<Region> {
         default:
             tag.setStyle(tag.getStyle());
             break;
-    }
+        }
         tag.setText(person.getTag().getTagName());
     }
 }
