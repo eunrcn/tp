@@ -7,8 +7,8 @@ enum Tags {
     NR("No Reply"),
     OA("Online Assessment"),
     I("Interview"),
-    R("Reject"),
-    O("Offer");
+    R("Rejected"),
+    O("Offered");
 
 
     public final String descriptiveName;

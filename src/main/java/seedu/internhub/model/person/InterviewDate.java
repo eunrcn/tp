@@ -58,11 +58,6 @@ public class InterviewDate {
             return true;
         }
 
-        // instanceof handles nulls
-        //        if (!(other instanceof InterviewDate)) {
-        //            return false;
-        //        }
-
         if (other == null || getClass() != other.getClass()) {
             return false;
         }
@@ -98,10 +93,5 @@ public class InterviewDate {
         // Check if the difference is less than or equal to numberOfDays
         return daysDifference > -1 && daysDifference <= numberOfDays;
     }
-
-    //    public int compareTo(InterviewDate otherInterviewDate) {
-    //        // Assuming you want to compare interview dates directly
-    //        return value.compareTo(otherInterviewDate.value);
-    //    }
 
 }
