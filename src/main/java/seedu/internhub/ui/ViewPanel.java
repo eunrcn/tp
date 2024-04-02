@@ -63,19 +63,19 @@ public class ViewPanel extends UiPart<Region> {
         // Tag : use switch case based on the tag name
         switch (person.getTag().getTagShort()) {
         case "NR":
-            tag.setStyle(tag.getStyle() + "-fx-background-color: #Eeec7e");
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #fdffba"); //yellow
             break;
         case "OA":
-            tag.setStyle(tag.getStyle() + "-fx-background-color: #Dc7eee");
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #dfbaff"); //purple
             break;
         case "I":
-            tag.setStyle(tag.getStyle() + "-fx-background-color: #4b94ea");
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #badaff"); //blue
             break;
         case "R":
-            tag.setStyle(tag.getStyle() + "-fx-background-color: #Ee7e7e");
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #ffbdba"); //red
             break;
         case "O":
-            tag.setStyle(tag.getStyle() + "-fx-background-color: #A9ee7e");
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #baffdf"); //green
             break;
         default:
             tag.setStyle(tag.getStyle());
