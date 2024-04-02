@@ -44,7 +44,7 @@ public class PersonCard extends UiPart<Region> {
         this.person = person;
         id.setText(displayedIndex + ". ");
         name.setText(person.getCompanyName().fullName);
-        jobDescription.setText("Job Description: " + person.getJobDescription().value);
+        jobDescription.setText(person.getJobDescription().value);
         if ((person.getInterviewDate().toString()).equals("")) {
             interviewDate.setText("Interview Date: -");
         } else {
