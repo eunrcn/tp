@@ -31,7 +31,8 @@ public class ReminderCommand extends Command {
 
     @Override
     public boolean equals(Object other) {
-        return other == this
-                || (other instanceof ReminderCommand);
+        assert other != null : "The object to compare with cannot be null.";
+        return other == this || (other instanceof ReminderCommand);
     }
+
 }

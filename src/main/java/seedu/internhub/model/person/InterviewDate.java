@@ -88,8 +88,6 @@ public class InterviewDate {
         // Calculate the difference in days between the interview date and the current date
         long daysDifference = ChronoUnit.DAYS.between(currentDate.toLocalDate(), value.toLocalDate());
 
-        assert daysDifference >= 0 : "daysDifference should not be negative";
-
         // Check if the difference is less than or equal to numberOfDays
         return daysDifference > -1 && daysDifference <= numberOfDays;
     }

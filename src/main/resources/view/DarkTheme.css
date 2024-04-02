@@ -409,13 +409,12 @@
 }
 
 /*----------------------------------------- Viewing Card Style ------------------------------------------------------*/
-
+//this chunk is for the right side
 .cell-header {
     -fx-font-family: Arial;
     -fx-font-weight: bold;
-    -fx-font-size: 32px;
+    -fx-font-size: 42px; // make bigger font and remove underline
     -fx-text-fill: black;
-    -fx-underline: true; /* Underline text */
 }
 
 .cell-subHeader {
