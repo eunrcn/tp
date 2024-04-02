@@ -62,25 +62,25 @@ public class ViewPanel extends UiPart<Region> {
         }
         // Tag : use switch case based on the tag name
         switch (person.getTag().getTagShort()) {
-            case "NR":
-                tag.setStyle(tag.getStyle() + "-fx-background-color: #fdffba"); //yellow
-                break;
-            case "OA":
-                tag.setStyle(tag.getStyle() + "-fx-background-color: #dfbaff"); //purple
-                break;
-            case "I":
-                tag.setStyle(tag.getStyle() + "-fx-background-color: #badaff"); //blue
-                break;
-            case "R":
-                tag.setStyle(tag.getStyle() + "-fx-background-color: #ffbdba"); //red
-                break;
-            case "O":
-                tag.setStyle(tag.getStyle() + "-fx-background-color: #baffdf"); //green
-                break;
-            default:
-                tag.setStyle(tag.getStyle());
-                break;
-        }
+        case "NR":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #fdffba"); //yellow
+            break;
+        case "OA":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #dfbaff"); //purple
+            break;
+        case "I":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #badaff"); //blue
+            break;
+        case "R":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #ffbdba"); //red
+            break;
+        case "O":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #baffdf"); //green
+            break;
+        default:
+            tag.setStyle(tag.getStyle());
+            break;
+    }
         tag.setText(person.getTag().getTagName());
     }
 }

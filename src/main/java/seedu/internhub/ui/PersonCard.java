@@ -52,24 +52,24 @@ public class PersonCard extends UiPart<Region> {
         }
         // Tag : use switch case based on the tag name
         switch (person.getTag().getTagShort()) {
-            case "NR":
-                tags.setStyle(tags.getStyle() + "-fx-background-color: #fdffba"); //yellow
-                break;
-            case "OA":
-                tags.setStyle(tags.getStyle() + "-fx-background-color: #dfbaff"); //purple
-                break;
-            case "I":
-                tags.setStyle(tags.getStyle() + "-fx-background-color: #badaff"); //blue
-                break;
-            case "R":
-                tags.setStyle(tags.getStyle() + "-fx-background-color: #ffbdba"); //red
-                break;
-            case "O":
-                tags.setStyle(tags.getStyle() + "-fx-background-color: #baffdf"); //green
-                break;
-            default:
-                tags.setStyle(tags.getStyle());
-                break;
+        case "NR":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #fdffba"); //yellow
+            break;
+        case "OA":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #dfbaff"); //purple
+            break;
+        case "I":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #badaff"); //blue
+            break;
+        case "R":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #ffbdba"); //red
+            break;
+        case "O":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #baffdf"); //green
+            break;
+        default:
+            tags.setStyle(tags.getStyle());
+            break;
         }
         tags.setText(person.getTag().getTagName());
     }
