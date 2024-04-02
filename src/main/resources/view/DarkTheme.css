@@ -266,7 +266,7 @@
 
 /* when table is empty, ui shows gray instead of blue*/
 .table-view:empty {
-    -fx-background-color: #bae1ff !important;
+    -fx-background-color: #bae1ff !important; // useless
 }
 
 .table-view .column-header-background {
@@ -304,7 +304,7 @@
 .list-view {
     -fx-background-insets: 0;
     -fx-padding: 0;
-    -fx-background-color: derive(#bae1ff, 20%); /* empty left table will default to blue */
+    -fx-background-color: #bae1ff; /* empty left table will default to blue */
     /* -fx-background-radius: 10px;  Curved corners */
     -fx-border-color: black; /* Set border color to black */
     /* -fx-border-radius: 10px;  Curved corners for borders */
