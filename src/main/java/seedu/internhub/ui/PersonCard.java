@@ -50,26 +50,26 @@ public class PersonCard extends UiPart<Region> {
         } else {
             interviewDate.setText("Interview Date: " + person.getInterviewDate().toString());
         }
-        // Tags
+        // Tag : use switch case based on the tag name
         switch (person.getTag().getTagShort()) {
-        case "NR":
-            tags.setStyle(tags.getStyle() + "-fx-background-color: #Eeec7e");
-            break;
-        case "OA":
-            tags.setStyle(tags.getStyle() + "-fx-background-color: #Dc7eee");
-            break;
-        case "I":
-            tags.setStyle(tags.getStyle() + "-fx-background-color: #4b94ea");
-            break;
-        case "R":
-            tags.setStyle(tags.getStyle() + "-fx-background-color: #Ee7e7e");
-            break;
-        case "O":
-            tags.setStyle(tags.getStyle() + "-fx-background-color: #A9ee7e");
-            break;
-        default:
-            tags.setStyle(tags.getStyle());
-            break;
+            case "NR":
+                tags.setStyle(tags.getStyle() + "-fx-background-color: #fdffba"); //yellow
+                break;
+            case "OA":
+                tags.setStyle(tags.getStyle() + "-fx-background-color: #dfbaff"); //purple
+                break;
+            case "I":
+                tags.setStyle(tags.getStyle() + "-fx-background-color: #badaff"); //blue
+                break;
+            case "R":
+                tags.setStyle(tags.getStyle() + "-fx-background-color: #ffbdba"); //red
+                break;
+            case "O":
+                tags.setStyle(tags.getStyle() + "-fx-background-color: #baffdf"); //green
+                break;
+            default:
+                tags.setStyle(tags.getStyle());
+                break;
         }
         tags.setText(person.getTag().getTagName());
     }

@@ -27,7 +27,7 @@ public class ViewPanel extends UiPart<Region> {
     @FXML
     private Label email;
     @FXML
-    private Label tag;
+    private Label tags;
     @FXML
     private Label interviewDate;
     @FXML
@@ -62,25 +62,25 @@ public class ViewPanel extends UiPart<Region> {
         }
         // Tag : use switch case based on the tag name
         switch (person.getTag().getTagShort()) {
-        case "NR":
-            tag.setStyle(tag.getStyle() + "-fx-background-color: #ffbd55");
-            break;
-        case "OA":
-            tag.setStyle(tag.getStyle() + "-fx-background-color: #ffff66");
-            break;
-        case "I":
-            tag.setStyle(tag.getStyle() + "-fx-background-color: #87cefa");
-            break;
-        case "R":
-            tag.setStyle(tag.getStyle() + "-fx-background-color: #ff6666");
-            break;
-        case "O":
-            tag.setStyle(tag.getStyle() + "-fx-background-color: #9de24f");
-            break;
-        default:
-            tag.setStyle(tag.getStyle());
-            break;
+            case "NR":
+                tags.setStyle(tags.getStyle() + "-fx-background-color: #fdffba"); //yellow
+                break;
+            case "OA":
+                tags.setStyle(tags.getStyle() + "-fx-background-color: #dfbaff"); //purple
+                break;
+            case "I":
+                tags.setStyle(tags.getStyle() + "-fx-background-color: #badaff"); //blue
+                break;
+            case "R":
+                tags.setStyle(tags.getStyle() + "-fx-background-color: #ffbdba"); //red
+                break;
+            case "O":
+                tags.setStyle(tags.getStyle() + "-fx-background-color: #baffdf"); //green
+                break;
+            default:
+                tags.setStyle(tags.getStyle());
+                break;
         }
-        tag.setText(person.getTag().getTagName());
+        tags.setText(person.getTag().getTagName());
     }
 }
