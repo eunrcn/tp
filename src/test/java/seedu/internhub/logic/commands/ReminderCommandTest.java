@@ -22,11 +22,6 @@ class ReminderCommandTest {
 
     @BeforeEach
     public void setup() {
-
-        // test cases might fail unpredictably due to reliance on the system clock for setting up LocalDateTime objects.
-        // By setting a fixed date and time in the setup method of the test class, we ensure consistent behavior across
-        // different runs regardless of the time of execution. This change improves the reliability of the test suite.
-
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HHmm");
         String plus1Days = LocalDateTime.now().plusDays(1).format(formatter);
         String plus4Days = LocalDateTime.now().plusDays(4).format(formatter);
