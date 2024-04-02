@@ -2,8 +2,7 @@
 
 
 .background {
-    -fx-background-color: derive(#1d1d1d, 20%);
-    background-color: #bae1ff;
+    -fx-background-color: #bae1ff;
 }
 
 .label { //file and help
@@ -36,6 +35,7 @@
     -fx-font-family: Arial;
     -fx-font-size: 16px;
     -fx-text-fill: #010504;
+    -fx-font-weight: bold;
 }
 
 .cell_small_label {
@@ -259,11 +259,11 @@
 
 /* when table is empty, ui shows gray instead of blue*/
 .table-view:empty {
-    -fx-background-color: #bae1ff !important; // no effect
+    -fx-background-color: #bae1ff !important;
 }
 
 .table-view .column-header-background {
-    -fx-background-color: #bae1ff; // no effect
+    -fx-background-color: #bae1ff;
 }
 
 .table-view .column-header, .table-view .filler {
@@ -297,7 +297,7 @@
 .list-view {
     -fx-background-insets: 0;
     -fx-padding: 0;
-    -fx-background-color: derive(#bae1ff, 20%); // empty left table will default to blue
+    -fx-background-color: derive(#bae1ff, 20%); /* empty left table will default to blue */
     /* -fx-background-radius: 10px;  Curved corners */
     -fx-border-color: black; /* Set border color to black */
     /* -fx-border-radius: 10px;  Curved corners for borders */
@@ -329,6 +329,17 @@
 
 .list-cell .label {
     -fx-text-fill: black;
+}
+
+.tag_list_bubble {
+    -fx-padding: 6;
+    -fx-font-size: 12px;
+    -fx-background-radius: 10px;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-pref-width: 120px;
+    -fx-alignment: center;
 }
 
 /*-------------------------------------------- Split Pane Style ----------------------------------------------------*/

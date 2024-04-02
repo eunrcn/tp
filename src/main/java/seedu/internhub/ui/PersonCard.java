@@ -44,13 +44,33 @@ public class PersonCard extends UiPart<Region> {
         this.person = person;
         id.setText(displayedIndex + ". ");
         name.setText(person.getCompanyName().fullName);
-        tags.setText("Status: " + person.getTag().getTagName());
         jobDescription.setText("Job Description: " + person.getJobDescription().value);
         if ((person.getInterviewDate().toString()).equals("")) {
             interviewDate.setText("Interview Date: -");
         } else {
             interviewDate.setText("Interview Date: " + person.getInterviewDate().toString());
         }
-
+        // Tags
+        switch (person.getTag().getTagShort()) {
+        case "NR":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #Eeec7e");
+            break;
+        case "OA":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #Dc7eee");
+            break;
+        case "I":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #4b94ea");
+            break;
+        case "R":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #Ee7e7e");
+            break;
+        case "O":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #A9ee7e");
+            break;
+        default:
+            tags.setStyle(tags.getStyle());
+            break;
+        }
+        tags.setText(person.getTag().getTagName());
     }
 }

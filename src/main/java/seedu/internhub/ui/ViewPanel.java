@@ -53,7 +53,6 @@ public class ViewPanel extends UiPart<Region> {
         } else {
             interviewDate.setText("Interview Date: " + person.getInterviewDate().toString());
         }
-        tag.setText(person.getTag().getTagName());
         internDuration.setText(person.getInternDuration().value);
         salary.setText("$" + person.getSalary().value);
         if ((person.getNote().value).equals("")) {
@@ -61,5 +60,27 @@ public class ViewPanel extends UiPart<Region> {
         } else {
             note.setText(person.getNote().value);
         }
+        // Tag : use switch case based on the tag name
+        switch (person.getTag().getTagShort()) {
+        case "NR":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #Eeec7e");
+            break;
+        case "OA":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #Dc7eee");
+            break;
+        case "I":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #4b94ea");
+            break;
+        case "R":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #Ee7e7e");
+            break;
+        case "O":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #A9ee7e");
+            break;
+        default:
+            tag.setStyle(tag.getStyle());
+            break;
+        }
+        tag.setText(person.getTag().getTagName());
     }
 }
