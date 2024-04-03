@@ -14,41 +14,41 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
     <HBox>
-        <Label fx:id="companyName" text="\$first" styleClass="cell-header" />
+        <Label fx:id="companyName" text="\$first" styleClass="cell-header" wrapText="true"/>
         <Region HBox.hgrow="ALWAYS" />
         <Label fx:id="tag" text="\$tag" styleClass="cell-tag" />
     </HBox>
 
     <VBox spacing="15">
-        <Label fx:id="jobDescription" text="\$jobDescription" styleClass="cell-subHeader" />
+        <Label fx:id="jobDescription" text="\$jobDescription" styleClass="cell-subHeader" wrapText="true"/>
         <VBox>
             <Label text="Phone" styleClass="cell-content-header"/>
-            <Label fx:id="phone" styleClass="cell-content" text="\$phone" />
+            <Label fx:id="phone" styleClass="cell-content" text="\$phone" wrapText="true"/>
         </VBox>
 
         <VBox>
             <Label text="Address" styleClass="cell-content-header"/>
-            <Label fx:id="address" styleClass="cell-content" text="\$address" />
+            <Label fx:id="address" styleClass="cell-content" text="\$address" wrapText="true"/>
         </VBox>
 
         <VBox>
             <Label text="Email" styleClass="cell-content-header"/>
-            <Label fx:id="email" styleClass="cell-content" text="\$email" />
+            <Label fx:id="email" styleClass="cell-content" text="\$email" wrapText="true"/>
         </VBox>
 
         <VBox>
             <Label text="Duration" styleClass="cell-content-header"/>
-            <Label fx:id="internDuration" styleClass="cell-content" text="\$internDuration" />
+            <Label fx:id="internDuration" styleClass="cell-content" text="\$internDuration" wrapText="true"/>
         </VBox>
 
         <VBox>
             <Label text="Salary" styleClass="cell-content-header"/>
-            <Label fx:id="salary" styleClass="cell-content" text="\$salary" />
+            <Label fx:id="salary" styleClass="cell-content" text="\$salary" wrapText="true"/>
         </VBox>
 
         <VBox>
             <Label text="Notes" styleClass="cell-content-header"/>
-            <Label fx:id="note" styleClass="cell-content" text="\$note" />
+            <Label fx:id="note" styleClass="cell-content" text="\$note" wrapText="true"/>
         </VBox>
 
     </VBox>

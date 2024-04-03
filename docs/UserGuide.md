@@ -31,11 +31,11 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 ### Icons used
 
-| Icons   | Representation                                |
-|---------|-----------------------------------------------|
-| Note    | Additional useful information                 |
-| Caution | Provides warnings on some potential errors    |
-| Tip     | Nifty tricks to make your experience smoother |
+| Icons                               | Representation                                |
+|-------------------------------------|-----------------------------------------------|
+| <box type="info" seamless></box>    | Additional useful information                 |
+| <box type="warning" seamless></box> | Provides warnings on some potential errors    |
+| <box type="tip" seamless></box>     | Nifty tricks to make your experience smoother |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -64,7 +64,7 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 7. Now in the same command prompt or terminal window, enter the `java -jar internhub.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+   ![Ui](images/Ui_new.png)
 
 8. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -86,7 +86,7 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 ## Getting familiar with the UI of InternHub
 
-_Add Latest UI with labels to mark the CommandBox, ResultBox, List of Contacts, View Panel_
+![Ui](images/GUI_annotation.png)
 
 - **Command Box** 
   - This is where you enter the commands !
@@ -257,11 +257,22 @@ Format: `note INDEX`
 
 2. Updating a note of an **existing company contact**
     - Suppose you want to edit the note of company contact at index **2**
-    - Use the `note 2` and when you hit enter, it will retrieve the note content of the company contact at index 2 in the command box **as an edit command** :
-      - `edit 2 n/[note that exists currently in the company contact at index 2]`
-    - Simply update the note content and hit enter again, now the company contact will reflect the latest note
+    - Use the note command as follows : `note 2`
+![enter note 2](images/note-feature/note_1.png)
+    - When you hit enter, it will retrieve the note content of the company contact at index 2 in the command box **as an edit command** :
+![command executes](images/note-feature/note_2.png)
+    - Simply update the note content and hit enter again :
+![command executes](images/note-feature/note_3.png)
+    - The next time you view the contact, the note section will be updated :
+![command executes](images/note-feature/note_4.png)
 
-To delete a note, simply use `edit INDEX n/`
+
+<box type="tip" seamless>
+
+To clear a note, simply use `edit INDEX n/`  
+
+</box>
+
 
 <box type="warning" seamless>
 
@@ -270,7 +281,6 @@ If you use `edit INDEX n/your updates for the new note`, this **WILL OVERWRITE**
 For these kinds of scenarios, make use of the `note INDEX` function !
 
 </box>
-
 
 ### Filtering the data (by tags) : `filter`
 
