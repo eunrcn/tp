@@ -26,6 +26,35 @@ Experienced users can jump straight to exploring our [features](#features) !
 <page-nav-print />
 
 --------------------------------------------------------------------------------------------------------------------
+
+## Table of Contents
+- [Introduction](#introduction-to-the-user-guide)
+- [Quick Start](#quick-start)
+- [Getting Familiar with UI](#getting-familiar-with-the-ui-of-internhub)
+- [Features](#features)
+    - [Help](#viewing-help--help)
+    - [Basic Commands](#basic-commands)
+        - [Adding a Contact](#adding-a-contact-add)
+        - [Deleting a Contact](#deleting-a-contact--delete)
+        - [Editing a Contact](#editing-a-contact--edit)
+        - [Viewing a Contact](#viewing-a-contact--view)
+    - [Advanced Commands](#advanced-commands)
+        - [Listing all Contacts](#listing-all-contacts--list)
+        - [Locating Contacts by Name](#locating-contacts-by-name-find)
+        - [Adding a Note](#adding-a-note--note)
+        - [Filter Contacts by Tags](#filtering-the-data-by-tags--filter)
+        - [Sending Reminders](#sending-reminders--reminder)
+    - [Miscellaneous Commands](#miscellaneous-commands)
+        - [Clearing all Entries](#clearing-all-entries--clear)
+        - [Exiting the Program](#exiting-the-program--exit)
+    - [Storage & Data](#storage--data)
+        - [Saving the Data](#saving-the-data)
+        - [Editing the Data](#editing-the-data-file)
+- [FAQ](#faq)
+- [Known Issues](#known-issues)
+- [Command Summary](#command-summary)
+
+--------------------------------------------------------------------------------------------------------------------
 ## Introduction to the User Guide
 Our team at InternHub have carefully designed this user guide to be your one-stop solution for everything related to InternHub !
 
@@ -44,11 +73,11 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 1. Check Java Version & Install Java
     - For this application, your system is required to have Java 11 installed
     - To check if you have Java installed, open your command prompt or terminal and type : `java -version`
-      - If Java is installed, you will see the version number in the output :
-      - <img src="images/quickstart/java-installation.png" >
+        - If Java is installed, you will see the version number in the output :
+        - <img src="images/quickstart/java-installation.png" >
     - If Java is not installed or your version does not match as the output above :
-      - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download jdk-11 & follow the download instructions
-      - For **mac** users, download the jdk-11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu)
+        - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download jdk-11 & follow the download instructions
+        - For **mac** users, download the jdk-11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu)
 
 2. Download the latest `internhub.jar` from [here](https://github.com/se-edu/addressbook-level3/releases).
 
@@ -69,16 +98,16 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 8. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all contacts.
+    * `list` : Lists all contacts.
 
-   * `add c/Food Panda p/12345678 e/panda@food.com a/CBD t/F jd/Front End Intern d/15-04-2024 0900 id/6 months s/500
-     ` : Adds a contact named `Food Panda` to the Address Book.
+    * `add c/Food Panda p/12345678 e/panda@food.com a/CBD t/F jd/Front End Intern d/15-04-2024 0900 id/6 months s/500
+      ` : Adds a contact named `Food Panda` to the Address Book.
 
-   * `delete 3` : Deletes the 3rd contact shown in the current list.
+    * `delete 3` : Deletes the 3rd contact shown in the current list.
 
-   * `clear` : Deletes all contacts.
+    * `clear` : Deletes all contacts.
 
-   * `exit` : Exits the app.
+    * `exit` : Exits the app.
 
 9. Refer to the [Features](#features) for details of each command.
 
@@ -88,14 +117,14 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 ![Ui](images/GUI_annotation.png)
 
-- **Command Box** 
-  - This is where you enter the commands !
-- **Result Display** 
-  - The output message after each command is displayed here
-- **List of Contacts** 
-  - The panel displays list of all internship company contacts
-- **View Panel** 
-  - The panel displays the internship company contact card
+- **Command Box**
+    - This is where you enter the commands !
+- **Result Display**
+    - The output message after each command is displayed here
+- **List of Contacts**
+    - The panel displays list of all internship company contacts
+- **View Panel**
+    - The panel displays the internship company contact card
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -118,7 +147,7 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
-</box>
+  </box>
 
 ### Viewing help : `help`
 
@@ -128,6 +157,9 @@ Shows a message explaning how to access the help page.
 
 Format: `help`
 
+--------------------------------------------------------------------------------------------------------------------
+
+## Basic Commands
 
 ### Adding a contact: `add`
 
@@ -146,23 +178,21 @@ Examples:
 * `add c/FoodPanda p/12345678 e/panda@food.com a/CBD t/F jd/Front End Intern d/15-04-2024 0900 id/6 months s/500`
 * `add c/Shoppa p/99912345 e/panda@food.com t/F jd/Software Developer Intern  id/6 months s/500`
 
-### Listing all contacts : `list`
 
-Shows a list of all contacts in the address book sorted in ascending order of interview dates. If a company contact does not have any interview dates yet, it will be pushed to the end of the list.
+### Deleting a contact : `delete`
 
-Format: `list`
+Deletes the specified contact from the address book.
 
-### Viewing a contact : `view`
+Format: `delete INDEX`
 
-Views the details of the contact on the view panel in address book.
+* Deletes the contact at the specified `INDEX`.
+* The index refers to the index number shown in the displayed contact list.
+* The index **must be a positive integer** 1, 2, 3, …​
 
-Format: `View INDEX`
+Examples:
+* `list` followed by `delete 2` deletes the 2nd contact in the address book.
+* `find Betsy` followed by `delete 1` deletes the 1st contact in the results of the `find` command.
 
-* Views the contact at the specified `INDEX`. The index refers to the index number shown in the displayed contact list. The index **must be a positive integer** 1, 2, 3, …​
-
-Example:
-*  `view 3` Displays the company card of the 3rd contact in the list on the view panel.
-* **INSERT PICTURE OF view 3 WITH LABEL !**
 
 ### Editing a contact : `edit`
 
@@ -178,6 +208,30 @@ Format: `Edit INDEX c/[COMPANY_NAME] p/[PHONE_NUMBER] e/[EMAIL] a/[ADDRESS] t/[T
 Examples:
 *  `edit 1 p/91234567 e/foodpanda@example.com` Edits the phone number and email address of the 1st contact to be `91234567` and `foodpanda@example.com` respectively.
 *  `edit 2 c/shopee` Edits the company name of the 2nd contact to be `shopee`.
+
+
+### Viewing a contact : `view`
+
+Views the details of the contact on the view panel in address book.
+
+Format: `View INDEX`
+
+* Views the contact at the specified `INDEX`. The index refers to the index number shown in the displayed contact list. The index **must be a positive integer** 1, 2, 3, …​
+
+Example:
+*  `view 3` Displays the company card of the 3rd contact in the list on the view panel.
+* **INSERT PICTURE OF view 3 WITH LABEL !**
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Advanced Commands
+
+### Listing all contacts : `list`
+
+Shows a list of all contacts in the address book sorted in ascending order of interview dates. If a company contact does not have any interview dates yet, it will be pushed to the end of the list.
+
+Format: `list`
+
 
 ### Locating contacts by name: `find`
 
@@ -197,53 +251,6 @@ Examples:
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
   ![result for 'find alex david'](images/findAlexDavidResult.png)
 
-### Deleting a contact : `delete`
-
-Deletes the specified contact from the address book.
-
-Format: `delete INDEX`
-
-* Deletes the contact at the specified `INDEX`.
-* The index refers to the index number shown in the displayed contact list.
-* The index **must be a positive integer** 1, 2, 3, …​
-
-Examples:
-* `list` followed by `delete 2` deletes the 2nd contact in the address book.
-* `find Betsy` followed by `delete 1` deletes the 1st contact in the results of the `find` command.
-
-### Clearing all entries : `clear`
-
-Clears all entries from the address book.
-
-Format: `clear`
-
-### Exiting the program : `exit`
-
-Exits the program.
-
-Format: `exit`
-
-### Saving the data
-
-AddressBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
-
-### Editing the data file
-
-AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
-
-<box type="warning" seamless>
-
-**Caution:**
-If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
-
-</box>
-
-### Finding the data : `find`
-
-To find specific data entries, use the `find` command followed by keywords related to the data you're looking for. This command will help you quickly locate the information you need within your address book.
-
-Format: `find Grab`
 
 ### Adding a Note : `note`
 
@@ -258,18 +265,18 @@ Format: `note INDEX`
 2. Updating a note of an **existing company contact**
     - Suppose you want to edit the note of company contact at index **2**
     - Use the note command as follows : `note 2`
-![enter note 2](images/note-feature/note_1.png)
+      ![enter note 2](images/note-feature/note_1.png)
     - When you hit enter, it will retrieve the note content of the company contact at index 2 in the command box **as an edit command** :
-![command executes](images/note-feature/note_2.png)
+      ![command executes](images/note-feature/note_2.png)
     - Simply update the note content and hit enter again :
-![command executes](images/note-feature/note_3.png)
+      ![command executes](images/note-feature/note_3.png)
     - The next time you view the contact, the note section will be updated :
-![command executes](images/note-feature/note_4.png)
+      ![command executes](images/note-feature/note_4.png)
 
 
 <box type="tip" seamless>
 
-To clear a note, simply use `edit INDEX n/`  
+To clear a note, simply use `edit INDEX n/`
 
 </box>
 
@@ -296,16 +303,46 @@ Sending reminders is a great way to stay organized and on top of important tasks
 Format: `reminder`
 
 --------------------------------------------------------------------------------------------------------------------
+
+## Miscellaneous Commands
+
+### Clearing all entries : `clear`
+
+Clears all entries from the address book.
+
+Format: `clear`
+
+### Exiting the program : `exit`
+
+Exits the program.
+
+Format: `exit`
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Storage & Data
+
+### Saving the data
+
+AddressBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+
+### Editing the data file
+
+AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
+
+<box type="warning" seamless>
+
+**Caution:**
+If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
+Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+
+</box>
+
+--------------------------------------------------------------------------------------------------------------------
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous InternHub home folder.
-
-**Q**: How do I check my Java version?<br>
-**A**: You can check your Java version by opening a command terminal and typing `java -version`.
-
-**Q**: How do I download Java 11?<br>
-**A**: You can download Java 11 from the official Oracle website or adoptopenjdk.net. Choose the appropriate installer for your operating system and follow the installation instructions provided.
 
 **Q**: What is a home folder?<br>
 **A**: The home folder is the main directory associated with a user account on a computer. It typically contains user-specific settings, documents, downloads, and other personal files.
@@ -313,8 +350,8 @@ Format: `reminder`
 **Q**: Does the user know how to open the command terminal/how to change directory (cd) into a folder?<br>
 **A**: Users should refer to the documentation or help resources specific to their operating system for instructions on opening a command terminal and navigating to a directory using the `cd` command.
 
-**Q**: How do I run addressbook.jar?<br>
-**A**: You can run addressbook.jar by opening a command terminal, navigating to the directory containing the jar file using the `cd` command, and then typing `java -jar addressbook.jar` and pressing Enter.
+**Q**: How do I run internhub.jar?<br>
+**A**: You can run internhub.jar by opening a command terminal, navigating to the directory containing the jar file using the `cd` command, and then typing `java -jar internhub.jar` and pressing Enter.
 
 --------------------------------------------------------------------------------------------------------------------
 
