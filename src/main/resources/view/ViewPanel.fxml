@@ -48,7 +48,7 @@
 
         <VBox>
             <Label text="Notes" styleClass="cell-content-header"/>
-            <Label fx:id="note" styleClass="cell-content" text="\$note" wrapText="true"/>
+            <TextArea fx:id="note" styleClass="cell-content" text="\$note" wrapText="true" minHeight="150"/>
         </VBox>
 
     </VBox>
