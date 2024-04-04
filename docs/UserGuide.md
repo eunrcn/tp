@@ -157,7 +157,11 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 You can list all the commands recognised by InternHub by typing `help` into the command box and pressing Enter.
 
-Format: `help`
+<box>
+
+**Format:** `help`
+
+</box>
 
 <box type="tip"> 
 
@@ -177,26 +181,33 @@ A separate help window will appear.
 
 ### Adding a contact: `add`
 
-To seamlessly add a new internship application contact to your address book, simply follow these steps:
+Add a new internship application contact into InternHub.
 
-1. Begin by typing `add`, followed by the specific details of the contact you wish to include in your records.
-2Utilize the following prefixes to ensure accurate categorization of each detail:
+<box>
+
+**Format:** `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL a/[ADDRESS] t/TAG jd/JOB_DESCRIPTION d/[INTERVIEW_DATE] id/INTERN_DURATION s/SALARY n/[NOTE]`
+
+</box>
+
+Utilize the following prefixes to ensure accurate categorization of each detail:
 
    | Parameter | Description      | Example                          |
    |-----------|------------------|----------------------------------|
    | `c/`      | Company name     | `c/ABC Corporation`              |
-   | `p/`      | Phone number     | `p/123-456-7890`                 |
+   | `p/`      | Phone number     | `p/98765432`                     |
    | `e/`      | Email address    | `e/example@example.com`          |
    | `a/`      | Physical address | `a/123 Main St, City, Country`   |
    | `t/`      | Tags             | `t/NR`                           |
    | `jd/`     | Job description  | `jd/Software Developer Intern`   |
-   | `d/`      | Interview date   | `d/2024-04-14 15:00`             |
+   | `d/`      | Interview date   | `d/2024-04-14 1500`              |
    | `id/`     | Intern duration  | `id/3 months`                    |
-   | `s/`      | Salary           | `s/Unpaid`                       |
+   | `s/`      | Salary           | `s/500`                          |
    | `n/`      | Notes            | `n/Previous experience required` |
 
+All parameters except of address, interview date, and note must be provided for the add command to function as intended.
 
-Format: `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL a/[ADDRESS] t/TAG jd/JOB_DESCRIPTION d/[INTERVIEW_DATE] id/INTERN_DURATION s/SALARY n/[NOTE]`
+The phone number parameter should only accept numerical inputs, while the email should adhere to the format local-part@domain. 
+Additionally, ensure that the salary parameter contains a positive number.
 
 <box type="info">
 
@@ -214,13 +225,6 @@ Make sure to include the appropriate tag after `t/` to denote the status of the 
 - O: Offered - Indicates that an offer for the internship has been received from the company.
 - OA: Online Assessment - Denotes that an online assessment or test is required.
 - R: Rejected - Indicates that the internship application has been rejected by the company.
-
-</box>
-
-<box type="info"> 
-
-We've made the address, interview date, and note fields optional. 
-This acknowledges that you might not have immediate information about the interview date and location at the time of application.
 
 </box>
 
@@ -264,24 +268,39 @@ Expected Outcome
 
 ### Deleting a contact : `delete`
 
-Deletes a contact by index from the address book.
+Deletes a internship application contact by index from InternHub.
 
-Format: `delete INDEX`
+<box>
+
+**Format:** `delete INDEX`
+
+</box>
 
 * Deletes the contact at the specified `INDEX`.
 * The index refers to the index number shown in the displayed contact list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
-Examples:
-* `list` followed by `delete 2` deletes the 2nd contact.
-* `find Happy Burger` followed by `delete 1` deletes the 1st contact in the results of the `find` command.
+Example 1:
+`list` followed by `delete 2` deletes the 2nd contact.
 
+Expected outcome
+
+Before delete
+![delete command example 1](images/UserGuide/deleteCommandBefore.png)
+
+After delete, Grab entry is no longer seen in our list
+![delete command example 1](images/UserGuide/deleteCommandAfter.png)
 
 ### Editing a contact : `edit`
 
-Edits an existing contact detail in the address book.
+Edits an existing internship application contact detail in InternHub.
 
-Format: `Edit INDEX c/[COMPANY_NAME] p/[PHONE_NUMBER] e/[EMAIL] a/[ADDRESS] t/[TAG] jd/[JOB_DESCRIPTION] d/[INTERVIEW_DATE] id/[INTERN_DURATION] s/[SALARY]`
+<box>
+
+**Format:** `Edit INDEX c/[COMPANY_NAME] p/[PHONE_NUMBER] e/[EMAIL] a/[ADDRESS] t/[TAG] jd/[JOB_DESCRIPTION] d/[INTERVIEW_DATE] id/[INTERN_DURATION] s/[SALARY]`
+
+</box>
+
 
 * Edits the contact at the specified `INDEX`. The index refers to the index number shown in the displayed contact list. 
 * The index **must be a positive integer** 1, 2, 3, …​
@@ -310,9 +329,13 @@ After receiving an interview date:
 
 ### Viewing a contact : `view`
 
-Views the details of the contact on the view panel in address book.
+Views the details of the internship application contact on the view panel in InternHub.
 
-Format: `View INDEX`
+<box>
+
+**Format:** `View INDEX`
+
+</box>
 
 * Views the contact at the specified `INDEX`. The index refers to the index number shown in the displayed contact list. The index **must be a positive integer** 1, 2, 3, …​
 
@@ -326,14 +349,18 @@ Example:
 
 ### Listing all contacts : `list`
 
-This command shows a list of all internship application entries in the address book sorted in ascending order of interview dates.
-Internship application entries with interview dates will be listed first, followed by internship application entries without interview dates.
+This command shows a list of all internship application contacts in InternHub sorted in ascending order of interview dates.
+Internship application contacts with interview dates will be listed first, followed by internship application contacts without interview dates.
 
-Format: `list`
+<box>
+
+**Format:** `list`
+
+</box>
 
 Expected Outcome
 
-All internship application entries will be shown on the left side of the window.
+All internship application contacts will be shown on the left side of the window.
 
 ![list](images/UserGuide/list.png)
 
@@ -341,7 +368,11 @@ All internship application entries will be shown on the left side of the window.
 
 Finds contacts whose company names contain any of the given keywords.
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
+<box>
+
+**Format:** `find KEYWORD [MORE_KEYWORDS]`
+
+</box>
 
 * All matching results of the find will be displayed in your view panel
 * The search is case-insensitive. e.g `shoppa` will match `Shoppa`
@@ -358,9 +389,13 @@ Examples:
 
 ### Adding a Note : `note`
 
-This command will allow you to add & edit notes to an internship company contact. There are 2 ways to execute this command based on your use<br>
+This command will allow you to add & edit notes to an internship application contact. There are 2 ways to execute this command based on your use<br>
 
-Format: `note INDEX`
+<box>
+
+**Format:** `note INDEX`
+
+</box>
 
 1. Adding a note when **creating a new company contact**
     - Simply include the note you want in the **add** command using the syntax `n/[NOTE]`
@@ -398,7 +433,11 @@ For these kinds of scenarios, make use of the `note INDEX` function !
 Filtering data allows you to narrow down your search results to focus on internship contacts based on their status. 
 Use the `filter` command to filter by tag and find exactly the internships that have an interview.
 
-Format: `filter [VALID TAG]`
+<box>
+
+**Format:** `filter [VALID TAG]`
+
+</box>
 
 <box type="info">
 
@@ -424,7 +463,11 @@ You can effortlessly retrieve reminders manually using this command.
 It conveniently displays the interviews scheduled within the upcoming N days, 
 keeping you well-prepared and on track.
 
-Format: `reminder INT`
+<box>
+
+**Format:** `reminder INT`
+
+</box>
 
 Examples:
 - `reminder 0`
@@ -445,15 +488,23 @@ This is a quick and easy way to be reminded of the upcoming interviews in order 
 
 ### Clearing all entries : `clear`
 
-Clears all entries from the address book.
+Clears all entries stored in InternHub.
 
-Format: `clear`
+<box>
+
+**Format:** `clear`
+
+</box>
 
 ### Exiting the program : `exit`
 
 Exits the program.
 
-Format: `exit`
+<box>
+
+**Format:** `exit`
+
+</box>
 
 --------------------------------------------------------------------------------------------------------------------
 
