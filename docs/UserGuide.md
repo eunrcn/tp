@@ -309,12 +309,6 @@ After delete, Grab entry is no longer seen in our list
 
 Edits an existing internship application contact detail in InternHub.
 
-<box>
-
-**Format:** `Edit INDEX c/[COMPANY_NAME] p/[PHONE_NUMBER] e/[EMAIL] a/[ADDRESS] t/[TAG] jd/[JOB_DESCRIPTION] d/[INTERVIEW_DATE] id/[INTERN_DURATION] s/[SALARY]`
-
-</box>
-
 1. Begin by typing `edit`, followed by the `INDEX` of the application. 
 The index refers to the index number shown in the displayed contact list.
 2. Next, include only specific prefix for the fields of the contact you wish to edit in your records. 
@@ -323,7 +317,7 @@ At least one of the optional fields must be provided and at most one of each fie
 
 <box>
 
-Format: `Edit INDEX c/[COMPANY_NAME] p/[PHONE_NUMBER] e/[EMAIL] a/[ADDRESS] t/[TAG] jd/[JOB_DESCRIPTION] d/[INTERVIEW_DATE] id/[INTERN_DURATION] s/[SALARY]`
+**Format:** `Edit INDEX c/[COMPANY_NAME] p/[PHONE_NUMBER] e/[EMAIL] a/[ADDRESS] t/[TAG] jd/[JOB_DESCRIPTION] d/[INTERVIEW_DATE] id/[INTERN_DURATION] s/[SALARY]`
 
 </box>
   
