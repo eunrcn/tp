@@ -364,6 +364,8 @@ Example:
 *  `view 3` Displays the company card of the 3rd contact in the list on the view panel.
 ![view result 3](images/view/view3Result.png)
 
+<div style="page-break-after: always;"></div>
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Advanced Commands
