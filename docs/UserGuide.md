@@ -106,8 +106,8 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
     * `list` : Lists all contacts.
 
-    * `add c/Food Panda p/12345678 e/panda@food.com a/CBD t/F jd/Front End Intern d/15-04-2024 0900 id/6 months s/500
-      ` : Adds a contact named `Food Panda` to the Address Book.
+    * `add c/Pixar p/98765432 e/Pixar@example.com a/123 Animation Avenue, Emeryville, CA, 94608, USA t/O jd/Junior Animator intern id/3 months s/1000 n/Assist in the creation of animated sequences, collaborate with the animation team to bring characters and scenes to life
+      ` : Adds a contact named `Pixar` to the Address Book.
 
     * `delete 3` : Deletes the 3rd contact shown in the current list.
 
@@ -157,11 +157,21 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 ### Viewing help : `help`
 
-Shows a message explaining how to access the help page.
-
-![help message](images/UserGuide/helpMessage.png)
+You can list all the commands recognised by InternHub by typing `help` into the command box and pressing Enter.
 
 Format: `help`
+
+<box type="tip" seamless> 
+
+You can also execute this command by using the `F1` key on your keyboard.
+
+</box>
+
+**Expected Outcome**
+
+A separate help window will appear.
+
+![help message](images/UserGuide/helpMessage.png)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -169,20 +179,80 @@ Format: `help`
 
 ### Adding a contact: `add`
 
-To add a internship contact to your address book, follow these simple steps:
+To seamlessly add a new internship application contact to your address book, simply follow these steps:
 
-1. Type `add` followed by the details of the contact you want to add.
-2. Use `c/` for the company name, `p/` for the phone number, `e/` for the email, `a/` for the address, `t/` for tags, `jd/` for job description, `d/` for interview date, `id/` for intern duration, `s/` for salary and `n/` for note.
+1. Begin by typing `add`, followed by the specific details of the contact you wish to include in your records.
+2. Utilize the following prefixes to ensure accurate categorization of each detail:
+   | Parameter  | Description                        | Example                        |
+   |------------|------------------------------------|--------------------------------|
+   | `c/`       | Company name                       | `c/ABC Corporation`            |
+   | `p/`       | Phone number                       | `p/123-456-7890`               |
+   | `e/`       | Email address                      | `e/example@example.com`        |
+   | `a/`       | Physical address                   | `a/123 Main St, City, Country`|
+   | `t/`       | Tags                               | `t/NR`                         |
+   | `jd/`      | Job description                    | `jd/Software Developer Intern` |
+   | `d/`       | Interview date                     | `d/2024-04-14 15:00`           |
+   | `id/`      | Intern duration                    | `id/3 months`                  |
+   | `s/`       | Salary                             | `s/Unpaid`                     |
+   | `n/`       | Notes                              | `n/Previous experience required`|
 
-Format: `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL a/[ADDRESS] t/TAG jd/JOB_DESCRIPTION d/[INTERVIEW_DATE] id/INTERN_DURATION s/salary n/[NOTE]`
 
-<box type="tip" seamless> heheh
+Format: `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL a/[ADDRESS] t/TAG jd/JOB_DESCRIPTION d/[INTERVIEW_DATE] id/INTERN_DURATION s/SALARY n/[NOTE]`
+
+<box type="tip" seamless> 
+
+Make sure to include the appropriate tag after `t/` to denote the status of the internship application
+- NR: No Reply - Indicates that there has been no response from the company regarding the internship application.
+- I: Interview - Signifies that an interview for the internship has been scheduled with the company.
+- O: Offered - Indicates that an offer for the internship has been received from the company.
+- OA: Online Assessment - Denotes that an online assessment or test is required.
+- R: Rejected - Indicates that the internship application has been rejected by the company.
 
 </box>
 
-Examples:
-* `add c/FoodPanda p/12345678 e/panda@food.com a/CBD t/F jd/Front End Intern d/15-04-2024 0900 id/6 months s/500`
-* `add c/Shoppa p/99912345 e/panda@food.com t/F jd/Software Developer Intern  id/6 months s/500`
+<box type="info" seamless> 
+
+We've made the address, interview date, and note fields optional. 
+This acknowledges that you might not have immediate information about the interview date and location at the time of application.
+
+</box>
+
+**Example 1:**
+
+This example represents an application for a Creative Design Internship position at MediaCorp.
+The tag t/I indicates that an interview has been scheduled with the company.
+All parameters are provided, including optional parameters such as address, interview date and notes.
+The notes section provides additional information about Mediacorp and suggests topics for discussion during the interview.
+
+`add c/MediaCorp p/12345678 e/jobs@mediacorp-digital.com a/321 Media Lane, Singapore 238163 t/I jd/Creative Design Intern d/11-04-2024 0900 id/3 months s/1000 n/Mediacorp is a leading media company in Singapore, offering a wide range of media and entertainment services, including television, radio, digital media, and content production. Be prepared to discuss current trends in the media industry and how Mediacorp is adapting to digital transformation.
+`
+
+Expected Outcome
+
+![add command example 1](images/UserGuide/addCommandExample1.png)
+
+**Example 2:**
+
+This example represents an application for a Junior Animator Internship position at Pixar.
+The tag t/O indicates that an offer has been received from the company.
+All required parameters are provided, including contact information, job details, internship duration, and salary.
+Optional parameters such as the address, interview date, and notes are omitted, demonstrating that their absence does not impact the completeness of this command.
+
+`add c/Pixar p/98765432 e/Pixar@example.com t/O jd/Junior Animator intern id/3 months s/1000`
+
+Expected Outcome
+
+![add command example 2](images/UserGuide/addCommandExample2.png)
+
+
+**More examples:**
+- `add c/Grab p/66550000 e/careers@grab.com a/6 Temasek Boulevard t/I jd/Software Developer Intern d/12-04-2024 0900 id/6 months s/1500 n/Grab offers various services like ride-sharing, food delivery and etc. For this interview, I need to revise topics like : Data structures, complexities and algorithms`
+
+- `add c/DBS Bank p/12345678 e/careers@dbs-bank-online.com a/321 Media Lane, Singapore 238163 t/OA jd/Creative Design Intern d/14-04-2024 0900 id/3 months s/1000 n/DBS Bank offer a wide range of banking services, including retail banking, corporate banking, and investment banking. Familiarize yourself with the banking industry and current trends in finance and technology. Showcase your understanding of financial concepts and your ability to apply them in real-world scenarios.`
+
+- `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/R jd/Software Developer intern d/03-05-2024 1200 id/3 months s/1000`
+
+- `add c/A STAR  p/12345678 e/info@astar-research.org a/456 Science Street, Singapore 117543 t/NR jd/Research Assistant Intern id/6 months s/1200 n/A*STAR is a leading research agency in Singapore, dedicated to advancing science and technology. They conduct research across various fields, including biomedical sciences, physical sciences, and engineering. Be prepared to discuss your research experience, methodologies, and any publications or projects you've worked on.`
 
 
 ### Deleting a contact : `delete`
@@ -217,9 +287,13 @@ Examples:
 * Edits the phone number and email address of the 1st contact to be `91234567` and `foodpanda@example.com` respectively.
 *  `edit 2 c/shopee` Edits the company name of the 2nd contact to be `shopee`.
 
-<box type="tip" seamless> If you received an interview invitation from a previously non-responsive company, you can add the interview date with this command: 
+<box type="tip" seamless> 
+
+If you received an interview invitation from a previously non-responsive company, you can add the interview date with this command: 
 `edit 5 t/ I d/14-04-2024 1500`
 This will change the tag from No-Reply to Interview and add an Interview time as shown below.
+
+</box>
 
 ![edit command](images/UserGuide/beforeEditCommand.png)
 
@@ -246,10 +320,16 @@ Example:
 
 ### Listing all contacts : `list`
 
-Shows a list of all contacts in the address book sorted in ascending order of interview dates. If a company contact does not have any interview dates yet, it will be pushed to the end of the list.
+This command shows a list of all internship application entries in the address book sorted in ascending order of interview dates.
+Internship application entries with interview dates will be listed first, followed by internship application entries without interview dates.
 
 Format: `list`
 
+Expected Outcome
+
+All internship application entries will be shown on the left side of the window.
+
+![list](images/UserGuide/list.png)
 
 ### Locating contacts by name: `find`
 
