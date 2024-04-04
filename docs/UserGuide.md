@@ -301,31 +301,44 @@ Edits an existing internship application contact detail in InternHub.
 
 </box>
 
+1. Begin by typing `edit`, followed by the `INDEX` of the application. 
+The index refers to the index number shown in the displayed contact list.
+2. Next, include only specific prefix for the fields of the contact you wish to edit in your records. 
+At least one of the optional fields must be provided and at most one of each field can be provided.
+3. After pressing enter, existing values will be updated to the input values.
 
-* Edits the contact at the specified `INDEX`. The index refers to the index number shown in the displayed contact list. 
-* The index **must be a positive integer** 1, 2, 3, …​
-* At least one of the optional fields must be provided.
-* Existing values will be updated to the input values.
-* For `[INTERVIEW_DATE]`, if you want to remove a date, just enter `d/` and it will remove that field.
+<box>
 
-Examples:
-*  `edit 1 p/91234567 e/foodpanda@example.com` 
-* Edits the phone number and email address of the 1st contact to be `91234567` and `foodpanda@example.com` respectively.
-*  `edit 2 c/shopee` Edits the company name of the 2nd contact to be `shopee`.
+Format: `Edit INDEX c/[COMPANY_NAME] p/[PHONE_NUMBER] e/[EMAIL] a/[ADDRESS] t/[TAG] jd/[JOB_DESCRIPTION] d/[INTERVIEW_DATE] id/[INTERN_DURATION] s/[SALARY]`
 
-<box type="tip"> 
+</box>
+  
+<box type="tip">
 
-If you received an interview invitation from a previously non-responsive company, you can add the interview date with this command: 
-`edit 5 t/ I d/14-04-2024 1500`
-This will change the tag from No-Reply to Interview and add an Interview time as shown below.
+For `[NOTE]`, please refer to the "Adding a note" section below for more details.
+For `[INTERVIEW_DATE]`, if you want to remove a date, just enter `d/` and it will remove that field.
 
 </box>
 
+**Example:**
+In this scenario, we've received confirmation of an interview details from a previously unresponsive company, A STAR. 
+
 ![edit command](images/UserGuide/beforeEditCommand.png)
 
-After receiving an interview date:
-![edit command](images/UserGuide/afterEditCommand.png)
+To update the status tag from "NR" to "I," please utilize the following command:
 
+`edit 5 t/I`.
+
+Additionally, to include the interview date on 14th of April 2024 at 3pm, use:
+
+`edit 5 d/14-04-2024 1500`.
+
+When both commands are executed together, it will appear as follows: 
+
+`edit 5 t/I d/14-04-2024 1500`. 
+
+This not only alters the tag to "Interview" but also specifies the interview schedule as indicated:
+![edit command](images/UserGuide/afterEditCommand.png)
 
 ### Viewing a contact : `view`
 
@@ -469,11 +482,12 @@ keeping you well-prepared and on track.
 
 </box>
 
-Examples:
-- `reminder 0`
-- Shows you the interviews you have today.
-- `reminder 2`
-- Shows you the interviews you have in the next two days, including today.
+</box>
+
+**Examples:**
+- `reminder 0` : Shows you the interviews you have today.
+- `reminder 2` : Shows you the interviews you have in the next two days, including today.
+- `reminder 20` : Shows you the interviews you have in the next twenty days, including today.
 
 ![reminder command](images/UserGuide/reminderCommand.png)
 
