@@ -264,7 +264,7 @@ Expected Outcome
 
 ### Deleting a contact : `delete`
 
-Deletes the specified contact from the address book.
+Deletes a contact by index from the address book.
 
 Format: `delete INDEX`
 
