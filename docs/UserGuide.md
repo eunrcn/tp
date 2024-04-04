@@ -216,7 +216,7 @@ Examples:
 * Edits the phone number and email address of the 1st contact to be `91234567` and `foodpanda@example.com` respectively.
 *  `edit 2 c/shopee` Edits the company name of the 2nd contact to be `shopee`.
 
-<box type="tip" seamless> If you received an interview invitation from a previously non-responsive company, you can add the interview date with this command. 
+<box type="tip" seamless> If you received an interview invitation from a previously non-responsive company, you can add the interview date with this command: 
 `edit 5 t/ I d/14-04-2024 1500`
 This will change the tag from No-Reply from Interview and add a Interview time as shown below.
 
