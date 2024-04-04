@@ -7,16 +7,21 @@ pageNav: 3
 # Internhub User Guide
 
 ## Welcome !
-Are you an undergraduate navigating the maze of internship opportunities?
-Look no further! InternHub is here to revolutionize the way you manage your internship contacts.
-This User Guide (UG) serves as a comprehensive resource to aid users in understanding and effectively utilizing the application.
-It provides detailed instructions on installation, usage, and navigation, ensuring users can maximize the benefits of Intern Hub for managing internship contacts.
+Are you currently navigating the intricate maze of internship opportunities as an undergraduate? 
+Your search ends here! InternHub is poised to transform the way you handle your internship contacts.
+InternHub stands as a beacon of productivity, offering you a comprehensive platform to manage and organize all your internship applications effectively.
+This User Guide (UG) acts as your trusted companion, providing a wealth of information to assist you in understanding and harnessing the full potential of our application. 
+From installation to usage and navigation, each step is meticulously outlined to ensure you derive maximum benefits from InternHub in managing your internship contacts.
 
 ## Who can use InternHub ?
-InternHub is designed for undergraduates, professors, and career guidance officers seeking a streamlined approach to managing internship contacts.
-InternHub is crafted with the intention of being **user-friendly** for individuals with varying levels of computer experience.
-We trust that you'll find the interface intuitive and easy to navigate, whether you're a tech-savvy enthusiast or just starting to explore desktop applications.
-We're here to support you every step of the way on your internship management journey!
+InternHub caters to undergraduates from all fields, providing them with a seamless and efficient approach to managing their internship contacts. 
+Professors and career guidance officers, we invite you to share this invaluable resource with your students, empowering them to secure their dream internships.
+
+InternHub is designed with **user-friendliness** in mind, catering to individuals with varying levels of computer experience. 
+Whether you're a tech-savvy enthusiast or just dipping your toes into the world of desktop applications, rest assured that our interface is intuitive and easy to navigate.
+We're committed to supporting you every step of the way on your internship management journey. 
+
+Welcome aboard, and let's embark on this exciting adventure together!
 
 For users who are **new to InternHub**, click [here](#introduction-to-the-user-guide) for a helpful starting point !
 
@@ -93,7 +98,7 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 7. Now in the same command prompt or terminal window, enter the `java -jar internhub.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui_new.png)
+   ![Ui](images/UserGuide/Ui_new.png)
 
 8. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -115,7 +120,7 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 ## Getting familiar with the UI of InternHub
 
-![Ui](images/GUI_annotation.png)
+![Ui](images/UserGuide/GUI_annotation.png)
 
 - **Command Box**
     - This is where you enter the commands !
@@ -151,9 +156,9 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 ### Viewing help : `help`
 
-Shows a message explaning how to access the help page.
+Shows a message explaining how to access the help page.
 
-![help message](images/helpMessage.png)
+![help message](images/UserGuide/helpMessage.png)
 
 Format: `help`
 
@@ -200,14 +205,27 @@ Edits an existing contact detail in the address book.
 
 Format: `Edit INDEX c/[COMPANY_NAME] p/[PHONE_NUMBER] e/[EMAIL] a/[ADDRESS] t/[TAG] jd/[JOB_DESCRIPTION] d/[INTERVIEW_DATE] id/[INTERN_DURATION] s/[SALARY]`
 
-* Edits the contact at the specified `INDEX`. The index refers to the index number shown in the displayed contact list. The index **must be a positive integer** 1, 2, 3, …​
+* Edits the contact at the specified `INDEX`. The index refers to the index number shown in the displayed contact list. 
+* The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
 * For `[INTERVIEW_DATE]`, if you want to remove a date, just enter `d/` and it will remove that field.
 
 Examples:
-*  `edit 1 p/91234567 e/foodpanda@example.com` Edits the phone number and email address of the 1st contact to be `91234567` and `foodpanda@example.com` respectively.
+*  `edit 1 p/91234567 e/foodpanda@example.com` 
+* Edits the phone number and email address of the 1st contact to be `91234567` and `foodpanda@example.com` respectively.
 *  `edit 2 c/shopee` Edits the company name of the 2nd contact to be `shopee`.
+
+<box type="tip" seamless> If you received an interview invitation from a previously non-responsive company, you can add the interview date with this command: 
+`edit 5 t/ I d/14-04-2024 1500`
+This will change the tag from No-Reply from Interview and add a Interview time as shown below.
+
+Before receiving an interview date:
+![edit command](images/UserGuide/beforeEditCommand.png)
+
+After receiving an interview date:
+![edit command](images/UserGuide/afterEditCommand.png)
+</box>
 
 
 ### Viewing a contact : `view`
@@ -249,7 +267,7 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
 Examples:
 * `find Happy` returns `happy` and `Happy Burger`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+  ![result for 'find alex david'](images/UserGuide/findAlexDavidResult.png)
 
 
 ### Adding a Note : `note`
