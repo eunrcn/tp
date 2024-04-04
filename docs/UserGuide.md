@@ -309,10 +309,10 @@ For these kinds of scenarios, make use of the `note INDEX` function !
 
 ### Filtering the data (by tags) : `filter`
 
-Filtering data allows you to narrow down your search results to focus on specific criteria. Use the `filter t/` command to filter by tag and find exactly the internships that have an interview.
+Filtering data allows you to narrow down your search results to focus on specific criteria. Use the `filter` command to filter by tag and find exactly the internships that have an interview.
 
 
-Format: `filter t/ I`
+Format: `filter I`
 
 ### Sending reminders : `reminder`
 
@@ -413,5 +413,5 @@ Furthermore, certain edits can cause the AddressBook to behave in unexpected way
 | **View**     | `view INDEX`<br> e.g., `view 3`                                                                                                                                                                                                                            |
 | **Help**     | `help`                                                                                                                                                                                                                                                     |
 | **Find**     | `find STRING`<br> e.g., `find Grab`                                                                                                                                                                                                                        |
-| **Filter**   | `filter t/ I`                                                                                                                                                                                                                                              |
+| **Filter**   | `filter I`                                                                                                                                                                                                                                                 |
 | **Reminder** | `reminder`                                                                                                                                                                                                                                                 |
