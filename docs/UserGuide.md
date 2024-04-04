@@ -66,11 +66,9 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 ### Icons used
 
-| Icons                               | Representation                                |
-|-------------------------------------|-----------------------------------------------|
-| <box type="info" seamless></box>    | Additional useful information                 |
-| <box type="warning" seamless></box> | Provides warnings on some potential errors    |
-| <box type="tip" seamless></box>     | Nifty tricks to make your experience smoother |
+<box type="info" >Additional useful information</box>
+<box type="warning" >Provides warnings on some potential errors</box>
+<box type="tip" >Nifty tricks to make your experience smoother</box>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -136,7 +134,7 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 ## Features
 
-<box type="info" seamless>
+<box type="info">
 
 **Notes about the command format:**<br>
 
@@ -161,7 +159,7 @@ You can list all the commands recognised by InternHub by typing `help` into the 
 
 Format: `help`
 
-<box type="tip" seamless> 
+<box type="tip"> 
 
 You can also execute this command by using the `F1` key on your keyboard.
 
@@ -182,24 +180,33 @@ A separate help window will appear.
 To seamlessly add a new internship application contact to your address book, simply follow these steps:
 
 1. Begin by typing `add`, followed by the specific details of the contact you wish to include in your records.
-2. Utilize the following prefixes to ensure accurate categorization of each detail:
-   | Parameter  | Description                        | Example                        |
-   |------------|------------------------------------|--------------------------------|
-   | `c/`       | Company name                       | `c/ABC Corporation`            |
-   | `p/`       | Phone number                       | `p/123-456-7890`               |
-   | `e/`       | Email address                      | `e/example@example.com`        |
-   | `a/`       | Physical address                   | `a/123 Main St, City, Country`|
-   | `t/`       | Tags                               | `t/NR`                         |
-   | `jd/`      | Job description                    | `jd/Software Developer Intern` |
-   | `d/`       | Interview date                     | `d/2024-04-14 15:00`           |
-   | `id/`      | Intern duration                    | `id/3 months`                  |
-   | `s/`       | Salary                             | `s/Unpaid`                     |
-   | `n/`       | Notes                              | `n/Previous experience required`|
+2Utilize the following prefixes to ensure accurate categorization of each detail:
+
+   | Parameter | Description      | Example                          |
+   |-----------|------------------|----------------------------------|
+   | `c/`      | Company name     | `c/ABC Corporation`              |
+   | `p/`      | Phone number     | `p/123-456-7890`                 |
+   | `e/`      | Email address    | `e/example@example.com`          |
+   | `a/`      | Physical address | `a/123 Main St, City, Country`   |
+   | `t/`      | Tags             | `t/NR`                           |
+   | `jd/`     | Job description  | `jd/Software Developer Intern`   |
+   | `d/`      | Interview date   | `d/2024-04-14 15:00`             |
+   | `id/`     | Intern duration  | `id/3 months`                    |
+   | `s/`      | Salary           | `s/Unpaid`                       |
+   | `n/`      | Notes            | `n/Previous experience required` |
 
 
 Format: `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL a/[ADDRESS] t/TAG jd/JOB_DESCRIPTION d/[INTERVIEW_DATE] id/INTERN_DURATION s/SALARY n/[NOTE]`
 
-<box type="tip" seamless> 
+<box type="info">
+
+Each contact is uniquely identified by the combination of **Company Name** and **Job Description**
+   - You **can** have 2 contacts of the same company name but **different** job descriptions
+   - You **cannot** have 2 contacts of the same company name **and** same job description
+
+</box>
+
+<box type="tip"> 
 
 Make sure to include the appropriate tag after `t/` to denote the status of the internship application
 - NR: No Reply - Indicates that there has been no response from the company regarding the internship application.
@@ -210,7 +217,7 @@ Make sure to include the appropriate tag after `t/` to denote the status of the 
 
 </box>
 
-<box type="info" seamless> 
+<box type="info"> 
 
 We've made the address, interview date, and note fields optional. 
 This acknowledges that you might not have immediate information about the interview date and location at the time of application.
@@ -266,8 +273,8 @@ Format: `delete INDEX`
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `list` followed by `delete 2` deletes the 2nd contact in the address book.
-* `find Betsy` followed by `delete 1` deletes the 1st contact in the results of the `find` command.
+* `list` followed by `delete 2` deletes the 2nd contact.
+* `find Happy Burger` followed by `delete 1` deletes the 1st contact in the results of the `find` command.
 
 
 ### Editing a contact : `edit`
@@ -287,7 +294,7 @@ Examples:
 * Edits the phone number and email address of the 1st contact to be `91234567` and `foodpanda@example.com` respectively.
 *  `edit 2 c/shopee` Edits the company name of the 2nd contact to be `shopee`.
 
-<box type="tip" seamless> 
+<box type="tip"> 
 
 If you received an interview invitation from a previously non-responsive company, you can add the interview date with this command: 
 `edit 5 t/ I d/14-04-2024 1500`
@@ -299,7 +306,6 @@ This will change the tag from No-Reply to Interview and add an Interview time as
 
 After receiving an interview date:
 ![edit command](images/UserGuide/afterEditCommand.png)
-</box>
 
 
 ### Viewing a contact : `view`
@@ -312,7 +318,7 @@ Format: `View INDEX`
 
 Example:
 *  `view 3` Displays the company card of the 3rd contact in the list on the view panel.
-* **INSERT PICTURE OF view 3 WITH LABEL !**
+![view result 3](images/view/view3Result.png)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -333,10 +339,11 @@ All internship application entries will be shown on the left side of the window.
 
 ### Locating contacts by name: `find`
 
-Finds contacts whose names contain any of the given keywords.
+Finds contacts whose company names contain any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
+* All matching results of the find will be displayed in your view panel
 * The search is case-insensitive. e.g `shoppa` will match `Shoppa`
 * The order of the keywords does not matter. e.g. `Food Panda` will match `Panda Food`
 * Only the name is searched.
@@ -345,9 +352,8 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
   e.g. `Happy Burger` will return `Happy Meal`, `Burger Queen`
 
 Examples:
-* `find Happy` returns `happy` and `Happy Burger`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/UserGuide/findAlexDavidResult.png)
+* `find burger` returns `Happy Burger` and `Sad Burger`<br>
+  ![result for 'find burger'](images/find/findBurgerResult.png)
 
 
 ### Adding a Note : `note`
@@ -372,14 +378,14 @@ Format: `note INDEX`
       ![command executes](images/note-feature/note_4.png)
 
 
-<box type="tip" seamless>
+<box type="tip">
 
 To clear a note, simply use `edit INDEX n/`
 
 </box>
 
 
-<box type="warning" seamless>
+<box type="warning">
 
 **Caution:**
 If you use `edit INDEX n/your updates for the new note`, this **WILL OVERWRITE** the old note of the company contact at `INDEX`<br>
@@ -389,10 +395,26 @@ For these kinds of scenarios, make use of the `note INDEX` function !
 
 ### Filtering the data (by tags) : `filter`
 
-Filtering data allows you to narrow down your search results to focus on specific criteria. Use the `filter` command to filter by tag and find exactly the internships that have an interview.
+Filtering data allows you to narrow down your search results to focus on internship contacts based on their status. 
+Use the `filter` command to filter by tag and find exactly the internships that have an interview.
 
+Format: `filter [VALID TAG]`
 
-Format: `filter I`
+<box type="info">
+
+Valid Tag Inputs   
+- NR: No Reply
+- I: Interview
+- O: Offered
+- OA: Online Assessment
+- R: Rejected
+
+</box>
+
+Examples:
+- `filter I`
+- Filters the list of contacts to only have internship company contacts that have an Interview status
+![resultFilter](images/filter/filterIResult.png)
 
 ### Sending reminders : `reminder`
 
@@ -412,12 +434,9 @@ Examples:
 
 ![reminder command](images/UserGuide/reminderCommand.png)
 
-<box type="tip" seamless> 
+<box type="tip"> 
 This is a quick and easy way to be reminded of the upcoming interviews in order to not miss them.
 </box>
-
-
-
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -448,7 +467,7 @@ AddressBook data are saved in the hard disk automatically after any command that
 
 AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
 
-<box type="warning" seamless>
+<box type="warning">
 
 **Caution:**
 If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
