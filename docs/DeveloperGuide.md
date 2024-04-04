@@ -631,6 +631,9 @@ testers are expected to do more *exploratory* testing.
 
 1. Dealing with missing/corrupted data files
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
-
-2. _{ more test cases …​ }_
+   i. Test case: Deleting name field (the `key` attribute) from a contact in the InternHub data file.
+      Expected: After the app is reboot, the corrupt data file will be detected and all the data in the file will be wiped out, causing the app to run with an empty data file.
+   ii. Test case: Delete InternHub data file.
+      Expected: If the data file is nowhere to be found, the app will simply recreate the data file with empty data.
+   iii. Test case: Modify the json format in which InternHub data file is stored.
+      Expected: If data file is still in the correct format, the app will run as per normal. However, if the data file becomes unreadable by the program, then all the data in the file will be wiped out, causing the app to recreate and run with an empty data file from scratch.
