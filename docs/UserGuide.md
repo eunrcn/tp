@@ -10,6 +10,7 @@ pageNav: 3
 Are you currently navigating the intricate maze of internship opportunities as an undergraduate? 
 Your search ends here! InternHub is poised to transform the way you handle your internship contacts.
 InternHub stands as a beacon of productivity, offering you a comprehensive platform to manage and organize all your internship applications effectively.
+
 This User Guide (UG) acts as your trusted companion, providing a wealth of information to assist you in understanding and harnessing the full potential of our application. 
 From installation to usage and navigation, each step is meticulously outlined to ensure you derive maximum benefits from InternHub in managing your internship contacts.
 
@@ -218,9 +219,8 @@ Examples:
 
 <box type="tip" seamless> If you received an interview invitation from a previously non-responsive company, you can add the interview date with this command: 
 `edit 5 t/ I d/14-04-2024 1500`
-This will change the tag from No-Reply from Interview and add a Interview time as shown below.
+This will change the tag from No-Reply to Interview and add an Interview time as shown below.
 
-Before receiving an interview date:
 ![edit command](images/UserGuide/beforeEditCommand.png)
 
 After receiving an interview date:
@@ -316,9 +316,29 @@ Format: `filter t/ I`
 
 ### Sending reminders : `reminder`
 
-Sending reminders is a great way to stay organized and on top of important tasks. While our application currently doesn't have a built-in reminder feature, you can manually retrieve reminders using this command. It will show the interviews you have within the next 3 days.
+Sending reminders is a pivotal practice to uphold organization and ensure timely completion of crucial tasks. 
+Although our application presently lacks a built-in reminder feature, fear not! 
+You can effortlessly retrieve reminders manually using this command. 
+It conveniently displays the interviews scheduled within the upcoming N days, 
+keeping you well-prepared and on track.
 
-Format: `reminder`
+Format: `reminder INT`
+
+Examples:
+- `reminder 0`
+- Shows you the interviews you have today.
+- `reminder 2`
+- Shows you the interviews you have in the next two days, including today.
+
+![reminder command](images/UserGuide/reminderCommand.png)
+
+<box type="tip" seamless> 
+This is a quick and easy way to be reminded of the upcoming interviews in order to not miss them.
+</box>
+
+
+
+
 
 --------------------------------------------------------------------------------------------------------------------
 
