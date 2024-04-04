@@ -46,7 +46,7 @@ Experienced users can jump straight to exploring our [features](#features) !
     - [Advanced Commands](#advanced-commands)
         - [Listing all Contacts](#listing-all-contacts-list)
         - [Locating Contacts by Name](#locating-contacts-by-name-find)
-        - [Adding a Note](#adding-a-note--note)
+        - [Adding a Note](#adding-a-note-note)
         - [Filter Contacts by Tags](#filtering-the-data-by-tags-filter)
         - [Sending Reminders](#sending-reminders-reminder)
     - [Miscellaneous Commands](#miscellaneous-commands)
