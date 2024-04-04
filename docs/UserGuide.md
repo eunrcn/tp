@@ -37,22 +37,22 @@ Experienced users can jump straight to exploring our [features](#features) !
 - [Quick Start](#quick-start)
 - [Getting Familiar with UI](#getting-familiar-with-the-ui-of-internhub)
 - [Features](#features)
-    - [Help](#viewing-help--help)
+    - [Help](#viewing-help-help)
     - [Basic Commands](#basic-commands)
         - [Adding a Contact](#adding-a-contact-add)
-        - [Deleting a Contact](#deleting-a-contact--delete)
-        - [Editing a Contact](#editing-a-contact--edit)
-        - [Viewing a Contact](#viewing-a-contact--view)
+        - [Deleting a Contact](#deleting-a-contact-delete)
+        - [Editing a Contact](#editing-a-contact-edit)
+        - [Viewing a Contact](#viewing-a-contact-view)
     - [Advanced Commands](#advanced-commands)
-        - [Listing all Contacts](#listing-all-contacts--list)
+        - [Listing all Contacts](#listing-all-contacts-list)
         - [Locating Contacts by Name](#locating-contacts-by-name-find)
         - [Adding a Note](#adding-a-note--note)
-        - [Filter Contacts by Tags](#filtering-the-data-by-tags--filter)
-        - [Sending Reminders](#sending-reminders--reminder)
+        - [Filter Contacts by Tags](#filtering-the-data-by-tags-filter)
+        - [Sending Reminders](#sending-reminders-reminder)
     - [Miscellaneous Commands](#miscellaneous-commands)
-        - [Clearing all Entries](#clearing-all-entries--clear)
-        - [Exiting the Program](#exiting-the-program--exit)
-    - [Storage & Data](#storage--data)
+        - [Clearing all Entries](#clearing-all-entries-clear)
+        - [Exiting the Program](#exiting-the-program-exit)
+    - [Storage & Data](#storage-and-amp-data)
         - [Saving the Data](#saving-the-data)
         - [Editing the Data](#editing-the-data-file)
 - [FAQ](#faq)
@@ -599,6 +599,5 @@ Furthermore, certain edits can cause the AddressBook to behave in unexpected way
 | **List**     | `list`                                                                                                                                                                                                                                                                  |
 | **View**     | `view INDEX` e.g., `view 3`                                                                                                                                                                                                                                             |
 | **Help**     | `help`                                                                                                                                                                                                                                                                  |
-| **Find**     | `find STRING` e.g., `find Grab`                                                                                                                                                                                                                                         |
 | **Filter**   | `filter [VALID TAG]` e.g., `filter I`                                                                                                                                                                                                                                   |
 | **Reminder** | `reminder INT`                                                                                                                                                                                                                                                          |
