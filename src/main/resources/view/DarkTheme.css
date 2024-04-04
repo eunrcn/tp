@@ -107,7 +107,7 @@
 }
 
 .button:default {
-    -fx-background-color: -fx-focus-color;
+    -fx-background-color: #bae1ff;
     -fx-text-fill: #bae1ff;
 }
 

@@ -8,10 +8,10 @@ import seedu.internhub.logic.parser.exceptions.ParseException;
  */
 public class ReminderCommandParser implements Parser<ReminderCommand> {
 
-    public static final String INVALID_NUMBER_OF_DAYS = "Invalid command format!" +
-            "\nReminder: Reminds you of the interviews/online assessments you have in the next N days, including today." +
-            "\nParameters: N DAYS (must be at least 0)\nExample: reminder 0 " +
-            " will show all interviews and online assessments you have today";
+    public static final String INVALID_NUMBER_OF_DAYS = "Invalid command format!"
+            + "\nReminder: Reminds you of the interviews/online assessments you have in the next N days, "
+            + "including today. \nParameters: N DAYS (must be at least 0)\nExample: reminder 0 "
+            + "will show all interviews and online assessments you have today";
 
     /**
      * Parses the given {@code String} of arguments in the context of the ReminderCommand
