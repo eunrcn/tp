@@ -28,8 +28,7 @@ For users who are **new to InternHub**, click [here](#introduction-to-the-user-g
 
 Experienced users can jump straight to exploring our [features](#features) !
 
-<!-- * Table of Contents -->
-<page-nav-print />
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -59,6 +58,8 @@ Experienced users can jump straight to exploring our [features](#features) !
 - [FAQ](#faq)
 - [Known Issues](#known-issues)
 - [Command Summary](#command-summary)
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 ## Introduction to the User Guide
@@ -115,6 +116,8 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 9. Refer to the [Features](#features) for details of each command.
 
+<div style="page-break-after: always;"></div>
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Getting familiar with the UI of InternHub
@@ -129,6 +132,8 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
     - The panel displays list of all internship company contacts
 - **View Panel**
     - The panel displays the internship company contact card
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -174,6 +179,8 @@ You can also execute this command by using the `F1` key on your keyboard.
 A separate help window will appear.
 
 ![help message](images/UserGuide/helpMessage.png)
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -228,6 +235,8 @@ Make sure to include the appropriate tag after `t/` to denote the status of the 
 
 </box>
 
+<div style="page-break-after: always;"></div>
+
 **Example 1:**
 
 This example represents an application for a Creative Design Internship position at MediaCorp.
@@ -241,6 +250,8 @@ The notes section provides additional information about Mediacorp and suggests t
 Expected Outcome
 
 ![add command example 1](images/UserGuide/addCommandExample1.png)
+
+<div style="page-break-after: always;"></div>
 
 **Example 2:**
 
@@ -265,6 +276,7 @@ Expected Outcome
 
 - `add c/A STAR  p/12345678 e/info@astar-research.org a/456 Science Street, Singapore 117543 t/NR jd/Research Assistant Intern id/6 months s/1200 n/A*STAR is a leading research agency in Singapore, dedicated to advancing science and technology. They conduct research across various fields, including biomedical sciences, physical sciences, and engineering. Be prepared to discuss your research experience, methodologies, and any publications or projects you've worked on.`
 
+<div style="page-break-after: always;"></div>
 
 ### Deleting a contact : `delete`
 
@@ -290,6 +302,8 @@ Before delete
 
 After delete, Grab entry is no longer seen in our list
 ![delete command example 1](images/UserGuide/deleteCommandAfter.png)
+
+<div style="page-break-after: always;"></div>
 
 ### Editing a contact : `edit`
 
@@ -377,6 +391,8 @@ All internship application contacts will be shown on the left side of the window
 
 ![list](images/UserGuide/list.png)
 
+<div style="page-break-after: always;"></div>
+
 ### Locating contacts by name: `find`
 
 Finds contacts whose company names contain any of the given keywords.
@@ -441,6 +457,8 @@ For these kinds of scenarios, make use of the `note INDEX` function !
 
 </box>
 
+<div style="page-break-after: always;"></div>
+
 ### Filtering the data (by tags) : `filter`
 
 Filtering data allows you to narrow down your search results to focus on internship contacts based on their status. 
@@ -467,6 +485,8 @@ Examples:
 - `filter I`
 - Filters the list of contacts to only have internship company contacts that have an Interview status
 ![resultFilter](images/filter/filterIResult.png)
+
+<div style="page-break-after: always;"></div>
 
 ### Sending reminders : `reminder`
 
@@ -495,6 +515,7 @@ keeping you well-prepared and on track.
 This is a quick and easy way to be reminded of the upcoming interviews in order to not miss them.
 </box>
 
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -560,6 +581,8 @@ Furthermore, certain edits can cause the AddressBook to behave in unexpected way
 ## Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
