@@ -16,7 +16,7 @@ public class FilterCommandParserTest {
     public void parse_emptyArg_throwsParseException() {
         assertParseFailure(parser, "     ",
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, FilterCommand.MESSAGE_USAGE));
-        assertParseFailure(parser, "t/     ",
+        assertParseFailure(parser, "OO",
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, FilterCommand.MESSAGE_USAGE));
     }
 
@@ -25,8 +25,6 @@ public class FilterCommandParserTest {
         // no leading and trailing whitespaces
         FilterCommand expectedFilterCommand =
                 new FilterCommand(new MatchingTagPredicate("NR"));
-        assertParseSuccess(parser, "t/ NR", expectedFilterCommand);
-        // multiple whitespaces between keywords
-        assertParseSuccess(parser, " t/    NR   ", expectedFilterCommand);
+        assertParseSuccess(parser, "NR", expectedFilterCommand);
     }
 }
