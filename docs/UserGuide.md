@@ -354,7 +354,7 @@ Views the details of the internship application contact on the view panel in Int
 
 <box>
 
-**Format:** `View INDEX`
+**Format:** `view INDEX`
 
 </box>
 
@@ -403,7 +403,7 @@ Finds contacts whose company names contain any of the given keywords.
 * The search is case-insensitive. e.g `shoppa` will match `Shoppa`
 * The order of the keywords does not matter. e.g. `Food Panda` will match `Panda Food`
 * Only the name is searched.
-* Only full words will be matched e.g. `Shopp` will not match `Shoppa`
+* Only full words will be matched e.g. `Shopp` will not match `Shoppa`, `Food Panda` will not match `FoodPanda`
 * Contacts matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `Happy Burger` will return `Happy Meal`, `Burger Queen`
 
