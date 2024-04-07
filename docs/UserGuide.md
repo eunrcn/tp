@@ -414,7 +414,7 @@ Examples:
 
 ### Adding a Note : `note`
 
-This command will allow you to add & edit notes to an internship application contact. There are 2 ways to execute this command based on your use<br>
+This command will allow you to add & edit notes to an internship application contact. There are 2 ways to execute this command based on your use: <br>
 
 <box>
 
