@@ -191,6 +191,7 @@ The Diagram below shows the sequence diagram for AddCommand. All Initialization 
 
 <puml src="diagrams/AddSequenceDiagram.puml" />
 
+<<<<<<< HEAD
 ### Filter Command
 
 #### Implementation
@@ -212,6 +213,64 @@ The following steps outline how the Filter Command feature operates:
         - **feedbackToUser** : `[size of filtered list] persons listed~`
         - 
 
+=======
+### Edit Command
+
+#### Implementation
+
+The `EditCommand` allows users to modify the details of an existing person in the address book.
+
+### Command Structure
+
+- **Command Word**: `edit`
+- **Parameters**:
+- `INDEX`: Positive integer representing the index of the person in the displayed list.
+- `[NAME]`, `[PHONE]`, `[EMAIL]`, `[ADDRESS]`, `[JOB DESCRIPTION]`, `[INTERVIEW DATE]`, `[INTERN DURATION]`, `[SALARY]`, `[TAG]`: Optional parameters to specify the new values for corresponding fields. Existing values will be overwritten.
+
+### Execution Steps
+
+1. Parsing:
+- The input arguments are parsed to extract the index and the new values for the person's details.
+2. Validation:
+- The validity of the index and the absence of duplicate prefixes are verified.
+3. Creation of Edit Descriptor:
+- An `EditPersonDescriptor` object is created to store the edited details.
+4. Field Editing:
+- Each provided field is set in the `EditPersonDescriptor`.
+5. Execution:
+- The `EditCommand` is executed, modifying the specified person's details in the address book.
+6. Feedback:
+- A success message is generated to confirm the editing operation.
+
+## Design Considerations
+
+- **Overwriting vs. Appending**: The command allows overwriting existing details with new ones. This simplifies the implementation and usage of the command.
+- **Error Handling**: The command ensures that at least one field is edited and provides appropriate error messages for invalid inputs.
+
+<puml src="diagrams/EditCommandClassDiagram.puml" width="300" />
+
+### Implementation
+
+Suppose we have a person with the following details:
+
+- Name: John Doe
+- Phone: 12345678
+- Email: johndoe@example.com
+- Address: Block 123, Avenue Street, #08-123
+- Job Description: Software Engineer
+- Interview Date: 2024-04-15
+- Intern Duration: 3 months
+- Salary: $3000
+- Tags: #java, #software
+
+Now, the user wants to edit John Doe's phone number and address. They issue the following command:
+edit 1 p/87654321 a/Block 456, New Avenue, #05-678
+
+The `EditCommand` will update John Doe's phone number to `87654321` and address to `Block 456, New Avenue, #05-678`. 
+Upon successful execution, a message will be displayed confirming the changes made to John Doe's details.
+
+<puml src="diagrams/EditSequenceDiagram.puml" width="600" />
+>>>>>>> c141e1a67834236d51441611411e88b3011fc522
 
 ### Note Command
 
@@ -257,7 +316,7 @@ The following steps outline how the Note Command feature operates:
     - An additional command has to be implemented
     - Essentially an abstracted & glorified edit feature
 
-<puml src="diagrams/NoteSequenceDiagram.puml" width="600" />
+<puml src="diagrams/NoteSequenceDiagram.puml" />
 
 ### \[Proposed\] Undo/redo feature
 
@@ -596,6 +655,11 @@ testers are expected to do more *exploratory* testing.
 
 1. Dealing with missing/corrupted data files
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
-
-2. _{ more test cases …​ }_
+   i. Test case: Deleting name field (the `key` attribute) from a contact in the InternHub data file.<br>
+      Expected: After the app is reboot, the now corrupt data file `addressbook.json` will be detected and all the data in the file will be wiped out, causing the app to recreate an empty data file.
+   
+   ii. Test case: Delete InternHub data file.<br>
+      Expected: If the data file `addressbook.json` is nowhere to be found, the app will simply recreate the an empty data file.
+   
+   iii. Test case: Modify the json format in which InternHub data file is stored.<br>
+      Expected: If data file `addressbook.json` is still in the correct format, the app will run as per normal. However, if the data file becomes unreadable by the program, then all the data in the file will be wiped out, causing the app to recreate and run with an empty data file from scratch.

@@ -26,9 +26,10 @@
           </minWidth>
         </Label>
         <Label fx:id="name" text="\$first" styleClass="cell_big_label" />
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="tags" styleClass="tag_list_bubble"/>
       </HBox>
-      <Label fx:id="tags" />
-      <Label fx:id="jobDescription" styleClass="cell_small_label" text="\$job description" />
+      <Label fx:id="jobDescription" styleClass="jd" text="\$job description" />
       <Label fx:id="interviewDate" styleClass="cell_small_label" text="\$interview date" />
     </VBox>
   </GridPane>

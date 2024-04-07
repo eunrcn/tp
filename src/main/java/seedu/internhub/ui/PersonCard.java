@@ -44,13 +44,33 @@ public class PersonCard extends UiPart<Region> {
         this.person = person;
         id.setText(displayedIndex + ". ");
         name.setText(person.getCompanyName().fullName);
-        tags.setText("Status: " + person.getTag().getTagName());
-        jobDescription.setText("Job Description: " + person.getJobDescription().value);
+        jobDescription.setText(person.getJobDescription().value);
         if ((person.getInterviewDate().toString()).equals("")) {
             interviewDate.setText("Interview Date: -");
         } else {
             interviewDate.setText("Interview Date: " + person.getInterviewDate().toString());
         }
-
+        // Tag : use switch case based on the tag name
+        switch (person.getTag().getTagShort()) {
+        case "NR":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #fdffba"); //yellow
+            break;
+        case "OA":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #dfbaff"); //purple
+            break;
+        case "I":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #badaff"); //blue
+            break;
+        case "R":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #ffbdba"); //red
+            break;
+        case "O":
+            tags.setStyle(tags.getStyle() + "-fx-background-color: #baffdf"); //green
+            break;
+        default:
+            tags.setStyle(tags.getStyle());
+            break;
+        }
+        tags.setText(person.getTag().getTagName());
     }
 }

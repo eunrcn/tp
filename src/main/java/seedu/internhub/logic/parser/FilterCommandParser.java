@@ -5,6 +5,7 @@ import static seedu.internhub.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import seedu.internhub.logic.commands.FilterCommand;
 import seedu.internhub.logic.parser.exceptions.ParseException;
 import seedu.internhub.model.person.MatchingTagPredicate;
+import seedu.internhub.model.person.Tag;
 
 /**
  * Parses input arguments and creates a new FilterCommand object
@@ -18,12 +19,17 @@ public class FilterCommandParser implements Parser<FilterCommand> {
      */
     public FilterCommand parse(String args) throws ParseException {
         String trimmedArgs = args.trim();
-        String field = trimmedArgs.substring(0, trimmedArgs.indexOf(" "));
-        String key = trimmedArgs.substring(trimmedArgs.indexOf(" ") + 1).trim();;
-        if (field.isEmpty() || key.isEmpty() || key.equals(field)) {
+        String tagKeyword;
+        try {
+            if (Tag.isValidTag(trimmedArgs)) {
+                tagKeyword = trimmedArgs.toUpperCase();
+            } else {
+                throw new ParseException("Invalid Tag entered");
+            }
+        } catch (ParseException pe) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, FilterCommand.MESSAGE_USAGE));
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, FilterCommand.MESSAGE_USAGE), pe);
         }
-        return new FilterCommand(new MatchingTagPredicate(key));
+        return new FilterCommand(new MatchingTagPredicate(tagKeyword));
     }
 }

@@ -17,7 +17,7 @@ public class FilterCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Filters the current list of companies to only display "
             + "those with the specified tag (case-sensitive) as a list with index numbers. \n"
-            + "Parameter: TAG \n"
+            + "Parameter: Valid TAG (NR,I,O,OA,R) \n"
             + "Example: " + COMMAND_WORD + " I";
 
     private final MatchingTagPredicate tagPredicate;

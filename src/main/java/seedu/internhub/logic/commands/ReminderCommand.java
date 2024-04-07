@@ -9,7 +9,8 @@ import seedu.internhub.model.person.Person;
  */
 public class ReminderCommand extends Command {
     public static final String COMMAND_WORD = "reminder";
-    public static final String MESSAGE_SUCCESS = "Listed applications that are due or have interviews in %1$d days.";
+    public static final String MESSAGE_SUCCESS = "Listed applications that have interviews on the next %1$d days, "
+            + "including today.";
 
     private int numberOfDays;
 
@@ -31,7 +32,8 @@ public class ReminderCommand extends Command {
 
     @Override
     public boolean equals(Object other) {
-        return other == this
-                || (other instanceof ReminderCommand);
+        assert other != null : "The object to compare with cannot be null.";
+        return other == this || (other instanceof ReminderCommand);
     }
+
 }

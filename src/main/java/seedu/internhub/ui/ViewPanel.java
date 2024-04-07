@@ -2,6 +2,7 @@ package seedu.internhub.ui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import seedu.internhub.model.person.Person;
@@ -35,7 +36,7 @@ public class ViewPanel extends UiPart<Region> {
     @FXML
     private Label salary;
     @FXML
-    private Label note;
+    private TextArea note;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} to display.
@@ -53,7 +54,6 @@ public class ViewPanel extends UiPart<Region> {
         } else {
             interviewDate.setText("Interview Date: " + person.getInterviewDate().toString());
         }
-        tag.setText(person.getTag().getTagName());
         internDuration.setText(person.getInternDuration().value);
         salary.setText("$" + person.getSalary().value);
         if ((person.getNote().value).equals("")) {
@@ -61,5 +61,27 @@ public class ViewPanel extends UiPart<Region> {
         } else {
             note.setText(person.getNote().value);
         }
+        // Tag : use switch case based on the tag name
+        switch (person.getTag().getTagShort()) {
+        case "NR":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #fdffba"); //yellow
+            break;
+        case "OA":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #dfbaff"); //purple
+            break;
+        case "I":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #badaff"); //blue
+            break;
+        case "R":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #ffbdba"); //red
+            break;
+        case "O":
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #baffdf"); //green
+            break;
+        default:
+            tag.setStyle(tag.getStyle());
+            break;
+        }
+        tag.setText(person.getTag().getTagName());
     }
 }
