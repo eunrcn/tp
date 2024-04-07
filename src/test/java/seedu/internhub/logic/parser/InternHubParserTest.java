@@ -83,10 +83,10 @@ public class InternHubParserTest {
     }
 
     @Test
-    public void parseCommand_filter() throws Exception {
+    public void parseCommand_filterByTag() throws Exception {
         String tag = "NR";
         FilterCommand command = (FilterCommand) parser.parseCommand(
-                FilterCommand.COMMAND_WORD + " " + String.join(" ", tag));
+                FilterCommand.COMMAND_WORD + " " + String.join(" t/ ", tag));
         assertEquals(new FilterCommand(new MatchingTagPredicate(tag)), command);
     }
 

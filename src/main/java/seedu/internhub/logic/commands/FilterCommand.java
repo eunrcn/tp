@@ -20,16 +20,19 @@ public class FilterCommand extends Command {
             + "Parameter: Valid TAG (NR,I,O,OA,R) \n"
             + "Example: " + COMMAND_WORD + " I";
 
-    private final MatchingTagPredicate predicate;
+    private final MatchingTagPredicate tagPredicate;
 
+    /**
+     * constructor that creates a new FilterCommand for filtering the contacts list by tag
+     * @param predicate  predicate for filtering by specified tag
+     */
     public FilterCommand(MatchingTagPredicate predicate) {
-        this.predicate = predicate;
+        this.tagPredicate = predicate;
     }
-
     @Override
     public CommandResult execute(Model model) {
         requireNonNull(model);
-        model.updateFilteredPersonList(predicate);
+        model.updateFilteredPersonList(tagPredicate);
         return new CommandResult(
                 String.format(
                         Messages.MESSAGE_PERSONS_LISTED_OVERVIEW,
@@ -49,13 +52,13 @@ public class FilterCommand extends Command {
         }
 
         FilterCommand otherFilterCommand = (FilterCommand) other;
-        return predicate.equals(otherFilterCommand.predicate);
+        return this.tagPredicate.equals(otherFilterCommand.tagPredicate);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .add("predicate", predicate)
+                .add("predicate", tagPredicate)
                 .toString();
     }
 }

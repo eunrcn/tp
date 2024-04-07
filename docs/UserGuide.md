@@ -192,13 +192,13 @@ Add a new internship application contact into InternHub.
 
 <box>
 
-**Format:** `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL a/[ADDRESS] t/TAG jd/JOB_DESCRIPTION d/[INTERVIEW_DATE] id/INTERN_DURATION s/SALARY n/[NOTE]`
+**Format:** `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL [a/ADDRESS] t/TAG jd/JOB_DESCRIPTION [d/INTERVIEW_DATE] id/INTERN_DURATION s/SALARY [n/NOTE]`
 
 </box>
 
 Utilize the following prefixes to ensure accurate categorization of each detail:
 
-   | Parameter | Description      | Example                          |
+   | Parameter | Description      | Example                          | 
    |-----------|------------------|----------------------------------|
    | `c/`      | Company name     | `c/ABC Corporation`              |
    | `p/`      | Phone number     | `p/98765432`                     |
@@ -219,8 +219,8 @@ Additionally, ensure that the salary parameter contains a positive number.
 <box type="info">
 
 Each contact is uniquely identified by the combination of **Company Name** and **Job Description**
-   - You **can** have 2 contacts of the same company name but **different** job descriptions
-   - You **cannot** have 2 contacts of the same company name **and** same job description
+   - You **can** have more than 1 contact with the same company name but **different** job descriptions
+   - You **cannot** have more than 1 contact with the same company name **and** same job description
 
 </box>
 
@@ -317,7 +317,7 @@ At least one of the optional fields must be provided and at most one of each fie
 
 <box>
 
-**Format:** `Edit INDEX c/[COMPANY_NAME] p/[PHONE_NUMBER] e/[EMAIL] a/[ADDRESS] t/[TAG] jd/[JOB_DESCRIPTION] d/[INTERVIEW_DATE] id/[INTERN_DURATION] s/[SALARY]`
+**Format:** `Edit INDEX [c/COMPANY_NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG] [jd/JOB_DESCRIPTION] [d/INTERVIEW_DATE] [id/INTERN_DURATION] [s/SALARY]`
 
 </box>
   
