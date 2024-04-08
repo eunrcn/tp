@@ -46,7 +46,7 @@ public class EditCommandParser implements Parser<EditCommand> {
                 CliSyntax.PREFIX_EMAIL, CliSyntax.PREFIX_ADDRESS, CliSyntax.PREFIX_TAG,
                 CliSyntax.PREFIX_JOB_DESCRIPTION, CliSyntax.PREFIX_INTERVIEW_DATE,
                 CliSyntax.PREFIX_INTERN_DURATION,
-                CliSyntax.PREFIX_SALARY);
+                CliSyntax.PREFIX_SALARY, CliSyntax.PREFIX_NOTE);
 
         EditCommand.EditPersonDescriptor editPersonDescriptor = new EditCommand.EditPersonDescriptor();
 
