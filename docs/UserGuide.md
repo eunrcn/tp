@@ -107,7 +107,7 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
     * `list` : Lists all company contacts.
 
     * `add c/Pixar p/98765432 e/Pixar@example.com a/123 Animation Avenue, Emeryville, CA, 94608, USA t/O jd/Junior Animator intern id/3 months s/1000 n/Assist in the creation of animated sequences, collaborate with the animation team to bring characters and scenes to life
-      ` : Adds a company contact named `Pixar` to the Address Book.
+      ` : Adds a company contact named `Pixar` to the InternHub.
 
     * `delete 3` : Deletes the 3rd contact shown in the current list.
 
