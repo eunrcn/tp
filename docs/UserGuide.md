@@ -206,7 +206,7 @@ Utilize the following prefixes to ensure accurate categorization of each detail:
    | `a/`      | Physical address | `a/123 Main St, City, Country`   |
    | `t/`      | Tags             | `t/NR`                           |
    | `jd/`     | Job description  | `jd/Software Developer Intern`   |
-   | `d/`      | Interview date   | `d/2024-04-14 1500`              |
+   | `d/`      | Interview date   | `d/14-04-2024 1500`              |
    | `id/`     | Intern duration  | `id/3 months`                    |
    | `s/`      | Salary           | `s/500`                          |
    | `n/`      | Notes            | `n/Previous experience required` |
@@ -354,7 +354,7 @@ Views the details of the internship application contact on the view panel in Int
 
 <box>
 
-**Format:** `View INDEX`
+**Format:** `view INDEX`
 
 </box>
 
@@ -403,7 +403,7 @@ Finds contacts whose company names contain any of the given keywords.
 * The search is case-insensitive. e.g `shoppa` will match `Shoppa`
 * The order of the keywords does not matter. e.g. `Food Panda` will match `Panda Food`
 * Only the name is searched.
-* Only full words will be matched e.g. `Shopp` will not match `Shoppa`
+* Only full words will be matched e.g. `Shopp` will not match `Shoppa`, `Food Panda` will not match `FoodPanda`
 * Contacts matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `Happy Burger` will return `Happy Meal`, `Burger Queen`
 
@@ -414,7 +414,7 @@ Examples:
 
 ### Adding a Note : `note`
 
-This command will allow you to add & edit notes to an internship application contact. There are 2 ways to execute this command based on your use<br>
+This command will allow you to add & edit notes to an internship application contact. There are 2 ways to execute this command based on your use: <br>
 
 <box>
 
@@ -582,6 +582,8 @@ Furthermore, certain edits can cause the AddressBook to behave in unexpected way
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 <div style="page-break-after: always;"></div>
+
+2. **When entering numbers greater than 2147483647** for commands e.g. remind 100000000000, the input will be considered invalid. Currently, there is no remedy for this but it is assumed that most users will not encounter this issue in normal usage. A solution could be added in a future iteration. 
 
 --------------------------------------------------------------------------------------------------------------------
 
