@@ -46,8 +46,8 @@ Experienced users can jump straight to exploring our [features](#features) !
     - [Advanced Commands](#advanced-commands)
         - [Listing all Contacts](#listing-all-contacts-list)
         - [Locating Contacts by Name](#locating-contacts-by-name-find)
-        - [Adding a Note](#adding-a-note-note)
-        - [Filter Contacts by Tags](#filtering-the-data-by-tags-filter)
+        - [Updating a Note](#updating-a-note-note)
+        - [Filter Contacts by Tags](#filter-by-tag-filter)
         - [Sending Reminders](#sending-reminders-reminder)
     - [Miscellaneous Commands](#miscellaneous-commands)
         - [Clearing all Entries](#clearing-all-entries-clear)
@@ -58,6 +58,7 @@ Experienced users can jump straight to exploring our [features](#features) !
 - [FAQ](#faq)
 - [Known Issues](#known-issues)
 - [Command Summary](#command-summary)
+- [Glossary](#glossary)
 
 <div style="page-break-after: always;"></div>
 
@@ -103,10 +104,10 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 8. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-    * `list` : Lists all contacts.
+    * `list` : Lists all company contacts.
 
     * `add c/Pixar p/98765432 e/Pixar@example.com a/123 Animation Avenue, Emeryville, CA, 94608, USA t/O jd/Junior Animator intern id/3 months s/1000 n/Assist in the creation of animated sequences, collaborate with the animation team to bring characters and scenes to life
-      ` : Adds a contact named `Pixar` to the Address Book.
+      ` : Adds a company contact named `Pixar` to the Address Book.
 
     * `delete 3` : Deletes the 3rd contact shown in the current list.
 
@@ -188,33 +189,30 @@ A separate help window will appear.
 
 ### Adding a contact: `add`
 
-Add a new internship application contact into InternHub.
+Add a new internship company contact into InternHub.
 
 <box>
 
-**Format:** `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL [a/ADDRESS] t/TAG jd/JOB_DESCRIPTION [d/INTERVIEW_DATE] id/INTERN_DURATION s/SALARY [n/NOTE]`
+**Format:** `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL t/TAG jd/JOB_DESCRIPTION id/INTERN_DURATION s/SALARY [a/ADDRESS] [d/INTERVIEW_DATE] [n/NOTE]`
 
 </box>
 
 Utilize the following prefixes to ensure accurate categorization of each detail:
 
-   | Parameter | Description      | Example                          | 
-   |-----------|------------------|----------------------------------|
-   | `c/`      | Company name     | `c/ABC Corporation`              |
-   | `p/`      | Phone number     | `p/98765432`                     |
-   | `e/`      | Email address    | `e/example@example.com`          |
-   | `a/`      | Physical address | `a/123 Main St, City, Country`   |
-   | `t/`      | Tags             | `t/NR`                           |
-   | `jd/`     | Job description  | `jd/Software Developer Intern`   |
-   | `d/`      | Interview date   | `d/14-04-2024 1500`              |
-   | `id/`     | Intern duration  | `id/3 months`                    |
-   | `s/`      | Salary           | `s/500`                          |
-   | `n/`      | Notes            | `n/Previous experience required` |
+   | Parameter | Description      | Constraints                                                    | Example                          | 
+   |-----------|------------------|----------------------------------------------------------------|----------------------------------|
+   | `c/`      | Company name     | Only contain alphanumeric values                               | `c/ABC Corporation`              |
+   | `p/`      | Phone number     | Only contain numbers and at least 3 digits                     | `p/98765432`                     |
+   | `e/`      | Email address    | Should be of the format local-part@domain                      | `e/example@example.com`          |
+   | `t/`      | Tags             | Valid values are NR, I, O, OA, R                               | `t/NR`                           |
+   | `jd/`     | Job description  | -                                                              | `jd/Software Developer Intern`   |
+   | `id/`     | Intern duration  | -                                                              | `id/3 months`                    |
+   | `s/`      | Salary           | Only positive numbers                                          | `s/500`                          |
+   | `a/`      | Physical address | -                                                              | `a/123 Main St, City, Country`   |
+   | `d/`      | Interview date   | Of format dd-mm-yyyy HHmm & cannot be earlier than current day | `d/14-04-2024 1500`              |
+   | `n/`      | Notes            | -                                                              | `n/Previous experience required` |
 
 All parameters except of address, interview date, and note must be provided for the add command to function as intended.
-
-The phone number parameter should only accept numerical inputs, while the email should adhere to the format local-part@domain. 
-Additionally, ensure that the salary parameter contains a positive number.
 
 <box type="info">
 
@@ -227,11 +225,11 @@ Each contact is uniquely identified by the combination of **Company Name** and *
 <box type="tip"> 
 
 Make sure to include the appropriate tag after `t/` to denote the status of the internship application
-- NR: No Reply - Indicates that there has been no response from the company regarding the internship application.
-- I: Interview - Signifies that an interview for the internship has been scheduled with the company.
-- O: Offered - Indicates that an offer for the internship has been received from the company.
-- OA: Online Assessment - Denotes that an online assessment or test is required.
-- R: Rejected - Indicates that the internship application has been rejected by the company.
+- **NR**: No Reply - Indicates that there has been no response from the company regarding the internship application.
+- **I**: Interview - Signifies that an interview for the internship has been scheduled with the company.
+- **O**: Offered - Indicates that an offer for the internship has been received from the company.
+- **OA**: Online Assessment - Denotes that an online assessment or test is required.
+- **R**: Rejected - Indicates that the internship application has been rejected by the company.
 
 </box>
 
@@ -239,15 +237,17 @@ Make sure to include the appropriate tag after `t/` to denote the status of the 
 
 **Example 1:**
 
-This example represents an application for a Creative Design Internship position at MediaCorp.
-The tag t/I indicates that an interview has been scheduled with the company.
-All parameters are provided, including optional parameters such as address, interview date and notes.
-The notes section provides additional information about Mediacorp and suggests topics for discussion during the interview.
+- This example represents an application for a Creative Design Internship position at MediaCorp.
+- The tag t/I indicates that **an interview has been scheduled** with the company.
+- The notes section provides additional information about Mediacorp and suggests topics for discussion during the interview.
 
-`add c/MediaCorp p/12345678 e/jobs@mediacorp-digital.com a/321 Media Lane, Singapore 238163 t/I jd/Creative Design Intern d/11-04-2024 0900 id/3 months s/1000 n/Mediacorp is a leading media company in Singapore, offering a wide range of media and entertainment services, including television, radio, digital media, and content production. Be prepared to discuss current trends in the media industry and how Mediacorp is adapting to digital transformation.
+We have provided the command below with all parameters provided, including the optional parameters :
+
+`
+add c/MediaCorp p/12345678 e/jobs@mediacorp-digital.com a/321 Media Lane, Singapore 238163 t/I jd/Creative Design Intern d/11-06-2024 0900 id/3 months s/1000 n/Be prepared to discuss current trends in the media industry and how Mediacorp is adapting to digital transformation.
 `
 
-Expected Outcome
+**Expected Outcome**
 
 ![add command example 1](images/UserGuide/addCommandExample1.png)
 
@@ -255,32 +255,30 @@ Expected Outcome
 
 **Example 2:**
 
-This example represents an application for a Junior Animator Internship position at Pixar.
-The tag t/O indicates that an offer has been received from the company.
-All required parameters are provided, including contact information, job details, internship duration, and salary.
-Optional parameters such as the address, interview date, and notes are omitted, demonstrating that their absence does not impact the completeness of this command.
+- This example represents an application for a Junior Animator Internship position at Pixar.
+- The tag t/O indicates that an **offer has been received** from the company.
+- Optional parameters such as the address, interview date, and notes are omitted, demonstrating that their absence does not impact the completeness of this command.
+
+We have provided the command below with only the necessary parameters provided, excluding the optional parameters :
 
 `add c/Pixar p/98765432 e/Pixar@example.com t/O jd/Junior Animator intern id/3 months s/1000`
 
-Expected Outcome
+**Expected Outcome**
 
 ![add command example 2](images/UserGuide/addCommandExample2.png)
 
+**More examples for you to try out:**
+- `add c/Grab p/66550000 e/careers@grab.com a/6 Temasek Boulevard t/I jd/Software Developer Intern d/12-06-2024 0900 id/6 months s/1500 n/Grab offers various services like ride-sharing, food delivery and etc.`
 
-**More examples:**
-- `add c/Grab p/66550000 e/careers@grab.com a/6 Temasek Boulevard t/I jd/Software Developer Intern d/12-04-2024 0900 id/6 months s/1500 n/Grab offers various services like ride-sharing, food delivery and etc. For this interview, I need to revise topics like : Data structures, complexities and algorithms`
+- `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/NR jd/Software Developer intern id/3 months s/1000`
 
-- `add c/DBS Bank p/12345678 e/careers@dbs-bank-online.com a/321 Media Lane, Singapore 238163 t/OA jd/Creative Design Intern d/14-04-2024 0900 id/3 months s/1000 n/DBS Bank offer a wide range of banking services, including retail banking, corporate banking, and investment banking. Familiarize yourself with the banking industry and current trends in finance and technology. Showcase your understanding of financial concepts and your ability to apply them in real-world scenarios.`
-
-- `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/R jd/Software Developer intern d/03-05-2024 1200 id/3 months s/1000`
-
-- `add c/A STAR  p/12345678 e/info@astar-research.org a/456 Science Street, Singapore 117543 t/NR jd/Research Assistant Intern id/6 months s/1200 n/A*STAR is a leading research agency in Singapore, dedicated to advancing science and technology. They conduct research across various fields, including biomedical sciences, physical sciences, and engineering. Be prepared to discuss your research experience, methodologies, and any publications or projects you've worked on.`
+- `add c/DBS Bank p/12345678 e/areers@dbs-bank-online.com a/321 Media Lane, Singapore 238163 t/NR jd/Creative Design Intern id/3 months s/1000`
 
 <div style="page-break-after: always;"></div>
 
 ### Deleting a contact : `delete`
 
-Deletes a internship application contact by index from InternHub.
+Deletes an internship company contact by index from InternHub.
 
 <box>
 
@@ -292,65 +290,82 @@ Deletes a internship application contact by index from InternHub.
 * The index refers to the index number shown in the displayed contact list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
-Example 1:
+**Example 1:**
+
 `list` followed by `delete 2` deletes the 2nd contact.
 
-Expected outcome
+**Expected outcome**
 
-Before delete
-![delete command example 1](images/UserGuide/deleteCommandBefore.png)
+After we execute the delete command, the Grab entry is no longer in our list of contacts !
 
-After delete, Grab entry is no longer seen in our list
-![delete command example 1](images/UserGuide/deleteCommandAfter.png)
-
-<div style="page-break-after: always;"></div>
+![delete_example_full](images/UserGuide/deleteExample.png)
 
 ### Editing a contact : `edit`
 
-Edits an existing internship application contact detail in InternHub.
+Edits an existing internship company contact detail in InternHub.
 
-1. Begin by typing `edit`, followed by the `INDEX` of the application. 
-The index refers to the index number shown in the displayed contact list.
+1. Begin by typing `edit`, followed by the `INDEX` of the application. The index refers to the index number shown in the displayed contact list.
 2. Next, include only specific prefix for the fields of the contact you wish to edit in your records. 
-At least one of the optional fields must be provided and at most one of each field can be provided.
+   **At least one** of the optional fields must be provided and at most one of each field can be provided.
 3. After pressing enter, existing values will be updated to the input values.
 
 <box>
 
-**Format:** `Edit INDEX [c/COMPANY_NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG] [jd/JOB_DESCRIPTION] [d/INTERVIEW_DATE] [id/INTERN_DURATION] [s/SALARY]`
+**Format:** `Edit INDEX [c/COMPANY_NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG] [jd/JOB_DESCRIPTION] [id/INTERN_DURATION] [s/SALARY] [a/ADDRESS] [d/INTERVIEW_DATE] [n/NOTE]`
 
 </box>
-  
+
+<box type="warning">
+
+When you edit any field with a new value, this will **OVERWRITE** the old value !
+
+</box>
+
+<div style="page-break-after: always;"></div>
+
 <box type="tip">
 
-For `[NOTE]`, please refer to the "Adding a note" section below for more details.
-For `[INTERVIEW_DATE]`, if you want to remove a date, just enter `d/` and it will remove that field.
+If you want to delete any of the **Optional** fields, you can use edit like so :
+- `edit 2 d/` will remove the **interview date** of company at index 2
+- `edit 2 a/` will remove the **address** of company at index 2
+- `edit 2 n/` will remove the **note** of company at index 2
 
 </box>
 
-**Example:**
-In this scenario, we've received confirmation of an interview details from a previously unresponsive company, A STAR. 
+**Example 1**
+- We've received confirmation of an online assessment from a previously unresponsive company, DBS Bank
+- We want to do the following :
+  - Change the status from "NR" to "OA"
+  - Set the online assessment date for DBS Bank contact to be 20 June 2024 at 9 am
 
-![edit command](images/UserGuide/beforeEditCommand.png)
+With the edit command, we can achieve this with the following command : 
 
-To update the status tag from "NR" to "I," please utilize the following command:
+`edit 4 t/OA d/20-06-2024 0900`
 
-`edit 5 t/I`.
+**Example 2**
+- Unfortunately, we've received a rejection email from the company, Happy Burger
+- We want to do the following :
+    - Change the status from "NR" to "R"
 
-Additionally, to include the interview date on 14th of April 2024 at 3pm, use:
+With the edit command, we can achieve this with the following command :
 
-`edit 5 d/14-04-2024 1500`.
+`edit 3 t/R`
 
-When both commands are executed together, it will appear as follows: 
+The image below shows the respective outcomes after executing both edit commands : 
 
-`edit 5 t/I d/14-04-2024 1500`. 
+![edit_example](images/UserGuide/edit_example.png)
 
-This not only alters the tag to "Interview" but also specifies the interview schedule as indicated:
-![edit command](images/UserGuide/afterEditCommand.png)
+<box type="info">
+
+Notice how when we set the online assessment date to DBS, the list dynamically sorted the contacts to ensure the latest interview is at the top
+
+</box>
+
+<div style="page-break-after: always;"></div>
 
 ### Viewing a contact : `view`
 
-Views the details of the internship application contact on the view panel in InternHub.
+Views the details of the internship company contact on the view panel in InternHub.
 
 <box>
 
@@ -358,11 +373,15 @@ Views the details of the internship application contact on the view panel in Int
 
 </box>
 
-* Views the contact at the specified `INDEX`. The index refers to the index number shown in the displayed contact list. The index **must be a positive integer** 1, 2, 3, …​
+* Views the contact at the specified `INDEX`. 
+* The index refers to the index number shown in the displayed contact list. 
+* The index **must be a positive integer** 1, 2, 3, …​
 
-Example:
-*  `view 3` Displays the company card of the 3rd contact in the list on the view panel.
-![view result 3](images/view/view3Result.png)
+**Example:**
+
+*  `view 1` Displays the company card of the 1st contact in the list on the view panel.
+
+![view result 3](images/view/view1Result.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -381,7 +400,7 @@ Internship application contacts with interview dates will be listed first, follo
 
 </box>
 
-Expected Outcome
+**Expected Outcome**
 
 All internship application contacts will be shown on the left side of the window.
 
@@ -412,9 +431,9 @@ Examples:
   ![result for 'find burger'](images/find/findBurgerResult.png)
 
 
-### Adding a Note : `note`
+### Updating a Note : `note`
 
-This command will allow you to add & edit notes to an internship application contact. There are 2 ways to execute this command based on your use: <br>
+This command will allow you to update the notes of a company contact without overwriting them !
 
 <box>
 
@@ -422,47 +441,31 @@ This command will allow you to add & edit notes to an internship application con
 
 </box>
 
-1. Adding a note when **creating a new company contact**
-    - Simply include the note you want in the **add** command using the syntax `n/[NOTE]`
-    - `add c/FoodPanda ...other attributes... n/This is a note`
+Updating a note of an **existing company contact**
+- Suppose you want to edit the note of company contact at index **2**
+- Use the note command as follows : `note 2`
+  ![enter note 2](images/note-feature/note_1.png)
 
-2. Updating a note of an **existing company contact**
-    - Suppose you want to edit the note of company contact at index **2**
-    - Use the note command as follows : `note 2`
-      ![enter note 2](images/note-feature/note_1.png)
-    - When you hit enter, it will retrieve the note content of the company contact at index 2 in the command box **as an edit command** :
-      ![command executes](images/note-feature/note_2.png)
-    - Simply update the note content and hit enter again :
-      ![command executes](images/note-feature/note_3.png)
-    - The next time you view the contact, the note section will be updated :
-      ![command executes](images/note-feature/note_4.png)
+- When you hit enter, it will retrieve the note content of the company contact at index 2 in the command box **as an edit command** :
+  ![command executes](images/note-feature/note_2.png)
 
+- Simply update the note content and hit enter again :
+  ![command executes](images/note-feature/note_3.png)
 
-<box type="tip">
+- The next time you view the contact, the note section will be updated :
+  ![command executes](images/note-feature/note_4.png)
 
-To clear a note, simply use `edit INDEX n/`
-
-</box>
-
-
-<box type="warning">
-
-**Caution:**
-If you use `edit INDEX n/your updates for the new note`, this **WILL OVERWRITE** the old note of the company contact at `INDEX`<br>
-For these kinds of scenarios, make use of the `note INDEX` function !
-
-</box>
 
 <div style="page-break-after: always;"></div>
 
-### Filtering the data (by tags) : `filter`
+### Filter By Tag : `filter`
 
 Filtering data allows you to narrow down your search results to focus on internship contacts based on their status. 
 Use the `filter` command to filter by tag and find exactly the internships that have an interview.
 
 <box>
 
-**Format:** `filter [VALID TAG]`
+**Format:** `filter VALID TAG`
 
 </box>
 
@@ -477,9 +480,11 @@ Valid Tag Inputs
 
 </box>
 
-Examples:
+**Example:**
+
 - `filter I`
 - Filters the list of contacts to only have internship company contacts that have an Interview status
+
 ![resultFilter](images/filter/filterIResult.png)
 
 <div style="page-break-after: always;"></div>
@@ -543,17 +548,17 @@ Exits the program.
 
 ### Saving the data
 
-AddressBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+InternHub data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
 ### Editing the data file
 
-AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
+InternHub data are saved automatically as a JSON file `[JAR file location]/data/internhub.json`. Advanced users are welcome to update data directly by editing that data file.
 
 <box type="warning">
 
 **Caution:**
-If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+If your changes to the data file makes its format invalid, InternHub will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
+Furthermore, certain edits can cause the InternHub to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 
 </box>
 
@@ -575,19 +580,19 @@ Furthermore, certain edits can cause the AddressBook to behave in unexpected way
 **Q**: How do I run internhub.jar?<br>
 **A**: You can run internhub.jar by opening a command terminal, navigating to the directory containing the jar file using the `cd` command, and then typing `java -jar internhub.jar` and pressing Enter.
 
+<div style="page-break-after: always;"></div>
+
 --------------------------------------------------------------------------------------------------------------------
 
-## Known issues
+## Known Issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
-
-<div style="page-break-after: always;"></div>
 
 2. **When entering numbers greater than 2147483647** for commands e.g. remind 100000000000, the input will be considered invalid. Currently, there is no remedy for this but it is assumed that most users will not encounter this issue in normal usage. A solution could be added in a future iteration. 
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+## Command Summary
 
 | Action       | Format, Examples                                                                                                                                                                                                                                                        |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -602,3 +607,21 @@ Furthermore, certain edits can cause the AddressBook to behave in unexpected way
 | **Help**     | `help`                                                                                                                                                                                                                                                                  |
 | **Filter**   | `filter [VALID TAG]` e.g., `filter I`                                                                                                                                                                                                                                   |
 | **Reminder** | `reminder INT`                                                                                                                                                                                                                                                          |
+
+<div style="page-break-after: always;"></div>
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Glossary
+
+| Term                              | Meaning                                                                                                                                                                 |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CLI (Command Line Interface)      | A way to interact with a computer by typing commands into a terminal or command box                                                                                     |
+| Command                           | A directive given to the program to perform a specific task                                                                                                             |
+| Feature                           | A distinct capability provided by our InternHub                                                                                                                         |
+| Field                             | A specific piece of information within each internship company contact like company name, phone number & etc...                                                         |
+| GUI (Graphical User Interface)    | A visual way of interacting with a computer through graphical elements like windows, icons, buttons & menus                                                             |
+| Index                             | A numerical identifier used to specify the position of an item in a list, for this context the position of an internship company contact                                |
+| JSON (JavaScript Object Notation) | A lightweight data interchange format that is easy to read & write, and for machines to parse. InternHub uses JSON to store and manage data                             |
+| Prefix                            | A string of characters placed at the beginning of a command to indicate its type. For example, InternHub uses `c/` for company name and `p/` for phone number and so on |
+
