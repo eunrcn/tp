@@ -159,6 +159,72 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
   </box>
 
+### Understanding each parameters
+| Parameter | Description      | Constraints                                                                                         | Example                          | Required |
+|-----------|------------------|-----------------------------------------------------------------------------------------------------|----------------------------------|----------|
+| `c/`      | Company name     | Only contain alphanumeric values                                                                    | `c/ABC Corporation`              | Yes      |
+| `p/`      | Phone number     | Only contain numbers and at least 3 digits                                                          | `p/98765432`                     | Yes      |
+| `e/`      | Email address    | Should be of the format local-part@domain, multiple consecutive special characters are not allowed. | `e/example@example.com`          | Yes      |
+| `t/`      | Tags             | Valid values are NR, I, O, OA, R                                                                    | `t/NR`                           | Yes      |
+| `jd/`     | Job description  | -                                                                                                   | `jd/Software Developer Intern`   | Yes      |
+| `id/`     | Intern duration  | -                                                                                                   | `id/3 months`                    | Yes      |
+| `s/`      | Salary           | Only positive numbers                                                                               | `s/500`                          | Yes      |
+| `a/`      | Physical address | -                                                                                                   | `a/123 Main St, City, Country`   | No       |
+| `d/`      | Interview date   | Of format dd-mm-yyyy HHmm & cannot be earlier than current day                                      | `d/14-04-2024 1500`              | No       |
+| `n/`      | Notes            | -                                                                                                   | `n/Previous experience required` | No       |
+
+**Company Name** <br>
+For company name that has **special characters**, do omit it or replace it with spaces <br>
+Example:
+  * `7-Eleven`, can be inputted as `7 Eleven` instead.
+  * `ABC PTE LTD.` can be inputted as `ABC PTE LTD` or `ABC Private Limited`.
+  * `ABC Co., Ltd` can be inputted as `ABC Co LTD` or `ABC Company Limited`. 
+
+Company is **case sensitive**, This means that variations in capitalization, such as "Apple" and "apple", will be treated as separate companies.
+  To maintain data consistency and accuracy, we encourage users to adhere to the correct capitalization when entering company names. This helps prevent unintentional duplication and ensures that each company is uniquely identified within the system. 
+  For example, if you've entered a company name as "Apple", ensure that you use the same capitalization in future entries related to that company.
+
+**Phone Number** <br>
+In InternHub, we aim to provide flexibility to users without imposing overly strict restrictions. 
+Therefore, we allow duplicate phone numbers to be entered for different contacts. 
+
+**Email** <br>
+For email with special characters, multiple consecutive special characters are not allowed.
+<br> Example of valid email: `abc+company@example.com`
+<br> Example of invalid email: `abc+_company@example.com`
+
+
+**Tags** <br>
+Make sure to include the appropriate tag after `t/` to denote the status of the internship application
+  - **NR**: No Reply - Indicates that there has been no response from the company regarding the internship application.
+  - **I**: Interview - Signifies that an interview for the internship has been scheduled with the company.
+  - **O**: Offered - Indicates that an offer for the internship has been received from the company.
+  - **OA**: Online Assessment - Denotes that an online assessment or test is required.
+  - **R**: Rejected - Indicates that the internship application has been rejected by the company.
+
+When using tags to denote the status of internship applications, ensure that you use capital case for the tags.
+Incorrect usage may result in misinterpretation of the application status.
+<br> Example of correct format: `t/I`
+<br> Example of incorrect format: `t/i`
+
+<box type="info">
+
+Each contact is uniquely identified by the combination of **Company Name** and **Job Description**
+- You **can** have more than 1 internship application with the same company name but **different** job descriptions
+  InternHub allows users to have more than one entry associated with the same company name, as long as each entry has a different job description. This flexibility accommodates scenarios where individuals may apply to different positions within the same company.
+- You **cannot** have more than 1 contact with the same company name **and** same job description.
+  <br> This restriction ensures data accuracy and prevents duplication of contacts with identical roles within the same company.
+- Example of Allowed Internship Applications:
+  <br> Internship application 1: Company Name - ABC Corp, Job Description - Software Engineer
+  <br> Internship application 2: Company Name - ABC Corp, Job Description - Marketing Specialist
+
+- Example of Not Allowed Input:
+  <br> Internship application 1: Company Name - ABC Corp, Job Description - Software Engineer
+  <br> Internship application 2: Company Name - ABC Corp, Job Description - Software Engineer
+
+</box>
+
+
 ### Viewing help : `help`
 
 You can list all the commands recognised by InternHub by typing `help` into the command box and pressing Enter.
@@ -197,41 +263,18 @@ Add a new internship company contact into InternHub.
 
 </box>
 
-Utilize the following prefixes to ensure accurate categorization of each detail:
+<box type="warning">
 
-   | Parameter | Description      | Constraints                                                    | Example                          | 
-   |-----------|------------------|----------------------------------------------------------------|----------------------------------|
-   | `c/`      | Company name     | Only contain alphanumeric values                               | `c/ABC Corporation`              |
-   | `p/`      | Phone number     | Only contain numbers and at least 3 digits                     | `p/98765432`                     |
-   | `e/`      | Email address    | Should be of the format local-part@domain                      | `e/example@example.com`          |
-   | `t/`      | Tags             | Valid values are NR, I, O, OA, R                               | `t/NR`                           |
-   | `jd/`     | Job description  | -                                                              | `jd/Software Developer Intern`   |
-   | `id/`     | Intern duration  | -                                                              | `id/3 months`                    |
-   | `s/`      | Salary           | Only positive numbers                                          | `s/500`                          |
-   | `a/`      | Physical address | -                                                              | `a/123 Main St, City, Country`   |
-   | `d/`      | Interview date   | Of format dd-mm-yyyy HHmm & cannot be earlier than current day | `d/14-04-2024 1500`              |
-   | `n/`      | Notes            | -                                                              | `n/Previous experience required` |
+All fields are unable to handle multiple inputs.
 
-All parameters except of address, interview date, and note must be provided for the add command to function as intended.
+Example of correct format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/I jd/Software Developer intern d/29-03-2024 1200 id/3 months s/1000 n/Company CEO is John Doe`
+<br> This internship application will be added in InternHub successfully.
 
-<box type="info">
-
-Each contact is uniquely identified by the combination of **Company Name** and **Job Description**
-   - You **can** have more than 1 contact with the same company name but **different** job descriptions
-   - You **cannot** have more than 1 contact with the same company name **and** same job description
+Example of incorrect format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/I jd/Software Developer intern d/29-03-2024 1200 id/3 months s/1000 n/Company CEO is John Doe`**`n/Company has 500 employee`**
+<br> An error message _"Multiple values specified for the following single-valued field(s): n/"_ will be shown on the result display box. 
 
 </box>
 
-<box type="tip"> 
-
-Make sure to include the appropriate tag after `t/` to denote the status of the internship application
-- **NR**: No Reply - Indicates that there has been no response from the company regarding the internship application.
-- **I**: Interview - Signifies that an interview for the internship has been scheduled with the company.
-- **O**: Offered - Indicates that an offer for the internship has been received from the company.
-- **OA**: Online Assessment - Denotes that an online assessment or test is required.
-- **R**: Rejected - Indicates that the internship application has been rejected by the company.
-
-</box>
 
 <div style="page-break-after: always;"></div>
 
@@ -329,6 +372,18 @@ If you want to delete any of the **Optional** fields, you can use edit like so :
 - `edit 2 d/` will remove the **interview date** of company at index 2
 - `edit 2 a/` will remove the **address** of company at index 2
 - `edit 2 n/` will remove the **note** of company at index 2
+
+</box>
+
+<box type="warning">
+
+All fields are unable to handle multiple inputs.
+
+Example of correct format: `edit 1 n/Company CEO is John Doe`
+<br> We update the 1st internship application's note
+
+Example of incorrect format: `edit 1 n/Company CEO is John Doe`**`n/Company has 500 employee`**
+<br> An error message _"Multiple values specified for the following single-valued field(s): n/"_ will be shown on the result display box.
 
 </box>
 
@@ -589,6 +644,10 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 2. **When entering numbers greater than 2147483647** for commands e.g. remind 100000000000, the input will be considered invalid. Currently, there is no remedy for this but it is assumed that most users will not encounter this issue in normal usage. A solution could be added in a future iteration. 
+
+3. **Inconsistent UI tag colour**, currently InternHub permits users to input tags in lowercase, resulting in unfilled tag colors. For our future implementation, we intend to either display a warning to users when they use lowercase instead of uppercase for tags, or automatically convert the tag value to uppercase.
+
+4. **Company name is case sensitive**, this make it possible for user to input "Apple" and "apple" in our application. It is possible that both input refer to the same company and may lead to potential confusion. For our future implementation, we intend to make company name case insensitive.
 
 --------------------------------------------------------------------------------------------------------------------
 

@@ -25,7 +25,7 @@ public class AddCommand extends Command {
 
     public static final String COMMAND_WORD = "add";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a person to the address book. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds an internship application to InternHub. "
             + "Parameters: "
             + PREFIX_NAME + "NAME "
             + PREFIX_PHONE + "PHONE "
@@ -45,13 +45,13 @@ public class AddCommand extends Command {
             + PREFIX_ADDRESS + "311, Clementi Ave 2, #02-25 "
             + PREFIX_TAG + "I "
             + PREFIX_JOB_DESCRIPTION + "Software Developer intern "
-            + PREFIX_INTERVIEW_DATE + "29-03-2024 1200 "
+            + PREFIX_INTERVIEW_DATE + "29-05-2024 1200 "
             + PREFIX_INTERN_DURATION + "3 months "
             + PREFIX_SALARY + "1000 "
             + PREFIX_NOTE + "Company CEO is John Doe\n";
 
-    public static final String MESSAGE_SUCCESS = "New person added: %1$s";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the address book";
+    public static final String MESSAGE_SUCCESS = "New internship application added: %1$s";
+    public static final String MESSAGE_DUPLICATE_PERSON = "This internship application already exists in InternHub";
 
     private final Person toAdd;
 

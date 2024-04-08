@@ -22,7 +22,7 @@ public class ViewCommand extends Command {
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1";
 
-    public static final String MESSAGE_VIEW_PERSON_SUCCESS = "Viewing Person: %1$s";
+    public static final String MESSAGE_VIEW_PERSON_SUCCESS = "Viewing internship application: %1$s";
 
     private final Index targetIndex;
 
