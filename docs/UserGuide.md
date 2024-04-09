@@ -205,7 +205,6 @@ Make sure to include the appropriate tag after `t/` to denote the status of the 
 When using tags to denote the status of internship applications, ensure that you use capital case for the tags.
 Incorrect usage may result in misinterpretation of the application status.
 <br> Example of correct format: `t/I`
-<br> Example of incorrect format: `t/i`
 
 <box type="info">
 
@@ -643,12 +642,13 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
-2. **When entering numbers greater than 2147483647** for commands e.g. remind 100000000000, the input will be considered invalid. Currently, there is no remedy for this but it is assumed that most users will not encounter this issue in normal usage. A solution could be added in a future iteration. 
+2. **When entering numbers greater than 2147483647 (max int value)** for commands e.g. remind 100000000000, the input will be considered invalid as we assumed that most users will not encounter this issue in normal usage. A solution could be added in a future iteration. 
 
 3. **Inconsistent UI tag colour**, currently InternHub permits users to input tags in lowercase, resulting in unfilled tag colors. For our future implementation, we intend to either display a warning to users when they use lowercase instead of uppercase for tags, or automatically convert the tag value to uppercase.
 
 4. **Company name is case sensitive**, this make it possible for user to input "Apple" and "apple" in our application. It is possible that both input refer to the same company and may lead to potential confusion. For our future implementation, we intend to make company name case insensitive.
 
+5. **Phone Number allow duplicate**, we did not want to set high restriction in our application hence did not force user to ensure all phone number must be unique. From user feedback, duplicate phone numbers can lead to potential confusion, especially when managing large contact lists. A solution could be added in a future iteration.
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command Summary
