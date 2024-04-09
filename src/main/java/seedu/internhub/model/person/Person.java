@@ -163,9 +163,8 @@ public class Person implements Comparable<Person> {
             return thisName.compareTo(otherName); // Compare using names
         } else if (thisIsPast && otherIsPast) {
             return 0; // same
-            //return thisName.compareTo(otherName);
         } else if (thisIsPast && !otherIsPast) {
-            return 1; // current is ahead of previous
+            return 1; // current is ahead of previous date
         } else if (!thisIsPast && otherIsPast) {
             return -1; // behind
         } else {
