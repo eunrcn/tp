@@ -130,7 +130,7 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 
 ## 3.2 Understanding InternHub's User Interface
 
-![Ui](images/UserGuide/GUI_annotation.png)
+![Ui2](images/UserGuide/GUI_annotation_v2.png)
 
 **Command Box**
 - Enter your commands in this box.
@@ -293,10 +293,10 @@ Add a new internship company contact into InternHub.
 
 All fields are unable to handle multiple inputs.
 
-Example of correct format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/I jd/Software Developer intern d/29-03-2024 1200 id/3 months s/1000 n/Company CEO is John Doe`
+Example of correct format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/I jd/Software Developer intern d/29-05-2024 1200 id/3 months s/1000 n/Company CEO is John Doe`
 <br> This internship application will be added in InternHub successfully.
 
-Example of incorrect format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/I jd/Software Developer intern d/29-03-2024 1200 id/3 months s/1000 n/Company CEO is John Doe`**`n/Company has 500 employee`**
+Example of incorrect format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/I jd/Software Developer intern d/29-05-2024 1200 id/3 months s/1000 n/Company CEO is John Doe `**`n/Company has 500 employee`**
 <br> An error message _"Multiple values specified for the following single-valued field(s): n/"_ will be shown on the result display box. 
 
 </box>
@@ -339,9 +339,11 @@ We have provided the command below with only the necessary parameters provided, 
 **More examples for you to try out:**
 - `add c/Grab p/66550000 e/careers@grab.com a/6 Temasek Boulevard t/I jd/Software Developer Intern d/12-06-2024 0900 id/6 months s/1500 n/Grab offers various services like ride-sharing, food delivery and etc.`
 
-- `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/NR jd/Software Developer intern id/3 months s/1000`
+- `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2 t/NR jd/Software Developer 
+intern id/3 months s/1000`
 
-- `add c/DBS Bank p/12345678 e/areers@dbs-bank-online.com a/321 Media Lane, Singapore 238163 t/NR jd/Creative Design Intern id/3 months s/1000`
+- `add c/DBS Bank p/12345678 e/areers@dbs-bank-online.com a/321 Media Lane, Singapore t/NR jd/Creative Design 
+Intern id/3 months s/1000`
 
 <div style="page-break-after: always;"></div>
 
@@ -408,23 +410,23 @@ All fields are unable to handle multiple inputs.
 Example of correct format: `edit 1 n/Company CEO is John Doe`
 <br> We update the 1st internship application's note.
 
-Example of incorrect format: `edit 1 n/Company CEO is John Doe`**` n/Company has 500 employee`**
+Example of incorrect format: `edit 1 n/Company CEO is John Doe n/Company has 500 employee`
 <br> An error message _"Multiple values specified for the following single-valued field(s): n/"_ will be shown on the result display box.
 
 </box>
 
 **Example 1**
-- We've received confirmation of an online assessment from a previously unresponsive company, DBS Bank.
+- We've received confirmation of an online assessment from a previously unresponsive company, Happy Burger.
 - We want to do the following:
   - Change the status from "NR" to "OA"
-  - Set the online assessment date for DBS Bank contact to be 20 June 2024 at 9 am.
+  - Set the online assessment date for Happy Burger to be 20 June 2024 at 9 am.
 
 With the edit command, we can achieve this with the following command: 
 
-`edit 4 t/OA d/20-06-2024 0900`
+`edit 3 t/OA d/20-06-2024 0900`
 
 **Example 2**
-- Unfortunately, we've received a rejection email from Happy Burger.
+- Unfortunately, we've received a rejection email from DBS Bank.
 - We want to do the following:
     - Change the status from "NR" to "R"
 
@@ -463,7 +465,8 @@ Views the details of the internship company contact on the view panel in InternH
 
 *  `view 1` Displays the company card of the 1st contact in the list on the view panel.
 
-![view result 3](images/view/view1Result.png)
+![view1Result](images/UserGuide/view1Result.png)
+
 
 <div style="page-break-after: always;"></div>
 
@@ -486,7 +489,7 @@ Internship application contacts with interview dates will be listed first, follo
 
 All internship application contacts will be shown on the left side of the window.
 
-![list](images/UserGuide/list.png)
+![list](images/UserGuide/list.png){ width=60% }
 
 <div style="page-break-after: always;"></div>
 
@@ -510,7 +513,7 @@ Finds contacts whose company names contain any of the given keywords.
 
 Examples:
 * `find burger` returns `Happy Burger` and `Sad Burger`<br>.
-  ![result for 'find burger'](images/find/findBurgerResult.png)
+  ![result for 'find burger'](images/find/findBurgerResult2.png)
 
 
 ### 4.2.3 Updating a Note : `note`
@@ -567,7 +570,7 @@ Valid Tag Inputs
 - `filter i` or `filter I`
 - Filters the contact list to display only internship company contacts with an Interview status
 
-![resultFilter](images/filter/filterIResult.png)
+![resultFilter](images/filter/filterIResult.png){ width=60% }
 
 <div style="page-break-after: always;"></div>
 
@@ -588,9 +591,9 @@ It conveniently displays the interviews scheduled within the upcoming N days, ke
 **Examples:**
 - `reminder 0` : Shows you the interviews you have today.
 - `reminder 2` : Shows you the interviews you have in the next two days, including today.
-- `reminder 20` : Shows you the interviews you have in the next twenty days, including today.
+- `reminder 100` : Shows you the interviews you have in the next hundredth days, including today.
 
-![reminder command](images/UserGuide/reminderCommand.png)
+![reminder command](images/UserGuide/reminderCommand.png){ width=60% }
 
 <box type="tip"> 
 This is a quick and easy way to be reminded of the upcoming interviews in order to not miss them.
