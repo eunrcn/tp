@@ -153,16 +153,21 @@ public class Person implements Comparable<Person> {
      * Returns int by comparing the 2 LocalDateTime dates with reference to current date.
      * This defines a notion of precedence between two inputs.
      */
-    public int compareInterviewDates(LocalDateTime thisInterviewDate, LocalDateTime otherInterviewDate) {
+    public int compareInterviewDates(LocalDateTime thisInterviewDate, LocalDateTime otherInterviewDate,
+            String thisName, String otherName) {
         LocalDateTime currentDate = LocalDateTime.now();
         boolean thisIsPast = thisInterviewDate.toLocalDate().isBefore(currentDate.toLocalDate());
         boolean otherIsPast = otherInterviewDate.toLocalDate().isBefore(currentDate.toLocalDate());
-        if (thisIsPast && otherIsPast) {
-            return 0;
+        if (thisInterviewDate.toLocalDate().isEqual(otherInterviewDate.toLocalDate())) {
+            // If both interviews have the same date
+            return thisName.compareTo(otherName); // Compare using names
+        } else if (thisIsPast && otherIsPast) {
+            return 0; // same
+            //return thisName.compareTo(otherName);
         } else if (thisIsPast && !otherIsPast) {
-            return 1;
+            return 1; // current is ahead of previous
         } else if (!thisIsPast && otherIsPast) {
-            return -1;
+            return -1; // behind
         } else {
             return thisInterviewDate.compareTo(otherInterviewDate);
         }
@@ -171,9 +176,10 @@ public class Person implements Comparable<Person> {
     public int compareTo(Person otherPerson) {
         LocalDateTime thisInterviewDate = this.interviewDate.value;
         LocalDateTime otherInterviewDate = otherPerson.getInterviewDate().value;
-
+        String thisName = this.companyName.toString();
+        String otherName = otherPerson.getCompanyName().toString();
         if (thisInterviewDate != null && otherInterviewDate != null) {
-            return compareInterviewDates(thisInterviewDate, otherInterviewDate);
+            return compareInterviewDates(thisInterviewDate, otherInterviewDate, thisName, otherName);
         } else if (thisInterviewDate != null) {
             return -1;
         } else if (otherInterviewDate != null) {
