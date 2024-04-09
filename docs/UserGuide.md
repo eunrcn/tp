@@ -39,7 +39,7 @@ Experienced users can jump straight to exploring our [features](#features)!
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Table of Contents {:style="font-size: 1.5em;"}
+## Table of Contents 
 - [Introduction](#introduction-to-the-user-guide)
 - [Quick Start](#quick-start)
 - [Getting Familiar with UI](#getting-familiar-with-the-ui-of-internhub)
