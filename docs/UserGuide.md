@@ -7,7 +7,7 @@ pageNav: 3
 # InternHub User Guide
 _By F14-1, JAYME_
 
-## 1. Welcome to InternHub!
+# 1. Welcome to InternHub!
 
 Attention, ambitious undergraduates! <br>
 Are you tirelessly navigating the labyrinth of internship opportunities? 
@@ -19,7 +19,7 @@ But fear not – we've got your back.
 Introducing InternHub – your ultimate desktop solution for streamlining internship application tracking. 
 Bid farewell to the chaos and embrace a seamless journey towards your dream internship. 
 
-### 1.1 Who can benefit from InternHub?
+## 1.1 Who can benefit from InternHub?
 
 InternHub caters to **undergraduates from all fields**, providing them with a seamless and efficient approach to managing their internship contacts.
 **For professors and career guidance officers** reading this, we invite you to share this invaluable resource with your students, empowering them to secure their dream internships.
@@ -30,11 +30,11 @@ With InternHub's sleek Command Line Interface (CLI), navigation and management b
 
 Unlock the power to focus on what truly matters – securing that coveted internship – with InternHub by your side.
 
-### 1.2 Skipping Ahead?
+## 1.2 Skipping Ahead?
 
 For users who are **new to InternHub**, click [here](#2-product-overview) for a helpful starting point!
 
-Experienced users can jump straight to exploring our [features](#features)!
+Experienced users can jump straight to exploring our [features](#4-features)!
 
 <div style="page-break-after: always;"></div>
 
@@ -77,48 +77,48 @@ jawad i am not removing ur beautiful work of art, i just testing how it looks wi
 
 --------------------------------------------------------------------------------------------------------------------
 
-## 2. Quick Start
+# 2. Quick Start
 
-1. Check Java Version & Install Java
-   - Ensure that your system has Java 11 installed, as this application requires it.
-     - To check if Java is installed, open your command prompt or terminal and type: `java -version`
-         - If Java is installed, you will see the version number in the output.
-         - If Java is not installed or your version does not match the required one, follow these steps:
-             - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download JDK 11 and follow the installation instructions.
-             - For **mac** users, download JDK 11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu). 
+1. **Check Java Version & Install Java**
+   Ensure that your system has Java 11 installed, as this application requires it.
+   - To check if Java is installed, open your command prompt or terminal and type: `java -version`
+       - If Java is installed, you will see the version number in the output.
+       - If Java is not installed or your version does not match the required one, follow these steps:
+           - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download JDK 11 and follow the installation instructions.
+           - For **mac** users, download JDK 11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu). 
 
-2. Download InternHub
-    - Download the latest `internhub.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases). 
+2. **Download InternHub**
+   Download the latest `internhub.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases). 
 
-3. Set Up Home Folder
-    - Copy the downloaded `internhub.jar` file to the folder you want to use as the home folder for InternHub.
-        - This folder will serve as InternHub's central location, where all important files and saved data will be stored. 
+3. **Set Up Home Folder**
+   Copy the downloaded `internhub.jar` file to the folder you want to use as the home folder for InternHub.
+   - This folder will serve as InternHub's central location, where all important files and saved data will be stored. 
 
-4. Navigate to Home Folder
-    - Once you've set up the home folder, right-click on it and select "Copy" to copy its path.
+4. **Navigate to Home Folder**
+   Once you've set up the home folder, right-click on it and select "Copy" to copy its path.
 
-5. Open Terminal or Command Prompt
-    - Open a new terminal or command prompt window. 
+5. **Open Terminal or Command Prompt**
+   Open a new terminal or command prompt window. You can search it in spotlight search/search bar.
 
-6. Change Directory to Home Folder
-    - Type `cd ` and paste the home folder path you copied earlier. For example: `cd /Users/john/home folder`, then press Enter. 
+6. **Change Directory to Home Folder**
+   Type `cd ` and paste the home folder path you copied earlier. For example: `cd /Users/john/home folder`, then press Enter. 
 
-7. Run InternHub
-    - In the same terminal or command prompt window, enter the command `java -jar internhub.jar` to run the application.
-        - A GUI similar to the one below should appear shortly.
-          ![InternHub GUI](images/UserGuide/Ui_new.png) 
+7. **Run InternHub**
+   In the same terminal or command prompt window, enter the command `java -jar internhub.jar` to run the application.
+   - A GUI similar to the one below should appear shortly.
+   ![InternHub GUI](images/UserGuide/Ui_new.png) 
 
-8. Execute Commands
-    - Type commands into the command box and press Enter to execute them. For example, typing `help` and pressing Enter will open the help window.
-    - Sample commands to try:
-        - `list`: [Lists](#listing-all-contacts-list) all company contacts.
-        - `add c/Pixar ...`: [Adds](#adding-a-contact-add) a company contact named `Pixar` to InternHub.
-        - `delete 3`: [Deletes](#deleting-a-contact-delete) the 3rd contact shown in the current list.
-        - `clear`: [Clears](#clearing-all-entries-clear) all contacts.
-        - `exit`: [Exits](#exiting-the-program-exit) the app. 
+8. **Execute Commands**
+   Type commands into the command box and press Enter to execute them. For example, typing `help` and pressing Enter will open the help window.
+   - Sample commands to try:
+     - `add c/Pixar ...`: [Adds](#411-adding-a-contact--add) a company contact named `Pixar` to InternHub.
+     - `delete 3`: [Deletes](#412-deleting-a-contact--delete) the 3rd contact shown in the current list.
+     - `list`: [Lists](#421-listing-all-contacts--list) all company contacts.
+     - `clear`: [Clears](#432-clearing-all-entries--clear) all contacts.
+     - `exit`: [Exits](#433-exiting-the-program--exit) the app. 
 
-9. Explore Features
-    - For more details on each command, refer to the [Features](#features) section.
+9. **Explore Features**
+   For more details on each command, refer to the [Features](#4-features) section.
 
 <div style="page-break-after: always;"></div>
 
@@ -138,37 +138,41 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 <box type="warning" >Provides warnings on some potential errors</box>
 <box type="tip" >Nifty tricks to make your experience smoother</box>
 
+
 ## 3.2 Understanding InternHub's User Interface
 
 ![Ui](images/UserGuide/GUI_annotation.png)
 
 **Command Box**
 - Enter your commands in this box.
-- 
+
 **Result Display**
-- View the output message after each command here.
-- 
+- View the output message after each command here. 
+- For longer commands like `Add`, the output text may get cut off, simply use our pink scroll bar to view the entire output.
+
 **List of Contacts**
 - This panel displays a list of all internship company contacts.
-- 
+
 **View Panel**
 - The contact details card of the selected internship company is displayed in this panel.
 
-## 3.3 Command Formatting Guidelines
+## 3.3 Command and Formatting Guidelines
 
-* Parameters in `UPPER_CASE` are user-supplied.<br>
+1. **Parameters in `UPPER_CASE` are user-supplied.**<br>
   For example, in `add c/COMPANY_NAME`, replace `COMPANY_NAME` with the actual company name like `add c/Food Panda`.
 
-* Square brackets denote optional items.<br>
+2. **Square brackets denote optional items.** <br>
   For instance, `c/COMPANY_NAME [a/ADDRESS]` can be entered as `c/Food Panda a/CBD` or simply `c/Food Panda`.
 
-* Parameters can be in any order.<br>
+3. **Parameters can be in any order.** <br>
   For example, if a command specifies `add c/COMPANY_NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER add c/COMPANY_NAME` is also valid.
 
-* Unnecessary parameters for commands without specified inputs (e.g., `help`, `list`, `exit`, and `clear`) are ignored.<br>
+4. **Unnecessary parameters for commands without specified inputs (e.g., `help`, `list`, `exit`, and `clear`) are ignored.** <br>
   For instance, `help 123` will be treated as `help`.
 
-* When copying and pasting multi-line commands from a PDF, be cautious as space characters around line breaks might be omitted.
+5. **Refrain from copying command lines from the User Guide**
+   When copying and pasting multi-line commands from a PDF, be cautious as space characters around line breaks might be omitted.
+
 
 ## 3.4 Understanding Each Parameter
 
@@ -188,28 +192,31 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 
 ### 3.4.1 Company Name
 
-For company names with special characters, it's advisable to omit them or replace them with spaces.
+For company names with **special characters**, it's advisable to omit them or replace them with spaces.
 
 Here are some examples:
 - "7-Eleven" can be inputted as "7 Eleven" instead.
 - "ABC PTE LTD." can be inputted as "ABC PTE LTD" or "ABC Private Limited."
 - "ABC Co., Ltd" can be inputted as "ABC Co LTD" or "ABC Company Limited."
 
-Please note that company names are case-sensitive.
+**Please note that company names are case-sensitive.**
 <br> This means variations in capitalization, such as "Apple" and "apple," will be treated as separate entries.
 
+<box type="tip">
 To maintain data consistency and accuracy, we encourage users to adhere to the correct capitalization when entering company names.
 This helps prevent unintentional duplication and ensures each company is uniquely identified within the system.
 <br> For example, if you've entered a company name as "Apple," ensure you consistently use the same capitalization in future entries related to that company.
+</box>
+
 
 ### 3.4.2 Phone Number
 
 In InternHub, we aim to provide flexibility to users without imposing overly strict restrictions.
-<br> Therefore, we allow duplicate phone numbers to be entered for different contacts.
+<br> Therefore, we **allow duplicate phone numbers** to be entered for different contacts.
 
 ### 3.4.3 Email
 
-For emails with special characters, multiple consecutive special characters are not allowed.
+For emails with special characters, **multiple consecutive special characters are not allowed**.
 <br> Here's an example of a valid email: `abc+company@example.com`.
 <br> An invalid email example would be `abc+_company@example.com`.
 
@@ -227,15 +234,44 @@ When using tags to denote the status of internship applications, ensure you use 
 <br> Incorrect usage may result in misinterpretation of the application status.
 <br> For example, the correct format is `t/I`.
 
+### 3.4.5 Internship Duration
+
+We have intentionally omitted setting a minimum internship duration as there isn't a universally fixed minimum duration for internships.
+
+### 3.4.6 Internship Date
+
+1. **Invalid Date**
+When InternHub encounters an invalid date like "29-02-2031," which doesn't exist because 2031 isn't a leap year, it automatically changes it to the closest valid date, which is "28-02-2031." 
+This happens because the InternHub follows the rules of the Gregorian calendar, which determines how dates are calculated and adjusted.
+
+2. **Overlapping of interview dates and time**
+In InternHub, it's possible to schedule interviews with multiple companies for the same date and time. 
+This flexibility acknowledges that you may have multiple interviews lined up simultaneously, requiring you to choose between them based on your preferences and priorities.
+
+3. **Using Edit command to change the date**
+While we ensured that when adding a new internship application, the interview day cannot be earlier than the current day, we do recognize the need to allow edits to past days. 
+Therefore, in the Edit command, users can adjust interview dates that have already passed, providing flexibility for correcting mistakes.
+
+4. **Error messages**
+When entering the command 'edit 3 d/14-04-2024 3", InternHub will display two error messages:
+Interview Date & Time needs to follow this pattern : dd-mm-yyyy HHmm
+Interview Date & Time cannot be before today's date !
+
+<box type="warning" >
+
+As mentioned in point 3, we allow the Edit command to modify dates preceding today's date, so please disregard the second line of the error message.
+
+</box>
 
 ## 3.5 Understanding Contact Identification in InternHub
-
 
 Each contact is uniquely identified by the combination of **Company Name** and **Job Description**
 - You **can** have more than 1 internship application with the same company name but **different** job descriptions
   InternHub allows users to have more than one entry associated with the same company name, as long as each entry has a different job description. This flexibility accommodates scenarios where individuals may apply to different positions within the same company.
 - You **cannot** have more than 1 contact with the same company name **and** same job description.
   <br> This restriction ensures data accuracy and prevents duplication of contacts with identical roles within the same company.
+
+<box type="tip">
 - Example of Allowed Internship Applications:
   <br> Internship application 1: Company Name - ABC Corp, Job Description - Software Engineer
   <br> Internship application 2: Company Name - ABC Corp, Job Description - Marketing Specialist
@@ -243,6 +279,7 @@ Each contact is uniquely identified by the combination of **Company Name** and *
 - Example of Not Allowed Input:
   <br> Internship application 1: Company Name - ABC Corp, Job Description - Software Engineer
   <br> Internship application 2: Company Name - ABC Corp, Job Description - Software Engineer
+  </box>
 
 <div style="page-break-after: always;"></div>
 
