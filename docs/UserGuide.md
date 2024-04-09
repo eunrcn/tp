@@ -239,18 +239,18 @@ We have intentionally omitted setting a minimum internship duration as there isn
   In InternHub, it's possible to schedule interviews with multiple companies for the same date and time. 
   This flexibility acknowledges that you may have multiple interviews lined up simultaneously, requiring you to choose between them based on your preferences and priorities.
 
-3. **Using Edit command to change the date** <br>
-  While we ensured that when adding a new internship application, the interview day cannot be earlier than the current day, we do recognize the need to allow edits to past days. 
-  Therefore, in the Edit command, users can adjust interview dates that have already passed, providing flexibility for correcting mistakes.
+3. **Using JSON file to change the date** <br>
+  While we ensured that when adding and editing a new internship application, the interview day cannot be earlier than the current day, we do recognize the need to allow edits to past days. 
+  Therefore, in the JSON file, experienced users can adjust interview dates that have already passed, providing flexibility for correcting mistakes.
 
 4. **Error messages** 
-<br> When entering the command 'edit 3 d/14-04-2024 3", InternHub will display two error messages:
+<br> When entering the command 'edit 3 d/14-07-2024 3", InternHub will display two error messages:
 <br> _Interview Date & Time needs to follow this pattern : dd-mm-yyyy HHmm_
 <br> _Interview Date & Time cannot be before today's date !_
 
-<box type="warning" >
+<box type="tip" >
 
-As mentioned in point 3, we allow the Edit command to modify dates preceding today's date, so please disregard the second line of the error message.
+Please only read the error message that is relevant to your situation. In this case, it is the first line.
 
 </box>
 
