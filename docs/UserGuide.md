@@ -130,7 +130,7 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 
 ## 3.2 Understanding InternHub's User Interface
 
-![Ui2](images/UserGuide/GUI_annotation_v2.png)
+![Ui](images/UserGuide/GUI_annotation.png)
 
 **Command Box**
 - Enter your commands in this box.
