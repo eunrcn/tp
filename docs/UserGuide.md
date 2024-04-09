@@ -140,18 +140,18 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 
 ## 3.2 Understanding InternHub's User Interface
 
-![Ui](images/UserGuide/GUI_annotation.png)
+[//]: # (![Ui]&#40;images/UserGuide/GUI_annotation.png&#41;)
 ![Ui2](images/UserGuide/GUI_annotation_v2.png)
 
 **Command Box**
 - Enter your commands in this box.
-- 
+
 **Result Display**
 - View the output message after each command here.
-- 
+
 **List of Contacts**
 - This panel displays a list of all internship company contacts.
-- 
+
 **View Panel**
 - The contact details card of the selected internship company is displayed in this panel.
 
@@ -462,7 +462,7 @@ Internship application contacts with interview dates will be listed first, follo
 
 All internship application contacts will be shown on the left side of the window.
 
-![list](images/UserGuide/list.png)
+![list](images/UserGuide/list.png){ width=60% }
 
 <div style="page-break-after: always;"></div>
 
@@ -543,7 +543,7 @@ Valid Tag Inputs
 - `filter i` or `filter I`
 - Filters the contact list to display only internship company contacts with an Interview status
 
-![resultFilter](images/filter/filterIResult.png)
+![resultFilter](images/filter/filterIResult.png){ width=60% }
 
 <div style="page-break-after: always;"></div>
 
@@ -566,7 +566,7 @@ It conveniently displays the interviews scheduled within the upcoming N days, ke
 - `reminder 2` : Shows you the interviews you have in the next two days, including today.
 - `reminder 100` : Shows you the interviews you have in the next hundredth days, including today.
 
-![reminder command](images/UserGuide/reminderCommand.png)
+![reminder command](images/UserGuide/reminderCommand.png){ width=60% }
 
 <box type="tip"> 
 This is a quick and easy way to be reminded of the upcoming interviews in order to not miss them.
