@@ -4,41 +4,44 @@ title: "User Guide"
 pageNav: 3
 ---
 
-# Internhub User Guide
+# InternHub User Guide
+_By F14-1, JAYME_
 
-## Welcome to InternHub!
+## 1. Welcome to InternHub!
 
-Are you currently navigating the intricate maze of internship opportunities as an undergraduate? 
-Your search ends here! InternHub is poised to transform the way you handle your internship contacts.
+Attention, ambitious undergraduates! <br>
+Are you tirelessly navigating the labyrinth of internship opportunities? 
+Ever found yourself frustrated by inadvertently applying to the same company twice? 
+Losing track of all the different interview dates? 
+Amidst the flurry of applications inundating various platforms, it's easy to lose track. 
+But fear not – we've got your back.
 
-InternHub stands as a beacon of productivity, offering you a comprehensive platform to manage and organize all your internship applications effectively.
+Introducing InternHub – your ultimate desktop solution for streamlining internship application tracking. 
+Bid farewell to the chaos and embrace a seamless journey towards your dream internship. 
 
-## Who Can Benefit from InternHub?
+### 1.1 Who can benefit from InternHub?
 
 InternHub caters to **undergraduates from all fields**, providing them with a seamless and efficient approach to managing their internship contacts.
-**Professors and career guidance officers**, we invite you to share this invaluable resource with your students, empowering them to secure their dream internships.
+**For professors and career guidance officers** reading this, we invite you to share this invaluable resource with your students, empowering them to secure their dream internships.
 
-InternHub is designed with **user-friendliness** in mind, catering to individuals with varying levels of computer experience.
-Whether you're a tech-savvy enthusiast or just dipping your toes into the world of desktop applications, rest assured that our interface is intuitive and easy to navigate.
-We're committed to supporting you every step of the way on your internship management journey.
+InternHub is meticulously crafted with **user-friendliness** at its core, tailored to accommodate individuals of all computer proficiency levels. 
+Whether you're a seasoned tech enthusiast or just starting to explore desktop applications, our interface ensures a seamless experience, intuitively guiding you through every step of your internship management journey. 
+With InternHub's sleek Command Line Interface (CLI), navigation and management become effortless, empowering you to stay focused on your goals.
 
-## User Guide: Your Trusted Companion
+Unlock the power to focus on what truly matters – securing that coveted internship – with InternHub by your side.
 
-This User Guide (UG) acts as your trusted companion, providing a wealth of information to assist you in understanding and harnessing the full potential of our application.
-From installation to usage and navigation, each step is meticulously outlined to ensure you derive maximum benefits from InternHub in managing your internship contacts.
+### 1.2 Skipping Ahead?
 
-Welcome aboard, and let's embark on this exciting adventure together!
-
-# Get Started
-
-For users who are **new to InternHub**, click [here](#introduction-to-the-user-guide) for a helpful starting point!
+For users who are **new to InternHub**, click [here](#2-product-overview) for a helpful starting point!
 
 Experienced users can jump straight to exploring our [features](#features)!
 
 <div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
+<page-nav-print />
 
+<!--
 # Table of Contents 
 - [Introduction](#introduction-to-the-user-guide)
 - [Quick Start](#quick-start)
@@ -67,89 +70,91 @@ Experienced users can jump straight to exploring our [features](#features)!
 - [Command Summary](#command-summary)
 - [Glossary](#glossary)
 
+jawad i am not removing ur beautiful work of art, i just testing how it looks without it first ok <3
+-->
+
 <div style="page-break-after: always;"></div>
 
-
---------------------------------------------------------------------------------------------------------------------
-## Introduction to the User Guide
-Our team at InternHub have carefully designed this user guide to be your one-stop solution for everything related to InternHub!
-
-### Icons used
-
-<box type="info" >Additional useful information</box>
-<box type="warning" >Provides warnings on some potential errors</box>
-<box type="tip" >Nifty tricks to make your experience smoother</box>
-
 --------------------------------------------------------------------------------------------------------------------
 
-# Quick Start
+## 2. Quick Start
 
-1. **Check Java Version & Install Java**
-    - Ensure that your system has Java 11 installed, as this application requires it.
-    - To check if Java is installed, open your command prompt or terminal and type: `java -version`
-        - If Java is installed, you will see the version number in the output.
-        - If Java is not installed or your version does not match the required one, follow these steps:
-            - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download JDK 11 and follow the installation instructions.
-            - For **mac** users, download JDK 11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu). <br>
+1. Check Java Version & Install Java
+   - Ensure that your system has Java 11 installed, as this application requires it.
+     - To check if Java is installed, open your command prompt or terminal and type: `java -version`
+         - If Java is installed, you will see the version number in the output.
+         - If Java is not installed or your version does not match the required one, follow these steps:
+             - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download JDK 11 and follow the installation instructions.
+             - For **mac** users, download JDK 11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu). 
 
-2. **Download InternHub**
-    - Download the latest `internhub.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases). <br>
+2. Download InternHub
+    - Download the latest `internhub.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases). 
 
-3. **Set Up Home Folder**
+3. Set Up Home Folder
     - Copy the downloaded `internhub.jar` file to the folder you want to use as the home folder for InternHub.
-        - This folder will serve as InternHub's central location, where all important files and saved data will be stored. <br>
+        - This folder will serve as InternHub's central location, where all important files and saved data will be stored. 
 
-4. **Navigate to Home Folder**
-    - Once you've set up the home folder, right-click on it and select "Copy" to copy its path. <br>
+4. Navigate to Home Folder
+    - Once you've set up the home folder, right-click on it and select "Copy" to copy its path.
 
-5. **Open Terminal or Command Prompt**
-    - Open a new terminal or command prompt window. <br>
+5. Open Terminal or Command Prompt
+    - Open a new terminal or command prompt window. 
 
-6. **Change Directory to Home Folder**
-    - Type `cd ` and paste the home folder path you copied earlier. For example: `cd /Users/john/home folder`, then press Enter. <br>
+6. Change Directory to Home Folder
+    - Type `cd ` and paste the home folder path you copied earlier. For example: `cd /Users/john/home folder`, then press Enter. 
 
-7. **Run InternHub**
+7. Run InternHub
     - In the same terminal or command prompt window, enter the command `java -jar internhub.jar` to run the application.
         - A GUI similar to the one below should appear shortly.
-      ![InternHub GUI](images/UserGuide/Ui_new.png) <br>
+          ![InternHub GUI](images/UserGuide/Ui_new.png) 
 
-8. **Execute Commands**
+8. Execute Commands
     - Type commands into the command box and press Enter to execute them. For example, typing `help` and pressing Enter will open the help window.
     - Sample commands to try:
         - `list`: [Lists](#listing-all-contacts-list) all company contacts.
         - `add c/Pixar ...`: [Adds](#adding-a-contact-add) a company contact named `Pixar` to InternHub.
         - `delete 3`: [Deletes](#deleting-a-contact-delete) the 3rd contact shown in the current list.
         - `clear`: [Clears](#clearing-all-entries-clear) all contacts.
-        - `exit`: [Exits](#exiting-the-program-exit) the app. <br>
+        - `exit`: [Exits](#exiting-the-program-exit) the app. 
 
-9. **Explore Features**
+9. Explore Features
     - For more details on each command, refer to the [Features](#features) section.
 
 <div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
+# 3. Product Overview
 
-## Getting familiar with the UI of InternHub
+Our team has carefully designed this user guide to be your one-stop solution for everything related to InternHub! 
+Our aim is to help you get started with InternHub as quickly as possible. 
+The guide features all the available commands, their syntax, as well as specific examples for illustration.
+
+Here in this section, we will be explaining the icons used and providing clear guidance on UI navigation. 
+Furthermore, we are providing guidelines for command formatting and contact details in InternHub, along with an understanding of each parameter.
+
+## 3.1 Icons used
+
+<box type="info" >Additional useful information</box>
+<box type="warning" >Provides warnings on some potential errors</box>
+<box type="tip" >Nifty tricks to make your experience smoother</box>
+
+## 3.2 Understanding InternHub's User Interface
 
 ![Ui](images/UserGuide/GUI_annotation.png)
 
 **Command Box**
-  - Enter your commands in this box.
+- Enter your commands in this box.
+- 
 **Result Display**
-  - View the output message after each command here.
+- View the output message after each command here.
+- 
 **List of Contacts**
-  - This panel displays a list of all internship company contacts.
+- This panel displays a list of all internship company contacts.
+- 
 **View Panel**
-  - The contact details card of the selected internship company is displayed in this panel.
+- The contact details card of the selected internship company is displayed in this panel.
 
-<div style="page-break-after: always;"></div>
-
---------------------------------------------------------------------------------------------------------------------
-## Guidelines for Command Formatting and Contact Details in InternHub
-
-<box type="info">
-
-**Important Notes on Command Formatting:**<br>
+## 3.3 Command Formatting Guidelines
 
 * Parameters in `UPPER_CASE` are user-supplied.<br>
   For example, in `add c/COMPANY_NAME`, replace `COMPANY_NAME` with the actual company name like `add c/Food Panda`.
@@ -164,9 +169,9 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
   For instance, `help 123` will be treated as `help`.
 
 * When copying and pasting multi-line commands from a PDF, be cautious as space characters around line breaks might be omitted.
-  </box>
 
-### Understanding Each Parameter
+## 3.4 Understanding Each Parameter
+
 | Parameter | Description         | Constraints                                                                                         | Example                          | Required |
 |-----------|---------------------|-----------------------------------------------------------------------------------------------------|----------------------------------|----------|
 | `c/`      | Company Name        | Only contain alphanumeric values                                                                    | `c/ABC Corporation`              | Yes      |
@@ -181,9 +186,9 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 | `n/`      | Notes               | -                                                                                                   | `n/Previous experience required` | No       |
 
 
-#### Company Name
+### 3.4.1 Company Name
 
-For company names with special characters, it's advisable to omit them or replace them with spaces. 
+For company names with special characters, it's advisable to omit them or replace them with spaces.
 
 Here are some examples:
 - "7-Eleven" can be inputted as "7 Eleven" instead.
@@ -191,24 +196,24 @@ Here are some examples:
 - "ABC Co., Ltd" can be inputted as "ABC Co LTD" or "ABC Company Limited."
 
 Please note that company names are case-sensitive.
-<br> This means variations in capitalization, such as "Apple" and "apple," will be treated as separate entries. 
+<br> This means variations in capitalization, such as "Apple" and "apple," will be treated as separate entries.
 
 To maintain data consistency and accuracy, we encourage users to adhere to the correct capitalization when entering company names.
 This helps prevent unintentional duplication and ensures each company is uniquely identified within the system.
 <br> For example, if you've entered a company name as "Apple," ensure you consistently use the same capitalization in future entries related to that company.
 
-#### Phone Number
+### 3.4.2 Phone Number
 
 In InternHub, we aim to provide flexibility to users without imposing overly strict restrictions.
 <br> Therefore, we allow duplicate phone numbers to be entered for different contacts.
 
-#### Email
+### 3.4.3 Email
 
 For emails with special characters, multiple consecutive special characters are not allowed.
 <br> Here's an example of a valid email: `abc+company@example.com`.
 <br> An invalid email example would be `abc+_company@example.com`.
 
-#### Tags
+### 3.4.4 Tags
 
 Ensure to include the appropriate tag after `t/` to denote the status of the internship application:
 
@@ -222,7 +227,9 @@ When using tags to denote the status of internship applications, ensure you use 
 <br> Incorrect usage may result in misinterpretation of the application status.
 <br> For example, the correct format is `t/I`.
 
-<box type="info">
+
+## 3.5 Understanding Contact Identification in InternHub
+
 
 Each contact is uniquely identified by the combination of **Company Name** and **Job Description**
 - You **can** have more than 1 internship application with the same company name but **different** job descriptions
@@ -237,19 +244,14 @@ Each contact is uniquely identified by the combination of **Company Name** and *
   <br> Internship application 1: Company Name - ABC Corp, Job Description - Software Engineer
   <br> Internship application 2: Company Name - ABC Corp, Job Description - Software Engineer
 
-</box>
-
-
-
 <div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
+# 4. Features
 
-# Features
+## 4.1 Basic Commands
 
-## Basic Commands
-
-### Adding a contact: `add`
+### 4.1.1 Adding a contact: `add`
 
 Add a new internship company contact into InternHub.
 
@@ -315,7 +317,7 @@ We have provided the command below with only the necessary parameters provided, 
 
 <div style="page-break-after: always;"></div>
 
-### Deleting a contact : `delete`
+### 4.1.2 Deleting a contact : `delete`
 
 Deletes an internship company contact by index from InternHub.
 
@@ -339,7 +341,7 @@ After we execute the delete command, the Grab entry is no longer in our list of 
 
 ![delete_example_full](images/UserGuide/deleteExample.png)
 
-### Editing a contact : `edit`
+### 4.1.3  Editing a contact : `edit`
 
 Edits an existing internship company contact detail in InternHub.
 
@@ -415,7 +417,7 @@ Notice how when we set the online assessment date for DBS, the contact list dyna
 
 <div style="page-break-after: always;"></div>
 
-### Viewing a contact : `view`
+### 4.1.4 Viewing a contact : `view`
 
 Views the details of the internship company contact on the view panel in InternHub.
 
@@ -439,9 +441,9 @@ Views the details of the internship company contact on the view panel in InternH
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Advanced Commands
+## 4.2  Advanced Commands
 
-### Listing all contacts : `list`
+### 4.2.1 Listing all contacts : `list`
 
 This command shows a list of all internship application contacts in InternHub sorted in ascending order of interview dates.
 Internship application contacts with interview dates will be listed first, followed by internship application contacts without interview dates.
@@ -460,7 +462,7 @@ All internship application contacts will be shown on the left side of the window
 
 <div style="page-break-after: always;"></div>
 
-### Locating contacts by name: `find`
+### 4.2.2 Locating contacts by name: `find`
 
 Finds contacts whose company names contain any of the given keywords.
 
@@ -483,7 +485,7 @@ Examples:
   ![result for 'find burger'](images/find/findBurgerResult.png)
 
 
-### Updating a Note : `note`
+### 4.2.3 Updating a Note : `note`
 
 This command will allow you to update the notes of a company contact without overwriting them.
 
@@ -510,7 +512,7 @@ Updating a note of an **existing company contact**
 
 <div style="page-break-after: always;"></div>
 
-### Filter By Tag : `filter`
+### 4.2.4 Filter By Tag : `filter`
 
 Filtering data allows you to narrow down your search results to focus on internship contacts based on their status. 
 Use the `filter` command to filter by tag and find exactly the internships that have an interview.
@@ -541,7 +543,7 @@ Valid Tag Inputs
 
 <div style="page-break-after: always;"></div>
 
-### Getting reminders : `reminder`
+### 4.2.5 Getting reminders : `reminder`
 
 Sending reminders is a pivotal practice to uphold organization and ensure timely completion of crucial tasks. 
 Although our application presently lacks a built-in reminder feature, fear not! 
@@ -570,11 +572,11 @@ This is a quick and easy way to be reminded of the upcoming interviews in order 
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Miscellaneous Commands
+## 4.3 Miscellaneous Commands
 
-### Getting help : `help`
+### 4.3.1 Getting help : `help`
 
-To access our InternHub User Guide, simply type help into the command box and press Enter.
+To access our InternHub User Guide at anytime, simply type help into the command box and press Enter.
 This action will display a link to this document, allowing you to easily navigate and explore the comprehensive features of InternHub.
 
 <box>
@@ -595,7 +597,7 @@ A separate help window will appear.
 
 ![help message](images/UserGuide/helpMessage.png)
 
-### Clearing all entries : `clear`
+### 4.3.2 Clearing all entries : `clear`
 
 Clears all entries stored in InternHub.
 
@@ -605,7 +607,7 @@ Clears all entries stored in InternHub.
 
 </box>
 
-### Exiting the program : `exit`
+### 4.3.3 Exiting the program : `exit`
 
 Exits the program.
 
@@ -617,13 +619,13 @@ Exits the program.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Storage & Data
+## 4.4 Storage & Data
 
-### Saving the data
+### 4.4.1 Saving the data
 
 InternHub data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
-### Editing the data file
+### 4.4.2 Editing the data file
 
 InternHub data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
 
@@ -636,7 +638,7 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 </box>
 
 --------------------------------------------------------------------------------------------------------------------
-# FAQ
+# 5. FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the InternHub app on the other computer and replace the empty data file it creates with the file containing the data from your previous InternHub *home folder*.
@@ -657,7 +659,7 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 
 --------------------------------------------------------------------------------------------------------------------
 
-# Known Issues
+# 6. Known Issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
@@ -672,7 +674,7 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 
 --------------------------------------------------------------------------------------------------------------------
 
-# Command Summary
+# 7. Command Summary
 
 | Action       | Format, Examples                                                                                                                                                                                                                                                        |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -693,7 +695,7 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 
 --------------------------------------------------------------------------------------------------------------------
 
-# Glossary
+# 8. Glossary
 
 | Term                              | Meaning                                                                                                                                                                 |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
