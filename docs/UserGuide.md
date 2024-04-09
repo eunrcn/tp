@@ -13,11 +13,6 @@ Your search ends here! InternHub is poised to transform the way you handle your 
 
 InternHub stands as a beacon of productivity, offering you a comprehensive platform to manage and organize all your internship applications effectively.
 
-## User Guide: Your Trusted Companion
-
-This User Guide (UG) acts as your trusted companion, providing a wealth of information to assist you in understanding and harnessing the full potential of our application. 
-From installation to usage and navigation, each step is meticulously outlined to ensure you derive maximum benefits from InternHub in managing your internship contacts.
-
 ## Who Can Benefit from InternHub?
 
 InternHub caters to **undergraduates from all fields**, providing them with a seamless and efficient approach to managing their internship contacts.
@@ -27,9 +22,14 @@ InternHub is designed with **user-friendliness** in mind, catering to individual
 Whether you're a tech-savvy enthusiast or just dipping your toes into the world of desktop applications, rest assured that our interface is intuitive and easy to navigate.
 We're committed to supporting you every step of the way on your internship management journey.
 
+## User Guide: Your Trusted Companion
+
+This User Guide (UG) acts as your trusted companion, providing a wealth of information to assist you in understanding and harnessing the full potential of our application.
+From installation to usage and navigation, each step is meticulously outlined to ensure you derive maximum benefits from InternHub in managing your internship contacts.
+
 Welcome aboard, and let's embark on this exciting adventure together!
 
-## Get Started
+# Get Started
 
 For users who are **new to InternHub**, click [here](#introduction-to-the-user-guide) for a helpful starting point!
 
@@ -39,12 +39,11 @@ Experienced users can jump straight to exploring our [features](#features)!
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Table of Contents 
+# Table of Contents 
 - [Introduction](#introduction-to-the-user-guide)
 - [Quick Start](#quick-start)
 - [Getting Familiar with UI](#getting-familiar-with-the-ui-of-internhub)
 - [Features](#features)
-    - [Help](#viewing-help-help)
     - [Basic Commands](#basic-commands)
         - [Adding a Contact](#adding-a-contact-add)
         - [Deleting a Contact](#deleting-a-contact-delete)
@@ -55,8 +54,9 @@ Experienced users can jump straight to exploring our [features](#features)!
         - [Locating Contacts by Name](#locating-contacts-by-name-find)
         - [Updating a Note](#updating-a-note-note)
         - [Filter Contacts by Tags](#filter-by-tag-filter)
-        - [Sending Reminders](#sending-reminders-reminder)
+        - [Getting Reminders](#getting-reminders-reminder)
     - [Miscellaneous Commands](#miscellaneous-commands)
+        - [Help](#viewing-help-help)
         - [Clearing all Entries](#clearing-all-entries-clear)
         - [Exiting the Program](#exiting-the-program-exit)
     - [Storage & Data](#storage-and-amp-data)
@@ -82,35 +82,36 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Quick Start
+# Quick Start
+
 1. **Check Java Version & Install Java**
     - Ensure that your system has Java 11 installed, as this application requires it.
     - To check if Java is installed, open your command prompt or terminal and type: `java -version`
         - If Java is installed, you will see the version number in the output.
         - If Java is not installed or your version does not match the required one, follow these steps:
             - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download JDK 11 and follow the installation instructions.
-            - For **mac** users, download JDK 11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu).
+            - For **mac** users, download JDK 11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu). <br>
 
 2. **Download InternHub**
-    - Download the latest `internhub.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases).
+    - Download the latest `internhub.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases). <br>
 
 3. **Set Up Home Folder**
     - Copy the downloaded `internhub.jar` file to the folder you want to use as the home folder for InternHub.
-        - This folder will serve as InternHub's central location, where all important files and saved data will be stored.
+        - This folder will serve as InternHub's central location, where all important files and saved data will be stored. <br>
 
 4. **Navigate to Home Folder**
-    - Once you've set up the home folder, right-click on it and select "Copy" to copy its path.
+    - Once you've set up the home folder, right-click on it and select "Copy" to copy its path. <br>
 
 5. **Open Terminal or Command Prompt**
-    - Open a new terminal or command prompt window.
+    - Open a new terminal or command prompt window. <br>
 
 6. **Change Directory to Home Folder**
-    - Type `cd ` and paste the home folder path you copied earlier. For example: `cd /Users/john/home folder`, then press Enter.
+    - Type `cd ` and paste the home folder path you copied earlier. For example: `cd /Users/john/home folder`, then press Enter. <br>
 
 7. **Run InternHub**
     - In the same terminal or command prompt window, enter the command `java -jar internhub.jar` to run the application.
         - A GUI similar to the one below should appear shortly.
-        - ![InternHub GUI](images/UserGuide/Ui_new.png)
+      ![InternHub GUI](images/UserGuide/Ui_new.png) <br>
 
 8. **Execute Commands**
     - Type commands into the command box and press Enter to execute them. For example, typing `help` and pressing Enter will open the help window.
@@ -119,7 +120,7 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
         - `add c/Pixar ...`: [Adds](#adding-a-contact-add) a company contact named `Pixar` to InternHub.
         - `delete 3`: [Deletes](#deleting-a-contact-delete) the 3rd contact shown in the current list.
         - `clear`: [Clears](#clearing-all-entries-clear) all contacts.
-        - `exit`: [Exits](#exiting-the-program-exit) the app.
+        - `exit`: [Exits](#exiting-the-program-exit) the app. <br>
 
 9. **Explore Features**
     - For more details on each command, refer to the [Features](#features) section.
@@ -132,20 +133,19 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 
 ![Ui](images/UserGuide/GUI_annotation.png)
 
-- **Command Box**
-    - Enter your commands in this box.
-- **Result Display**
-    - View the output message after each command here.
-- **List of Contacts**
-    - This panel displays a list of all internship company contacts.
-- **View Panel**
-    - The contact details card of the selected internship company is displayed in this panel.
+**Command Box**
+  - Enter your commands in this box.
+**Result Display**
+  - View the output message after each command here.
+**List of Contacts**
+  - This panel displays a list of all internship company contacts.
+**View Panel**
+  - The contact details card of the selected internship company is displayed in this panel.
 
 <div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
-
-## Features
+## Guidelines for Command Formatting and Contact Details in InternHub
 
 <box type="info">
 
@@ -166,7 +166,7 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 * When copying and pasting multi-line commands from a PDF, be cautious as space characters around line breaks might be omitted.
   </box>
 
-## Understanding Each Parameter
+### Understanding Each Parameter
 | Parameter | Description         | Constraints                                                                                         | Example                          | Required |
 |-----------|---------------------|-----------------------------------------------------------------------------------------------------|----------------------------------|----------|
 | `c/`      | Company Name        | Only contain alphanumeric values                                                                    | `c/ABC Corporation`              | Yes      |
@@ -181,7 +181,7 @@ Our team at InternHub have carefully designed this user guide to be your one-sto
 | `n/`      | Notes               | -                                                                                                   | `n/Previous experience required` | No       |
 
 
-### Company Name
+#### Company Name
 
 For company names with special characters, it's advisable to omit them or replace them with spaces. 
 
@@ -197,18 +197,18 @@ To maintain data consistency and accuracy, we encourage users to adhere to the c
 This helps prevent unintentional duplication and ensures each company is uniquely identified within the system.
 <br> For example, if you've entered a company name as "Apple," ensure you consistently use the same capitalization in future entries related to that company.
 
-### Phone Number
+#### Phone Number
 
 In InternHub, we aim to provide flexibility to users without imposing overly strict restrictions.
 <br> Therefore, we allow duplicate phone numbers to be entered for different contacts.
 
-### Email
+#### Email
 
 For emails with special characters, multiple consecutive special characters are not allowed.
 <br> Here's an example of a valid email: `abc+company@example.com`.
 <br> An invalid email example would be `abc+_company@example.com`.
 
-### Tags
+#### Tags
 
 Ensure to include the appropriate tag after `t/` to denote the status of the internship application:
 
@@ -240,32 +240,12 @@ Each contact is uniquely identified by the combination of **Company Name** and *
 </box>
 
 
-### Viewing help : `help`
-
-To access our InternHub User Guide, simply type help into the command box and press Enter. 
-This action will display a link to this document, allowing you to easily navigate and explore the comprehensive features of InternHub.
-
-<box>
-
-**Format:** `help`
-
-</box>
-
-<box type="tip"> 
-
-You can also execute this command by using the `F1` key on your keyboard.
-
-</box>
-
-**Expected Outcome**
-
-A separate help window will appear.
-
-![help message](images/UserGuide/helpMessage.png)
 
 <div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
+
+# Features
 
 ## Basic Commands
 
@@ -561,7 +541,7 @@ Valid Tag Inputs
 
 <div style="page-break-after: always;"></div>
 
-### Sending reminders : `reminder`
+### Getting reminders : `reminder`
 
 Sending reminders is a pivotal practice to uphold organization and ensure timely completion of crucial tasks. 
 Although our application presently lacks a built-in reminder feature, fear not! 
@@ -591,6 +571,29 @@ This is a quick and easy way to be reminded of the upcoming interviews in order 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Miscellaneous Commands
+
+### Getting help : `help`
+
+To access our InternHub User Guide, simply type help into the command box and press Enter.
+This action will display a link to this document, allowing you to easily navigate and explore the comprehensive features of InternHub.
+
+<box>
+
+**Format:** `help`
+
+</box>
+
+<box type="tip"> 
+
+You can also execute this command by using the `F1` key on your keyboard.
+
+</box>
+
+**Expected Outcome**
+
+A separate help window will appear.
+
+![help message](images/UserGuide/helpMessage.png)
 
 ### Clearing all entries : `clear`
 
@@ -633,7 +636,7 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 </box>
 
 --------------------------------------------------------------------------------------------------------------------
-## FAQ
+# FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the InternHub app on the other computer and replace the empty data file it creates with the file containing the data from your previous InternHub *home folder*.
@@ -654,7 +657,7 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Known Issues
+# Known Issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
@@ -669,27 +672,28 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command Summary
+# Command Summary
 
 | Action       | Format, Examples                                                                                                                                                                                                                                                        |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Add**      | `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL a/[ADDRESS] t/TAG jd/JOB_DESCRIPTION d/[INTERVIEW_DATE] id/INTERN_DURATION s/SALARY n/[NOTE]` <br> e.g., `add c/FoodPanda p/12345678 e/panda@food.com a/CBD t/I jd/Front End Intern d/15-04-2024 0900 id/6 months s/500 n/-` |
-| **Clear**    | `clear`                                                                                                                                                                                                                                                                 |
 | **Delete**   | `delete INDEX` e.g., `delete 3`                                                                                                                                                                                                                                         |
 | **Edit**     | `Edit INDEX c/[COMPANY_NAME] p/[PHONE_NUMBER] e/[EMAIL] a/[ADDRESS] t/[TAG] jd/[JOB_DESCRIPTION] d/[INTERVIEW_DATE] id/[INTERN_DURATION] s/[SALARY] n/[NOTE]`<br> e.g.,`Edit 2 p/99987654`                                                                              |
+| **View**     | `view INDEX` e.g., `view 3`                                                                                                                                                                                                                                             |
+| **List**     | `list`                                                                                                                                                                                                                                                                  |
 | **Find**     | `find KEYWORD [MORE_KEYWORDS]`e.g., `find foodpanda`                                                                                                                                                                                                                    |
 | **Note**     | `note INDEX`                                                                                                                                                                                                                                                            |
-| **List**     | `list`                                                                                                                                                                                                                                                                  |
-| **View**     | `view INDEX` e.g., `view 3`                                                                                                                                                                                                                                             |
-| **Help**     | `help`                                                                                                                                                                                                                                                                  |
 | **Filter**   | `filter VALID _TAG` e.g., `filter I`                                                                                                                                                                                                                                    |
 | **Reminder** | `reminder INT`                                                                                                                                                                                                                                                          |
+| **Help**     | `help`                                                                                                                                                                                                                                                                  |
+| **Clear**    | `clear`                                                                                                                                                                                                                                                                 |
+| **Exit**     | `exit`                                                                                                                                                                                                                                                                  |
 
 <div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Glossary
+# Glossary
 
 | Term                              | Meaning                                                                                                                                                                 |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
