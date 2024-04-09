@@ -79,37 +79,35 @@ jawad i am not removing ur beautiful work of art, i just testing how it looks wi
 
 # 2. Quick Start
 
-1. **Check Java Version & Install Java** <br>
-   Ensure that your system has Java 11 installed, as this application requires it.
-   - To check if Java is installed, open your command prompt or terminal and type: `java -version`
-       - If Java is installed, you will see the version number in the output.
-       - If Java is not installed or your version does not match the required one, follow these steps:
-           - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download JDK 11 and follow the installation instructions.
-           - For **mac** users, download JDK 11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu). 
+1. Check Java Version & Install Java
+    - For this application, your system is required to have Java 11 installed
+    - To check if you have Java installed, open your command prompt or terminal and type : `java -version`
+        - If Java is installed, you will see the version number in the output :
+        - <img src="images/quickstart/java-installation.png" >
+    - If Java is not installed or your version does not match as the output above :
+        - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download jdk-11 & follow the download instructions
+        - For **mac** users, download the jdk-11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu)
 
-2. **Download InternHub** <br>
-   Download the latest `internhub.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases). 
+2. Download the latest `internhub.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases).
 
-3. **Set Up Home Folder** <br>
-   Copy the downloaded `internhub.jar` file to the folder you want to use as the home folder for InternHub.
-   - This folder will serve as InternHub's central location, where all important files and saved data will be stored. 
+3. Copy the file to the folder you want to use as the _home folder_ for your InternHub.
+    - The home folder will serve as InternHub's central location
+    - This folder is where InternHub will keep all its important files and saved data
 
-4. **Navigate to Home Folder** <br>
-   Once you've set up the home folder, right-click on it and select "Copy" to copy its path.
+4. Once you have set up the _home folder_, right-click on the _home folder_ and click copy to copy the path to this directory.
 
-5. **Open Terminal or Command Prompt** <br>
-   Open a new terminal or command prompt window. You can search it in spotlight search/search bar.
+5. Open up a new terminal or command prompt window
 
-6. **Change Directory to Home Folder** <br>
-   Type `cd ` and paste the home folder path you copied earlier. For example: `cd /Users/john/home folder`, then press Enter. 
+6. Type `cd ` and paste the _home folder_ path, your command should look something like this : `cd /Users/john/home folder`, then hit enter.
 
-7. **Run InternHub** <br>
-   In the same terminal or command prompt window, enter the command `java -jar internhub.jar` to run the application.
-   - A GUI similar to the one below should appear shortly.
-   ![InternHub GUI](images/UserGuide/Ui_new.png)
+7. Now in the same command prompt or terminal window, enter the `java -jar internhub.jar` command to run the application.<br>
+   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+   ![Ui](images/UserGuide/Ui_new.png)
 
-8. **Explore Features and Run Commands** <br>
-   For more details on each command, refer to the [Features](#4-features) section.
+8. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+ 
+9. Refer to the [Features](#features) for a full detailed list of each command.
+
 
 <div style="page-break-after: always;"></div>
 
@@ -240,8 +238,8 @@ We have intentionally omitted setting a minimum internship duration as there isn
   This flexibility acknowledges that you may have multiple interviews lined up simultaneously, requiring you to choose between them based on your preferences and priorities.
 
 3. **Using JSON file to change the date** <br>
-  While we ensured that when adding and editing a new internship application, the interview day cannot be earlier than the current day, we do recognize the need to allow edits to past days. 
-  Therefore, in the JSON file, experienced users can adjust interview dates that have already passed, providing flexibility for correcting mistakes.
+  While we've ensured that when adding or editing an internship application, the interview date cannot precede the current day, we also recognize the importance of allowing deliberate adjustments to past dates. 
+  As a result, experienced users have the flexibility to edit interview dates in the JSON file, empowering them to rectify errors and make necessary modifications.
 
 4. **Error messages** 
 <br> When entering the command 'edit 3 d/14-07-2024 3", InternHub will display two error messages:
@@ -262,14 +260,16 @@ Each contact is uniquely identified by the combination of **Company Name** and *
 - You **cannot** have more than 1 contact with the same company name **and** same job description.
   <br> This restriction ensures data accuracy and prevents duplication of contacts with identical roles within the same company.
 
-<box type="tip">
-- Example of Allowed Internship Applications:
+<box type="tip" >
+
+1. Example of Allowed Internship Applications:
   <br> Internship application 1: Company Name - ABC Corp, Job Description - Software Engineer
   <br> Internship application 2: Company Name - ABC Corp, Job Description - Marketing Specialist
 
-- Example of Not Allowed Input:
+2. Example of Not Allowed Input:
   <br> Internship application 1: Company Name - ABC Corp, Job Description - Software Engineer
   <br> Internship application 2: Company Name - ABC Corp, Job Description - Software Engineer
+
   </box>
 
 <div style="page-break-after: always;"></div>
