@@ -32,7 +32,7 @@ Unlock the power to focus on what truly matters – securing that coveted intern
 
 ## 1.2 Skipping Ahead?
 
-For users who are **new to InternHub**, click [here](#2-product-overview) for a helpful starting point!
+For users who are **new to InternHub**, click [here](#2-quick-start) for a helpful starting point!
 
 Experienced users can jump straight to exploring our [features](#4-features)!
 
@@ -79,7 +79,7 @@ jawad i am not removing ur beautiful work of art, i just testing how it looks wi
 
 # 2. Quick Start
 
-1. **Check Java Version & Install Java**
+1. **Check Java Version & Install Java** <br>
    Ensure that your system has Java 11 installed, as this application requires it.
    - To check if Java is installed, open your command prompt or terminal and type: `java -version`
        - If Java is installed, you will see the version number in the output.
@@ -87,37 +87,28 @@ jawad i am not removing ur beautiful work of art, i just testing how it looks wi
            - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download JDK 11 and follow the installation instructions.
            - For **mac** users, download JDK 11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu). 
 
-2. **Download InternHub**
+2. **Download InternHub** <br>
    Download the latest `internhub.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases). 
 
-3. **Set Up Home Folder**
+3. **Set Up Home Folder** <br>
    Copy the downloaded `internhub.jar` file to the folder you want to use as the home folder for InternHub.
    - This folder will serve as InternHub's central location, where all important files and saved data will be stored. 
 
-4. **Navigate to Home Folder**
+4. **Navigate to Home Folder** <br>
    Once you've set up the home folder, right-click on it and select "Copy" to copy its path.
 
-5. **Open Terminal or Command Prompt**
+5. **Open Terminal or Command Prompt** <br>
    Open a new terminal or command prompt window. You can search it in spotlight search/search bar.
 
-6. **Change Directory to Home Folder**
+6. **Change Directory to Home Folder** <br>
    Type `cd ` and paste the home folder path you copied earlier. For example: `cd /Users/john/home folder`, then press Enter. 
 
-7. **Run InternHub**
+7. **Run InternHub** <br>
    In the same terminal or command prompt window, enter the command `java -jar internhub.jar` to run the application.
    - A GUI similar to the one below should appear shortly.
-   ![InternHub GUI](images/UserGuide/Ui_new.png) 
+   ![InternHub GUI](images/UserGuide/Ui_new.png)
 
-8. **Execute Commands**
-   Type commands into the command box and press Enter to execute them. For example, typing `help` and pressing Enter will open the help window.
-   - Sample commands to try:
-     - `add c/Pixar ...`: [Adds](#411-adding-a-contact--add) a company contact named `Pixar` to InternHub.
-     - `delete 3`: [Deletes](#412-deleting-a-contact--delete) the 3rd contact shown in the current list.
-     - `list`: [Lists](#421-listing-all-contacts--list) all company contacts.
-     - `clear`: [Clears](#432-clearing-all-entries--clear) all contacts.
-     - `exit`: [Exits](#433-exiting-the-program--exit) the app. 
-
-9. **Explore Features**
+8. **Explore Features and Run Commands** <br>
    For more details on each command, refer to the [Features](#4-features) section.
 
 <div style="page-break-after: always;"></div>
@@ -170,8 +161,8 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 4. **Unnecessary parameters for commands without specified inputs (e.g., `help`, `list`, `exit`, and `clear`) are ignored.** <br>
   For instance, `help 123` will be treated as `help`.
 
-5. **Refrain from copying command lines from the User Guide**
-   When copying and pasting multi-line commands from a PDF, be cautious as space characters around line breaks might be omitted.
+5. **Refrain from copying command lines from the User Guide** <br>
+  When copying and pasting multi-line commands from a PDF, be cautious as space characters around line breaks might be omitted.
 
 
 ## 3.4 Understanding Each Parameter
@@ -240,22 +231,22 @@ We have intentionally omitted setting a minimum internship duration as there isn
 
 ### 3.4.6 Internship Date
 
-1. **Invalid Date**
-When InternHub encounters an invalid date like "29-02-2031," which doesn't exist because 2031 isn't a leap year, it automatically changes it to the closest valid date, which is "28-02-2031." 
-This happens because the InternHub follows the rules of the Gregorian calendar, which determines how dates are calculated and adjusted.
+1. **Invalid Date** <br>
+  When InternHub encounters an invalid date like "29-02-2031," which doesn't exist because 2031 isn't a leap year, it automatically changes it to the closest valid date, which is "28-02-2031." 
+  This happens because the InternHub follows the rules of the Gregorian calendar, which determines how dates are calculated and adjusted.
 
-2. **Overlapping of interview dates and time**
-In InternHub, it's possible to schedule interviews with multiple companies for the same date and time. 
-This flexibility acknowledges that you may have multiple interviews lined up simultaneously, requiring you to choose between them based on your preferences and priorities.
+2. **Overlapping of interview dates and time** <br>
+  In InternHub, it's possible to schedule interviews with multiple companies for the same date and time. 
+  This flexibility acknowledges that you may have multiple interviews lined up simultaneously, requiring you to choose between them based on your preferences and priorities.
 
-3. **Using Edit command to change the date**
-While we ensured that when adding a new internship application, the interview day cannot be earlier than the current day, we do recognize the need to allow edits to past days. 
-Therefore, in the Edit command, users can adjust interview dates that have already passed, providing flexibility for correcting mistakes.
+3. **Using Edit command to change the date** <br>
+  While we ensured that when adding a new internship application, the interview day cannot be earlier than the current day, we do recognize the need to allow edits to past days. 
+  Therefore, in the Edit command, users can adjust interview dates that have already passed, providing flexibility for correcting mistakes.
 
-4. **Error messages**
-When entering the command 'edit 3 d/14-04-2024 3", InternHub will display two error messages:
-Interview Date & Time needs to follow this pattern : dd-mm-yyyy HHmm
-Interview Date & Time cannot be before today's date !
+4. **Error messages** 
+<br> When entering the command 'edit 3 d/14-04-2024 3", InternHub will display two error messages:
+<br> _Interview Date & Time needs to follow this pattern : dd-mm-yyyy HHmm_
+<br> _Interview Date & Time cannot be before today's date !_
 
 <box type="warning" >
 
