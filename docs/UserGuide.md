@@ -32,7 +32,7 @@ Unlock the power to focus on what truly matters – securing that coveted intern
 
 ## 1.2 Eager to skip ahead?
 
-For users who are **new to InternHub**, click [here](#2-quick-start) for a helpful starting point!
+For users who are **new to InternHub**, click [here](#2-getting-started) for a helpful starting point!
 
 Experienced users can jump straight to exploring our [features](#4-features)!
 
