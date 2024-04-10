@@ -318,6 +318,10 @@ The following steps outline how the Note Command feature operates:
 
 <puml src="diagrams/NoteSequenceDiagram.puml" />
 
+The following activity diagram shows how the user can interact with the Note Command
+
+<puml src="diagrams/NoteActivityDiagram.puml" width="300" />
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
@@ -605,6 +609,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
 * **Private contact detail**: A contact detail that is not meant to be shared with others
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Planned Enhancements**
+
+Team size : 5
+
+1. **Handling of invalid date to be with accordance of Gregorian Calendar**
+2. 
 
 --------------------------------------------------------------------------------------------------------------------
 
