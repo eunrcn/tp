@@ -9,11 +9,11 @@ _By F14-1, JAYME_
 
 # 1. Welcome to InternHub!
 
-Attention, ambitious undergraduates! <br>
+**Attention all undergraduates!** <br>
 Are you tirelessly navigating the labyrinth of internship opportunities? 
 Ever found yourself frustrated by inadvertently applying to the same company twice? 
 Losing track of all the different interview dates? 
-Amidst the flurry of applications inundating various platforms, it's easy to lose track. 
+Amidst all of your applications from various websites, it's easy to lose track. 
 But fear not – we've got your back.
 
 Introducing InternHub – your ultimate desktop solution for streamlining internship application tracking. 
@@ -25,14 +25,14 @@ InternHub caters to **undergraduates from all fields**, providing them with a se
 **For professors and career guidance officers** reading this, we invite you to share this invaluable resource with your students, empowering them to secure their dream internships.
 
 InternHub is meticulously crafted with **user-friendliness** at its core, tailored to accommodate individuals of all computer proficiency levels. 
-Whether you're a seasoned tech enthusiast or just starting to explore desktop applications, our interface ensures a seamless experience, intuitively guiding you through every step of your internship management journey. 
+Whether you're a experienced or just starting to explore desktop applications, our interface ensures a seamless experience, intuitively guiding you through every step of your internship management journey. 
 With InternHub's sleek Command Line Interface (CLI), navigation and management become effortless, empowering you to stay focused on your goals.
 
 Unlock the power to focus on what truly matters – securing that coveted internship – with InternHub by your side.
 
-## 1.2 Skipping Ahead?
+## 1.2 Eager to skip ahead?
 
-For users who are **new to InternHub**, click [here](#2-quick-start) for a helpful starting point!
+For users who are **new to InternHub**, click [here](#2-getting-started) for a helpful starting point!
 
 Experienced users can jump straight to exploring our [features](#4-features)!
 
@@ -77,37 +77,61 @@ jawad i am not removing ur beautiful work of art, i just testing how it looks wi
 
 --------------------------------------------------------------------------------------------------------------------
 
-# 2. Quick Start
+# 2. Getting Started
 
-1. Check Java Version & Install Java
-    - For this application, your system is required to have Java 11 installed
-    - To check if you have Java installed, open your command prompt or terminal and type : `java -version`
-        - If Java is installed, you will see the version number in the output :
-        - <img src="images/quickstart/java-installation.png" >
-    - If Java is not installed or your version does not match as the output above :
-        - Visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download jdk-11 & follow the download instructions
-        - For **mac** users, download the jdk-11 from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#zulu)
+## 2.1 Check Java Version & Install Java
 
-2. Download the latest `internhub.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases).
+1. For this application, your system is required to have Java 11 or above installed.
+2. To check if you have Java installed, open your command prompt or terminal and type: `java -version`.
+3. If Java is installed, you will see the version number in the output: <br>
+<img src="images/quickstart/java-installation.png" >
+4. If Java is not installed or if your version is not Java 11 or above, visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download jdk-11 & follow the download instructions.
 
-3. Copy the file to the folder you want to use as the _home folder_ for your InternHub.
-    - The home folder will serve as InternHub's central location
-    - This folder is where InternHub will keep all its important files and saved data
+## 2.2 Downloading InternHub
+1. Download the latest `internhub.jar` [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases/latest).
+2. After clicking on `internhub.jar`, it will go to your Downloads folder.
+3. Then, you can copy and paste the file to a folder you want to use as the _home folder_ for your InternHub.
 
-4. Once you have set up the _home folder_, right-click on the _home folder_ and click copy to copy the path to this directory.
+<box type="info" > 
 
-5. Open up a new terminal or command prompt window
+The _home folder_ will serve as InternHub's central location. This _home folder_ is where InternHub will keep all its important files and saved data.
 
-6. Type `cd ` and paste the _home folder_ path, your command should look something like this : `cd /Users/john/home folder`, then hit enter.
+</box>
 
-7. Now in the same command prompt or terminal window, enter the `java -jar internhub.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+<box type="tip" > 
+
+You can create a _home folder_ named "internhub" and store the jar file inside it, making it easy to find in the future.
+
+</box>
+
+## 2.3 Running InternHub
+
+1. Once you have set up the _home folder_, right-click on the _home folder_ and click copy/copy as path to copy the path to this directory.
+2. Open up a new terminal or command prompt window
+3. Type `cd` and paste the _home folder_ path, your command should look something like this: `cd /Users/jayme/home_folder`, then hit enter.
+4. Now in the same command prompt or terminal window, enter the `java -jar internhub.jar` command to run the application.<br>
+   A beautiful pink-blue-orange interface similar to the below should appear in a few seconds.
    ![Ui](images/UserGuide/Ui_new.png)
 
-8. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
- 
-9. Refer to the [Features](#features) for a full detailed list of each command.
+<box type="note" > 
 
+The beautiful colours on our InternHub interface is best viewed in full screen. <br>
+The app contains 1 sample data.
+
+</box>
+
+<box type="tip" > 
+
+[Only for Mac users]
+If you encounter any issues copying the path to the directory, you can drag the folder out to your desktop. 
+Then, right-click the folder and select "New Terminal at Folder" to skip steps 1-3.
+
+</box>
+
+## 2.4 And you are all set!
+1. Now that you have InternHub running, you can now type commands in the command box and press Enter to execute it. <br> 
+e.g. typing **`help`** and pressing Enter will open the help window.
+2. Please refer to the [Features](#4-features) for a full detailed list of each command.
 
 <div style="page-break-after: always;"></div>
 
@@ -159,7 +183,7 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 4. **Unnecessary parameters for commands without specified inputs (e.g., `help`, `list`, `exit`, and `clear`) are ignored.** <br>
   For instance, `help 123` will be treated as `help`.
 
-5. **Refrain from copying command lines from the User Guide** <br>
+5. **Practice caution when copying command lines from the User Guide** <br>
   When copying and pasting multi-line commands from a PDF, be cautious as space characters around line breaks might be omitted.
 
 
@@ -219,9 +243,8 @@ Ensure to include the appropriate tag after `t/` to denote the status of the int
 - **OA (Online Assessment):** Denotes requirement of an online assessment or test.
 - **R (Rejected):** Indicates rejection of the internship application by the company.
 
-When using tags to denote the status of internship applications, ensure you use **UPPERCASE** for the tags.
-<br> Incorrect usage may result in misinterpretation of the application status.
-<br> For example, the correct format is `t/I`.
+When using tags to denote the status of internship applications, you can use both lowercase and UPPERCASE.
+<br> For example, either `t/i` or `t/I` will work.
 
 ### 3.4.5 Internship Duration
 
@@ -495,7 +518,7 @@ All internship application contacts will be shown on the left side of the window
 
 ### 4.2.2 Locating contacts by name: `find`
 
-Finds contacts whose company names contain any of the given keywords.
+Finding contacts whose company names contain any of the given keywords.
 
 <box>
 
@@ -550,7 +573,7 @@ Use the `filter` command to filter by tag and find exactly the internships that 
 
 <box>
 
-**Format:** `filter VALID TAG`
+**Format:** `filter VALID_TAG`
 
 </box>
 
@@ -694,13 +717,11 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
-2. **When entering numbers greater than 2147483647 (maximum Integer value)** for commands e.g. reminder 100000000000, the input will be considered invalid as we assumed that most users will not encounter this issue in normal usage. A solution could be added in a future iteration. 
+2. **When entering numbers larger than 2147483647 (maximum Integer value)** e.g. reminder 100000000000, the input will be considered invalid as we assumed that most users will not encounter this issue in normal usage. A solution could be added in a future iteration. 
 
-3. **Inconsistent UI tag colour**, currently InternHub permits users to input tags in lowercase, resulting in unfilled tag colors. For our future implementation, we intend to either display a warning to users when they use lowercase instead of uppercase for tags, or automatically convert the tag value to uppercase.
+3. **Company name is case-sensitive**, this make it possible for user to input "Apple" and "apple" in our application. It is possible that both input refer to the same company and may lead to potential confusion. For our future implementation, we intend to make company name case-insensitive.
 
-4. **Company name is case-sensitive**, this make it possible for user to input "Apple" and "apple" in our application. It is possible that both input refer to the same company and may lead to potential confusion. For our future implementation, we intend to make company name case-insensitive.
-
-5. **Phone numbers allow duplicates**: We did not want to set high restrictions in our application, hence did not force users to ensure all phone numbers must be unique. From user feedback, duplicate phone numbers can lead to potential confusion, especially when managing large contact lists. A solution could be added in a future iteration.
+4. **Phone numbers allow duplicates**: We did not want to set high restrictions in our application, hence did not force users to ensure all phone numbers must be unique. From user feedback, duplicate phone numbers can lead to potential confusion, especially when managing large contact lists. A solution could be added in a future iteration.
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -716,7 +737,7 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 | **List**     | `list`                                                                                                                                                                                                                                                                  |
 | **Find**     | `find KEYWORD [MORE_KEYWORDS]`e.g., `find foodpanda`                                                                                                                                                                                                                    |
 | **Note**     | `note INDEX`                                                                                                                                                                                                                                                            |
-| **Filter**   | `filter VALID _TAG` e.g., `filter I`                                                                                                                                                                                                                                    |
+| **Filter**   | `filter VALID_TAG` e.g., `filter I`                                                                                                                                                                                                                                     |
 | **Reminder** | `reminder INT`                                                                                                                                                                                                                                                          |
 | **Help**     | `help`                                                                                                                                                                                                                                                                  |
 | **Clear**    | `clear`                                                                                                                                                                                                                                                                 |
