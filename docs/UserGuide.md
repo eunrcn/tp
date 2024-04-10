@@ -41,38 +41,6 @@ Experienced users can jump straight to exploring our [features](#4-features)!
 --------------------------------------------------------------------------------------------------------------------
 <page-nav-print />
 
-<!--
-# Table of Contents 
-- [Introduction](#introduction-to-the-user-guide)
-- [Quick Start](#quick-start)
-- [Getting Familiar with UI](#getting-familiar-with-the-ui-of-internhub)
-- [Features](#features)
-    - [Basic Commands](#basic-commands)
-        - [Adding a Contact](#adding-a-contact-add)
-        - [Deleting a Contact](#deleting-a-contact-delete)
-        - [Editing a Contact](#editing-a-contact-edit)
-        - [Viewing a Contact](#viewing-a-contact-view)
-    - [Advanced Commands](#advanced-commands)
-        - [Listing all Contacts](#listing-all-contacts-list)
-        - [Locating Contacts by Name](#locating-contacts-by-name-find)
-        - [Updating a Note](#updating-a-note-note)
-        - [Filter Contacts by Tags](#filter-by-tag-filter)
-        - [Getting Reminders](#getting-reminders-reminder)
-    - [Miscellaneous Commands](#miscellaneous-commands)
-        - [Help](#viewing-help-help)
-        - [Clearing all Entries](#clearing-all-entries-clear)
-        - [Exiting the Program](#exiting-the-program-exit)
-    - [Storage & Data](#storage-and-amp-data)
-        - [Saving the Data](#saving-the-data)
-        - [Editing the Data](#editing-the-data-file)
-- [FAQ](#faq)
-- [Known Issues](#known-issues)
-- [Command Summary](#command-summary)
-- [Glossary](#glossary)
-
-jawad i am not removing ur beautiful work of art, i just testing how it looks without it first ok <3
--->
-
 <div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
@@ -108,13 +76,13 @@ You can create a _home folder_ named "internhub" and store the jar file inside i
 ## 2.3 Running InternHub
 
 1. Once you have created the _home folder_, right-click on the _home folder_ and click `copy/copy as path` to copy the path to this folder.
-2. Open up a new terminal or command prompt window
+2. Open up a new terminal or command prompt window.
 3. Type `cd` and paste the copied text, your command should look something like this: `cd /Users/jayme/home_folder`, then hit enter.
 4. Now in the same command prompt or terminal window, enter the `java -jar internhub.jar` command to run the application.
 5. A beautiful pink-blue-orange interface similar to the one below should appear in a few seconds.
 ![Ui](images/UserGuide/Ui_new.png)
 
-<box type="note" > 
+<box type="info" > 
 
 The beautiful colours on our InternHub interface is best viewed in full screen and it contains 1 sample data, FoodPanda.
 
@@ -163,11 +131,11 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 - View the output message after each command here. 
 - For longer commands like `Add`, the output text may get cut off, simply use our pink scroll bar to view the entire output.
 
-**List of Contacts**
-- This panel displays a list of all internship company contacts.
+**List of Internship Applications**
+- This panel displays a list of all internship applications.
 
 **View Panel**
-- The contact details card of the selected internship company is displayed in this panel.
+- The contact details card of the selected internship application is displayed in this panel.
 
 ## 3.3 Command and Formatting Guidelines
 
@@ -302,9 +270,9 @@ Each contact is uniquely identified by the combination of **Company Name** and *
 
 ## 4.1 Basic Commands
 
-### 4.1.1 Adding a contact: `add`
+### 4.1.1 Adding an internship application: `add`
 
-Add a new internship company contact into InternHub.
+Add a new internship application into InternHub.
 
 <box>
 
@@ -370,9 +338,9 @@ Intern id/3 months s/1000`
 
 <div style="page-break-after: always;"></div>
 
-### 4.1.2 Deleting a contact : `delete`
+### 4.1.2 Deleting an internship application : `delete`
 
-Deletes an internship company contact by index from InternHub.
+Deletes an internship application by index from InternHub.
 
 <box>
 
@@ -381,7 +349,7 @@ Deletes an internship company contact by index from InternHub.
 </box>
 
 * Deletes the contact at the specified `INDEX`.
-* The index refers to the index number shown in the displayed contact list.
+* The index refers to the index number shown in the displayed internship applications list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
 **Example 1:**
@@ -390,16 +358,16 @@ Deletes an internship company contact by index from InternHub.
 
 **Expected outcome**
 
-After we execute the delete command, the Grab entry is no longer in our list of contacts.
+After we execute the delete command, the Grab entry is no longer in our list of internship applications.
 
 ![delete_example_full](images/UserGuide/deleteExample.png)
 
-### 4.1.3  Editing a contact : `edit`
+### 4.1.3  Editing an internship application : `edit`
 
-Edits an existing internship company contact detail in InternHub.
+Edits an existing internship application detail in InternHub.
 
-1. Begin by typing `edit`, followed by the `INDEX` of the application. The index refers to the index number shown in the displayed contact list.
-2. Next, include only specific prefix for the fields of the contact you wish to edit in your records. 
+1. Begin by typing `edit`, followed by the `INDEX` of the application. The index refers to the index number shown in the displayed internship application list.
+2. Next, include only specific prefix for the fields of the internship application you wish to edit in your records. 
    **At least one** of the optional fields must be provided and at most one of each field can be provided.
 3. After pressing enter, existing values will be updated to the input values.
 
@@ -470,9 +438,9 @@ Notice how when we set the online assessment date for DBS, the contact list dyna
 
 <div style="page-break-after: always;"></div>
 
-### 4.1.4 Viewing a contact : `view`
+### 4.1.4 Viewing an internship application : `view`
 
-Views the details of the internship company contact on the view panel in InternHub.
+Views the details of the internship application on the view panel in InternHub.
 
 <box>
 
@@ -480,8 +448,8 @@ Views the details of the internship company contact on the view panel in InternH
 
 </box>
 
-* Views the contact at the specified `INDEX`. 
-* The index refers to the index number shown in the displayed contact list. 
+* Views the details of internship application at the specified `INDEX`. 
+* The index refers to the index number shown in the displayed internship application list. 
 * The index **must be a positive integer** 1, 2, 3, …​
 
 **Example:**
@@ -497,9 +465,9 @@ Views the details of the internship company contact on the view panel in InternH
 
 ## 4.2  Advanced Commands
 
-### 4.2.1 Listing all contacts : `list`
+### 4.2.1 Listing all internship applications : `list`
 
-This command shows a list of all internship application contacts in InternHub sorted in ascending order of interview dates.
+This command shows a list of all internship applications in InternHub **sorted in ascending order of interview dates.**
 Internship application contacts with interview dates will be listed first, followed by internship application contacts without interview dates.
 
 <box>
@@ -510,15 +478,15 @@ Internship application contacts with interview dates will be listed first, follo
 
 **Expected Outcome**
 
-All internship application contacts will be shown on the left side of the window.
+All internship applications will be shown on the left side of the window.
 
 ![list](images/UserGuide/list.png){ width=60% }
 
 <div style="page-break-after: always;"></div>
 
-### 4.2.2 Locating contacts by name: `find`
+### 4.2.2 Locating internship applications by name: `find`
 
-Finding contacts whose company names contain any of the given keywords.
+Finding internship applications whose company names contain any of the given keywords.
 
 <box>
 
@@ -541,7 +509,7 @@ Examples:
 
 ### 4.2.3 Updating a Note : `note`
 
-This command will allow you to update the notes of a company contact without overwriting them.
+This command will allow you to update the notes of an internship application without overwriting them.
 
 <box>
 
@@ -549,12 +517,12 @@ This command will allow you to update the notes of a company contact without ove
 
 </box>
 
-Updating a note of an **existing company contact**
-- Suppose you want to edit the note of company contact at index **2**
+Updating a note of an **existing internship application**
+- Suppose you want to edit the note of an internship application at index **2**
 - Use the note command as follows: `note 2`
   ![enter note 2](images/note-feature/note_1.png)
 
-- When you hit enter, it will retrieve the note content of the company contact at index 2 in the command box **as an edit command**:
+- When you hit enter, it will retrieve the note content of the application at index 2 in the command box **as an edit command**:
   ![command executes](images/note-feature/note_2.png)
 
 - Simply update the note content and hit enter again:
@@ -568,7 +536,7 @@ Updating a note of an **existing company contact**
 
 ### 4.2.4 Filter By Tag : `filter`
 
-Filtering data allows you to narrow down your search results to focus on internship contacts based on their status. 
+Filtering data allows you to narrow down your search results to focus on internship applications based on their status. 
 Use the `filter` command to filter by tag and find exactly the internships that have an interview.
 
 <box>
@@ -591,7 +559,7 @@ Valid Tag Inputs
 **Example:**
 
 - `filter i` or `filter I`
-- Filters the contact list to display only internship company contacts with an Interview status
+- Filters the internship application list to display only internships with an Interview status
 
 ![resultFilter](images/filter/filterIResult.png){ width=60% }
 

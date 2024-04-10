@@ -194,7 +194,7 @@ The Diagram below shows the sequence diagram for AddCommand. All Initialization 
 ### Filter Command
 
 #### Implementation
-The Filter Command allows users to filter the current list of contacts by a specified tag, such that only contacts with said tag will be displayed in the contact list.
+The Filter Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
 
 The following steps outline how the Filter Command feature operates:
 
@@ -203,7 +203,7 @@ The following steps outline how the Filter Command feature operates:
     - The tag provided is extracted from the input string
 2. List filtering
     - Upon parsing, a `MatchingTagPredicate` is instantiated with the parsed tag String
-    - The `FilteredPersonList` representing the list of contacts is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
+    - The `FilteredPersonList` representing the list of applications is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
 3. Execute
     - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
     - The `FilterCommand#execute(Model model)` is then called, passing the current application model
@@ -215,19 +215,19 @@ The following steps outline how the Filter Command feature operates:
 
 #### Implementation
 
-The `EditCommand` allows users to modify the details of an existing person in the address book.
+The `EditCommand` allows users to modify the details of an existing internship application.
 
-### Command Structure
+#### Command Structure
 
 - **Command Word**: `edit`
 - **Parameters**:
 - `INDEX`: Positive integer representing the index of the person in the displayed list.
 - `[NAME]`, `[PHONE]`, `[EMAIL]`, `[ADDRESS]`, `[JOB DESCRIPTION]`, `[INTERVIEW DATE]`, `[INTERN DURATION]`, `[SALARY]`, `[TAG]`: Optional parameters to specify the new values for corresponding fields. Existing values will be overwritten.
 
-### Execution Steps
+#### Execution Steps
 
 1. Parsing:
-- The input arguments are parsed to extract the index and the new values for the person's details.
+- The input arguments are parsed to extract the index and the new values for the internship application's details.
 2. Validation:
 - The validity of the index and the absence of duplicate prefixes are verified.
 3. Creation of Edit Descriptor:
@@ -235,43 +235,80 @@ The `EditCommand` allows users to modify the details of an existing person in th
 4. Field Editing:
 - Each provided field is set in the `EditPersonDescriptor`.
 5. Execution:
-- The `EditCommand` is executed, modifying the specified person's details in the address book.
+- The `EditCommand` is executed, modifying the specified internship application's details.
 6. Feedback:
 - A success message is generated to confirm the editing operation.
 
-## Design Considerations
+#### Design Considerations
 
 - **Overwriting vs. Appending**: The command allows overwriting existing details with new ones. This simplifies the implementation and usage of the command.
 - **Error Handling**: The command ensures that at least one field is edited and provides appropriate error messages for invalid inputs.
 
 <puml src="diagrams/EditCommandClassDiagram.puml" width="300" />
 
-### Implementation
+#### Implementation
 
-Suppose we have a person with the following details:
+Suppose we have an internship application with the following details:
 
-- Name: John Doe
+- Company Name: Happy Burger
 - Phone: 12345678
-- Email: johndoe@example.com
+- Email: happy@example.com
 - Address: Block 123, Avenue Street, #08-123
 - Job Description: Software Engineer
 - Interview Date: 2024-04-15
 - Intern Duration: 3 months
 - Salary: $3000
-- Tags: #java, #software
+- Tags: #Interview
 
-Now, the user wants to edit John Doe's phone number and address. They issue the following command:
+Now, the user wants to edit the phone number and address. They issue the following command:
 edit 1 p/87654321 a/Block 456, New Avenue, #05-678
 
-The `EditCommand` will update John Doe's phone number to `87654321` and address to `Block 456, New Avenue, #05-678`. 
-Upon successful execution, a message will be displayed confirming the changes made to John Doe's details.
+The `EditCommand` will update the internship application's phone number to `87654321` and address to `Block 456, New Avenue, #05-678`. 
+Upon successful execution, a message will be displayed confirming the changes made to the internship application's details.
 
 <puml src="diagrams/EditSequenceDiagram.puml" width="600" />
+
+### View Command
+
+#### Implementation
+The View Command allows users to view the internship application based on its index in the view panel
+
+The following steps outline how the View Command feature operates :
+
+1. Command Parsing
+    - When a user inputs the `view` command followed by an `index`, the `ViewCommandParser` is invoked to parse this input
+    - The index provided is extracted from the input string
+2. Execution
+    - Upon parsing, the `ViewCommand` is instantiated with the parsed index.
+    - The `ViewCommand#execute(Model model)` is then called, passing the current application model
+3. Index validation
+    - Within the `execute` method, the validity of the index entered is checked. This involves ensuring the index falls within the current range of the internship application list
+    - If index is invalid, a `CommandException` is thrown with an error message
+4. Command Result
+    - The `ViewCommand` constructs a new `CommandResult` with the following param :
+        - **personToView** : `Current internship application`
+5. UI 
+    - The `ViewPanel` class displays the **personToView** with all its details and fields
+
+#### Design Considerations
+
+- Fetch `Person` object based on the index
+- Utilize the `CommandResult` to pass the `Person` object to the UI component
+
+The following sequence diagram shows what happens when `view 3` is the command input
+
+<puml src="diagrams/ViewSequenceDiagram.puml" />
+
+
+The following activity diagram shows what the logic behind the command `view 3`
+
+<puml src="diagrams/ViewActivityDiagram.puml" />
+
 
 ### Note Command
 
 #### Implementation
-The Note Command feature allows users to retrieve the note attribute of a contact based on its index and reflects it in the Command Box as an edit command, enabling users to make changes to the note seamlessly.
+The Note Command feature allows users to retrieve the note attribute of an internship applciation based on its index and reflects it in the Command Box as an edit command, enabling users to make changes to the note seamlessly.
 
 The following steps outline how the Note Command feature operates:
 
@@ -282,21 +319,21 @@ The following steps outline how the Note Command feature operates:
     - Upon parsing, the `NoteCommand` is instantiated with the parsed index.
     - The `NoteCommand#execute(Model model)` is then called, passing the current application model
 3. Index validation
-    - Within the `execute` method, the validity of the index entered is checked. This involves ensuring the index falls within the current range of the contact list
+    - Within the `execute` method, the validity of the index entered is checked. This involves ensuring the index falls within the current range of the internship application list
     - If index is invalid, a `CommandException` is thrown with an error message
 4. Note Retrieval
-    - Assuming the index is valid, the `NoteCommand` retrieves the **filtered list of contacts** (`List<Person>`) from the model
-    - The note content of the contact corresponding to the provided index is then fetched.
+    - Assuming the index is valid, the `NoteCommand` retrieves the **filtered list of applications** (`List<Person>`) from the model
+    - The note content of the application corresponding to the provided index is then fetched.
 5. Command Result
     - Upon retrieving the note content, the `NoteCommand` constructs a new `CommandResult` with the following params :
-        - **feedbackToUser** : `edit [INDEX of Contact] n/{existing note}`
-        - **personToView** : `Current company contact`
+        - **feedbackToUser** : `edit [INDEX of application] n/{existing note}`
+        - **personToView** : `Current internship application`
 6. Reflecting the feedback on Command Box
     - In `CommandBox#handleCommandEntered()`, if the `feedbackToUser` of the CommandResult object starts with `edit ` (ie our note Command Result), we set the text of the command box to be the `feedbackToUser`
 
 <puml src="diagrams/NoteCommandClassDiagram.puml" width="300" />
 
-#### Implementation
+#### Design Considerations
 **Alternative 1 : Use edit to make changes to note attribute**
 - Pros:
     - Easier implementation
@@ -316,105 +353,7 @@ The following steps outline how the Note Command feature operates:
 
 The following activity diagram shows how the user can interact with the Note Command
 
-<puml src="diagrams/NoteActivityDiagram.puml" width="300" />
-
-### \[Proposed\] Undo/redo feature
-
-#### Proposed Implementation
-
-The proposed undo/redo mechanism is facilitated by `VersionedAddressBook`. It extends `AddressBook` with an undo/redo history, stored internally as an `addressBookStateList` and `currentStatePointer`. Additionally, it implements the following operations:
-
-* `VersionedAddressBook#commit()` — Saves the current address book state in its history.
-* `VersionedAddressBook#undo()` — Restores the previous address book state from its history.
-* `VersionedAddressBook#redo()` — Restores a previously undone address book state from its history.
-
-These operations are exposed in the `Model` interface as `Model#commitAddressBook()`, `Model#undoAddressBook()` and `Model#redoAddressBook()` respectively.
-
-Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
-
-Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.
-
-<puml src="diagrams/UndoRedoState0.puml" alt="UndoRedoState0" />
-
-Step 2. The user executes `delete 5` command to delete the 5th person in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
-
-<puml src="diagrams/UndoRedoState1.puml" alt="UndoRedoState1" />
-
-Step 3. The user executes `add n/David …​` to add a new person. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`.
-
-<puml src="diagrams/UndoRedoState2.puml" alt="UndoRedoState2" />
-
-<box type="info" seamless>
-
-**Note:** If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`.
-
-</box>
-
-Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
-
-<puml src="diagrams/UndoRedoState3.puml" alt="UndoRedoState3" />
-
-
-<box type="info" seamless>
-
-**Note:** If the `currentStatePointer` is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather
-than attempting to perform the undo.
-
-</box>
-
-The following sequence diagram shows how an undo operation goes through the `Logic` component:
-
-<puml src="diagrams/UndoSequenceDiagram-Logic.puml" alt="UndoSequenceDiagram-Logic" />
-
-<box type="info" seamless>
-
-**Note:** The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-
-</box>
-
-Similarly, how an undo operation goes through the `Model` component is shown below:
-
-<puml src="diagrams/UndoSequenceDiagram-Model.puml" alt="UndoSequenceDiagram-Model" />
-
-The `redo` command does the opposite — it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
-
-<box type="info" seamless>
-
-**Note:** If the `currentStatePointer` is at index `addressBookStateList.size() - 1`, pointing to the latest address book state, then there are no undone AddressBook states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-
-</box>
-
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged.
-
-<puml src="diagrams/UndoRedoState4.puml" alt="UndoRedoState4" />
-
-Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
-
-<puml src="diagrams/UndoRedoState5.puml" alt="UndoRedoState5" />
-
-The following activity diagram summarizes what happens when a user executes a new command:
-
-<puml src="diagrams/CommitActivityDiagram.puml" width="250" />
-
-### Design considerations:
-
-**Aspect: How undo & redo executes:**
-
-* **Alternative 1 (current choice):** Saves the entire address book.
-  * Pros: Easy to implement.
-  * Cons: May have performance issues in terms of memory usage.
-
-* **Alternative 2:** Individual command knows how to undo/redo by
-  itself.
-  * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
-  * Cons: We must ensure that the implementation of each individual command are correct.
-
-_{more aspects and alternatives to be added}_
-
-### \[Proposed\] Data archiving
-
-_{Explain here how the data archiving feature will be implemented}_
-
+<puml src="diagrams/NoteActivityDiagram.puml" />
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -428,19 +367,19 @@ _{Explain here how the data archiving feature will be implemented}_
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Requirements**
+## **Appendix A : Requirements**
 
 ### Product scope
 
 **Target user profile**:
 
-* CS students
-* has a need to keep track of contacts of companies and interview dates during thier internship hunt
+* Undergraduate students
+* has a need to keep track of contacts of companies and interview dates during their internship hunt
 * prefer a one-stop, centralised dashboard to manage all contact details of companies
 * is reasonably comfortable in using a more CLI based app
 * wants to be better organized
 
-**Value proposition**: Ultimate companion for Computer Science (CS) students embarking on their internship journey !
+**Value proposition**: Ultimate companion for Undergraduate students embarking on their internship journey !
 
 ### User stories
 
@@ -608,7 +547,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Planned Enhancements**
+## **Appendix B : Planned Enhancements**
 
 Team size : 5
 
@@ -617,7 +556,7 @@ Team size : 5
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Instructions for manual testing**
+## **Appendix C : Instructions for manual testing**
 
 Given below are instructions to test the app manually.
 
@@ -643,32 +582,68 @@ testers are expected to do more *exploratory* testing.
 
 3. _{ more test cases …​ }_
 
-### Deleting a person
+### Deleting an internship application
 
-1. Deleting a person while all persons are being shown
+1. Deleting an internship application while all internship applications are being shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+   1. Prerequisites: List all internship applications using the `list` command. Multiple applications in the list.
 
    2. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+      Expected: First application is deleted from the list. Details of the deleted application shown in the status message. Timestamp in the status bar is updated.
 
    3. Test case: `delete 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+      Expected: No application is deleted. Error details shown in the status message. Status bar remains the same.
 
    4. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
 
-2. _{ more test cases …​ }_
+2. Deleting an internship application in a filtered list of applications
+
+    1. Prerequisites: Filter internship applications using `filter i` based on tags. Do note, you can use any tags instead of `i` as long as you have a populated result list of applications
+
+    2. Test case: `delete 1`<br>
+       Expected: First application based on the **filtered list** is deleted. Details of deleted application shown in status message.
+
+
+### Viewing an internship application
+
+1. Viewing an internship application with an empty application list
+
+   1. Prerequisites: Clear all applications using `clear` command. Will empty the applications
+
+   2. Test case : `view 2`<br>
+      Expected : Error message should be shown in the **result display** as there are no applications to view from !
+
+2. Viewing an internship application in a populated list
+
+    1. Prerequisites: Ensure at least 1 internship application is in the applications list of InternHub
+
+    2. Test case : `view 2` (Assuming there are at least 2 applications)<br>
+       Expected : The application details at index 2 will be aptly displayed on the view panel on the right
+
+### Modifying note content of an internship application
+
+1. Append to existing note content of internship application
+
+    1. Prerequisites: Attach a test note to the internship application either when you create it or by using `edit`
+
+    2. Test case : `note 2` where 2 is the index of that application<br>
+       Expected : In the command box, you will notice the following : `edit 2 n/[existing note content]`, then you can make changes and enter to modify the note
 
 ### Saving data
 
 1. Dealing with missing/corrupted data files
 
    i. Test case: Deleting name field (the `key` attribute) from a contact in the InternHub data file.<br>
-      Expected: After the app is reboot, the now corrupt data file `addressbook.json` will be detected and all the data in the file will be wiped out, causing the app to recreate an empty data file.
+      Expected: After the app is reboot, the now corrupt data file `internhub.json` will be detected and all the data in the file will be wiped out, causing the app to recreate an empty data file.
    
    ii. Test case: Delete InternHub data file.<br>
-      Expected: If the data file `addressbook.json` is nowhere to be found, the app will simply recreate the an empty data file.
+      Expected: If the data file `internhub.json` is nowhere to be found, the app will simply recreate the an empty data file.
    
    iii. Test case: Modify the json format in which InternHub data file is stored.<br>
-      Expected: If data file `addressbook.json` is still in the correct format, the app will run as per normal. However, if the data file becomes unreadable by the program, then all the data in the file will be wiped out, causing the app to recreate and run with an empty data file from scratch.
+      Expected: If data file `internhub.json` is still in the correct format, the app will run as per normal. However, if the data file becomes unreadable by the program, then all the data in the file will be wiped out, causing the app to recreate and run with an empty data file from scratch.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix D : Effort**
+
