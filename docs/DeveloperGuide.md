@@ -191,7 +191,6 @@ The Diagram below shows the sequence diagram for AddCommand. All Initialization 
 
 <puml src="diagrams/AddSequenceDiagram.puml" />
 
-<<<<<<< HEAD
 ### Filter Command
 
 #### Implementation
@@ -211,9 +210,7 @@ The following steps outline how the Filter Command feature operates:
 4. Command Result
     - The `FilterCommand` constructs a new `CommandResult` with the following params :
         - **feedbackToUser** : `[size of filtered list] persons listed~`
-        - 
 
-=======
 ### Edit Command
 
 #### Implementation
@@ -270,7 +267,6 @@ The `EditCommand` will update John Doe's phone number to `87654321` and address 
 Upon successful execution, a message will be displayed confirming the changes made to John Doe's details.
 
 <puml src="diagrams/EditSequenceDiagram.puml" width="600" />
->>>>>>> c141e1a67834236d51441611411e88b3011fc522
 
 ### Note Command
 
