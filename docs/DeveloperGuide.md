@@ -217,14 +217,14 @@ The following steps outline how the Filter Command feature operates:
 
 The `EditCommand` allows users to modify the details of an existing person in the address book.
 
-### Command Structure
+#### Command Structure
 
 - **Command Word**: `edit`
 - **Parameters**:
 - `INDEX`: Positive integer representing the index of the person in the displayed list.
 - `[NAME]`, `[PHONE]`, `[EMAIL]`, `[ADDRESS]`, `[JOB DESCRIPTION]`, `[INTERVIEW DATE]`, `[INTERN DURATION]`, `[SALARY]`, `[TAG]`: Optional parameters to specify the new values for corresponding fields. Existing values will be overwritten.
 
-### Execution Steps
+#### Execution Steps
 
 1. Parsing:
 - The input arguments are parsed to extract the index and the new values for the person's details.
@@ -239,14 +239,14 @@ The `EditCommand` allows users to modify the details of an existing person in th
 6. Feedback:
 - A success message is generated to confirm the editing operation.
 
-## Design Considerations
+#### Design Considerations
 
 - **Overwriting vs. Appending**: The command allows overwriting existing details with new ones. This simplifies the implementation and usage of the command.
 - **Error Handling**: The command ensures that at least one field is edited and provides appropriate error messages for invalid inputs.
 
 <puml src="diagrams/EditCommandClassDiagram.puml" width="300" />
 
-### Implementation
+#### Implementation
 
 Suppose we have a person with the following details:
 
@@ -267,6 +267,43 @@ The `EditCommand` will update John Doe's phone number to `87654321` and address 
 Upon successful execution, a message will be displayed confirming the changes made to John Doe's details.
 
 <puml src="diagrams/EditSequenceDiagram.puml" width="600" />
+
+### View Command
+
+#### Implementation
+The View Command allows users to view the company contact based on its index in the view panel
+
+The following steps outline how the View Command feature operates :
+
+1. Command Parsing
+    - When a user inputs the `view` command followed by an `index`, the `ViewCommandParser` is invoked to parse this input
+    - The index provided is extracted from the input string
+2. Execution
+    - Upon parsing, the `ViewCommand` is instantiated with the parsed index.
+    - The `ViewCommand#execute(Model model)` is then called, passing the current application model
+3. Index validation
+    - Within the `execute` method, the validity of the index entered is checked. This involves ensuring the index falls within the current range of the contact list
+    - If index is invalid, a `CommandException` is thrown with an error message
+4. Command Result
+    - The `ViewCommand` constructs a new `CommandResult` with the following param :
+        - **personToView** : `Current company contact`
+5. UI 
+    - The `ViewPanel` class displays the **personToView** with all its details and fields
+
+#### Design Considerations
+
+- Fetch `Person` object based on the index
+- Utilize the `CommandResult` to pass the `Person` object to the UI component
+
+The following sequence diagram shows what happens when `view 3` is the command input
+
+<puml src="diagrams/ViewSequenceDiagram.puml" />
+
+
+The following activity diagram shows what the logic behind the command `view 3`
+
+<puml src="diagrams/ViewActivityDiagram.puml" />
+
 
 ### Note Command
 
@@ -296,7 +333,7 @@ The following steps outline how the Note Command feature operates:
 
 <puml src="diagrams/NoteCommandClassDiagram.puml" width="300" />
 
-#### Implementation
+#### Design Considerations
 **Alternative 1 : Use edit to make changes to note attribute**
 - Pros:
     - Easier implementation
@@ -316,7 +353,7 @@ The following steps outline how the Note Command feature operates:
 
 The following activity diagram shows how the user can interact with the Note Command
 
-<puml src="diagrams/NoteActivityDiagram.puml" width="300" />
+<puml src="diagrams/NoteActivityDiagram.puml" />
 
 ### \[Proposed\] Undo/redo feature
 
@@ -396,7 +433,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 <puml src="diagrams/CommitActivityDiagram.puml" width="250" />
 
-### Design considerations:
+#### Design considerations:
 
 **Aspect: How undo & redo executes:**
 
@@ -428,19 +465,19 @@ _{Explain here how the data archiving feature will be implemented}_
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Requirements**
+## **Appendix A : Requirements**
 
 ### Product scope
 
 **Target user profile**:
 
-* CS students
-* has a need to keep track of contacts of companies and interview dates during thier internship hunt
+* Undergraduate students
+* has a need to keep track of contacts of companies and interview dates during their internship hunt
 * prefer a one-stop, centralised dashboard to manage all contact details of companies
 * is reasonably comfortable in using a more CLI based app
 * wants to be better organized
 
-**Value proposition**: Ultimate companion for Computer Science (CS) students embarking on their internship journey !
+**Value proposition**: Ultimate companion for Undergraduate students embarking on their internship journey !
 
 ### User stories
 
@@ -608,7 +645,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Planned Enhancements**
+## **Appendix B : Planned Enhancements**
 
 Team size : 5
 
@@ -617,7 +654,7 @@ Team size : 5
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Instructions for manual testing**
+## **Appendix C : Instructions for manual testing**
 
 Given below are instructions to test the app manually.
 
@@ -660,15 +697,36 @@ testers are expected to do more *exploratory* testing.
 
 2. _{ more test cases …​ }_
 
+### Viewing a company contact
+
+1. Viewing a contact with an empty contact list
+
+   1. Prerequisites: Clear all contacts using `clear` command. Will empty the contacts
+
+   2. Test case : `view 2`<br>
+      Expected : Error message should be shown in the **result display** as there are no contacts to view from !
+
+2. Viewing a contact in a populated list
+
+    1. Prerequisites: Ensure at least 1 company contact is in the contact list of InternHub
+
+    2. Test case : `view 2` (Assuming there are at least 2 contacts)<br>
+       Expected : The contact details of the company at index 2 will be aptly displayed on the view panel on the right
+
 ### Saving data
 
 1. Dealing with missing/corrupted data files
 
    i. Test case: Deleting name field (the `key` attribute) from a contact in the InternHub data file.<br>
-      Expected: After the app is reboot, the now corrupt data file `addressbook.json` will be detected and all the data in the file will be wiped out, causing the app to recreate an empty data file.
+      Expected: After the app is reboot, the now corrupt data file `internhub.json` will be detected and all the data in the file will be wiped out, causing the app to recreate an empty data file.
    
    ii. Test case: Delete InternHub data file.<br>
-      Expected: If the data file `addressbook.json` is nowhere to be found, the app will simply recreate the an empty data file.
+      Expected: If the data file `internhub.json` is nowhere to be found, the app will simply recreate the an empty data file.
    
    iii. Test case: Modify the json format in which InternHub data file is stored.<br>
-      Expected: If data file `addressbook.json` is still in the correct format, the app will run as per normal. However, if the data file becomes unreadable by the program, then all the data in the file will be wiped out, causing the app to recreate and run with an empty data file from scratch.
+      Expected: If data file `internhub.json` is still in the correct format, the app will run as per normal. However, if the data file becomes unreadable by the program, then all the data in the file will be wiped out, causing the app to recreate and run with an empty data file from scratch.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix D : Effort**
+
