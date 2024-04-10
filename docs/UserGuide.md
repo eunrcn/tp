@@ -88,13 +88,14 @@ jawad i am not removing ur beautiful work of art, i just testing how it looks wi
 4. If Java is not installed or if your version is not Java 11 or above, visit the Official [Oracle website](https://www.oracle.com/java/technologies/downloads/#java11) to download jdk-11 & follow the download instructions.
 
 ## 2.2 Downloading InternHub
-1. Download the latest `internhub.jar` [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases/latest).
+1. Download the latest `internhub.jar` [here](https://github.com/AY2324S2-CS2103T-F14-1/tp/releases/latest). 
+  This jar file contains our entire application, isn't it cool?
 2. After clicking on `internhub.jar`, it will go to your Downloads folder.
 3. Then, you can copy and paste the file to a folder you want to use as the _home folder_ for your InternHub.
 
 <box type="info" > 
 
-The _home folder_ will serve as InternHub's central location. This _home folder_ is where InternHub will keep all its important files and saved data.
+The _home folder_ will serve as InternHub's central location, it is where InternHub will keep all its important files and saved data.
 
 </box>
 
@@ -106,17 +107,16 @@ You can create a _home folder_ named "internhub" and store the jar file inside i
 
 ## 2.3 Running InternHub
 
-1. Once you have set up the _home folder_, right-click on the _home folder_ and click copy/copy as path to copy the path to this directory.
+1. Once you have created the _home folder_, right-click on the _home folder_ and click `copy/copy as path` to copy the path to this folder.
 2. Open up a new terminal or command prompt window
-3. Type `cd` and paste the _home folder_ path, your command should look something like this: `cd /Users/jayme/home_folder`, then hit enter.
-4. Now in the same command prompt or terminal window, enter the `java -jar internhub.jar` command to run the application.<br>
-   A beautiful pink-blue-orange interface similar to the below should appear in a few seconds.
-   ![Ui](images/UserGuide/Ui_new.png)
+3. Type `cd` and paste the copied text, your command should look something like this: `cd /Users/jayme/home_folder`, then hit enter.
+4. Now in the same command prompt or terminal window, enter the `java -jar internhub.jar` command to run the application.
+5. A beautiful pink-blue-orange interface similar to the one below should appear in a few seconds.
+![Ui](images/UserGuide/Ui_new.png)
 
 <box type="note" > 
 
-The beautiful colours on our InternHub interface is best viewed in full screen. <br>
-The app contains 1 sample data.
+The beautiful colours on our InternHub interface is best viewed in full screen and it contains 1 sample data, FoodPanda.
 
 </box>
 
