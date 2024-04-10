@@ -103,7 +103,7 @@ public class Tag {
     }
 
     public String getTagShort() {
-        return this.tagInput;
+        return this.tagInput.toUpperCase();
     }
 
     @Override
