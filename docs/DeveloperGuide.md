@@ -191,7 +191,6 @@ The Diagram below shows the sequence diagram for AddCommand. All Initialization 
 
 <puml src="diagrams/AddSequenceDiagram.puml" />
 
-<<<<<<< HEAD
 ### Filter Command
 
 #### Implementation
@@ -211,9 +210,7 @@ The following steps outline how the Filter Command feature operates:
 4. Command Result
     - The `FilterCommand` constructs a new `CommandResult` with the following params :
         - **feedbackToUser** : `[size of filtered list] persons listed~`
-        - 
 
-=======
 ### Edit Command
 
 #### Implementation
@@ -270,7 +267,6 @@ The `EditCommand` will update John Doe's phone number to `87654321` and address 
 Upon successful execution, a message will be displayed confirming the changes made to John Doe's details.
 
 <puml src="diagrams/EditSequenceDiagram.puml" width="600" />
->>>>>>> c141e1a67834236d51441611411e88b3011fc522
 
 ### Note Command
 
@@ -317,6 +313,10 @@ The following steps outline how the Note Command feature operates:
     - Essentially an abstracted & glorified edit feature
 
 <puml src="diagrams/NoteSequenceDiagram.puml" />
+
+The following activity diagram shows how the user can interact with the Note Command
+
+<puml src="diagrams/NoteActivityDiagram.puml" width="300" />
 
 ### \[Proposed\] Undo/redo feature
 
@@ -605,6 +605,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
 * **Private contact detail**: A contact detail that is not meant to be shared with others
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Planned Enhancements**
+
+Team size : 5
+
+1. **Handling of invalid date to be with accordance of Gregorian Calendar**
+2. 
 
 --------------------------------------------------------------------------------------------------------------------
 
