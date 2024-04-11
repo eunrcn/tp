@@ -151,7 +151,7 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 4. **Unnecessary parameters for commands without specified inputs (e.g., `help`, `list`, `exit`, and `clear`) are ignored.** <br>
   For instance, `help 123` will be treated as `help`.
 
-5. **Practice caution when copying command lines from the User Guide** <br>
+5. **Practice caution when copying command lines from the User Guide**. <br>
   When copying and pasting multi-line commands from a PDF, be cautious as space characters around line breaks might be omitted.
 
 
@@ -178,7 +178,7 @@ For company names with **special characters**, it's advisable to omit them or re
 Here are some examples:
 - "7-Eleven" can be inputted as "7 Eleven" instead.
 - "ABC PTE LTD." can be inputted as "ABC PTE LTD" or "ABC Private Limited."
-- "ABC Co., Ltd" can be inputted as "ABC Co LTD" or "ABC Company Limited."
+- "ABC Co., Ltd" can be inputted as "ABC Co Ltd" or "ABC Company Limited."
 
 **Please note that company names are case-sensitive.**
 <br> This means variations in capitalization, such as "Apple" and "apple," will be treated as separate entries.
@@ -235,7 +235,7 @@ We have intentionally omitted setting a minimum internship duration as there isn
 4. **Error messages** 
 <br> When entering the command 'edit 3 d/14-07-2024 3", InternHub will display two error messages:
 <br> _Interview Date & Time needs to follow this pattern : dd-mm-yyyy HHmm_
-<br> _Interview Date & Time cannot be before today's date !_
+<br> _Interview Date & Time cannot be before today's date!_
 
 <box type="tip" >
 
@@ -431,7 +431,7 @@ The image below shows the respective outcomes after executing both edit commands
 
 <box type="info">
 
-Notice how when we set the online assessment date for DBS, the contact list dynamically rearranged to prioritize the latest interview at the top.
+Notice how when we set the online assessment date for Happy Burger, the contact list dynamically rearranged to prioritize the latest interview at the top.
 <br> This dynamic sorting is based on the first interview date.
 
 </box>
@@ -503,7 +503,7 @@ Finding internship applications whose company names contain any of the given key
   e.g. `Happy Burger` will return `Happy Meal`, `Burger Queen`.
 
 Examples:
-* `find burger` returns `Happy Burger` and `Sad Burger`<br>.
+* `find burger` returns `Happy Burger` and `Sad Burger`.<br>
   ![result for 'find burger'](images/find/findBurgerResult2.png)
 
 
@@ -517,8 +517,8 @@ This command will allow you to update the notes of an internship application wit
 
 </box>
 
-Updating a note of an **existing internship application**
-- Suppose you want to edit the note of an internship application at index **2**
+Updating a note of an **existing internship application**.
+- Suppose you want to edit the note of an internship application at index **2**.
 - Use the note command as follows: `note 2`
   ![enter note 2](images/note-feature/note_1.png)
 
@@ -559,7 +559,7 @@ Valid Tag Inputs
 **Example:**
 
 - `filter i` or `filter I`
-- Filters the internship application list to display only internships with an Interview status
+- Filters the internship application list to display only internships with an Interview status.
 
 ![resultFilter](images/filter/filterIResult.png){ width=60% }
 
@@ -717,18 +717,18 @@ Furthermore, certain edits can cause the InternHub to behave in unexpected ways 
 
 # 8. Glossary
 
-| Term                              | Meaning                                                                                                                                                                 |
-|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Java Version                      | A programming language and computing platform used for the InternHub application. Version 11 or higher is required for proper functioning.                              |
-| Terminal or Command Prompt        | Command-line interfaces used to interact with the operating system and run commands.                                                                                    |
-| Result Display                    | Area where outputs and messages from InternHub are displayed.                                                                                                           |
-| View Panel                        | Area displaying detailed information of the selected internship company contact.                                                                                        |
-| Features                          | Functionalities provided by InternHub, including adding, editing, deleting, and filtering contacts                                                                      |
-| Command                           | A directive given to the program to perform a specific task                                                                                                             |
-| GUI (Graphical User Interface)    | A visual way of interacting with a computer through graphical elements like windows, icons, buttons & menus                                                             |
-| Index                             | A numerical identifier used to specify the position of an item in a list, for this context the position of an internship company contact                                |
-| JSON (JavaScript Object Notation) | A lightweight data interchange format that is easy to read & write, and for machines to parse. InternHub uses JSON to store and manage data                             |
-| CLI (Command Line Interface)      | A way to interact with a computer by typing commands into a terminal or command box                                                                                     |
-| Prefix                            | A string of characters placed at the beginning of a command to indicate its type. For example, InternHub uses `c/` for company name and `p/` for phone number and so on |
-| Field                             | A specific piece of information within each internship company contact like company name, phone number & etc...                                                         |
+| Term                              | Meaning                                                                                                                                                                  |
+|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Java Version                      | A programming language and computing platform used for the InternHub application. Version 11 or higher is required for proper functioning.                               |
+| Terminal or Command Prompt        | Command-line interfaces used to interact with the operating system and run commands.                                                                                     |
+| Result Display                    | Area where outputs and messages from InternHub are displayed.                                                                                                            |
+| View Panel                        | Area displaying detailed information of the selected internship company contact.                                                                                         |
+| Features                          | Functionalities provided by InternHub, including adding, editing, deleting, and filtering contacts.                                                                      |
+| Command                           | A directive given to the program to perform a specific task.                                                                                                             |
+| GUI (Graphical User Interface)    | A visual way of interacting with a computer through graphical elements like windows, icons, buttons & menus.                                                             |
+| Index                             | A numerical identifier used to specify the position of an item in a list, for this context the position of an internship company contact.                                |
+| JSON (JavaScript Object Notation) | A lightweight data interchange format that is easy to read & write, and for machines to parse. InternHub uses JSON to store and manage data.                             |
+| CLI (Command Line Interface)      | A way to interact with a computer by typing commands into a terminal or command box.                                                                                     |
+| Prefix                            | A string of characters placed at the beginning of a command to indicate its type. For example, InternHub uses `c/` for company name and `p/` for phone number and so on. |
+| Field                             | A specific piece of information within each internship company contact like company name, phone number & etc...                                                          |
 
