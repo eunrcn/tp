@@ -162,13 +162,20 @@ This command adds an internship application into the InternHub using the company
 
 The following steps show how the add internship application feature works:
 
-The `add` command entered by the user is parsed and the different fields are tokenized.
-
-`AddCommand#execute(Model model)` is invoked which checks for validity of the entered parameter values.
-
-The command is then executed by creating a new Person object using the parameter values entered and adding the Person object into the InternHub.
-
-If successful, a `CommandResult` object is created to show a success message in the feedback box of the ui.
+1. Command Parsing
+   - When a user inputs the `add` command followed by internship application details, the `AddCommandParser` is invoked to parse this input.
+2. Getting inputs
+   - Input is broken down into individual components based on predefined prefixes.
+   - Check for missing or duplicates prefix
+   - Once all components are successfully parsed, a new Person object representing the internship application is created using the parsed values.
+3. Execution
+   - Upon parsing, the `AddCommand` is instantiated with the Person object.
+   - The AddCommand#execute(Model model) is then called, passing the current application model
+4. Command Result
+   - The AddCommand constructs a new `CommandResult` with the following params :
+     - feedbackToUser : `New internship application added: [newly added internship application details]`
+5. UI
+   - The ViewPanel class displays the personToView with all its details and fields
 
 The diagram below shows the class diagram for AddCommand.
 
@@ -177,15 +184,15 @@ The diagram below shows the class diagram for AddCommand.
 #### Design Considerations
 Alternative 1 (current choice): Creates a new Person object in AddCommandParser.
 
-Pros: Simpler to test and understand.
+- Pros: Simpler to test and understand.
 
-Cons: Command object should not know details about model i.e. Person.
+- Cons: Command object should not know details about model i.e. Person.
 
 Alternative 2: New Person object is created and added to InternHub in model.
 
-Pros: Command has no knowledge of Model and its attributes.
+- Pros: Command has no knowledge of Model and its attributes.
 
-Cons: More prone to error.
+- Cons: More prone to error.
 
 The Diagram below shows the sequence diagram for AddCommand. All Initialization commands above are similar in their interactions with the [logic component](###logic-component) and [model component](###model-component).
 
@@ -227,17 +234,17 @@ The `EditCommand` allows users to modify the details of an existing internship a
 #### Execution Steps
 
 1. Parsing:
-- The input arguments are parsed to extract the index and the new values for the internship application's details.
+   - The input arguments are parsed to extract the index and the new values for the internship application's details.
 2. Validation:
-- The validity of the index and the absence of duplicate prefixes are verified.
+   - The validity of the index and the absence of duplicate prefixes are verified.
 3. Creation of Edit Descriptor:
-- An `EditPersonDescriptor` object is created to store the edited details.
+   - An `EditPersonDescriptor` object is created to store the edited details.
 4. Field Editing:
-- Each provided field is set in the `EditPersonDescriptor`.
+   - Each provided field is set in the `EditPersonDescriptor`.
 5. Execution:
-- The `EditCommand` is executed, modifying the specified internship application's details.
+   - The `EditCommand` is executed, modifying the specified internship application's details.
 6. Feedback:
-- A success message is generated to confirm the editing operation.
+   - A success message is generated to confirm the editing operation.
 
 #### Design Considerations
 
@@ -258,7 +265,7 @@ Suppose we have an internship application with the following details:
 - Interview Date: 2024-04-15
 - Intern Duration: 3 months
 - Salary: $3000
-- Tags: #Interview
+- Tags: Interview
 
 Now, the user wants to edit the phone number and address. They issue the following command:
 edit 1 p/87654321 a/Block 456, New Avenue, #05-678
@@ -266,7 +273,7 @@ edit 1 p/87654321 a/Block 456, New Avenue, #05-678
 The `EditCommand` will update the internship application's phone number to `87654321` and address to `Block 456, New Avenue, #05-678`. 
 Upon successful execution, a message will be displayed confirming the changes made to the internship application's details.
 
-<puml src="diagrams/EditSequenceDiagram.puml" width="600" />
+<puml src="diagrams/EditSequenceDiagram.puml" />
 
 ### View Command
 
@@ -551,8 +558,18 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 Team size : 5
 
-1. **Handling of invalid date to be with accordance of Gregorian Calendar**
-2. 
+1. **Handling of invalid date to be with accordance of Gregorian Calendar**:
+    - Ensure that the system handles invalid date inputs according to the rules of the Gregorian calendar, providing better error handling and user feedback.
+    - Currently, when InternHub encounter `29-02-yyyy` where it is not a leap year, it will automatically changes it to the closest valid date, which is `28-02-yyyy`.
+    - We intend to make the system throw an error message instead to warn user about this invalid date and it is possible that they might have schedules an interview with a company on an non existent date.
+2. **Case sensitive for company name**:
+    - Implement case sensitivity for company names to prevent potential duplication or confusion due to variations in casing.
+3. **Prevent duplicate phone number**:
+    - Add validation logic to prevent the addition of internship applications with duplicate phone numbers, reducing data redundancy and maintaining data integrity.
+4. **Make company name less restrictive, allow special characters**:
+    - Relax the restrictions on company names to allow for special characters, enabling users to input a wider range of company names without encountering validation errors.
+5. **In UI, make the view card scrollable for all labels**:
+    - Enhance the user interface by making the view card scrollable for all labels, ensuring that users can view all information associated with an internship application, even if it exceeds the visible area of the card.
 
 --------------------------------------------------------------------------------------------------------------------
 
