@@ -672,10 +672,10 @@ testers are expected to do more *exploratory* testing.
 
 2. Viewing an internship application in a populated list
 
-    1. Prerequisites: Ensure at least 1 internship application is in the applications list of InternHub
+    1. Prerequisites: Ensure **at least 1 internship application** is in the applications list of InternHub
 
-    2. Test case: `view 2` (Assuming there are at least 2 applications)<br>
-       Expected : The application details at index 2 will be aptly displayed on the view panel on the right
+    2. Test case: `view 1` <br>
+       Expected : The application details at index 1 will be aptly displayed on the view panel on the right
 
        
 ### List all internship applications
