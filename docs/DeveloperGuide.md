@@ -571,7 +571,8 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   2. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   2. Double-click the jar file. <br>
+       Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
 2. Saving window preferences
 
@@ -580,29 +581,67 @@ testers are expected to do more *exploratory* testing.
    2. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-3. _{ more test cases …​ }_
+3. Using InternHub with Sample Internship Application List
+    
+   1. Close InternHub. 
+
+   2. Delete the folder `data` which contain file `./addressbook.json` (if applicable).
+
+   3. Launch InternHub. <br>
+   Expected: A sample internship application list with 1 internship applications should be displayed.
+
+### Adding an internship application
+
+1. Test case: `add c/Singapore Airline p/98765432 e/singaporeairline@example.com t/O jd/Animator intern id/3 months s/1000`<br>
+   Expected: A new internship application is added to the list. Details of the added internship application shown in the **result display**.
+
+2. Test case: `add`<br>
+   Expected: No internship application is added. Error details shown in the **result display**.
+
 
 ### Deleting an internship application
 
 1. Deleting an internship application while all internship applications are being shown
 
-   1. Prerequisites: List all internship applications using the `list` command. Multiple applications in the list.
+   1. Prerequisites: At least one internship application displayed.
 
    2. Test case: `delete 1`<br>
-      Expected: First application is deleted from the list. Details of the deleted application shown in the status message. Timestamp in the status bar is updated.
+      Expected: First application is deleted from the list. Details of the deleted internship application shown in the **result display**.
 
    3. Test case: `delete 0`<br>
-      Expected: No application is deleted. Error details shown in the status message. Status bar remains the same.
+      Expected: No application is deleted. Error details shown in the **result display**. 
 
    4. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
+      Expected: No application is deleted. Error details shown in the **result display**.
 
 2. Deleting an internship application in a filtered list of applications
 
-    1. Prerequisites: Filter internship applications using `filter i` based on tags. Do note, you can use any tags instead of `i` as long as you have a populated result list of applications
+    1. Prerequisites: Filter internship applications using `filter I` based on tags. Do note, you can use other valid tags instead of `I` as long as you have a populated result list of applications
 
     2. Test case: `delete 1`<br>
-       Expected: First application based on the **filtered list** is deleted. Details of deleted application shown in status message.
+       Expected: First application based on the **filtered list** is deleted. Details of deleted internship application shown in **result display**.
+
+### Editing an internship application
+
+1. Editing an internship application while all internship applications are being shown
+
+    1. Prerequisites: At least one internship application displayed.
+
+    2. Test case: `edit 1 c/shoppa`<br>
+       Expected: The company name of the first internship application is updated to shoppa. Details of the edited internship application shown in the **result display**.
+
+    3. Test case: `edit 0`<br>
+       Expected: No application is edited. Error details shown in the **result display**.
+
+    4. Other incorrect delete commands to try: `edit`, `edit x`, `...` (where x is larger than the list size)<br>
+       Expected: No application is edited. Error details shown in the **result display**.
+
+2. Deleting an internship application in a filtered list of applications
+
+    1. Prerequisites: Filter internship applications using `filter I` based on tags. Do note, you can use other valid tags instead of `I` as long as you have a populated result list of applications
+
+    2. Test case: `delete 1`<br>
+       Expected: First application based on the **filtered list** is deleted. Details of deleted application shown in **result display**.
 
 
 ### Viewing an internship application
@@ -611,15 +650,37 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: Clear all applications using `clear` command. Will empty the applications
 
-   2. Test case : `view 2`<br>
-      Expected : Error message should be shown in the **result display** as there are no applications to view from !
+   2. Test case: `view 2`<br>
+      Expected : Error message should be shown in the **result display** as there are no applications to view.
 
 2. Viewing an internship application in a populated list
 
     1. Prerequisites: Ensure at least 1 internship application is in the applications list of InternHub
 
-    2. Test case : `view 2` (Assuming there are at least 2 applications)<br>
+    2. Test case: `view 2` (Assuming there are at least 2 applications)<br>
        Expected : The application details at index 2 will be aptly displayed on the view panel on the right
+
+       
+### List all internship applications
+1. Test case: `list`<br>
+Expected: List all internship application in InternHub.
+
+
+### Finding internship application(s)
+
+1. Prerequisites: Starting from an empty list,<br>
+    * `add c/Singapore Airline p/98765432 e/singaporeairline@example.com t/O jd/Animator intern id/3 months s/1000`
+
+    * `add c/Malaysia Airline p/98765431 e/malaysiaairline@example.com t/NR jd/Data Science intern id/3 months s/1000`
+
+    * `add c/shoppa p/98765430 e/shoppa@example.com t/OA jd/Junior Animator intern id/3 months s/1000`
+
+2. Test case: `find`<br>
+   Expected: No internship application is displayed on the view panel on the right. Error message should be shown in the **result display**.
+
+3. Test case: `find airline`<br>
+   Expected: The application details of Singapore Airline and Malaysia Airline will be aptly displayed on the view panel on the right (the company name contain the word **airline**).
+
 
 ### Modifying note content of an internship application
 
@@ -627,21 +688,50 @@ testers are expected to do more *exploratory* testing.
 
     1. Prerequisites: Attach a test note to the internship application either when you create it or by using `edit`
 
-    2. Test case : `note 2` where 2 is the index of that application<br>
+    2. Test case: `note 2` where 2 is the index of that application<br>
        Expected : In the command box, you will notice the following : `edit 2 n/[existing note content]`, then you can make changes and enter to modify the note
+
+### filter internship applications
+1. filter to get internship application(s) with status 'NR' (No Reply) in an empty list
+
+    1. Prerequisites: Clear all applications using `clear` command. Will empty the applications
+
+    2. Test case: `filter NR`<br>
+       Expected : Error message should be shown in the **result display** as there are no applications.
+
+2. filter to get internship application(s) that has status 'NR' (No Reply) in a populated list
+
+    1. Prerequisites: Starting from an empty list,<br>
+       * `add c/Singapore Airline p/98765432 e/singaporeairline@example.com t/O jd/Animator intern id/3 months s/1000`
+
+       * `add c/Malaysia Airline p/98765431 e/malaysiaairline@example.com t/NR jd/Data Science intern id/3 months s/1000`
+
+       * `add c/shoppa p/98765430 e/shoppa@example.com t/OA jd/Junior Animator intern id/3 months s/1000`
+
+    2. Test case: `filter NR` (Assuming there are at least 2 applications)<br>
+       Expected : Only Malaysia Airline will be displayed on the left side of the list panel.
+
+
+### Getting Reminders for Internship Applications
+1. Getting reminders for internship applications which are due or have interviews scheduled in 7 days
+
+   1. Prerequisites: At least one internship application displayed. 
+   2. Test case: `reminder 7` <br>
+       Expected: Only internship applications which have interviews scheduled in 7 days will be shown. They should be displayed in order of earliest interview date.
+
 
 ### Saving data
 
 1. Dealing with missing/corrupted data files
 
    i. Test case: Deleting name field (the `key` attribute) from a contact in the InternHub data file.<br>
-      Expected: After the app is reboot, the now corrupt data file `internhub.json` will be detected and all the data in the file will be wiped out, causing the app to recreate an empty data file.
+      Expected: After the app is reboot, the now corrupt data file `addressbook.json` will be detected and all the data in the file will be wiped out, causing the app to recreate an empty data file.
    
    ii. Test case: Delete InternHub data file.<br>
-      Expected: If the data file `internhub.json` is nowhere to be found, the app will simply recreate the an empty data file.
+      Expected: If the data file `addressbook.json` is nowhere to be found, the app will simply recreate the an empty data file.
    
    iii. Test case: Modify the json format in which InternHub data file is stored.<br>
-      Expected: If data file `internhub.json` is still in the correct format, the app will run as per normal. However, if the data file becomes unreadable by the program, then all the data in the file will be wiped out, causing the app to recreate and run with an empty data file from scratch.
+      Expected: If data file `addressbook.json` is still in the correct format, the app will run as per normal. However, if the data file becomes unreadable by the program, then all the data in the file will be wiped out, causing the app to recreate and run with an empty data file from scratch.
 
 --------------------------------------------------------------------------------------------------------------------
 
