@@ -16,7 +16,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/ashleygoh1.png" width="200px">
 
 [[github](http://github.com/ashleygoh1)]
-[[portfolio](team/ashley.md)]
+[[portfolio](team/ashleygoh1)]
 
 * Role: Developer
 * Responsibilities: Model
@@ -26,7 +26,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/minghowc.png" width="200px">
 
 [[github](http://github.com/minghowC)]
-[[portfolio](team/minghow.md)]
+[[portfolio](team/minghowc)]
 
 * Role: Developer
 * Responsibilities: Features Testing
@@ -36,7 +36,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/chenyixin0.png" width="200px">
 
 [[github](http://github.com/chenyixin0)]
-[[portfolio](team/yixin.md)]
+[[portfolio](team/chenyixin0)]
 
 * Role: Developer
 * Responsibilities: Dev Ops + Threading
@@ -46,7 +46,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/eunrcn.png" width="200px">
 
 [[github](http://github.com/eunrcn)]
-[[portfolio](team/eunice.md)]
+[[portfolio](team/eunrcn)]
 
 * Role: Developer
 * Responsibilities: Model
@@ -56,7 +56,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/jawad280.png" width="200px">
 
 [[github](http://github.com/Jawad280)]
-[[portfolio](team/jawad.md)]
+[[portfolio](team/jawad280)]
 
 * Role: Developer
 * Responsibilities: UI
