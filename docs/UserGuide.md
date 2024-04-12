@@ -699,6 +699,8 @@ Advanced users are welcome to update data directly by editing that data file.
 
 <div style="page-break-after: always;"></div>
 
+5. **Leap Year Date Handling**: A defect has been identified in the Java Format library where certain invalid date inputs, such as "29 Feb 2023" which is not a leap year, are incorrectly accepted and silently converted to a valid date by the system. This behavior can result in incorrect date information being processed by the application. Hence, users are advised to manually verify the correctness of date inputs, especially around leap years, to ensure accuracy. The workaround in the future will be imposing a stricter validation check offered by the Java library `java.time.format.ResolverStyle` to correct this behaviour.
+
 --------------------------------------------------------------------------------------------------------------------
 
 # 7. Command Summary
