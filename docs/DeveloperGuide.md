@@ -764,7 +764,7 @@ Expected: List all internship application in InternHub.
 1. Dealing with missing/corrupted data files
 
    i. Test case: Deleting name field (the `key` attribute) from a contact in the InternHub data file.<br>
-      Expected: After the app is reboot, the now corrupt data file `addressbook.json` will be detected and the corrupted data is considered invalid and will be appear in the app.
+      Expected: After the app is reboot, the now corrupt data file `addressbook.json` will be detected and the corrupted data is considered invalid and will not appear in the app.
    
    ii. Test case: Delete InternHub data file.<br>
       Expected: If the data file `addressbook.json` is nowhere to be found, the app will simply recreate the an empty data file.
