@@ -166,20 +166,20 @@ The following steps show how the add internship application feature works:
    - When a user inputs the `add` command followed by internship application details, the `AddCommandParser` is invoked to parse this input.
 2. Getting inputs
    - Input is broken down into individual components based on predefined prefixes.
-   - Check for missing or duplicates prefix
+   - Check for missing or duplicates prefix.
    - Once all components are successfully parsed, a new Person object representing the internship application is created using the parsed values.
 3. Execution
    - Upon parsing, the `AddCommand` is instantiated with the Person object.
-   - The AddCommand#execute(Model model) is then called, passing the current application model
+   - The AddCommand#execute(Model model) is then called, passing the current application model.
 4. Command Result
    - The AddCommand constructs a new `CommandResult` with the following params :
      - feedbackToUser : `New internship application added: [newly added internship application details]`
 5. UI
-   - The ViewPanel class displays the personToView with all its details and fields
+   - The ViewPanel class displays the personToView with all its details and fields.
 
 The diagram below shows the class diagram for AddCommand.
 
-<puml src="diagrams/AddCommandClassDiagram.puml" width="300" />
+<puml src="diagrams/AddCommandClassDiagram.puml" width="550" />
 
 #### Design Considerations
 Alternative 1 (current choice): Creates a new Person object in AddCommandParser.
