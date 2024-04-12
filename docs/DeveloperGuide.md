@@ -218,6 +218,28 @@ The following steps outline how the Filter Command feature operates:
     - The `FilterCommand` constructs a new `CommandResult` with the following params :
         - **feedbackToUser** : `[size of filtered list] persons listed~`
 
+
+### Reminder Command
+
+#### Implementation
+The Filter Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
+
+The following steps outline how the Filter Command feature operates:
+
+1. Command Parsing
+    - When a user inputs the `filter` command followed by a `tag`, the `FilterCommandParser` is invoked to parse this input
+    - The tag provided is extracted from the input string
+2. List filtering
+    - Upon parsing, a `MatchingTagPredicate` is instantiated with the parsed tag String
+    - The `FilteredPersonList` representing the list of applications is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
+3. Execute
+    - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
+    - The `FilterCommand#execute(Model model)` is then called, passing the current application model
+4. Command Result
+    - The `FilterCommand` constructs a new `CommandResult` with the following params :
+        - **feedbackToUser** : `[size of filtered list] persons listed~`
+
+
 ### Edit Command
 
 #### Implementation
