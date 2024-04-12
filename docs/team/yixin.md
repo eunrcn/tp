@@ -1,13 +1,45 @@
 ---
   layout: default.md
-  title: "John Doe's Project Portfolio Page"
+    title: "Yixin's Project Portfolio Page"
 ---
 
-### Project: AddressBook Level 3
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <h1>Chen Yixin</h1>
+  <h2>InternHub Project Portfolio</h2>
+</div>
 
-AddressBook - Level 3 is a desktop address book application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.
+<box>
 
-Given below are my contributions to the project.
+#### Project Overview
+* InternHub is a productivity tool designed to help Undergraduate students manage their internship applications.
+* The user interacts with it using a CLI, and it has a GUI created with JavaFX.
+* 
+* It is written in Java, and has about 10 kLoC.
+* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * **New Feature**: Added the ability to undo/redo previous commands.
   * What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.
@@ -17,7 +49,7 @@ Given below are my contributions to the project.
 
 * **New Feature**: Added a history command that allows the user to navigate to previous commands using up/down keys.
 
-* **Code contributed**: [RepoSense link]()
+* **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s2.github.io/tp-dashboard/?search=chenyixin0&breakdown=true)
 
 * **Project management**:
   * Managed releases `v1.3` - `v1.5rc` (3 releases) on GitHub
