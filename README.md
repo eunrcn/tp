@@ -6,7 +6,7 @@
 
 ## Overview
 
-InternHub is a comprehensive project designed to assist Computer Science (CS) students in managing their internship applications. This project serves various purposes:
+InternHub is a comprehensive project designed to assist Undergraduate students in managing their internship applications. This project serves various purposes:
 
 - It can be utilized as a starting point for a course project, offering students a foundation rather than building everything from scratch.
 - It serves as a case study for understanding the development of a desktop application in an Object-Oriented Programming (OOP) fashion.
@@ -22,7 +22,7 @@ InternHub is a comprehensive project designed to assist Computer Science (CS) st
 
 ## Features
 
-InternHub is specifically tailored for CS students, offering the following features:
+InternHub is specifically tailored for Undergraduate students, offering the following features:
 
 - Organization and optimization of internship application details.
 - Seamless management of contacts, interview dates, internship duration, salary and job description.

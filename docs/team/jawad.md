@@ -1,6 +1,6 @@
 ---
   layout: default.md
-    title: "Jawad's Project Portfolio Page"
+  title: "Jawad's Project Portfolio Page"
 ---
 
 <div style="display: flex; justify-content: space-between; align-items: center;">

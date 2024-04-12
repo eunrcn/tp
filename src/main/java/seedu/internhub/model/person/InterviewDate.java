@@ -13,7 +13,7 @@ public class InterviewDate {
     public static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("dd-MM-yyyy HHmm");
     public static final String MESSAGE_CONSTRAINTS =
             "Interview Date & Time needs to follow this pattern : dd-mm-yyyy HHmm\n"
-                    + "Interview Date & Time cannot be before today's date !";
+                    + "Interview Date & Time cannot be before today's date!";
     public final LocalDateTime value;
     /**
      * Constructs an {@code interview date}.

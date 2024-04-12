@@ -19,7 +19,7 @@ _{ list here sources of all reused/adapted ideas, code, documentation, and third
 
 ## **Setting up, getting started**
 
-Refer to the guide [_Setting up and getting started_](SettingUp.md).
+Refer to the guide [_Setting up and getting started_](SettingUp.md) for initial setup and basic instructions.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 The bulk of the app's work is done by the following four components:
 
-* [**`UI`**](#ui-component): The UI of the App.
+* [**`UI`**](#ui-component): Manages the user interface of the app.
 * [**`Logic`**](#logic-component): The command executor.
 * [**`Model`**](#model-component): Holds the data of the App in memory.
 * [**`Storage`**](#storage-component): Reads data from, and writes data to, the hard disk.
@@ -162,13 +162,20 @@ This command adds an internship application into the InternHub using the company
 
 The following steps show how the add internship application feature works:
 
-The `add` command entered by the user is parsed and the different fields are tokenized.
-
-`AddCommand#execute(Model model)` is invoked which checks for validity of the entered parameter values.
-
-The command is then executed by creating a new Person object using the parameter values entered and adding the Person object into the InternHub.
-
-If successful, a `CommandResult` object is created to show a success message in the feedback box of the ui.
+1. Command Parsing
+   - When a user inputs the `add` command followed by internship application details, the `AddCommandParser` is invoked to parse this input.
+2. Getting inputs
+   - Input is broken down into individual components based on predefined prefixes.
+   - Check for missing or duplicates prefix
+   - Once all components are successfully parsed, a new Person object representing the internship application is created using the parsed values.
+3. Execution
+   - Upon parsing, the `AddCommand` is instantiated with the Person object.
+   - The AddCommand#execute(Model model) is then called, passing the current application model
+4. Command Result
+   - The AddCommand constructs a new `CommandResult` with the following params :
+     - feedbackToUser : `New internship application added: [newly added internship application details]`
+5. UI
+   - The ViewPanel class displays the personToView with all its details and fields
 
 The diagram below shows the class diagram for AddCommand.
 
@@ -177,15 +184,15 @@ The diagram below shows the class diagram for AddCommand.
 #### Design Considerations
 Alternative 1 (current choice): Creates a new Person object in AddCommandParser.
 
-Pros: Simpler to test and understand.
+- Pros: Simpler to test and understand.
 
-Cons: Command object should not know details about model i.e. Person.
+- Cons: Command object should not know details about model i.e. Person.
 
 Alternative 2: New Person object is created and added to InternHub in model.
 
-Pros: Command has no knowledge of Model and its attributes.
+- Pros: Command has no knowledge of Model and its attributes.
 
-Cons: More prone to error.
+- Cons: More prone to error.
 
 The Diagram below shows the sequence diagram for AddCommand. All Initialization commands above are similar in their interactions with the [logic component](###logic-component) and [model component](###model-component).
 
@@ -211,6 +218,28 @@ The following steps outline how the Filter Command feature operates:
     - The `FilterCommand` constructs a new `CommandResult` with the following params :
         - **feedbackToUser** : `[size of filtered list] persons listed~`
 
+
+### Reminder Command
+
+#### Implementation
+The Filter Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
+
+The following steps outline how the Filter Command feature operates:
+
+1. Command Parsing
+    - When a user inputs the `filter` command followed by a `tag`, the `FilterCommandParser` is invoked to parse this input
+    - The tag provided is extracted from the input string
+2. List filtering
+    - Upon parsing, a `MatchingTagPredicate` is instantiated with the parsed tag String
+    - The `FilteredPersonList` representing the list of applications is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
+3. Execute
+    - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
+    - The `FilterCommand#execute(Model model)` is then called, passing the current application model
+4. Command Result
+    - The `FilterCommand` constructs a new `CommandResult` with the following params :
+        - **feedbackToUser** : `[size of filtered list] persons listed~`
+
+
 ### Edit Command
 
 #### Implementation
@@ -227,17 +256,17 @@ The `EditCommand` allows users to modify the details of an existing internship a
 #### Execution Steps
 
 1. Parsing:
-- The input arguments are parsed to extract the index and the new values for the internship application's details.
+   - The input arguments are parsed to extract the index and the new values for the internship application's details.
 2. Validation:
-- The validity of the index and the absence of duplicate prefixes are verified.
+   - The validity of the index and the absence of duplicate prefixes are verified.
 3. Creation of Edit Descriptor:
-- An `EditPersonDescriptor` object is created to store the edited details.
+   - An `EditPersonDescriptor` object is created to store the edited details.
 4. Field Editing:
-- Each provided field is set in the `EditPersonDescriptor`.
+   - Each provided field is set in the `EditPersonDescriptor`.
 5. Execution:
-- The `EditCommand` is executed, modifying the specified internship application's details.
+   - The `EditCommand` is executed, modifying the specified internship application's details.
 6. Feedback:
-- A success message is generated to confirm the editing operation.
+   - A success message is generated to confirm the editing operation.
 
 #### Design Considerations
 
@@ -258,7 +287,7 @@ Suppose we have an internship application with the following details:
 - Interview Date: 2024-04-15
 - Intern Duration: 3 months
 - Salary: $3000
-- Tags: #Interview
+- Tags: Interview
 
 Now, the user wants to edit the phone number and address. They issue the following command:
 edit 1 p/87654321 a/Block 456, New Avenue, #05-678
@@ -266,7 +295,7 @@ edit 1 p/87654321 a/Block 456, New Avenue, #05-678
 The `EditCommand` will update the internship application's phone number to `87654321` and address to `Block 456, New Avenue, #05-678`. 
 Upon successful execution, a message will be displayed confirming the changes made to the internship application's details.
 
-<puml src="diagrams/EditSequenceDiagram.puml" width="600" />
+<puml src="diagrams/EditSequenceDiagram.puml" />
 
 ### View Command
 
@@ -551,8 +580,18 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 Team size : 5
 
-1. **Handling of invalid date to be with accordance of Gregorian Calendar**
-2. 
+1. **Handling of invalid date to be with accordance of Gregorian Calendar**:
+    - Ensure that the system handles invalid date inputs according to the rules of the Gregorian calendar, providing better error handling and user feedback.
+    - Currently, when InternHub encounter `29-02-yyyy` where it is not a leap year, it will automatically changes it to the closest valid date, which is `28-02-yyyy`.
+    - We intend to make the system throw an error message instead to warn user about this invalid date and it is possible that they might have schedules an interview with a company on an non existent date.
+2. **Case sensitive for company name**:
+    - Implement case sensitivity for company names to prevent potential duplication or confusion due to variations in casing.
+3. **Prevent duplicate phone number**:
+    - Add validation logic to prevent the addition of internship applications with duplicate phone numbers, reducing data redundancy and maintaining data integrity.
+4. **Make company name less restrictive, allow special characters**:
+    - Relax the restrictions on company names to allow for special characters, enabling users to input a wider range of company names without encountering validation errors.
+5. **In UI, make the view card scrollable for all labels**:
+    - Enhance the user interface by making the view card scrollable for all labels, ensuring that users can view all information associated with an internship application, even if it exceeds the visible area of the card.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -571,7 +610,8 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   2. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   2. Double-click the jar file. <br>
+       Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
 2. Saving window preferences
 
@@ -580,29 +620,67 @@ testers are expected to do more *exploratory* testing.
    2. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-3. _{ more test cases …​ }_
+3. Using InternHub with Sample Internship Application List
+    
+   1. Close InternHub. 
+
+   2. Delete the folder `data` which contain file `./addressbook.json` (if applicable).
+
+   3. Launch InternHub. <br>
+   Expected: A sample internship application list with 1 internship applications should be displayed.
+
+### Adding an internship application
+
+1. Test case: `add c/Singapore Airline p/98765432 e/singaporeairline@example.com t/O jd/Animator intern id/3 months s/1000`<br>
+   Expected: A new internship application is added to the list. Details of the added internship application shown in the **result display**.
+
+2. Test case: `add`<br>
+   Expected: No internship application is added. Error details shown in the **result display**.
+
 
 ### Deleting an internship application
 
 1. Deleting an internship application while all internship applications are being shown
 
-   1. Prerequisites: List all internship applications using the `list` command. Multiple applications in the list.
+   1. Prerequisites: At least one internship application displayed.
 
    2. Test case: `delete 1`<br>
-      Expected: First application is deleted from the list. Details of the deleted application shown in the status message. Timestamp in the status bar is updated.
+      Expected: First application is deleted from the list. Details of the deleted internship application shown in the **result display**.
 
    3. Test case: `delete 0`<br>
-      Expected: No application is deleted. Error details shown in the status message. Status bar remains the same.
+      Expected: No application is deleted. Error details shown in the **result display**. 
 
    4. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
+      Expected: No application is deleted. Error details shown in the **result display**.
 
 2. Deleting an internship application in a filtered list of applications
 
-    1. Prerequisites: Filter internship applications using `filter i` based on tags. Do note, you can use any tags instead of `i` as long as you have a populated result list of applications
+    1. Prerequisites: Filter internship applications using `filter I` based on tags. Do note, you can use other valid tags instead of `I` as long as you have a populated result list of applications
 
     2. Test case: `delete 1`<br>
-       Expected: First application based on the **filtered list** is deleted. Details of deleted application shown in status message.
+       Expected: First application based on the **filtered list** is deleted. Details of deleted internship application shown in **result display**.
+
+### Editing an internship application
+
+1. Editing an internship application while all internship applications are being shown
+
+    1. Prerequisites: At least one internship application displayed.
+
+    2. Test case: `edit 1 c/shoppa`<br>
+       Expected: The company name of the first internship application is updated to shoppa. Details of the edited internship application shown in the **result display**.
+
+    3. Test case: `edit 0`<br>
+       Expected: No application is edited. Error details shown in the **result display**.
+
+    4. Other incorrect delete commands to try: `edit`, `edit x`, `...` (where x is larger than the list size)<br>
+       Expected: No application is edited. Error details shown in the **result display**.
+
+2. Deleting an internship application in a filtered list of applications
+
+    1. Prerequisites: Filter internship applications using `filter I` based on tags. Do note, you can use other valid tags instead of `I` as long as you have a populated result list of applications
+
+    2. Test case: `delete 1`<br>
+       Expected: First application based on the **filtered list** is deleted. Details of deleted application shown in **result display**.
 
 
 ### Viewing an internship application
@@ -611,15 +689,37 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: Clear all applications using `clear` command. Will empty the applications
 
-   2. Test case : `view 2`<br>
-      Expected : Error message should be shown in the **result display** as there are no applications to view from !
+   2. Test case: `view 2`<br>
+      Expected : Error message should be shown in the **result display** as there are no applications to view.
 
 2. Viewing an internship application in a populated list
 
-    1. Prerequisites: Ensure at least 1 internship application is in the applications list of InternHub
+    1. Prerequisites: Ensure **at least 1 internship application** is in the applications list of InternHub
 
-    2. Test case : `view 2` (Assuming there are at least 2 applications)<br>
-       Expected : The application details at index 2 will be aptly displayed on the view panel on the right
+    2. Test case: `view 1` <br>
+       Expected : The application details at index 1 will be aptly displayed on the view panel on the right
+
+       
+### List all internship applications
+1. Test case: `list`<br>
+Expected: List all internship application in InternHub.
+
+
+### Finding internship application(s)
+
+1. Prerequisites: Starting from an empty list,<br>
+    * `add c/Singapore Airline p/98765432 e/singaporeairline@example.com t/O jd/Animator intern id/3 months s/1000`
+
+    * `add c/Malaysia Airline p/98765431 e/malaysiaairline@example.com t/NR jd/Data Science intern id/3 months s/1000`
+
+    * `add c/shoppa p/98765430 e/shoppa@example.com t/OA jd/Junior Animator intern id/3 months s/1000`
+
+2. Test case: `find`<br>
+   Expected: No internship application is displayed on the view panel on the right. Error message should be shown in the **result display**.
+
+3. Test case: `find airline`<br>
+   Expected: The application details of Singapore Airline and Malaysia Airline will be aptly displayed on the view panel on the right (the company name contain the word **airline**).
+
 
 ### Modifying note content of an internship application
 
@@ -627,21 +727,50 @@ testers are expected to do more *exploratory* testing.
 
     1. Prerequisites: Attach a test note to the internship application either when you create it or by using `edit`
 
-    2. Test case : `note 2` where 2 is the index of that application<br>
+    2. Test case: `note 2` where 2 is the index of that application<br>
        Expected : In the command box, you will notice the following : `edit 2 n/[existing note content]`, then you can make changes and enter to modify the note
+
+### filter internship applications
+1. filter to get internship application(s) with status 'NR' (No Reply) in an empty list
+
+    1. Prerequisites: Clear all applications using `clear` command. Will empty the applications
+
+    2. Test case: `filter NR`<br>
+       Expected : Error message should be shown in the **result display** as there are no applications.
+
+2. filter to get internship application(s) that has status 'NR' (No Reply) in a populated list
+
+    1. Prerequisites: Starting from an empty list,<br>
+       * `add c/Singapore Airline p/98765432 e/singaporeairline@example.com t/O jd/Animator intern id/3 months s/1000`
+
+       * `add c/Malaysia Airline p/98765431 e/malaysiaairline@example.com t/NR jd/Data Science intern id/3 months s/1000`
+
+       * `add c/shoppa p/98765430 e/shoppa@example.com t/OA jd/Junior Animator intern id/3 months s/1000`
+
+    2. Test case: `filter NR` (Assuming there are at least 2 applications)<br>
+       Expected : Only Malaysia Airline will be displayed on the left side of the list panel.
+
+
+### Getting Reminders for Internship Applications
+1. Getting reminders for internship applications which are due or have interviews scheduled in 7 days
+
+   1. Prerequisites: At least one internship application displayed. 
+   2. Test case: `reminder 7` <br>
+       Expected: Only internship applications which have interviews scheduled in 7 days will be shown. They should be displayed in order of earliest interview date.
+
 
 ### Saving data
 
 1. Dealing with missing/corrupted data files
 
    i. Test case: Deleting name field (the `key` attribute) from a contact in the InternHub data file.<br>
-      Expected: After the app is reboot, the now corrupt data file `internhub.json` will be detected and all the data in the file will be wiped out, causing the app to recreate an empty data file.
+      Expected: After the app is reboot, the now corrupt data file `addressbook.json` will be detected and all the data in the file will be wiped out, causing the app to recreate an empty data file.
    
    ii. Test case: Delete InternHub data file.<br>
-      Expected: If the data file `internhub.json` is nowhere to be found, the app will simply recreate the an empty data file.
+      Expected: If the data file `addressbook.json` is nowhere to be found, the app will simply recreate the an empty data file.
    
    iii. Test case: Modify the json format in which InternHub data file is stored.<br>
-      Expected: If data file `internhub.json` is still in the correct format, the app will run as per normal. However, if the data file becomes unreadable by the program, then all the data in the file will be wiped out, causing the app to recreate and run with an empty data file from scratch.
+      Expected: If data file `addressbook.json` is still in the correct format, the app will run as per normal. However, if the data file becomes unreadable by the program, then all the data in the file will be wiped out, causing the app to recreate and run with an empty data file from scratch.
 
 --------------------------------------------------------------------------------------------------------------------
 
