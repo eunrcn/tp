@@ -244,14 +244,14 @@ The following steps outline how the Filter Command feature operates:
 
 #### Implementation
 
-The `EditCommand` allows users to modify the details of an existing internship application.
+The `EditCommand` allows users to modify the details of an existing internship application, based on their table `index`.
 
 #### Command Structure
 
 - **Command Word**: `edit`
 - **Parameters**:
 - `INDEX`: Positive integer representing the index of the person in the displayed list.
-- `[NAME]`, `[PHONE]`, `[EMAIL]`, `[ADDRESS]`, `[JOB DESCRIPTION]`, `[INTERVIEW DATE]`, `[INTERN DURATION]`, `[SALARY]`, `[TAG]`: Optional parameters to specify the new values for corresponding fields. Existing values will be overwritten.
+- `[NAME]`, `[PHONE]`, `[EMAIL]`, `[ADDRESS]`, `[JOB DESCRIPTION]`, `[INTERVIEW DATE]`, `[INTERN DURATION]`, `[SALARY]`, `[TAG]`, `[NOTE]`: Optional parameters to specify the new values for corresponding fields. Existing values will be overwritten.
 
 #### Execution Steps
 
@@ -273,7 +273,7 @@ The `EditCommand` allows users to modify the details of an existing internship a
 - **Overwriting vs. Appending**: The command allows overwriting existing details with new ones. This simplifies the implementation and usage of the command.
 - **Error Handling**: The command ensures that at least one field is edited and provides appropriate error messages for invalid inputs.
 
-<puml src="diagrams/EditCommandClassDiagram.puml" width="300" />
+<puml src="diagrams/EditCommandClassDiagram.puml" width="550" />
 
 #### Implementation
 
