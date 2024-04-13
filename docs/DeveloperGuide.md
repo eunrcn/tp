@@ -326,11 +326,11 @@ The following steps outline how the View Command feature operates :
 
 ### 4.3.4 Diagrams
 
-The following sequence diagram shows what happens when `view 3` is the command input
+The following sequence diagram shows what happens when `view 3` is the command input.
 
 <puml src="diagrams/ViewSequenceDiagram.puml" />
 
-The following activity diagram shows what the logic behind the command `view 3`
+The following activity diagram shows what the logic behind the command `view 3`.
 
 <puml src="diagrams/ViewActivityDiagram.puml" />
 
