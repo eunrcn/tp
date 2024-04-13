@@ -150,7 +150,6 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 `util`: This package defines utility classes for certain operations, like file I/O, argument validation, and image processing.
 
 --------------------------------------------------------------------------------------------------------------------
-
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
@@ -163,7 +162,7 @@ This command adds an internship application into the InternHub using the company
 The following steps show how the add internship application feature works:
 
 1. Command Parsing
-   - When a user inputs the `add` command followed by internship application details, the `AddCommandParser` is invoked to parse this input.
+    - When a user inputs the `add` command followed by internship application details, the `AddCommandParser` is invoked to parse this input.
 2. Getting inputs
    - Input is broken down into individual components based on predefined prefixes.
    - Check for missing or duplicates prefix.
@@ -171,11 +170,15 @@ The following steps show how the add internship application feature works:
 3. Execution
    - Upon parsing, the `AddCommand` is instantiated with the Person object.
    - The AddCommand#execute(Model model) is then called, passing the current application model.
+    - Input is broken down into individual components based on predefined prefixes.
+    - Check for missing or duplicates prefix.
+    - Once all components are successfully parsed, a new Person object representing the internship application is created using the parsed values.
 4. Command Result
-   - The AddCommand constructs a new `CommandResult` with the following params :
-     - feedbackToUser : `New internship application added: [newly added internship application details]`
+    - The AddCommand constructs a new `CommandResult` with the following params :
+        - feedbackToUser : `New internship application added: [newly added internship application details]`
 5. UI
-   - The ViewPanel class displays the personToView with all its details and fields.
+    - The ViewPanel class displays the personToView with all its details and fields.
+
 
 The diagram below shows the class diagram for AddCommand.
 
@@ -198,28 +201,8 @@ The Diagram below shows the sequence diagram for AddCommand. All Initialization 
 
 <puml src="diagrams/AddSequenceDiagram.puml" />
 
+
 ### Filter Command
-
-#### Implementation
-The Filter Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
-
-The following steps outline how the Filter Command feature operates:
-
-1. Command Parsing
-    - When a user inputs the `filter` command followed by a `tag`, the `FilterCommandParser` is invoked to parse this input
-    - The tag provided is extracted from the input string
-2. List filtering
-    - Upon parsing, a `MatchingTagPredicate` is instantiated with the parsed tag String
-    - The `FilteredPersonList` representing the list of applications is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
-3. Execute
-    - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
-    - The `FilterCommand#execute(Model model)` is then called, passing the current application model
-4. Command Result
-    - The `FilterCommand` constructs a new `CommandResult` with the following params :
-        - **feedbackToUser** : `[size of filtered list] persons listed~`
-
-
-### Reminder Command
 
 #### Implementation
 The Filter Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
@@ -256,17 +239,17 @@ The `EditCommand` allows users to modify the details of an existing internship a
 #### Execution Steps
 
 1. Parsing:
-   - The input arguments are parsed to extract the index and the new values for the internship application's details.
+    - The input arguments are parsed to extract the index and the new values for the internship application's details.
 2. Validation:
-   - The validity of the index and the absence of duplicate prefixes are verified.
+    - The validity of the index and the absence of duplicate prefixes are verified.
 3. Creation of Edit Descriptor:
-   - An `EditPersonDescriptor` object is created to store the edited details.
+    - An `EditPersonDescriptor` object is created to store the edited details.
 4. Field Editing:
-   - Each provided field is set in the `EditPersonDescriptor`.
+    - Each provided field is set in the `EditPersonDescriptor`.
 5. Execution:
-   - The `EditCommand` is executed, modifying the specified internship application's details.
+    - The `EditCommand` is executed, modifying the specified internship application's details.
 6. Feedback:
-   - A success message is generated to confirm the editing operation.
+    - A success message is generated to confirm the editing operation.
 
 #### Design Considerations
 
@@ -292,7 +275,7 @@ Suppose we have an internship application with the following details:
 Now, the user wants to edit the phone number and address. They issue the following command:
 edit 1 p/87654321 a/Block 456, New Avenue, #05-678
 
-The `EditCommand` will update the internship application's phone number to `87654321` and address to `Block 456, New Avenue, #05-678`. 
+The `EditCommand` will update the internship application's phone number to `87654321` and address to `Block 456, New Avenue, #05-678`.
 Upon successful execution, a message will be displayed confirming the changes made to the internship application's details.
 
 <puml src="diagrams/EditSequenceDiagram.puml" />
@@ -383,6 +366,66 @@ The following steps outline how the Note Command feature operates:
 The following activity diagram shows how the user can interact with the Note Command
 
 <puml src="diagrams/NoteActivityDiagram.puml" />
+
+
+### 4.x Reminder Command
+
+#### 4.x.1 Command Structure
+
+- **Command Word**: `reminder`
+- **Parameters**:
+    - `N`: Positive integer representing the number of days for upcoming interviews.
+
+#### 4.x.2 Implementation
+
+The `ReminderCommand` allows users to filter the list of internship applications to display only those with interviews scheduled within the next 'N' days, including today.
+
+The following steps outline how the Reminder Command feature operates:
+
+1. Command Parsing
+    - When a user inputs the `reminder` command followed by a number of days, the `ReminderCommandParser` is invoked to parse this input.
+    - The number of days provided is extracted from the input string.
+2. Execution
+    - Upon parsing, the `ReminderCommand` is instantiated with the parsed number of days.
+    - The `ReminderCommand#execute(Model model)` is then called, passing the current application model.
+3. Filter Applications
+    - Within the `execute` method, the `ReminderCommand` filters the list of internship applications (`List<Person>`) from the model to include only those with upcoming interviews within the specified number of days.
+4. Command Result
+    - Upon filtering the applications, the `ReminderCommand` constructs a new `CommandResult` with the following parameters:
+        - **feedbackToUser**: A message indicating the success of the command, including the number of days and the applications listed.
+5. Displaying Feedback
+    - The `CommandResult` is displayed to the user, showing the filtered list of applications with upcoming interviews within the specified number of days.
+
+<puml src="diagrams/ReminderCommandClassDiagram.puml" width="300" />
+
+#### 4.x.3 Design Considerations
+**Alternative 1 (Current Implementation): Create `reminder` command**
+- Pros:
+    - Provides a dedicated command for filtering applications based on upcoming interviews
+    - Offers flexibility in specifying the number of days
+- Cons:
+    - Requires additional command implementation
+    - Might introduce complexity to the command interface
+
+**Alternative 2: Integrated Feature**
+- Pros:
+    - Combine `reminder` command with existing `filter` command
+    - Streamline command interface
+- Cons:
+    - May increase complexity in command parsing
+    - Could potentially confuse users with dual functionality
+
+**Chosen Approach: Alternative 1**
+- The chosen approach introduces a dedicated `reminder` command to maintain clarity and flexibility in filtering applications based on upcoming interviews.
+- While it requires additional implementation effort, it ensures a clear and distinct feature for users to manage their internship applications effectively.
+
+<puml src="diagrams/ReminderCommandSequenceDiagram.puml" />
+
+#### 4.x.4 Activity Diagram
+The following activity diagram shows how the user can interact with the Reminder Command
+
+<puml src="diagrams/ReminderCommandActivityDiagram.puml" />
+
 
 --------------------------------------------------------------------------------------------------------------------
 
