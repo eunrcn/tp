@@ -4,14 +4,14 @@ title: "Developer Guide"
 pageNav: 3
 ---
 
-# 1. InternHub Developer Guide
+# InternHub Developer Guide
 
 <!-- * Table of Contents -->
 <page-nav-print />
 
 --------------------------------------------------------------------------------------------------------------------
 
-## 1.1 **Acknowledgements**
+## 1.1 Acknowledgements
 
 * This is a brownfield project is based on the AddressBook-Level3 created by the [SE-EDU initiative](https://se-education.org/)
 * AI tools used: 
@@ -19,13 +19,13 @@ pageNav: 3
 
 --------------------------------------------------------------------------------------------------------------------
 
-# 2. **Setting up, getting started**
+# 2. Setting up, getting started
 
 Refer to the guide [_Setting up and getting started_](SettingUp.md) for initial setup and basic instructions.
 
 --------------------------------------------------------------------------------------------------------------------
 
-# 3 **Design**
+# 3. Design
 
 ## 3.1 Architecture
 
@@ -152,7 +152,7 @@ Classes used by multiple components are in the `seedu.internhub.commons` package
 `util`: This package defines utility classes for certain operations, like file I/O, argument validation, and image processing.
 
 --------------------------------------------------------------------------------------------------------------------
-# 4. **Implementation**
+# 4. Implementation
 
 This section describes some noteworthy details on how certain features are implemented.
 
@@ -255,7 +255,7 @@ The `EditCommand` allows users to modify the details of an existing internship a
 6. Feedback:
     - A success message is generated to confirm the editing operation.
 
-## 4.2.3 Design Considerations
+### 4.2.3 Design Considerations
 
 - **Overwriting vs. Appending**: The command allows overwriting existing details with new ones. This simplifies the implementation and usage of the command.
 - **Error Handling**: The command ensures that at least one field is edited and provides appropriate error messages for invalid inputs.
@@ -687,7 +687,7 @@ Use case ends.
 ---
 
 
-### 6.3.7 Use Case: Filter Internship Applications by Reminder
+### 6.3.7 Use Case: Be reminded of upcoming Interviews
 
 **Main Success Scenario (MSS):**
 
