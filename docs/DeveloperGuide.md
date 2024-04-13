@@ -13,7 +13,9 @@ pageNav: 3
 
 ## **Acknowledgements**
 
-_{ list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well }_
+* This is a brownfield project is based on the AddressBook-Level3 created by the [SE-EDU initiative](https://se-education.org/)
+* AI tools used: 
+  * ChatGPT by OpenAI used to answer design questions and minor documentation formats
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -67,13 +69,13 @@ The sections below give more details of each component.
 
 ### UI component
 
-The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
+The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/java/seedu/internhub/ui/Ui.java)
 
 <puml src="diagrams/UiClassDiagram.puml" alt="Structure of the UI Component"/>
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/java/seedu/internhub/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
@@ -84,7 +86,7 @@ The `UI` component,
 
 ### Logic component
 
-**API** : [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+**API** : [`Logic.java`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/java/seedu/internhub/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
@@ -101,7 +103,7 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 How the `Logic` component works:
 
-1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
+1. When `Logic` is called upon to execute a command, it is passed to an `InternHubParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
 1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
 1. The command can communicate with the `Model` when it is executed (e.g. to delete a person).<br>
    Note that although this is shown as a single step in the diagram above (for simplicity), in the code it can take several interactions (between the command object and the `Model`) to achieve.
@@ -112,13 +114,13 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 <puml src="diagrams/ParserClasses.puml" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
+* When called upon to parse a user command, the `InternHubParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `InternHubParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
-**API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+**API** : [`Model.java`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/java/seedu/internhub/model/Model.java)
 
-<puml src="diagrams/ModelClassDiagram.puml" width="450" />
+<puml src="diagrams/ModelClassDiagram.puml" />
 
 
 The `Model` component,
@@ -130,7 +132,7 @@ The `Model` component,
 
 ### Storage component
 
-**API** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
+**API** : [`Storage.java`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/java/seedu/internhub/storage/Storage.java)
 
 <puml src="diagrams/StorageClassDiagram.puml" width="550" />
 
@@ -141,7 +143,7 @@ The `Storage` component,
 
 ### Common classes
 
-Classes used by multiple components are in the `seedu.addressbook.commons` package. The three over-arching sub-packages are `core`, `exceptions`, and `util`.
+Classes used by multiple components are in the `seedu.internhub.commons` package. The three over-arching sub-packages are `core`, `exceptions`, and `util`.
 
 `core`: This package defines classes for user configuration, GUI settings, and even a version number.
 
@@ -156,6 +158,20 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 This section describes some noteworthy details on how certain features are implemented.
 
 ### Add Command
+
+#### Command Structure
+
+<box>
+
+**Format:** `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL [a/ADDRESS] t/TAG jd/JOB_DESCRIPTION [d/INTERVIEW_DATE] id/INTERN_DURATION s/SALARY [n/NOTE]`
+
+</box>
+
+<box type="info">
+
+Parameters in `[]` are optional
+
+</box>
 
 #### Implementation
 This command adds an internship application into the InternHub using the company name, phone number, email, address, tag, job description, interview date, intern duration, salary and note.
@@ -194,79 +210,45 @@ Alternative 2: New Person object is created and added to InternHub in model.
 
 - Cons: More prone to error.
 
-The Diagram below shows the sequence diagram for AddCommand. All Initialization commands above are similar in their interactions with the [logic component](###logic-component) and [model component](###model-component).
+The Diagram below shows the sequence diagram for AddCommand. All Initialization commands above are similar in their interactions with the [logic component](#logic-component) and [model component](#model-component).
 
 <puml src="diagrams/AddSequenceDiagram.puml" />
 
-### Filter Command
-
-#### Implementation
-The Filter Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
-
-The following steps outline how the Filter Command feature operates:
-
-1. Command Parsing
-    - When a user inputs the `filter` command followed by a `tag`, the `FilterCommandParser` is invoked to parse this input
-    - The tag provided is extracted from the input string
-2. List filtering
-    - Upon parsing, a `MatchingTagPredicate` is instantiated with the parsed tag String
-    - The `FilteredPersonList` representing the list of applications is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
-3. Execute
-    - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
-    - The `FilterCommand#execute(Model model)` is then called, passing the current application model
-4. Command Result
-    - The `FilterCommand` constructs a new `CommandResult` with the following params :
-        - **feedbackToUser** : `[size of filtered list] persons listed~`
-
-
-### Reminder Command
-
-#### Implementation
-The Filter Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
-
-The following steps outline how the Filter Command feature operates:
-
-1. Command Parsing
-    - When a user inputs the `filter` command followed by a `tag`, the `FilterCommandParser` is invoked to parse this input
-    - The tag provided is extracted from the input string
-2. List filtering
-    - Upon parsing, a `MatchingTagPredicate` is instantiated with the parsed tag String
-    - The `FilteredPersonList` representing the list of applications is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
-3. Execute
-    - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
-    - The `FilterCommand#execute(Model model)` is then called, passing the current application model
-4. Command Result
-    - The `FilterCommand` constructs a new `CommandResult` with the following params :
-        - **feedbackToUser** : `[size of filtered list] persons listed~`
-
 
 ### Edit Command
+
+#### Command Structure
+
+<box>
+
+**Format:** `edit INDEX [c/COMPANY_NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG] [jd/JOB_DESCRIPTION] [id/INTERN_DURATION] [s/SALARY] [a/ADDRESS] [d/INTERVIEW_DATE] [n/NOTE]`
+
+</box>
+
+<box type="info">
+
+- `INDEX` is a positive integer representing the index of the application in the applications list.
+- Editing any field with a new value will **OVERWRITE** the old value.
+- At least one parameter needs to be included.
+
+</box>
 
 #### Implementation
 
 The `EditCommand` allows users to modify the details of an existing internship application, based on their table `index`.
 
-#### Command Structure
-
-- **Command Word**: `edit`
-- **Parameters**:
-- `INDEX`: Positive integer representing the index of the person in the displayed list.
-- `[NAME]`, `[PHONE]`, `[EMAIL]`, `[ADDRESS]`, `[JOB DESCRIPTION]`, `[INTERVIEW DATE]`, `[INTERN DURATION]`, `[SALARY]`, `[TAG]`, `[NOTE]`: Optional parameters to specify the new values for corresponding fields. Existing values will be overwritten.
-
-#### Execution Steps
-
 1. Parsing:
-   - The input arguments are parsed to extract the index and the new values for the internship application's details.
+    - The input arguments are parsed to extract the index and the new values for the internship application's details.
 2. Validation:
-   - The validity of the index and the absence of duplicate prefixes are verified.
+    - The validity of the index and the absence of duplicate prefixes are verified.
 3. Creation of Edit Descriptor:
-   - An `EditPersonDescriptor` object is created to store the edited details.
+    - An `EditPersonDescriptor` object is created to store the edited details.
 4. Field Editing:
-   - Each provided field is set in the `EditPersonDescriptor`.
+    - Each provided field is set in the `EditPersonDescriptor`.
 5. Execution:
-   - The `EditCommand` is executed, modifying the specified internship application's details.
+    - The `EditCommand` is executed, modifying the specified internship application's details.
 6. Feedback:
-   - A success message is generated to confirm the editing operation.
+    - A success message is generated to confirm the editing operation.
 
 #### Design Considerations
 
@@ -274,8 +256,6 @@ The `EditCommand` allows users to modify the details of an existing internship a
 - **Error Handling**: The command ensures that at least one field is edited and provides appropriate error messages for invalid inputs.
 
 <puml src="diagrams/EditCommandClassDiagram.puml" width="550" />
-
-#### Implementation
 
 Suppose we have an internship application with the following details:
 
@@ -292,12 +272,94 @@ Suppose we have an internship application with the following details:
 Now, the user wants to edit the phone number and address. They issue the following command:
 edit 1 p/87654321 a/Block 456, New Avenue, #05-678
 
-The `EditCommand` will update the internship application's phone number to `87654321` and address to `Block 456, New Avenue, #05-678`. 
+The `EditCommand` will update the internship application's phone number to `87654321` and address to `Block 456, New Avenue, #05-678`.
 Upon successful execution, a message will be displayed confirming the changes made to the internship application's details.
 
 <puml src="diagrams/EditSequenceDiagram.puml" />
 
+
+### Filter Command
+
+#### Command Structure
+<box>
+
+**Format:** `filter VALID_TAG`
+
+</box>
+
+<box type="info">
+
+Valid Tag Inputs
+- NR: No Reply
+- I: Interview
+- O: Offered
+- OA: Online Assessment
+- R: Rejected
+
+</box>
+
+#### Implementation
+
+The Filter Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
+
+The following steps outline how the Filter Command feature operates:
+
+1. Command Parsing
+    - When a user inputs the `filter` command followed by a `tag`, the `FilterCommandParser` is invoked to parse this input
+    - The tag provided is extracted from the input string
+2. List filtering
+    - Upon parsing, a `MatchingTagPredicate` is instantiated with the parsed tag String
+    - The `FilteredPersonList` representing the list of applications is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
+3. Execute
+    - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
+    - The `FilterCommand#execute(Model model)` is then called, passing the current application model
+4. Command Result
+    - The `FilterCommand` constructs a new `CommandResult` with the following params :
+        - **feedbackToUser** : `[size of filtered list] persons listed`
+
+
+### Reminder Command
+
+#### Command Structure
+<box>
+
+**Format:** `reminder INT`
+
+</box>
+
+#### Implementation
+
+The Reminder Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
+
+The following steps outline how the Filter Command feature operates:
+
+1. Command Parsing
+    - When a user inputs the `filter` command followed by a `tag`, the `FilterCommandParser` is invoked to parse this input
+    - The tag provided is extracted from the input string
+2. List filtering
+    - Upon parsing, a `MatchingTagPredicate` is instantiated with the parsed tag String
+    - The `FilteredPersonList` representing the list of applications is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
+3. Execute
+    - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
+    - The `FilterCommand#execute(Model model)` is then called, passing the current application model
+4. Command Result
+    - The `FilterCommand` constructs a new `CommandResult` with the following params :
+        - **feedbackToUser** : `[size of filtered list] persons listed~`
+
 ### View Command
+
+#### Command Structure
+<box>
+
+**Format:** `view INDEX`
+
+</box>
+
+<box type="info">
+
+`INDEX` is a positive integer representing the index of the application in the applications list.
+
+</box>
 
 #### Implementation
 The View Command allows users to view the internship application based on its index in the view panel
@@ -336,22 +398,35 @@ The following activity diagram shows what the logic behind the command `view 3`
 
 ### Note Command
 
+#### Command Structure
+<box>
+
+**Format:** `note INDEX`
+
+</box>
+
+<box type="info">
+
+`INDEX` is a positive integer representing the index of the application in the applications list.
+
+</box>
+
 #### Implementation
-The Note Command feature allows users to retrieve the note attribute of an internship applciation based on its index and reflects it in the Command Box as an edit command, enabling users to make changes to the note seamlessly.
+The Note Command feature allows users to retrieve the note attribute of an internship application based on its index and reflects it in the Command Box as an edit command, enabling users to make changes to the note seamlessly.
 
 The following steps outline how the Note Command feature operates:
 
 1. Command Parsing
-    - When a user inputs the `note` command followed by an `index`, the `NoteCommandParser` is invoked to parse this input
-    - The index provided is extracted from the input string
+    - When a user inputs the `note` command followed by an `index`, the `NoteCommandParser` is invoked to parse this input.
+    - The index provided is extracted from the input string.
 2. Execution
     - Upon parsing, the `NoteCommand` is instantiated with the parsed index.
-    - The `NoteCommand#execute(Model model)` is then called, passing the current application model
+    - The `NoteCommand#execute(Model model)` is then called, passing the current application model.
 3. Index validation
-    - Within the `execute` method, the validity of the index entered is checked. This involves ensuring the index falls within the current range of the internship application list
-    - If index is invalid, a `CommandException` is thrown with an error message
+    - Within the `execute` method, the validity of the index entered is checked. This involves ensuring the index falls within the current range of the internship application list.
+    - If index is invalid, a `CommandException` is thrown with an error message.
 4. Note Retrieval
-    - Assuming the index is valid, the `NoteCommand` retrieves the **filtered list of applications** (`List<Person>`) from the model
+    - Assuming the index is valid, the `NoteCommand` retrieves the **filtered list of applications** (`List<Person>`) from the model.
     - The note content of the application corresponding to the provided index is then fetched.
 5. Command Result
     - Upon retrieving the note content, the `NoteCommand` constructs a new `CommandResult` with the following params :
@@ -432,134 +507,130 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `InternHub` and the **User** is the `InternHub User`, unless specified otherwise)
 
-**Use Case: Input Company Contact Information**
-
-**Actor:** Internship Applicant
+#### Use Case: Adding a new Internship Application
 
 **Main Success Scenario (MSS):**
 
-1. Internship Applicant inputs contact information of internship company.
-2. System stores the contact information.
-3. Use case ends.
+1. User inputs contact information of internship company.
+2. System stores the application information.<br>
+Use case ends.
 
 **Extensions:**
 
-* 1a. System detects an error in the entered data.
-    * 1a1. System requests for the correct data.
-    * 1a2. Internship Applicant enters new data.
-    * Steps 1a1-1a2 are repeated until the data entered are correct.
-    * Use case resumes from step 2.
+1a. System detects an error in the entered data.
+* 1a1. System requests for the correct data.
+* 1a2. User enters new data.
+* Steps 1a1-1a2 are repeated until the data entered are correct.
+* Use case resumes from step 2.
 
-* *a. At any time, Internship Applicant chooses to cancel the input.
-    * Use case ends.
-
+1a. System detects an error in the fields being added (No fields at all / Invalid field prefixes / Duplicate prefixes)
+* 1a1. System requests for proper input of fields and correct prefix
+* 1a2. User enters the fields to be edited.
+* Steps 1a1-1a2 are repeated until the selection is correct.
+* Use case resumes from step 2.
 ---
 
-**Use Case: Delete Company Contact Information**
-
-**Actor:** Internship Applicant
+#### Use Case: Delete Internship Application
 
 **Main Success Scenario (MSS):**
 
-1. Internship Applicant inputs index of contact to be deleted.
-2. System deletes the relevant contact information.
-3. Use case ends.
+1. User inputs index of contact to be deleted.
+2. System deletes the relevant internship application.<br>
+Use case ends.
 
 **Extensions:**
 
-* 1a. System detects an error in index of contact
-    * 1a1. System requests for proper input of index (1 to current number of contacts)
-    * 1a2. Internship Applicant enters the correct index.
-    * Steps 1a1-1a2 are repeated until the selection is correct.
-    * Use case resumes from step 2.
-
-* *a. At any time, the Internship Applicant chooses to cancel to detect contact.
-    * *a1. System cancels deletion of contact.
-    * Use case ends.
+1a. System detects an error in index of application
+* 1a1. System requests for proper input of index (1 to current number of applications)
+* 1a2. User enters the correct index.
+* Steps 1a1-1a2 are repeated until the selection is correct.
+* Use case resumes from step 2.
 
 ---
 
-**Use Case: Edit Contacts Info**
-
-**Actor:** Internship Applicant
+#### Use Case: Edit Internship Application Information
 
 **Main Success Scenario (MSS):**
 
-1. Internship Applicant chooses contact to edit by its index and enters relevant fields to be modified
-2. System modifies that corresponding field of that contact
-3. Use case ends
+1. User chooses application to edit by its index and enters relevant fields to be modified.
+2. System modifies that corresponding field of that application.<br>
+Use case ends.
 
 **Extensions:**
 
-* 1a. System detects an error in index of contact
-    * 1a1. System requests for proper input of index (1 to current number of contacts)
-    * 1a2. Internship Applicant enters the correct index.
-    * Steps 1a1-1a2 are repeated until the selection is correct.
-    * Use case resumes from step 2.
+1a. System detects an error in index of application
+* 1a1. System requests for proper input of index (1 to current number of applications)
+* 1a2. User enters the correct index.
+* Steps 1a1-1a2 are repeated until the selection is correct.
+* Use case resumes from step 2.
 
-* 1a. System detects an error in the fields to be edited (No fields at all or incorrect field prefixes)
-    * 1a1. System requests for proper input of fields and correct prefix
-    * 1a2. Internship Applicant enters the fields to be edited.
-    * Steps 1a1-1a2 are repeated until the selection is correct.
-    * Use case resumes from step 2.
-
-* *a. At any time, the Internship Applicant chooses to cancel to edit contact.
-    * *a1. System cancels edit of contact.
-    * Use case ends.
+1a. System detects an error in the fields to be edited (No fields at all / Invalid field prefixes / Duplicate prefixes)
+* 1a1. System requests for proper input of fields and correct prefix
+* 1a2. User enters the fields to be edited.
+* Steps 1a1-1a2 are repeated until the selection is correct.
+* Use case resumes from step 2.
 
 ---
 
-**Use Case: Filter Contacts by Tag**
-
-**Actor:** Internship Applicant
+#### Use Case: Filter Internship Applications by Tag
 
 **Main Success Scenario (MSS):**
 
-1. Internship Applicant chooses to filter contacts by tag.
-2. Internship Applicant inputs the tag.
-3. System filters the contacts associated with the selected tag.
-4. System displays the filtered contacts.
-5. Use case ends.
+1. User chooses to filter applications by tag.
+2. User inputs the tag.
+3. System filters the applications associated with the selected tag.
+4. System displays the filtered applications.<br>
+Use case ends.
 
 **Extensions:**
 
 * 2a. System detects an error in tag to be filtered
-    * 2a1. System requests for proper input of tag (One of existing tags)
-    * 2a2. Internship Applicant enters the correct tag.
+    * 2a1. System requests for proper input of tag (One of existing tags : NR, O, OA, I, R)
+    * 2a2. User enters the correct tag.
     * Steps 2a1-2a2 are repeated until the selection is correct.
     * Use case resumes from step 3.
 
-* *a. At any time, the Internship Applicant chooses to cancel the filtering.
-    * *a1. System cancels the filtering.
-    * Use case ends.
-
 ---
 
-**Use Case: View information of a contact**
-
-**Actor:** Internship Applicant
+#### Use Case: View information of an Internship Application
 
 **Main Success Scenario (MSS):**
 
-1. Internship Applicant chooses contact to be viewed on view panel.
-2. System requests for the specific contact index.
-3. Internship Applicant enters the contact index.
-4. System views the relevant contact on the view panel.
-5. Use case ends.
+1. User chooses application to be viewed on view panel.
+2. User enters the application index.
+3. System views the relevant contact on the view panel.<br>
+Use case ends.
 
 **Extensions:**
 
-* 3a. IH detects an error in index of contact
-    * 3a1. System requests for proper input of index (1 to current number of contacts)
-    * 3a2. Internship Applicant enters the correct index.
-    * Steps 3a1-3a2 are repeated until the selection is correct.
+* 2a. System detects an error in index of application
+    * 2a1. System requests for proper input of index (1 to current number of applications)
+    * 2a2. user enters the correct index.
+    * Steps 2a1-2a2 are repeated until the selection is correct.
     * Use case resumes from step 3.
 
-* *a. At any time, Internship Applicant chooses to cancel to view contact.
-    * *a1. System cancels viewing of contact.
-    * Use case ends.
+---
+
+#### Use Case: Modifying existing Note content of an Internship Application
+
+**Main Success Scenario (MSS):**
+
+1. User chooses application update the note content of.
+2. User enters the application index.
+3. System retrieves note content of the corresponding application in the command box as an edit command.
+4. User makes updates the note on the command box and hits enter.
+5. System stores the changes made.<br>
+   Use case ends.
+
+**Extensions:**
+
+* 2a. System detects an error in index of application
+    * 2a1. System requests for proper input of index (1 to current number of applications)
+    * 2a2. Internship Applicant enters the correct index.
+    * Steps 2a1-2a2 are repeated until the selection is correct.
+    * Use case resumes from step 3.
 
 ---
 
@@ -592,6 +663,9 @@ Team size : 5
     - Relax the restrictions on company names to allow for special characters, enabling users to input a wider range of company names without encountering validation errors.
 5. **In UI, make the view card scrollable for all labels**:
     - Enhance the user interface by making the view card scrollable for all labels, ensuring that users can view all information associated with an internship application, even if it exceeds the visible area of the card.
+6. **More flexible Filter Command**:
+    - We aim to make our filter command to work with all other fields like `address`, `salary`, `jobDescription` and so on, to allow greater flexibility for the user.
+    - To achieve this, our team is working on incorporating prefixes in the filter command, for example : `filter a/Clementi t/I s/1200` would filter the applications that fit the provided filter-restrictions.
 
 --------------------------------------------------------------------------------------------------------------------
 
