@@ -4,14 +4,14 @@ title: "Developer Guide"
 pageNav: 3
 ---
 
-# InternHub Developer Guide
+# 1. InternHub Developer Guide
 
 <!-- * Table of Contents -->
 <page-nav-print />
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Acknowledgements**
+## 1.1 **Acknowledgements**
 
 * This is a brownfield project is based on the AddressBook-Level3 created by the [SE-EDU initiative](https://se-education.org/)
 * AI tools used: 
@@ -19,15 +19,15 @@ pageNav: 3
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Setting up, getting started**
+# 2. **Setting up, getting started**
 
 Refer to the guide [_Setting up and getting started_](SettingUp.md) for initial setup and basic instructions.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Design**
+# 3 **Design**
 
-### Architecture
+## 3.1 Architecture
 
 <puml src="diagrams/ArchitectureDiagram.puml" width="280" />
 
@@ -67,7 +67,7 @@ For example, the `Logic` component defines its API in the `Logic.java` interface
 
 The sections below give more details of each component.
 
-### UI component
+## 3.2 UI component
 
 The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/java/seedu/internhub/ui/Ui.java)
 
@@ -84,7 +84,7 @@ The `UI` component,
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
 * depends on some classes in the `Model` component, as it displays `Person` object residing in the `Model`.
 
-### Logic component
+## 3.3 Logic component
 
 **API** : [`Logic.java`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/java/seedu/internhub/logic/Logic.java)
 
@@ -104,10 +104,10 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 How the `Logic` component works:
 
 1. When `Logic` is called upon to execute a command, it is passed to an `InternHubParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
-1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
-1. The command can communicate with the `Model` when it is executed (e.g. to delete a person).<br>
+2. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
+3. The command can communicate with the `Model` when it is executed (e.g. to delete a person).<br>
    Note that although this is shown as a single step in the diagram above (for simplicity), in the code it can take several interactions (between the command object and the `Model`) to achieve.
-1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
+4. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
 
 Here are the other classes in `Logic` (omitted from the class diagram above) that are used for parsing a user command:
 
@@ -117,7 +117,7 @@ How the parsing works:
 * When called upon to parse a user command, the `InternHubParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `InternHubParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
-### Model component
+## 3.4 Model component
 **API** : [`Model.java`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/java/seedu/internhub/model/Model.java)
 
 <puml src="diagrams/ModelClassDiagram.puml" />
@@ -130,7 +130,7 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-### Storage component
+## 3.5 Storage component
 
 **API** : [`Storage.java`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/java/seedu/internhub/storage/Storage.java)
 
@@ -141,7 +141,7 @@ The `Storage` component,
 * inherits from both `AddressBookStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
 * depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`)
 
-### Common classes
+## 3.6 Common classes
 
 Classes used by multiple components are in the `seedu.internhub.commons` package. The three over-arching sub-packages are `core`, `exceptions`, and `util`.
 
@@ -152,13 +152,13 @@ Classes used by multiple components are in the `seedu.internhub.commons` package
 `util`: This package defines utility classes for certain operations, like file I/O, argument validation, and image processing.
 
 --------------------------------------------------------------------------------------------------------------------
-## **Implementation**
+# 4. **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
 
-### Add Command
+## 4.1 Add Command
 
-#### Command Structure
+### 4.1.1 Command Structure
 
 <box>
 
@@ -172,7 +172,7 @@ Parameters in `[]` are optional
 
 </box>
 
-#### Implementation
+### 4.1.2 Implementation
 This command adds an internship application into the InternHub using the company name, phone number, email, address, tag, job description, interview date, intern duration, salary and note.
 
 The following steps show how the add internship application feature works:
@@ -196,11 +196,7 @@ The following steps show how the add internship application feature works:
     - The ViewPanel class displays the personToView with all its details and fields.
 
 
-The diagram below shows the class diagram for AddCommand.
-
-<puml src="diagrams/AddCommandClassDiagram.puml" width="550" />
-
-#### Design Considerations
+### 4.1.3 Design Considerations
 Alternative 1 (current choice): Creates a new Person object in AddCommandParser.
 
 - Pros: Simpler to test and understand.
@@ -213,20 +209,26 @@ Alternative 2: New Person object is created and added to InternHub in model.
 
 - Cons: More prone to error.
 
-The Diagram below shows the sequence diagram for AddCommand. All Initialization commands above are similar in their interactions with the [logic component](#logic-component) and [model component](#model-component).
+### 4.1.4 Diagrams
+
+The diagram below shows the class diagram for AddCommand.
+
+<puml src="diagrams/AddCommandClassDiagram.puml" width="550" />
+
+The diagram below shows the sequence diagram for AddCommand. All Initialization commands above are similar in their interactions with the [logic component](#logic-component) and [model component](#model-component).
 
 <puml src="diagrams/AddSequenceDiagram.puml" />
 
-### Edit Command
 
-#### Command Structure
+## 4.2 Edit Command
+
+### 4.2.1 Command Structure
 
 <box>
 
 **Format:** `edit INDEX [c/COMPANY_NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG] [jd/JOB_DESCRIPTION] [id/INTERN_DURATION] [s/SALARY] [a/ADDRESS] [d/INTERVIEW_DATE] [n/NOTE]`
 
 </box>
-
 
 <box type="info">
 
@@ -236,7 +238,7 @@ The Diagram below shows the sequence diagram for AddCommand. All Initialization 
 
 </box>
 
-#### Implementation
+### 4.2.2 Implementation
 
 The `EditCommand` allows users to modify the details of an existing internship application, based on their table `index`.
 
@@ -253,12 +255,10 @@ The `EditCommand` allows users to modify the details of an existing internship a
 6. Feedback:
     - A success message is generated to confirm the editing operation.
 
-#### Design Considerations
+## 4.2.3 Design Considerations
 
 - **Overwriting vs. Appending**: The command allows overwriting existing details with new ones. This simplifies the implementation and usage of the command.
 - **Error Handling**: The command ensures that at least one field is edited and provides appropriate error messages for invalid inputs.
-
-<puml src="diagrams/EditCommandClassDiagram.puml" width="550" />
 
 Suppose we have an internship application with the following details:
 
@@ -278,80 +278,15 @@ edit 1 p/87654321 a/Block 456, New Avenue, #05-678
 The `EditCommand` will update the internship application's phone number to `87654321` and address to `Block 456, New Avenue, #05-678`.
 Upon successful execution, a message will be displayed confirming the changes made to the internship application's details.
 
+### 4.2.4 Diagrams
+
+<puml src="diagrams/EditCommandClassDiagram.puml" width="550" />
+
 <puml src="diagrams/EditSequenceDiagram.puml" />
 
+## 4.3 View Command
 
-### Filter Command
-
-#### Command Structure
-<box>
-
-**Format:** `filter VALID_TAG`
-
-</box>
-
-<box type="info">
-
-Valid Tag Inputs
-- NR: No Reply
-- I: Interview
-- O: Offered
-- OA: Online Assessment
-- R: Rejected
-
-</box>
-
-#### Implementation
-
-The Filter Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
-
-The following steps outline how the Filter Command feature operates:
-
-1. Command Parsing
-    - When a user inputs the `filter` command followed by a `tag`, the `FilterCommandParser` is invoked to parse this input
-    - The tag provided is extracted from the input string
-2. List filtering
-    - Upon parsing, a `MatchingTagPredicate` is instantiated with the parsed tag String
-    - The `FilteredPersonList` representing the list of applications is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
-3. Execute
-    - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
-    - The `FilterCommand#execute(Model model)` is then called, passing the current application model
-4. Command Result
-    - The `FilterCommand` constructs a new `CommandResult` with the following params :
-        - **feedbackToUser** : `[size of filtered list] persons listed`
-
-
-### Reminder Command
-
-#### Command Structure
-<box>
-
-**Format:** `reminder INT`
-
-</box>
-
-#### Implementation
-
-The Reminder Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
-
-The following steps outline how the Filter Command feature operates:
-
-1. Command Parsing
-    - When a user inputs the `filter` command followed by a `tag`, the `FilterCommandParser` is invoked to parse this input
-    - The tag provided is extracted from the input string
-2. List filtering
-    - Upon parsing, a `MatchingTagPredicate` is instantiated with the parsed tag String
-    - The `FilteredPersonList` representing the list of applications is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
-3. Execute
-    - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
-    - The `FilterCommand#execute(Model model)` is then called, passing the current application model
-4. Command Result
-    - The `FilterCommand` constructs a new `CommandResult` with the following params :
-        - **feedbackToUser** : `[size of filtered list] persons listed~`
-
-### View Command
-
-#### Command Structure
+### 4.3.1 Command Structure
 <box>
 
 **Format:** `view INDEX`
@@ -364,7 +299,7 @@ The following steps outline how the Filter Command feature operates:
 
 </box>
 
-#### Implementation
+### 4.3.2 Implementation
 The View Command allows users to view the internship application based on its index in the view panel
 
 The following steps outline how the View Command feature operates :
@@ -384,24 +319,24 @@ The following steps outline how the View Command feature operates :
 5. UI 
     - The `ViewPanel` class displays the **personToView** with all its details and fields
 
-#### Design Considerations
+### 4.3.3 Design Considerations
 
 - Fetch `Person` object based on the index
 - Utilize the `CommandResult` to pass the `Person` object to the UI component
 
-The following sequence diagram shows what happens when `view 3` is the command input
+### 4.3.4 Diagrams
+
+The following sequence diagram shows what happens when `view 3` is the command input.
 
 <puml src="diagrams/ViewSequenceDiagram.puml" />
 
-
-The following activity diagram shows what the logic behind the command `view 3`
+The following activity diagram shows what the logic behind the command `view 3`.
 
 <puml src="diagrams/ViewActivityDiagram.puml" />
 
+## 4.4 Note Command
 
-### Note Command
-
-#### Command Structure
+### 4.4.1 Command Structure
 <box>
 
 **Format:** `note INDEX`
@@ -414,7 +349,7 @@ The following activity diagram shows what the logic behind the command `view 3`
 
 </box>
 
-#### Implementation
+### 4.4.2 Implementation
 The Note Command feature allows users to retrieve the note attribute of an internship application based on its index and reflects it in the Command Box as an edit command, enabling users to make changes to the note seamlessly.
 
 The following steps outline how the Note Command feature operates:
@@ -438,9 +373,8 @@ The following steps outline how the Note Command feature operates:
 6. Reflecting the feedback on Command Box
     - In `CommandBox#handleCommandEntered()`, if the `feedbackToUser` of the CommandResult object starts with `edit ` (ie our note Command Result), we set the text of the command box to be the `feedbackToUser`
 
-<puml src="diagrams/NoteCommandClassDiagram.puml" width="300" />
 
-#### Design Considerations
+### 4.4.3 Design Considerations
 **Alternative 1 : Use edit to make changes to note attribute**
 - Pros:
     - Easier implementation
@@ -456,6 +390,10 @@ The following steps outline how the Note Command feature operates:
     - An additional command has to be implemented
     - Essentially an abstracted & glorified edit feature
 
+### 4.4.4 Diagrams
+
+<puml src="diagrams/NoteCommandClassDiagram.puml" width="300" />
+
 <puml src="diagrams/NoteSequenceDiagram.puml" />
 
 The following activity diagram shows how the user can interact with the Note Command
@@ -463,15 +401,61 @@ The following activity diagram shows how the user can interact with the Note Com
 <puml src="diagrams/NoteActivityDiagram.puml" />
 
 
-### 4.x Reminder Command
+## 4.5 Filter Command
 
-#### 4.x.1 Command Structure
+### 4.5.1 Command Structure
 
-- **Command Word**: `reminder`
-- **Parameters**:
-    - `N`: Positive integer representing the number of days for upcoming interviews.
+<box>
 
-#### 4.x.2 Implementation
+**Format:** `filter VALID_TAG`
+
+</box>
+
+<box type="info">
+
+Valid Tag Inputs
+- NR: No Reply
+- I: Interview
+- O: Offered
+- OA: Online Assessment
+- R: Rejected
+
+</box>
+
+### 4.5.2 Implementation
+
+The Filter Command allows users to filter the current list of applications by a specified tag, such that only applications with said tag will be displayed in the applications list.
+
+The following steps outline how the Filter Command feature operates:
+
+1. Command Parsing
+    - When a user inputs the `filter` command followed by a `tag`, the `FilterCommandParser` is invoked to parse this input
+    - The tag provided is extracted from the input string
+2. List filtering
+    - Upon parsing, a `MatchingTagPredicate` is instantiated with the parsed tag String
+    - The `FilteredPersonList` representing the list of applications is then updated with the new `MatchingTagPredicate` which checks if the `tag` field of each list entry matches the specified `tag`
+3. Execute
+    - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
+    - The `FilterCommand#execute(Model model)` is then called, passing the current application model
+4. Command Result
+    - The `FilterCommand` constructs a new `CommandResult` with the following params :
+        - **feedbackToUser** : `[size of filtered list] persons listed`
+
+### 4.5.3 Design Considerations
+
+### 4.5.4 Diagrams
+
+## 4.6 Reminder Command
+
+### 4.6.1 Command Structure
+
+<box>
+
+**Format:** `reminder INT`
+
+</box>
+
+### 4.6.2 Implementation
 
 The `ReminderCommand` allows users to filter the list of internship applications to display only those with interviews scheduled within the next 'N' days, including today.
 
@@ -491,9 +475,7 @@ The following steps outline how the Reminder Command feature operates:
 5. Displaying Feedback
     - The `CommandResult` is displayed to the user, showing the filtered list of applications with upcoming interviews within the specified number of days.
 
-<puml src="diagrams/ReminderCommandClassDiagram.puml" width="300" />
-
-#### 4.x.3 Design Considerations
+### 4.6.3 Design Considerations
 **Alternative 1 (Current Implementation): Create `reminder` command**
 - Pros:
     - Provides a dedicated command for filtering applications based on upcoming interviews
@@ -514,17 +496,24 @@ The following steps outline how the Reminder Command feature operates:
 - The chosen approach introduces a dedicated `reminder` command to maintain clarity and flexibility in filtering applications based on upcoming interviews.
 - While it requires additional implementation effort, it ensures a clear and distinct feature for users to manage their internship applications effectively.
 
+### 4.6.4 Diagrams
+
+The diagram below shows the class diagram for ReminderCommand.
+
+<puml src="diagrams/ReminderCommandClassDiagram.puml" width="300" />
+
+The diagram below shows the sequence diagram for ReminderCommand. 
+
 <puml src="diagrams/ReminderCommandSequenceDiagram.puml" />
 
-#### 4.x.4 Activity Diagram
-The following activity diagram shows how the user can interact with the Reminder Command
+The following activity diagram shows how the user can interact with the ReminderCommand.
 
 <puml src="diagrams/ReminderCommandActivityDiagram.puml" />
 
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Documentation, logging, testing, configuration, dev-ops**
+# 5. **Documentation, logging, testing, configuration, dev-ops**
 
 * [Documentation guide](Documentation.md)
 * [Testing guide](Testing.md)
@@ -534,9 +523,9 @@ The following activity diagram shows how the user can interact with the Reminder
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix A : Requirements**
+# 6. **Appendix A: Requirements**
 
-### Product scope
+## 6.1 Product scope
 
 **Target user profile**:
 
@@ -548,7 +537,7 @@ The following activity diagram shows how the user can interact with the Reminder
 
 **Value proposition**: Ultimate companion for Undergraduate students embarking on their internship journey !
 
-### User stories
+## 6.2 User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
@@ -568,11 +557,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* `     | internship applicant | add notes to company contacts                           | include important details or information about specific interviews and what I can learn from them |
 
 
-### Use cases
+## 6.3 Use cases
 
 (For all use cases below, the **System** is the `InternHub` and the **User** is the `InternHub User`, unless specified otherwise)
 
-#### Use Case: Adding a new Internship Application
+### 6.3.1 Use Case: Adding a new Internship Application
 
 **Main Success Scenario (MSS):**
 
@@ -595,7 +584,7 @@ Use case ends.
 * Use case resumes from step 2.
 ---
 
-#### Use Case: Delete Internship Application
+### 6.3.2 Use Case: Delete Internship Application
 
 **Main Success Scenario (MSS):**
 
@@ -613,7 +602,7 @@ Use case ends.
 
 ---
 
-#### Use Case: Edit Internship Application Information
+### 6.3.3 Use Case: Edit Internship Application Information
 
 **Main Success Scenario (MSS):**
 
@@ -637,7 +626,7 @@ Use case ends.
 
 ---
 
-#### Use Case: Filter Internship Applications by Tag
+### 6.3.4 Use Case: Filter Internship Applications by Tag
 
 **Main Success Scenario (MSS):**
 
@@ -657,7 +646,7 @@ Use case ends.
 
 ---
 
-#### Use Case: View information of an Internship Application
+### 6.3.5 Use Case: View information of an Internship Application
 
 **Main Success Scenario (MSS):**
 
@@ -676,7 +665,7 @@ Use case ends.
 
 ---
 
-#### Use Case: Modifying existing Note content of an Internship Application
+### 6.3.6 Use Case: Modifying existing Note content of an Internship Application
 
 **Main Success Scenario (MSS):**
 
@@ -697,22 +686,42 @@ Use case ends.
 
 ---
 
-### Non-Functional Requirements
+
+### 6.3.7 Use Case: Filter Internship Applications by Reminder
+
+**Main Success Scenario (MSS):**
+
+1. User decides to filter internship applications by upcoming interviews within a specified number of days.
+2. User inputs the number of days for upcoming interviews.
+3. System filters the internship applications based on upcoming interviews within the specified number of days.
+4. System displays the filtered internship applications.
+
+**Extensions:**
+
+* 2a. System detects an error in the input for the number of days
+    * 2a1. System prompts the user to provide a valid number of days (positive integer).
+    * 2a2. User enters the correct number of days.
+    * Steps 2a1-2a2 are repeated until the input is valid.
+    * Use case resumes from step 3.
+
+---
+
+## 6.4 Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
 2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 
-### Glossary
+## 6.5 Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
 * **Private contact detail**: A contact detail that is not meant to be shared with others
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix B : Planned Enhancements**
+# 7. **Appendix B: Planned Enhancements**
 
-Team size : 5
+Team size: 5
 
 1. **Handling of invalid date to be with accordance of Gregorian Calendar**:
     - Ensure that the system handles invalid date inputs according to the rules of the Gregorian calendar, providing better error handling and user feedback.
@@ -732,16 +741,15 @@ Team size : 5
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix C : Instructions for manual testing**
+# 8. **Appendix C: Instructions for manual testing**
 
 Given below are instructions to test the app manually.
-
 
 **Note:** These instructions only provide a starting point for testers to work on;
 testers are expected to do more *exploratory* testing.
 
 
-### Launch and shutdown
+## 8.1 Launch and shutdown
 
 1. Initial launch
 
@@ -766,7 +774,7 @@ testers are expected to do more *exploratory* testing.
    3. Launch InternHub. <br>
    Expected: A sample internship application list with 1 internship applications should be displayed.
 
-### Adding an internship application
+## 8.2 Adding an internship application
 
 1. Test case: `add c/Singapore Airline p/98765432 e/singaporeairline@example.com t/O jd/Animator intern id/3 months s/1000`<br>
    Expected: A new internship application is added to the list. Details of the added internship application shown in the **result display**.
@@ -775,7 +783,7 @@ testers are expected to do more *exploratory* testing.
    Expected: No internship application is added. Error details shown in the **result display**.
 
 
-### Deleting an internship application
+## 8.3 Deleting an internship application
 
 1. Deleting an internship application while all internship applications are being shown
 
@@ -797,7 +805,7 @@ testers are expected to do more *exploratory* testing.
     2. Test case: `delete 1`<br>
        Expected: First application based on the **filtered list** is deleted. Details of deleted internship application shown in **result display**.
 
-### Editing an internship application
+## 8.4 Editing an internship application
 
 1. Editing an internship application while all internship applications are being shown
 
@@ -820,7 +828,7 @@ testers are expected to do more *exploratory* testing.
        Expected: First application based on the **filtered list** is deleted. Details of deleted application shown in **result display**.
 
 
-### Viewing an internship application
+## 8.5 Viewing an internship application
 
 1. Viewing an internship application with an empty application list
 
@@ -837,12 +845,12 @@ testers are expected to do more *exploratory* testing.
        Expected : The application details at index 1 will be aptly displayed on the view panel on the right
 
        
-### List all internship applications
+## 8.6 List all internship applications
 1. Test case: `list`<br>
 Expected: List all internship application in InternHub.
 
 
-### Finding internship application(s)
+## 8.7 Finding internship application(s)
 
 1. Prerequisites: Starting from an empty list,<br>
     * `add c/Singapore Airline p/98765432 e/singaporeairline@example.com t/O jd/Animator intern id/3 months s/1000`
@@ -858,7 +866,7 @@ Expected: List all internship application in InternHub.
    Expected: The application details of Singapore Airline and Malaysia Airline will be aptly displayed on the view panel on the right (the company name contain the word **airline**).
 
 
-### Modifying note content of an internship application
+## 8.8 Modifying note content of an internship application
 
 1. Append to existing note content of internship application
 
@@ -867,7 +875,7 @@ Expected: List all internship application in InternHub.
     2. Test case: `note 2` where 2 is the index of that application<br>
        Expected : In the command box, you will notice the following : `edit 2 n/[existing note content]`, then you can make changes and enter to modify the note
 
-### filter internship applications
+## 8.9 Filtering internship applications
 1. filter to get internship application(s) with status 'NR' (No Reply) in an empty list
 
     1. Prerequisites: Clear all applications using `clear` command. Will empty the applications
@@ -888,7 +896,7 @@ Expected: List all internship application in InternHub.
        Expected : Only Malaysia Airline will be displayed on the left side of the list panel.
 
 
-### Getting Reminders for Internship Applications
+## 8.10 Getting Reminders for Internship Applications
 1. Getting reminders for internship applications which are due or have interviews scheduled in 7 days
 
    1. Prerequisites: At least one internship application displayed. 
@@ -896,7 +904,7 @@ Expected: List all internship application in InternHub.
        Expected: Only internship applications which have interviews scheduled in 7 days will be shown. They should be displayed in order of earliest interview date.
 
 
-### Saving data
+## 8.11 Saving data
 
 1. Dealing with missing/corrupted data files
 
@@ -911,5 +919,5 @@ Expected: List all internship application in InternHub.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix D : Effort**
+# 9. **Appendix D: Effort**
 
