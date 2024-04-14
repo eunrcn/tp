@@ -663,22 +663,22 @@ Advanced users are welcome to update data directly by editing that data file.
 --------------------------------------------------------------------------------------------------------------------
 # 5. FAQ
 
-**Q**: **How do I transfer my data to another Computer ?**<br>
+**Q**: **How do I transfer my data to another Computer?**<br>
 **A**: Install the InternHub app on the other computer and replace the empty data file it creates with the file containing the data from your previous InternHub *home folder*.
 
-**Q**: **What is a home folder ?**<br>
+**Q**: **What is a home folder?**<br>
 **A**: A home folder is the main directory associated with a user account on a computer. It typically contains user-specific settings, documents, downloads, and their personal files. Here is an example using the user name "internGuy" on a Unix-like system: `/home/internGuy`. On a Windows sytem, `C:\users\internGuy`.
 
-**Q**: **Why is the app not running ?**<br>
+**Q**: **Why is the app not running?**<br>
 **A**: Ensure that JDK `11` or above is installed.
 
-**Q**: **How do I open the command terminal/how to change directory (cd) into a folder ?**<br>
+**Q**: **How do I open the command terminal/how to change directory (cd) into a folder?**<br>
 **A**: Users should refer to the documentation or help resources specific to their operating system for instructions on opening a command terminal and navigating to a directory using the `cd` command.
 
-**Q**: **How do I run internhub.jar ?**<br>
+**Q**: **How do I run internhub.jar?**<br>
 **A**: You can run internhub.jar by opening a command terminal, navigating to the directory containing the jar file using the `cd` command, and then typing `java -jar internhub.jar` and pressing Enter.
 
-**Q**: **I accidentally made some changes in the addressbook.json and InternHub is now blank, what do I do ?**<br>
+**Q**: **I accidentally made some changes in the addressbook.json and InternHub is now blank, what do I do?**<br>
 **A**: The reason for this occurrence is likely due to invalid fields assigned to the internship applications. If you are able to identify the invalid field, by all means make your changes and upon the next run, InternHub should work as normal. However, if you are not sure, you can follow these steps to salvage your data:<br>
 1. Take a backup of `addressbook.json`.
 2. Run `clear` in InternHub and manually add the applications referencing the details from the `addressbook.json`.
@@ -698,8 +698,7 @@ Advanced users are welcome to update data directly by editing that data file.
 
 5. **Leap Year Date Handling**, A defect has been identified in the Java Format library where certain invalid date inputs, such as "29 Feb 2023" which is not a leap year, are incorrectly accepted and silently converted to a valid date by the system. This behavior can result in incorrect date information being processed by the application. Hence, users are advised to manually verify the correctness of date inputs, especially around leap years, to ensure accuracy. The workaround in the future will be imposing a stricter validation check offered by the Java library `java.time.format.ResolverStyle` to correct this behaviour.
 
-6. **The order of applications without interview date**, may differ in the list of applications when you close and reopen InternHub. This is due to our list sorting algorithm only focuses
-on the interview date and is random otherwise.
+6. **The order of applications without interview date**, may differ in the list of applications when you close and reopen InternHub. This is due to our list sorting algorithm only focuses on the interview date and is random otherwise.
 
 --------------------------------------------------------------------------------------------------------------------
 
