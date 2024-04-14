@@ -13,7 +13,7 @@ pageNav: 3
 
 ## 1.1 Acknowledgements
 
-* This is a brownfield project is based on the AddressBook-Level3 created by the [SE-EDU initiative](https://se-education.org/)
+* This is a brownfield project based on the AddressBook-Level3 created by the [SE-EDU initiative](https://se-education.org/)
 * AI tools used: 
   * ChatGPT by OpenAI used to answer design questions and minor documentation formats
 
@@ -571,10 +571,10 @@ Use case ends.
 
 **Extensions:**
 
-1a. System detects an error in the entered data.
-* 1a1. System requests for the correct data.
-* 1a2. User enters new data.
-* Steps 1a1-1a2 are repeated until the data entered are correct.
+1a. System detects an error in the entered command syntax.
+* 1a1. System requests for the correct command syntax.
+* 1a2. User enters correct command syntax.
+* Steps 1a1-1a2 are repeated until the command syntax entered is correct.
 * Use case resumes from step 2.
 
 1a. System detects an error in the fields being added (No fields at all / Invalid field prefixes / Duplicate prefixes)
@@ -582,13 +582,14 @@ Use case ends.
 * 1a2. User enters the fields to be edited.
 * Steps 1a1-1a2 are repeated until the selection is correct.
 * Use case resumes from step 2.
+
 ---
 
 ### 6.3.2 Use Case: Delete Internship Application
 
 **Main Success Scenario (MSS):**
 
-1. User inputs index of contact to be deleted.
+1. User inputs index of internship application to be deleted.
 2. System deletes the relevant internship application.<br>
 Use case ends.
 
@@ -669,20 +670,19 @@ Use case ends.
 
 **Main Success Scenario (MSS):**
 
-1. User chooses application update the note content of.
-2. User enters the application index.
-3. System retrieves note content of the corresponding application in the command box as an edit command.
-4. User makes updates the note on the command box and hits enter.
-5. System stores the changes made.<br>
+1. User chooses internship application to update the note content of.
+2. System retrieves note content of the corresponding application.
+3. User makes changes to the note content.
+4. System stores the changes made.<br>
    Use case ends.
 
 **Extensions:**
 
-* 2a. System detects an error in index of application
-    * 2a1. System requests for proper input of index (1 to current number of applications)
-    * 2a2. Internship Applicant enters the correct index.
-    * Steps 2a1-2a2 are repeated until the selection is correct.
-    * Use case resumes from step 3.
+* 1a. System detects an error in index of application
+    * 1a1. System requests for proper input of index (1 to current number of applications)
+    * 1a2. Internship Applicant enters the correct index.
+    * Steps 1a1-1a2 are repeated until the selection is correct.
+    * Use case resumes from step 2.
 
 ---
 
@@ -921,3 +921,23 @@ Expected: List all internship application in InternHub.
 
 # 9. **Appendix D: Effort**
 
+## 9.1 Difficulty Level
+Overall, our team felt the difficulty level is moderate.
+
+## 9.2 Challenges Faced
+- Working on an existing **brownfield** project's codebase takes a while to get accustomed to.
+- Coordinating team efforts and managing conflicts while using git to monitor version control.
+- The restrictions of an AddressBook had to be considered when implementing new features or enhancing existing features.
+- InternHub handles more commands, features and fields for each contact compared to AB3, contributing to the challenge of management.
+
+## 9.3 Effort Required
+- Moderate effort required.
+- Working as a team allows to regulate and split the workload to ensure effort is optimal.
+- Some aspects of the project required greater efforts : 
+  - Documentation
+  - Test cases
+  - UI implementation
+
+## 9.4 Achievements of Project
+- Able to meet initially planned features with almost full functionality with minor bugs.
+- Effectively delivers a solution for the target audience.
