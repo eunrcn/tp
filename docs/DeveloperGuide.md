@@ -5,6 +5,7 @@ pageNav: 3
 ---
 
 # InternHub Developer Guide
+_By F14-1, JAYME_
 
 <!-- * Table of Contents -->
 <page-nav-print />
@@ -259,24 +260,6 @@ The `EditCommand` allows users to modify the details of an existing internship a
 
 - **Overwriting vs. Appending**: The command allows overwriting existing details with new ones. This simplifies the implementation and usage of the command.
 - **Error Handling**: The command ensures that at least one field is edited and provides appropriate error messages for invalid inputs.
-
-Suppose we have an internship application with the following details:
-
-- Company Name: Happy Burger
-- Phone: 12345678
-- Email: happy@example.com
-- Address: Block 123, Avenue Street, #08-123
-- Job Description: Software Engineer
-- Interview Date: 2024-04-15
-- Intern Duration: 3 months
-- Salary: $3000
-- Tags: Interview
-
-Now, the user wants to edit the phone number and address. They issue the following command:
-edit 1 p/87654321 a/Block 456, New Avenue, #05-678
-
-The `EditCommand` will update the internship application's phone number to `87654321` and address to `Block 456, New Avenue, #05-678`.
-Upon successful execution, a message will be displayed confirming the changes made to the internship application's details.
 
 ### 4.2.4 Diagrams
 
@@ -535,7 +518,7 @@ The following activity diagram shows how the user can interact with the Reminder
 * is reasonably comfortable in using a more CLI based app
 * wants to be better organized
 
-**Value proposition**: Ultimate companion for Undergraduate students embarking on their internship journey !
+**Value proposition**: Ultimate companion for Undergraduate students embarking on their internship journey!
 
 ## 6.2 User stories
 
@@ -577,8 +560,8 @@ Use case ends.
 * Steps 1a1-1a2 are repeated until the command syntax entered is correct.
 * Use case resumes from step 2.
 
-1a. System detects an error in the fields being added (No fields at all / Invalid field prefixes / Duplicate prefixes)
-* 1a1. System requests for proper input of fields and correct prefix
+1a. System detects an error in the fields being added (No fields at all / Invalid field prefixes / Duplicate prefixes).
+* 1a1. System requests for proper input of fields and correct prefix.
 * 1a2. User enters the fields to be edited.
 * Steps 1a1-1a2 are repeated until the selection is correct.
 * Use case resumes from step 2.
@@ -595,8 +578,8 @@ Use case ends.
 
 **Extensions:**
 
-1a. System detects an error in index of application
-* 1a1. System requests for proper input of index (1 to current number of applications)
+1a. System detects an error in index of application.
+* 1a1. System requests for proper input of index (1 to current number of applications).
 * 1a2. User enters the correct index.
 * Steps 1a1-1a2 are repeated until the selection is correct.
 * Use case resumes from step 2.
@@ -613,14 +596,14 @@ Use case ends.
 
 **Extensions:**
 
-1a. System detects an error in index of application
-* 1a1. System requests for proper input of index (1 to current number of applications)
+1a. System detects an error in index of application.
+* 1a1. System requests for proper input of index (1 to current number of applications).
 * 1a2. User enters the correct index.
 * Steps 1a1-1a2 are repeated until the selection is correct.
 * Use case resumes from step 2.
 
-1a. System detects an error in the fields to be edited (No fields at all / Invalid field prefixes / Duplicate prefixes)
-* 1a1. System requests for proper input of fields and correct prefix
+1a. System detects an error in the fields to be edited (No fields at all / Invalid field prefixes / Duplicate prefixes).
+* 1a1. System requests for proper input of fields and correct prefix.
 * 1a2. User enters the fields to be edited.
 * Steps 1a1-1a2 are repeated until the selection is correct.
 * Use case resumes from step 2.
@@ -639,8 +622,8 @@ Use case ends.
 
 **Extensions:**
 
-* 2a. System detects an error in tag to be filtered
-    * 2a1. System requests for proper input of tag (One of existing tags : NR, O, OA, I, R)
+* 2a. System detects an error in tag to be filtered.
+    * 2a1. System requests for proper input of tag (One of existing tags : NR, O, OA, I, R).
     * 2a2. User enters the correct tag.
     * Steps 2a1-2a2 are repeated until the selection is correct.
     * Use case resumes from step 3.
@@ -658,8 +641,8 @@ Use case ends.
 
 **Extensions:**
 
-* 2a. System detects an error in index of application
-    * 2a1. System requests for proper input of index (1 to current number of applications)
+* 2a. System detects an error in index of application.
+    * 2a1. System requests for proper input of index (1 to current number of applications).
     * 2a2. user enters the correct index.
     * Steps 2a1-2a2 are repeated until the selection is correct.
     * Use case resumes from step 3.
@@ -679,7 +662,7 @@ Use case ends.
 **Extensions:**
 
 * 1a. System detects an error in index of application
-    * 1a1. System requests for proper input of index (1 to current number of applications)
+    * 1a1. System requests for proper input of index (1 to current number of applications).
     * 1a2. Internship Applicant enters the correct index.
     * Steps 1a1-1a2 are repeated until the selection is correct.
     * Use case resumes from step 2.
@@ -698,7 +681,7 @@ Use case ends.
 
 **Extensions:**
 
-* 2a. System detects an error in the input for the number of days
+* 2a. System detects an error in the input for the number of days.
     * 2a1. System prompts the user to provide a valid number of days (positive integer).
     * 2a2. User enters the correct number of days.
     * Steps 2a1-2a2 are repeated until the input is valid.
@@ -714,8 +697,8 @@ Use case ends.
 
 ## 6.5 Glossary
 
-* **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **Private contact detail**: A contact detail that is not meant to be shared with others
+* **Mainstream OS**: Windows, Linux, Unix, MacOS.
+* **Private contact detail**: A contact detail that is not meant to be shared with others.
 
 --------------------------------------------------------------------------------------------------------------------
 
