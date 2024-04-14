@@ -602,8 +602,6 @@ Use case ends
 
 ### 6.3.3 Use Case: Edit Internship Application Information
 
-### 6.3.3 Use Case: Edit Internship Application Information
-
 **Main Success Scenario (MSS):**
 
 1. User enters the index of the internship application to be edited, along with the details of the field to be modified.
@@ -713,58 +711,58 @@ Use case ends
 
 ## 6.4 Non-Functional Requirements
 
-1. **Availability:**
+**1. Availability:**
     - The application should be available for download on the project's GitHub release page in the form of a JAR file.
 
-2. **Capacity:**
+**2. Capacity:**
     - The application should be capable of storing up to 1000 internship applications.
 
-3. **Performance:**
+**3. Performance:**
     - Response time to any user command should be within 3 seconds.
     - The application should be able to handle up to 300 internship applications before facing any performance bottleneck issues.
 
-4. **Reliability:**
+**4. Reliability:**
     - The application should provide guidance to the user if it is unable to execute any user actions for various reasons.
 
-5. **Compatibility:**
+**5. Compatibility:**
     - The application should work as intended on any mainstream operating system.
     - It is guaranteed to work on Java version 11.
 
-6. **Usability:**
+**6. Usability:**
     - A user with above-average typing speed for regular English text should be able to accomplish most tasks faster using commands than using the mouse.
 
-7. **Robustness:**
+**7. Robustness:**
     - The application should remain highly relevant to internship applications at any point in the future.
 
-8. **Integrity:**
+**8. Integrity:**
     - There should be user updates to the internship applications to ensure integrity.
     - Application updates should not compromise the integrity of the save file.
 
-9. **Maintainability:**
+**9. Maintainability:**
     - The application should comply with the coding standards set forth by CS2103T.
     - It should adhere to best coding practices highlighted in CS2103T.
     - The design should allow any programmer with at least a year of experience to read, maintain, and contribute to the source code easily.
 
-10. **Process:**
+**10. Process:**
     - The project features should align with any changes to real-world internship application processes.
 
-11. **Project Scope:**
+**11. Project Scope:**
     - The application requires manual addition of internship applications into the system.
 
-12. **Privacy:**
+**12. Privacy:**
     - The application should not store any information about users' internship applications in remote storage.
 
 ## 6.5 Glossary
 
-1. **Main components**: Main, UI, Logic, Model, Storage, Commons.
-2. **Architecture Diagram**: High-level design overview.
-3. **UI component**: Manages app interface elements.
-4. **Logic component**: Executes user commands.
-5. **Model component**: Stores app data.
-6. **Storage component**: Handles data storage.
-7. **Common classes**: Shared utility classes.
-8. **Mainstream OS**: Windows, Linux, Unix, MacOS.
-9. **CLI**: Command Line Interface for user interaction.
+**1. Main components**: Main, UI, Logic, Model, Storage, Commons.
+**2. Architecture Diagram**: High-level design overview.
+**3. UI component**: Manages app interface elements.
+**4. Logic component**: Executes user commands.
+**5. Model component**: Stores app data.
+**6. Storage component**: Handles data storage.
+**7. Common classes**: Shared utility classes.
+**8. Mainstream OS**: Windows, Linux, Unix, MacOS.
+**9. CLI**: Command Line Interface for user interaction.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -772,24 +770,24 @@ Use case ends
 
 Team size: 5
 
-1. **Handling of invalid date to be with accordance of Gregorian Calendar**:
+**1. Handling of invalid date to be with accordance of Gregorian Calendar**:
     - Ensure that the system handles invalid date inputs according to the rules of the Gregorian calendar, providing better error handling and user feedback.
     - Currently, when InternHub encounter `29-02-yyyy` where it is not a leap year, it will automatically changes it to the closest valid date, which is `28-02-yyyy`.
     - We intend to make the system throw an error message instead to warn user about this invalid date and it is possible that they might have schedules an interview with a company on an non existent date.
-2. **Case sensitive for company name**:
+**2. Case sensitive for company name**:
     - Implement case sensitivity for company names to prevent potential duplication or confusion due to variations in casing.
-3. **Prevent duplicate phone number**:
+**3. Prevent duplicate phone number**:
     - Add validation logic to prevent the addition of internship applications with duplicate phone numbers, reducing data redundancy and maintaining data integrity.
-4. **Make company name less restrictive, allow special characters**:
+**4. Make company name less restrictive, allow special characters**:
     - Relax the restrictions on company names to allow for special characters, enabling users to input a wider range of company names without encountering validation errors.
-5. **In UI, make the view card scrollable for all labels**:
+**5. In UI, make the view card scrollable for all labels**:
     - Enhance the user interface by making the view card scrollable for all labels, ensuring that users can view all information associated with an internship application, even if it exceeds the visible area of the card.
-6. **More flexible Filter Command**:
+**6. More flexible Filter Command**:
     - We aim to make our filter command to work with all other fields like `address`, `salary`, `jobDescription` and so on, to allow greater flexibility for the user.
     - To achieve this, our team is working on incorporating prefixes in the filter command, for example: `filter a/Clementi t/I s/1200` would filter the applications that fit the provided filter-restrictions.
-7. **Countdown in UI reflecting the number of days until interview date**:
+**7. Countdown in UI reflecting the number of days until interview date**:
     - Implement a feature in the user interface to display a countdown for interviews, showing the number of days left. This provides users with quick access to important information.
-8. **Find command based on fields other than name**:
+**8. Find command based on fields other than name**:
     - Enhance the search functionality by implementing a find command that allows users to search for internship applications based on fields other than the applicant's name. This will provide users with more flexibility in locating specific applications based on various criteria such as company, date, or location.
 
 
