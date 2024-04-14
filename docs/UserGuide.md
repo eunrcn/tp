@@ -91,7 +91,7 @@ The beautiful colours on our InternHub interface is best viewed in full screen a
 
 <box type="tip" > 
 
-[Only for Mac users]<br>
+[For Mac users]<br>
 To skip steps 1-3, you can drag the folder out to your desktop. Then, right-click the folder and select "New Terminal at Folder"
 
 </box>
@@ -694,7 +694,6 @@ Advanced users are welcome to update data directly by editing that data file.
 3. **Company name is case-sensitive**, this make it possible for user to input "Apple" and "apple" in our application. It is possible that both input refer to the same company and may lead to potential confusion. For our future implementation, we intend to make company name case-insensitive.
 
 4. **Phone numbers allow duplicates**, We did not want to set high restrictions in our application, hence did not force users to ensure all phone numbers must be unique. From user feedback, duplicate phone numbers can lead to potential confusion, especially when managing large contact lists. A solution could be added in a future iteration.
-<div style="page-break-after: always;"></div>
 
 5. **Leap Year Date Handling**, A defect has been identified in the Java Format library where certain invalid date inputs, such as "29 Feb 2023" which is not a leap year, are incorrectly accepted and silently converted to a valid date by the system. This behavior can result in incorrect date information being processed by the application. Hence, users are advised to manually verify the correctness of date inputs, especially around leap years, to ensure accuracy. The workaround in the future will be imposing a stricter validation check offered by the Java library `java.time.format.ResolverStyle` to correct this behaviour.
 
