@@ -18,39 +18,40 @@ skinparam class {
     BorderColor DimGray
 }
 
-title "Add Command Class diagram"
+title "Reminder Command Class Diagram"
 
-class "AddCommand" as Object\AddCommand {
-     - toAdd: Person
-     + execute(model) : CommandResult
-     + equals(other) : boolean
+class "ReminderCommand" as Object\ReminderCommand {
+     - numberOfDays: int
+     + ReminderCommand(numberOfDays: int)
+     + execute(model: Model) : CommandResult
+     + equals(other: Object) : boolean
 }
 
 Interface "Command" as Object\Command <<abstract>> {
     + execute(model)
 }
 
+class "Model" as Object\Model <<interface>> {
+    - addressbook: AddressBook
+    + updateFilteredPersonList(predicate: Predicate<Person>): void
+}
+
 class "Person" as Object\Person {
     - companyName: Name
-    - phone: Phone
+    - phone: Phone Number
     - email: Email
     - tag: Tag
-    - address: Address
+    - address: Address;
     - jobDescription: JobDescription
     - interviewDate: InterviewDate
     - internDuration: InternDuration
     - salary: Salary
     - note: Note
+    + getInterviewDate(): InterviewDate
 }
 
-class "Model" as Object\Model <<interace>> {
-    - addressbook: AddressBook
-    + hasPerson(person: Person): boolean
-    + addPerson(person: Person): void
-}
-
-Object\AddCommand --> Object\Model
-Object\AddCommand ...> Object\Person
-Object\AddCommand --|> Object\Command
+Object\ReminderCommand --> Object\Model
+Object\ReminderCommand ...> Object\Person
+Object\ReminderCommand --|> Object\Command
 
 @enduml

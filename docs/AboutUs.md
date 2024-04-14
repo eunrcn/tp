@@ -16,47 +16,47 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/ashleygoh1.png" width="200px">
 
 [[github](http://github.com/ashleygoh1)]
-[[portfolio](team/ashley.md)]
+[[portfolio](team/ashleygoh1)]
 
 * Role: Developer
-* Responsibilities: Model
+* Responsibilities: Feature Development, UI/UX Design, Testing and Quality Assurance, Documentation, Data Management, Error Handling and Troubleshooting.
 
 ### Chai Ming How
 
 <img src="images/minghowc.png" width="200px">
 
 [[github](http://github.com/minghowC)]
-[[portfolio](team/minghow.md)]
+[[portfolio](team/minghowc)]
 
 * Role: Developer
-* Responsibilities: Features Testing
+* Responsibilities: Feature Development, UI/UX Design, Testing and Quality Assurance, Documentation, Data Management, Error Handling and Troubleshooting.
 
 ### Chen Yixin
 
 <img src="images/chenyixin0.png" width="200px">
 
 [[github](http://github.com/chenyixin0)]
-[[portfolio](team/yixin.md)]
+[[portfolio](team/chenyixin0)]
 
 * Role: Developer
-* Responsibilities: Dev Ops + Threading
+* Responsibilities: Feature Development, UI/UX Design, Testing and Quality Assurance, Documentation, Data Management, Error Handling and Troubleshooting.
 
 ### Eunice Koh
 
 <img src="images/eunrcn.png" width="200px">
 
 [[github](http://github.com/eunrcn)]
-[[portfolio](team/eunice.md)]
+[[portfolio](team/eunrcn)]
 
 * Role: Developer
-* Responsibilities: Model
+* Responsibilities: Feature Development, UI/UX Design, Testing and Quality Assurance, Documentation, Data Management, Error Handling and Troubleshooting.
 
 ### Jawad Afthab
 
 <img src="images/jawad280.png" width="200px">
 
 [[github](http://github.com/Jawad280)]
-[[portfolio](team/jawad.md)]
+[[portfolio](team/jawad280)]
 
 * Role: Developer
-* Responsibilities: UI
+* Responsibilities: Feature Development, UI/UX Design, Testing and Quality Assurance, Documentation, Data Management, Error Handling and Troubleshooting.

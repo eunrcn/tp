@@ -91,9 +91,8 @@ The beautiful colours on our InternHub interface is best viewed in full screen a
 
 <box type="tip" > 
 
-[Only for Mac users]
-If you encounter any issues copying the path to the directory, you can drag the folder out to your desktop. 
-Then, right-click the folder and select "New Terminal at Folder" to skip steps 1-3.
+[For Mac users]<br>
+To skip steps 1-3, you can drag the folder out to your desktop. Then, right-click the folder and select "New Terminal at Folder"
 
 </box>
 
@@ -128,8 +127,8 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 - Enter your commands in this box.
 
 **Result Display**
-- View the output message after each command here. 
-- For longer commands like `Add`, the text found in the result display box may get cut off. Simply use our pink scroll bar to view the entire output.
+- View the output message after each command here.
+- For longer commands like `add`, the text found in the result display box may get cut off. Simply use our pink scroll bar to view the entire output.
 
 **List of Applications**
 - This panel displays a list of all internship applications.
@@ -164,7 +163,7 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 | `t/`      | Tags                | Valid values are NR, I, O, OA, R                                                                    | `t/NR`                           | Yes      |
 | `jd/`     | Job Description     | -                                                                                                   | `jd/Software Developer Intern`   | Yes      |
 | `id/`     | Internship Duration | -                                                                                                   | `id/3 months`                    | Yes      |
-| `s/`      | Salary              | Only positive numbers                                                                               | `s/500`                          | Yes      |
+| `s/`      | Salary              | Only positive numbers (ie 0 is not a valid input)                                                   | `s/500`                          | Yes      |
 | `a/`      | Physical Address    | -                                                                                                   | `a/123 Main St, City, Country`   | No       |
 | `d/`      | Interview Date      | Of format dd-mm-yyyy HHmm & cannot be earlier than current day                                      | `d/14-04-2024 1500`              | No       |
 | `n/`      | Notes               | -                                                                                                   | `n/Previous experience required` | No       |
@@ -274,7 +273,7 @@ Add a new internship application into InternHub.
 
 <box>
 
-**Format:** `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL t/TAG jd/JOB_DESCRIPTION id/INTERN_DURATION s/SALARY [a/ADDRESS] [d/INTERVIEW_DATE] [n/NOTE]`
+**Format:** `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL [a/ADDRESS] t/TAG jd/JOB_DESCRIPTION [d/INTERVIEW_DATE] id/INTERN_DURATION s/SALARY [n/NOTE]`
 
 </box>
 
@@ -351,7 +350,7 @@ Deletes an internship application by index from InternHub.
 
 **Example 1:**
 
-`list` followed by `delete 2` deletes the 2nd contact.
+`list` followed by `delete 2` deletes the 2nd entry.
 
 **Expected outcome**
 
@@ -534,7 +533,7 @@ Updating a note of an **existing internship application**.
 ### 4.2.4 Filter By Tag : `filter`
 
 Filtering data allows you to narrow down your search results to focus on internship applications based on their status. 
-Use the `filter` command to filter by tag and find exactly the internships that have an interview.
+Use the `filter` command to filter by tag and find exactly the internships with the specified status.
 
 <box>
 
@@ -564,8 +563,7 @@ Valid Tag Inputs
 
 ### 4.2.5 Getting reminders : `reminder`
 
-Sending reminders is a pivotal practice to uphold organization and ensure timely completion of crucial tasks. 
-Although our application presently lacks a built-in reminder feature, fear not! 
+Sending reminders is a pivotal practice to uphold organization and ensure timely completion of crucial tasks.
 
 You can effortlessly retrieve reminders manually using this command. 
 It conveniently displays the interviews scheduled within the upcoming N days, keeping you well-prepared and on track.
@@ -578,8 +576,8 @@ It conveniently displays the interviews scheduled within the upcoming N days, ke
 
 **Examples:**
 - `reminder 0` : Shows you the interviews you have today.
-- `reminder 2` : Shows you the interviews you have in the next two days, including today.
-- `reminder 100` : Shows you the interviews you have in the next hundredth days, including today.
+- `reminder 2` : Shows you the interviews you have in the next 2 days, including today.
+- `reminder 100` : Shows you the interviews you have in the next 100 days, including today.
 
 ![reminder command](images/UserGuide/reminderCommand.png){ width=60% }
 
@@ -665,25 +663,25 @@ Advanced users are welcome to update data directly by editing that data file.
 --------------------------------------------------------------------------------------------------------------------
 # 5. FAQ
 
-**Q**: **How do I transfer my data to another Computer ?**<br>
+**Q**: **How do I transfer my data to another Computer?**<br>
 **A**: Install the InternHub app on the other computer and replace the empty data file it creates with the file containing the data from your previous InternHub *home folder*.
 
-**Q**: **What is a home folder ?**<br>
+**Q**: **What is a home folder?**<br>
 **A**: A home folder is the main directory associated with a user account on a computer. It typically contains user-specific settings, documents, downloads, and their personal files. Here is an example using the user name "internGuy" on a Unix-like system: `/home/internGuy`. On a Windows sytem, `C:\users\internGuy`.
 
-**Q**: **Why is the app not running ?**<br>
+**Q**: **Why is the app not running?**<br>
 **A**: Ensure that JDK `11` or above is installed.
 
-**Q**: **How do I open the command terminal/how to change directory (cd) into a folder ?**<br>
+**Q**: **How do I open the command terminal/how to change directory (cd) into a folder?**<br>
 **A**: Users should refer to the documentation or help resources specific to their operating system for instructions on opening a command terminal and navigating to a directory using the `cd` command.
 
-**Q**: **How do I run internhub.jar ?**<br>
+**Q**: **How do I run internhub.jar?**<br>
 **A**: You can run internhub.jar by opening a command terminal, navigating to the directory containing the jar file using the `cd` command, and then typing `java -jar internhub.jar` and pressing Enter.
 
-**Q**: **I accidentally made some changes in the addressbook.json and InternHub is now blank, what do I do ?**<br>
-**A**: The reason for this occurrence is likely due to invalid fields assigned to the internship applications. If you are able to identify the invalid field, by all means make your changes and upon the next run, InternHub should work as normal. However, if you are not sure, you can follow these steps to salvage your data :<br>
+**Q**: **I accidentally made some changes in the addressbook.json and InternHub is now blank, what do I do?**<br>
+**A**: The reason for this occurrence is likely due to invalid fields assigned to the internship applications. If you are able to identify the invalid field, by all means make your changes and upon the next run, InternHub should work as normal. However, if you are not sure, you can follow these steps to salvage your data:<br>
 1. Take a backup of `addressbook.json`.
-2. Run `clear` in InternHub and manually add the applications referencing the details from the `addressbook.json`
+2. Run `clear` in InternHub and manually add the applications referencing the details from the `addressbook.json`.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -695,11 +693,11 @@ Advanced users are welcome to update data directly by editing that data file.
 
 3. **Company name is case-sensitive**, this make it possible for user to input "Apple" and "apple" in our application. It is possible that both input refer to the same company and may lead to potential confusion. For our future implementation, we intend to make company name case-insensitive.
 
-4. **Phone numbers allow duplicates**: We did not want to set high restrictions in our application, hence did not force users to ensure all phone numbers must be unique. From user feedback, duplicate phone numbers can lead to potential confusion, especially when managing large contact lists. A solution could be added in a future iteration.
+4. **Phone numbers allow duplicates**, We did not want to set high restrictions in our application, hence did not force users to ensure all phone numbers must be unique. From user feedback, duplicate phone numbers can lead to potential confusion, especially when managing large contact lists. A solution could be added in a future iteration.
 
-<div style="page-break-after: always;"></div>
+5. **Leap Year Date Handling**, A defect has been identified in the Java Format library where certain invalid date inputs, such as "29 Feb 2023" which is not a leap year, are incorrectly accepted and silently converted to a valid date by the system. This behavior can result in incorrect date information being processed by the application. Hence, users are advised to manually verify the correctness of date inputs, especially around leap years, to ensure accuracy. The workaround in the future will be imposing a stricter validation check offered by the Java library `java.time.format.ResolverStyle` to correct this behaviour.
 
-5. **Leap Year Date Handling**: A defect has been identified in the Java Format library where certain invalid date inputs, such as "29 Feb 2023" which is not a leap year, are incorrectly accepted and silently converted to a valid date by the system. This behavior can result in incorrect date information being processed by the application. Hence, users are advised to manually verify the correctness of date inputs, especially around leap years, to ensure accuracy. The workaround in the future will be imposing a stricter validation check offered by the Java library `java.time.format.ResolverStyle` to correct this behaviour.
+6. **The order of applications without interview date**, may differ in the list of applications when you close and reopen InternHub. This is due to our list sorting algorithm only focuses on the interview date and is random otherwise.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -707,9 +705,9 @@ Advanced users are welcome to update data directly by editing that data file.
 
 | Action       | Format, Examples                                                                                                                                                                                                                                                        |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**      | `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL a/[ADDRESS] t/TAG jd/JOB_DESCRIPTION d/[INTERVIEW_DATE] id/INTERN_DURATION s/SALARY n/[NOTE]` <br> e.g., `add c/FoodPanda p/12345678 e/panda@food.com a/CBD t/I jd/Front End Intern d/15-04-2024 0900 id/6 months s/500 n/-` |
+| **Add**      | `add c/COMPANY_NAME p/PHONE_NUMBER e/EMAIL [a/ADDRESS] t/TAG jd/JOB_DESCRIPTION [d/INTERVIEW_DATE] id/INTERN_DURATION s/SALARY [n/NOTE]` <br> e.g., `add c/FoodPanda p/12345678 e/panda@food.com a/CBD t/I jd/Front End Intern d/15-04-2024 0900 id/6 months s/500 n/-` |
 | **Delete**   | `delete INDEX` e.g., `delete 3`                                                                                                                                                                                                                                         |
-| **Edit**     | `Edit INDEX c/[COMPANY_NAME] p/[PHONE_NUMBER] e/[EMAIL] a/[ADDRESS] t/[TAG] jd/[JOB_DESCRIPTION] d/[INTERVIEW_DATE] id/[INTERN_DURATION] s/[SALARY] n/[NOTE]`<br> e.g.,`Edit 2 p/99987654`                                                                              |
+| **Edit**     | `Edit INDEX [c/COMPANY_NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG] [jd/JOB_DESCRIPTION] [d/INTERVIEW_DATE] [id/INTERN_DURATION] [s/SALARY] [n/NOTE]`<br> e.g.,`Edit 2 p/99987654`                                                                              |
 | **View**     | `view INDEX` e.g., `view 3`                                                                                                                                                                                                                                             |
 | **List**     | `list`                                                                                                                                                                                                                                                                  |
 | **Find**     | `find KEYWORD [MORE_KEYWORDS]`e.g., `find foodpanda`                                                                                                                                                                                                                    |
