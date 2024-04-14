@@ -19,7 +19,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[portfolio](team/ashleygoh1)]
 
 * Role: Developer
-* Responsibilities: Model
+* Responsibilities: Feature Development, UI/UX Design, Testing and Quality Assurance, Documentation, Data Management, Error Handling and Troubleshooting.
 
 ### Chai Ming How
 
@@ -29,7 +29,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[portfolio](team/minghowc)]
 
 * Role: Developer
-* Responsibilities: Features Testing
+* Responsibilities: Feature Development, UI/UX Design, Testing and Quality Assurance, Documentation, Data Management, Error Handling and Troubleshooting.
 
 ### Chen Yixin
 
@@ -39,7 +39,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[portfolio](team/chenyixin0)]
 
 * Role: Developer
-* Responsibilities: Dev Ops + Threading
+* Responsibilities: Feature Development, UI/UX Design, Testing and Quality Assurance, Documentation, Data Management, Error Handling and Troubleshooting.
 
 ### Eunice Koh
 
@@ -49,7 +49,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[portfolio](team/eunrcn)]
 
 * Role: Developer
-* Responsibilities: Model
+* Responsibilities: Feature Development, UI/UX Design, Testing and Quality Assurance, Documentation, Data Management, Error Handling and Troubleshooting.
 
 ### Jawad Afthab
 
@@ -59,4 +59,4 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[portfolio](team/jawad280)]
 
 * Role: Developer
-* Responsibilities: UI
+* Responsibilities: Feature Development, UI/UX Design, Testing and Quality Assurance, Documentation, Data Management, Error Handling and Troubleshooting.
