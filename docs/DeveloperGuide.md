@@ -16,7 +16,7 @@ _By F14-1, JAYME_
 
 * This is a brownfield project based on the AddressBook-Level3 created by the [SE-EDU initiative](https://se-education.org/)
 * AI tools used: 
-  * ChatGPT by OpenAI used to answer design questions and minor documentation formats
+  * ChatGPT by OpenAI used to answer design questions and minor documentation formats.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -169,7 +169,7 @@ This section describes some noteworthy details on how certain features are imple
 
 <box type="info">
 
-Parameters in `[]` are optional
+Parameters in `[]` are optional.
 
 </box>
 
@@ -191,8 +191,8 @@ The following steps show how the add internship application feature works:
     - Check for missing or duplicates prefix.
     - Once all components are successfully parsed, a new Person object representing the internship application is created using the parsed values.
 4. Command Result
-    - The AddCommand constructs a new `CommandResult` with the following params :
-        - feedbackToUser : `New internship application added: [newly added internship application details]`
+    - The AddCommand constructs a new `CommandResult` with the following params:
+        - feedbackToUser: `New internship application added: [newly added internship application details]`.
 5. UI
     - The ViewPanel class displays the personToView with all its details and fields.
 
@@ -216,7 +216,7 @@ The diagram below shows the class diagram for AddCommand.
 
 <puml src="diagrams/AddCommandClassDiagram.puml" width="550" />
 
-The diagram below shows the sequence diagram for AddCommand. All Initialization commands above are similar in their interactions with the [logic component](#logic-component) and [model component](#model-component).
+The diagram below shows the sequence diagram for AddCommand. All Initialization commands above are similar in their interactions with the [logic component](#33-logic-component) and [model component](#34-model-component).
 
 <puml src="diagrams/AddSequenceDiagram.puml" />
 
@@ -263,7 +263,11 @@ The `EditCommand` allows users to modify the details of an existing internship a
 
 ### 4.2.4 Diagrams
 
+The diagram below shows the class diagram for EditCommand.
+
 <puml src="diagrams/EditCommandClassDiagram.puml" width="550" />
+
+The diagram below shows the sequence diagram for EditCommand. 
 
 <puml src="diagrams/EditSequenceDiagram.puml" />
 
@@ -375,7 +379,11 @@ The following steps outline how the Note Command feature operates:
 
 ### 4.4.4 Diagrams
 
+The diagram below shows the class diagram for NoteCommand.
+
 <puml src="diagrams/NoteCommandClassDiagram.puml" width="300" />
+
+The diagram below shows the sequence diagram for NoteCommand.
 
 <puml src="diagrams/NoteSequenceDiagram.puml" />
 
@@ -427,6 +435,12 @@ The following steps outline how the Filter Command feature operates:
 ### 4.5.3 Design Considerations
 
 ### 4.5.4 Diagrams
+
+<!-- The diagram below shows the class diagram for FilterCommand. -->
+
+<!-- The diagram below shows the sequence diagram for FilterCommand. -->
+
+<!-- The following activity diagram shows how the user can interact with the FilterCommand -->
 
 ## 4.6 Reminder Command
 
@@ -550,7 +564,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1. User inputs contact information of internship company.
 2. System stores the application information.<br>
-Use case ends.
+Use case ends
 
 **Extensions:**
 
@@ -560,7 +574,7 @@ Use case ends.
 * Steps 1a1-1a2 are repeated until the command syntax entered is correct.
 * Use case resumes from step 2.
 
-1a. System detects an error in the fields being added (No fields at all / Invalid field prefixes / Duplicate prefixes).
+1b. System detects an error in the fields being added (No fields at all / Invalid field prefixes / Duplicate prefixes).
 * 1a1. System requests for proper input of fields and correct prefix.
 * 1a2. User enters the fields to be edited.
 * Steps 1a1-1a2 are repeated until the selection is correct.
@@ -574,7 +588,7 @@ Use case ends.
 
 1. User inputs index of internship application to be deleted.
 2. System deletes the relevant internship application.<br>
-Use case ends.
+Use case ends
 
 **Extensions:**
 
@@ -588,24 +602,32 @@ Use case ends.
 
 ### 6.3.3 Use Case: Edit Internship Application Information
 
+### 6.3.3 Use Case: Edit Internship Application Information
+
 **Main Success Scenario (MSS):**
 
-1. User chooses application to edit by its index and enters relevant fields to be modified.
-2. System modifies that corresponding field of that application.<br>
-Use case ends.
+1. User enters the index of the internship application to be edited, along with the details of the field to be modified.
+2. System updates the corresponding field of that application.
+3. Feedback is provided.
+4. Updated information is displayed in the UI.
 
 **Extensions:**
 
-1a. System detects an error in index of application.
-* 1a1. System requests for proper input of index (1 to current number of applications).
+1a. System detects an error in the index of the application.
+* 1a1. System requests proper input of the index (1 to the current number of applications).
 * 1a2. User enters the correct index.
-* Steps 1a1-1a2 are repeated until the selection is correct.
+* Steps 1a1-1a2 are repeated until the correct selection is made.
+* Use case resumes from step 1.
+
+1b. User enters edit without index or without specifying the field scenario.
+* 1b1. System prompts the user to enter the index and the fields to be edited.
+* 1b2. User enters the index and the fields to be edited.
 * Use case resumes from step 2.
 
-1a. System detects an error in the fields to be edited (No fields at all / Invalid field prefixes / Duplicate prefixes).
-* 1a1. System requests for proper input of fields and correct prefix.
-* 1a2. User enters the fields to be edited.
-* Steps 1a1-1a2 are repeated until the selection is correct.
+2. System detects an error in the fields to be edited (No fields at all / Invalid field prefixes / Duplicate prefixes).
+* 2a1. System requests proper input of fields and correct prefixes.
+* 2a2. User enters the fields to be edited.
+* Steps 2a1-2a2 are repeated until the correct selection is made.
 * Use case resumes from step 2.
 
 ---
@@ -618,7 +640,7 @@ Use case ends.
 2. User inputs the tag.
 3. System filters the applications associated with the selected tag.
 4. System displays the filtered applications.<br>
-Use case ends.
+Use case ends
 
 **Extensions:**
 
@@ -637,7 +659,7 @@ Use case ends.
 1. User chooses application to be viewed on view panel.
 2. User enters the application index.
 3. System views the relevant contact on the view panel.<br>
-Use case ends.
+Use case ends
 
 **Extensions:**
 
@@ -657,11 +679,11 @@ Use case ends.
 2. System retrieves note content of the corresponding application.
 3. User makes changes to the note content.
 4. System stores the changes made.<br>
-   Use case ends.
+   Use case ends
 
 **Extensions:**
 
-* 1a. System detects an error in index of application
+* 1a. System detects an error in index of application.
     * 1a1. System requests for proper input of index (1 to current number of applications).
     * 1a2. Internship Applicant enters the correct index.
     * Steps 1a1-1a2 are repeated until the selection is correct.
@@ -691,14 +713,58 @@ Use case ends.
 
 ## 6.4 Non-Functional Requirements
 
-1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
-3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+1. **Availability:**
+    - The application should be available for download on the project's GitHub release page in the form of a JAR file.
+
+2. **Capacity:**
+    - The application should be capable of storing up to 1000 internship applications.
+
+3. **Performance:**
+    - Response time to any user command should be within 3 seconds.
+    - The application should be able to handle up to 300 internship applications before facing any performance bottleneck issues.
+
+4. **Reliability:**
+    - The application should provide guidance to the user if it is unable to execute any user actions for various reasons.
+
+5. **Compatibility:**
+    - The application should work as intended on any mainstream operating system.
+    - It is guaranteed to work on Java version 11.
+
+6. **Usability:**
+    - A user with above-average typing speed for regular English text should be able to accomplish most tasks faster using commands than using the mouse.
+
+7. **Robustness:**
+    - The application should remain highly relevant to internship applications at any point in the future.
+
+8. **Integrity:**
+    - There should be user updates to the internship applications to ensure integrity.
+    - Application updates should not compromise the integrity of the save file.
+
+9. **Maintainability:**
+    - The application should comply with the coding standards set forth by CS2103T.
+    - It should adhere to best coding practices highlighted in CS2103T.
+    - The design should allow any programmer with at least a year of experience to read, maintain, and contribute to the source code easily.
+
+10. **Process:**
+    - The project features should align with any changes to real-world internship application processes.
+
+11. **Project Scope:**
+    - The application requires manual addition of internship applications into the system.
+
+12. **Privacy:**
+    - The application should not store any information about users' internship applications in remote storage.
 
 ## 6.5 Glossary
 
-* **Mainstream OS**: Windows, Linux, Unix, MacOS.
-* **Private contact detail**: A contact detail that is not meant to be shared with others.
+1. **Main components**: Main, UI, Logic, Model, Storage, Commons.
+2. **Architecture Diagram**: High-level design overview.
+3. **UI component**: Manages app interface elements.
+4. **Logic component**: Executes user commands.
+5. **Model component**: Stores app data.
+6. **Storage component**: Handles data storage.
+7. **Common classes**: Shared utility classes.
+8. **Mainstream OS**: Windows, Linux, Unix, MacOS.
+9. **CLI**: Command Line Interface for user interaction.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -721,6 +787,13 @@ Team size: 5
 6. **More flexible Filter Command**:
     - We aim to make our filter command to work with all other fields like `address`, `salary`, `jobDescription` and so on, to allow greater flexibility for the user.
     - To achieve this, our team is working on incorporating prefixes in the filter command, for example: `filter a/Clementi t/I s/1200` would filter the applications that fit the provided filter-restrictions.
+7. **Countdown in UI reflecting the number of days until interview date**:
+    - Implement a feature in the user interface to display a countdown for interviews, showing the number of days left. This provides users with quick access to important information.
+8. **Find command based on fields other than name**:
+    - Enhance the search functionality by implementing a find command that allows users to search for internship applications based on fields other than the applicant's name. This will provide users with more flexibility in locating specific applications based on various criteria such as company, date, or location.
+
+
+
 
 --------------------------------------------------------------------------------------------------------------------
 

@@ -11,15 +11,15 @@ AddressBook - Level 3 is a desktop address book application used for teaching So
 
 ---
 
-### Contributions Overview
+### Preface
 
-Here are the contributions I've made to the project.
+I'm extremely thankful for my teammates. Their dedication and enthusiasm drive me to excel, and without their invaluable contributions, this project wouldn't be where it is today.
 
 ---
 
-### Preface
+### Contributions Overview
 
-I owe a debt of gratitude to my incredible teammates, whose ongoing collaboration and support have elevated my work beyond what I could achieve alone. Their dedication not only enhances the project but also inspires me to push myself further. Their boundless enthusiasm and tireless efforts create an atmosphere of shared achievement, driving me to continually strive for excellence. Without their invaluable contributions, this project wouldn't shine as brightly as it does today.
+Here are the contributions I've made to the project.
 
 ---
 
@@ -66,6 +66,8 @@ I owe a debt of gratitude to my incredible teammates, whose ongoing collaboratio
   - Implementation for edit command: [\#91](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/91)
   - Detailed implementation of the reminder command: [\#215](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/215) 
   - Updated model class diagram: [\#56](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/56) [\#57](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/57)
+  - Non-Functional Requirements: [\#219](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/219)
+  - Expanded the glossary: [\#219](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/219)
   - Reordered table of contents for clarity: [\#216](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/216) 
 
 * **Read Me**: [\#2](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/2)
