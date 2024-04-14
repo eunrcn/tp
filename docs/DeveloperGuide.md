@@ -11,7 +11,7 @@ pageNav: 3
 
 --------------------------------------------------------------------------------------------------------------------
 
-## 1.1 Acknowledgements
+# 1. Acknowledgements
 
 * This is a brownfield project based on the AddressBook-Level3 created by the [SE-EDU initiative](https://se-education.org/)
 * AI tools used: 
@@ -513,7 +513,7 @@ The following activity diagram shows how the user can interact with the Reminder
 
 --------------------------------------------------------------------------------------------------------------------
 
-# 5. **Documentation, logging, testing, configuration, dev-ops**
+# 5. Documentation, logging, testing, configuration, dev-ops
 
 * [Documentation guide](Documentation.md)
 * [Testing guide](Testing.md)
@@ -523,7 +523,7 @@ The following activity diagram shows how the user can interact with the Reminder
 
 --------------------------------------------------------------------------------------------------------------------
 
-# 6. **Appendix A: Requirements**
+# 6. Appendix A: Requirements
 
 ## 6.1 Product scope
 
@@ -719,7 +719,7 @@ Use case ends.
 
 --------------------------------------------------------------------------------------------------------------------
 
-# 7. **Appendix B: Planned Enhancements**
+# 7. Appendix B: Planned Enhancements
 
 Team size: 5
 
@@ -737,11 +737,11 @@ Team size: 5
     - Enhance the user interface by making the view card scrollable for all labels, ensuring that users can view all information associated with an internship application, even if it exceeds the visible area of the card.
 6. **More flexible Filter Command**:
     - We aim to make our filter command to work with all other fields like `address`, `salary`, `jobDescription` and so on, to allow greater flexibility for the user.
-    - To achieve this, our team is working on incorporating prefixes in the filter command, for example : `filter a/Clementi t/I s/1200` would filter the applications that fit the provided filter-restrictions.
+    - To achieve this, our team is working on incorporating prefixes in the filter command, for example: `filter a/Clementi t/I s/1200` would filter the applications that fit the provided filter-restrictions.
 
 --------------------------------------------------------------------------------------------------------------------
 
-# 8. **Appendix C: Instructions for manual testing**
+# 8. Appendix C: Instructions for manual testing
 
 Given below are instructions to test the app manually.
 
@@ -753,7 +753,7 @@ testers are expected to do more *exploratory* testing.
 
 1. Initial launch
 
-   1. Download the jar file and copy into an empty folder
+   1. Download the jar file and copy into an empty folder.
 
    2. Double-click the jar file. <br>
        Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
@@ -800,7 +800,7 @@ testers are expected to do more *exploratory* testing.
 
 2. Deleting an internship application in a filtered list of applications
 
-    1. Prerequisites: Filter internship applications using `filter I` based on tags. Do note, you can use other valid tags instead of `I` as long as you have a populated result list of applications
+    1. Prerequisites: Filter internship applications using `filter I` based on tags. Do note, you can use other valid tags instead of `I` as long as you have a populated result list of applications.
 
     2. Test case: `delete 1`<br>
        Expected: First application based on the **filtered list** is deleted. Details of deleted internship application shown in **result display**.
@@ -822,7 +822,7 @@ testers are expected to do more *exploratory* testing.
 
 2. Deleting an internship application in a filtered list of applications
 
-    1. Prerequisites: Filter internship applications using `filter I` based on tags. Do note, you can use other valid tags instead of `I` as long as you have a populated result list of applications
+    1. Prerequisites: Filter internship applications using `filter I` based on tags. Do note, you can use other valid tags instead of `I` as long as you have a populated result list of applications.
 
     2. Test case: `delete 1`<br>
        Expected: First application based on the **filtered list** is deleted. Details of deleted application shown in **result display**.
@@ -832,17 +832,17 @@ testers are expected to do more *exploratory* testing.
 
 1. Viewing an internship application with an empty application list
 
-   1. Prerequisites: Clear all applications using `clear` command. Will empty the applications
+   1. Prerequisites: Clear all applications using `clear` command. Will empty the applications.
 
    2. Test case: `view 2`<br>
-      Expected : Error message should be shown in the **result display** as there are no applications to view.
+      Expected: Error message should be shown in the **result display** as there are no applications to view.
 
 2. Viewing an internship application in a populated list
 
-    1. Prerequisites: Ensure **at least 1 internship application** is in the applications list of InternHub
+    1. Prerequisites: Ensure **at least 1 internship application** is in the applications list of InternHub.
 
     2. Test case: `view 1` <br>
-       Expected : The application details at index 1 will be aptly displayed on the view panel on the right
+       Expected: The application details at index 1 will be aptly displayed on the view panel on the right.
 
        
 ## 8.6 List all internship applications
@@ -870,18 +870,18 @@ Expected: List all internship application in InternHub.
 
 1. Append to existing note content of internship application
 
-    1. Prerequisites: Attach a test note to the internship application either when you create it or by using `edit`
+    1. Prerequisites: Attach a test note to the internship application either when you create it or by using `edit`.
 
     2. Test case: `note 2` where 2 is the index of that application<br>
-       Expected : In the command box, you will notice the following : `edit 2 n/[existing note content]`, then you can make changes and enter to modify the note
+       Expected: In the command box, you will notice the following: `edit 2 n/[existing note content]`, then you can make changes and enter to modify the note.
 
 ## 8.9 Filtering internship applications
 1. filter to get internship application(s) with status 'NR' (No Reply) in an empty list
 
-    1. Prerequisites: Clear all applications using `clear` command. Will empty the applications
+    1. Prerequisites: Clear all applications using `clear` command. Will empty the applications.
 
     2. Test case: `filter NR`<br>
-       Expected : Error message should be shown in the **result display** as there are no applications.
+       Expected: Error message should be shown in the **result display** as there are no applications.
 
 2. filter to get internship application(s) that has status 'NR' (No Reply) in a populated list
 
@@ -893,7 +893,7 @@ Expected: List all internship application in InternHub.
        * `add c/shoppa p/98765430 e/shoppa@example.com t/OA jd/Junior Animator intern id/3 months s/1000`
 
     2. Test case: `filter NR` (Assuming there are at least 2 applications)<br>
-       Expected : Only Malaysia Airline will be displayed on the left side of the list panel.
+       Expected: Only Malaysia Airline will be displayed on the left side of the list panel.
 
 
 ## 8.10 Getting Reminders for Internship Applications
@@ -919,7 +919,7 @@ Expected: List all internship application in InternHub.
 
 --------------------------------------------------------------------------------------------------------------------
 
-# 9. **Appendix D: Effort**
+# 9. Appendix D: Effort
 
 ## 9.1 Difficulty Level
 Overall, our team felt the difficulty level is moderate.
@@ -933,7 +933,7 @@ Overall, our team felt the difficulty level is moderate.
 ## 9.3 Effort Required
 - Moderate effort required.
 - Working as a team allows to regulate and split the workload to ensure effort is optimal.
-- Some aspects of the project required greater efforts : 
+- Some aspects of the project required greater efforts: 
   - Documentation
   - Test cases
   - UI implementation
