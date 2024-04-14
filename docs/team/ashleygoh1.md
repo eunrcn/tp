@@ -1,6 +1,6 @@
 ---
   layout: default.md
-  title: "John Doe's Project Portfolio Page"
+  title: "Ashley's Project Portfolio Page"
 ---
 
 ### Project: InternHub
@@ -20,14 +20,14 @@ Given below are my contributions to the project.
   * Managed releases `v1.3` (1 releases) on GitHub
 
 * **Enhancements to existing features**:
-  * Update existing tests for existing features with coverage of 74.46% (Pull requests [\#36](), [\#38]())
+  * Update existing tests for existing features with coverage of 74.46% (Pull requests [\#36](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/36), [\#38](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/38))
   * Update compareInterviewDates() function found in Person.java to fix app crash (Pull request [\#190](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/190))
 
 * **Documentation**:
   * User Guide:
-    * Added documentation for the features `add` and `edit` [\#72]()
-    * add new section 'understanding each parameter' [\#189](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/189)
-    * Update images [\#200](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/200)
+    * Added documentation for the features `add` and `edit` [\#72](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/72)
+    * Added a new section 'understanding each parameter' [\#189](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/189)
+    * Updated images [\#200](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/200)
 
   * Developer Guide:
     * Added more manual test cases, update implementation for add command and add planned enhancement [\#206](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/206)
@@ -38,3 +38,7 @@ Given below are my contributions to the project.
 
 * **Tools**:
   * Set up codecov to the team repo
+  * Set up UserGuide.md and DeveloperGuide.md
+  * Set up team's Github repo
+  
+
