@@ -102,6 +102,7 @@ e.g. typing **`help`** and pressing Enter will open the help window.
 2. Please refer to the [Features](#4-features) for a full detailed list of each command.
 
 --------------------------------------------------------------------------------------------------------------------
+
 # 3. Product Overview
 
 Our team has carefully designed this user guide to be your one-stop solution for everything related to InternHub! 
@@ -168,8 +169,6 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 | `d/`      | Interview Date      | Of format dd-mm-yyyy HHmm & cannot be earlier than current day                                      | `d/14-04-2024 1500`              | No       |
 | `n/`      | Notes               | -                                                                                                   | `n/Previous experience required` | No       |
 
-<div style="page-break-after: always;"></div>
-
 ### 3.4.1 Company Name
 
 For company names with **special characters**, it's advisable to omit them or replace them with spaces.
@@ -196,6 +195,7 @@ In InternHub, we aim to provide flexibility to users without imposing overly str
 
 ### 3.4.3 Email
 
+Allowed special characters are **+_.-**. <br>
 For emails with special characters, **multiple consecutive special characters are not allowed**.
 <br> Here's an example of a valid email: `abc+company@example.com`.
 <br> An invalid email example would be `abc+_company@example.com`.
@@ -216,6 +216,8 @@ When using tags to denote the status of internship applications, you can use bot
 ### 3.4.5 Internship Duration
 
 We have intentionally omitted setting a minimum internship duration as there isn't a universally fixed minimum duration for internships.
+
+<div style="page-break-after: always;"></div>
 
 ### 3.4.6 Internship Date
 
@@ -262,12 +264,15 @@ Each contact is uniquely identified by the combination of **Company Name** and *
 
   </box>
 
+<div style="page-break-after: always;"></div>
+
 --------------------------------------------------------------------------------------------------------------------
+
 # 4. Features
 
 ## 4.1 Basic Commands
 
-### 4.1.1 Adding an internship application: `add`
+### 4.1.1 Adding an internship application : `add`
 
 Add a new internship application into InternHub.
 
@@ -281,15 +286,14 @@ Add a new internship application into InternHub.
 
 All fields are unable to handle multiple inputs.
 
-Example of correct format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/I jd/Software Developer intern d/29-05-2024 1200 id/3 months s/1000 n/Company CEO is John Doe`
+Example of correct format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 S(123456) t/I jd/Software Developer intern d/29-05-2024 1200 id/3 months s/1000 n/Company CEO is John Doe, tech team lead is Alex Yeoh`
 <br> This internship application will be added in InternHub successfully.
 
-Example of incorrect format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 t/I jd/Software Developer intern d/29-05-2024 1200 id/3 months s/1000 n/Company CEO is John Doe `**`n/Company has 500 employee`**
-<br> An error message _"Multiple values specified for the following single-valued field(s): n/"_ will be shown on the result display box. 
+Example of incorrect format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 S(123456) t/I jd/Software Developer intern d/29-05-2024 1200 id/3 months s/1000 n/Company CEO is John Doe, tech team lead is Alex Yeoh `**`n/Company has 500 employee`**
+
+An error message _"Multiple values specified for the following single-valued field(s): n/"_ will be shown on the result display box. 
 
 </box>
-
-<div style="page-break-after: always;"></div>
 
 **Example 1:**
 
@@ -305,7 +309,7 @@ add c/MediaCorp p/12345678 e/jobs@mediacorp-digital.com a/321 Media Lane, Singap
 
 **Expected Outcome**
 
-![add command example 1](images/UserGuide/addCommandExample1.png)
+<img src="images/UserGuide/addCommandExample1.png" width="700"/>
 
 <div style="page-break-after: always;"></div>
 
@@ -358,6 +362,8 @@ After we execute the delete command, the Grab entry is no longer in our list of 
 
 ![delete_example_full](images/UserGuide/deleteExample.png)
 
+<div style="page-break-after: always;"></div>
+
 ### 4.1.3  Editing an internship application : `edit`
 
 Edits an existing internship application detail in InternHub.
@@ -378,8 +384,6 @@ Edits an existing internship application detail in InternHub.
 When you edit any field with a new value, this will **OVERWRITE** the old value!
 
 </box>
-
-<div style="page-break-after: always;"></div>
 
 <box type="tip">
 
@@ -403,14 +407,14 @@ Example of incorrect format: `edit 1 n/Company CEO is John Doe n/Company has 500
 </box>
 
 **Example 1**
-- We've received confirmation of an online assessment from a previously unresponsive company, Happy Burger.
+- We've received confirmation of an interview from a previously unresponsive company, Happy Burger.
 - We want to do the following:
-  - Change the status from "NR" to "OA"
-  - Set the online assessment date for Happy Burger to be 20 June 2024 at 9 am.
+  - Change the status from "NR" to "I"
+  - Set the interview date for Happy Burger to be 20 June 2024 at 9 am.
 
 With the edit command, we can achieve this with the following command: 
 
-`edit 3 t/OA d/20-06-2024 0900`
+`edit 3 t/I d/20-06-2024 0900`
 
 **Example 2**
 - Unfortunately, we've received a rejection email from DBS Bank.
@@ -421,17 +425,21 @@ With the edit command, we can achieve this with the following command:
 
 `edit 3 t/R`
 
+<div style="page-break-after: always;"></div>
+
 The image below shows the respective outcomes after executing both edit commands: 
 
 ![edit_example](images/UserGuide/edit_example.png)
 
 <box type="info">
 
-Notice how when we set the online assessment date for Happy Burger, the contact list dynamically rearranged to prioritize the latest interview at the top.<br>
+Notice how when we set the interview date for Happy Burger, the contact list dynamically rearranged to prioritize the latest interview at the top.<br>
  
 This dynamic sorting is based on the first interview date.
 
 </box>
+
+<div style="page-break-after: always;"></div>
 
 ### 4.1.4 Viewing an internship application : `view`
 
@@ -479,7 +487,7 @@ All internship applications will be shown on the left side of the window.
 
 <div style="page-break-after: always;"></div>
 
-### 4.2.2 Locating internship applications by name: `find`
+### 4.2.2 Locating internship applications by name : `find`
 
 Finding internship applications whose company names contain any of the given keywords.
 
@@ -578,6 +586,8 @@ It conveniently displays the interviews scheduled within the upcoming N days, ke
 - `reminder 0` : Shows you the interviews you have today.
 - `reminder 2` : Shows you the interviews you have in the next 2 days, including today.
 - `reminder 100` : Shows you the interviews you have in the next 100 days, including today.
+
+**Expected Outcome**
 
 ![reminder command](images/UserGuide/reminderCommand.png){ width=60% }
 
@@ -683,6 +693,9 @@ Advanced users are welcome to update data directly by editing that data file.
 1. Take a backup of `addressbook.json`.
 2. Run `clear` in InternHub and manually add the applications referencing the details from the `addressbook.json`.
 
+**Q**: **I copied a command from the UserGuide but when I paste and run on InternHub, it fails?**<br>
+**A**: When you copy from our UserGuide, do exercise caution as sometimes it can unfortunately concatenate or append the commands together, making the command invalid. When you paste the command, we urge you to verify if the format of the code is valid. You can take a look [here](#3-3-command-and-formatting-guidelines) for reference.
+
 --------------------------------------------------------------------------------------------------------------------
 
 # 6. Known Issues
@@ -698,6 +711,8 @@ Advanced users are welcome to update data directly by editing that data file.
 5. **Leap Year Date Handling**, A defect has been identified in the Java Format library where certain invalid date inputs, such as "29 Feb 2023" which is not a leap year, are incorrectly accepted and silently converted to a valid date by the system. This behavior can result in incorrect date information being processed by the application. Hence, users are advised to manually verify the correctness of date inputs, especially around leap years, to ensure accuracy. The workaround in the future will be imposing a stricter validation check offered by the Java library `java.time.format.ResolverStyle` to correct this behaviour.
 
 6. **The order of applications without interview date**, may differ in the list of applications when you close and reopen InternHub. This is due to our list sorting algorithm only focuses on the interview date and is random otherwise.
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 

@@ -20,21 +20,35 @@ Given below are my contributions to the project.
   * Managed releases `v1.3` (1 releases) on GitHub
 
 * **Enhancements to existing features**:
-  * Update existing tests for existing features with coverage of 74.46% (Pull requests [\#36](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/36), [\#38](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/38))
+  * Update existing tests for existing features with coverage of 78.571% (Pull requests [\#9](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/9), [\#48](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/48)
+  * Update UI for PersonCard to display essential information only (Pull request [\#71](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/71))
+  * Add descriptive labels to UI PersonCard for clarity (Pull request [\#71](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/71))
+  * Show a '-' in UI if note or interview date is empty (Pull request [\#83](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/83))
   * Update compareInterviewDates() function found in Person.java to fix app crash (Pull request [\#190](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/190))
 
 * **Documentation**:
   * User Guide:
-    * Added documentation for the features `add` and `edit` [\#72](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/72)
+    * Added documentation for the features `add` and `edit` [\#16](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/16), [\#104](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/104)
+    * Added documentation for the features `delete` [\#108](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/108)
+    * Added documentation related to bugs [\#189](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/189)
     * Added a new section 'understanding each parameter' [\#189](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/189)
     * Updated images [\#200](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/200)
 
   * Developer Guide:
+    * Update DG to include add command feature description [\#79](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/79)
     * Added more manual test cases, update implementation for add command and add planned enhancement [\#206](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/206)
+    * Add `add`, `edit`, `filter` activity diagrams, `filter` sequence diagram [\#221](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/221)
 
 * **Community**:
-  * PRs reviewed (with non-trivial review comments): [\#12](), [\#32](), [\#19](), [\#42]()
-  * Reported bugs and suggestions for other teams in the class (examples: [1](), [2](), [3]())
+  * PRs reviewed (with non-trivial review comments): [\#78](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/78#discussion_r1540881872), [\#32](), [\#70](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/70#discussion_r1541268786)
+  * Reported bugs and suggestions for other teams in the class (examples: [1](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/1), [2](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/2), [3](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/3),
+  [4](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/4), 
+  [5](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/5),
+  [6](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/6),
+  [7](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/7),
+  [8](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/8),
+  [9](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/9), 
+  [10](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/10))
 
 * **Tools**:
   * Set up codecov to the team repo
