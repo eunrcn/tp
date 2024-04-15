@@ -37,7 +37,7 @@ Given below are my contributions to the project.
   * Developer Guide:
     * Update DG to include add command feature description [\#79](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/79)
     * Added more manual test cases, update implementation for add command and add planned enhancement [\#206](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/206)
-    * Add `add`, `edit`, `filter` activity diagrams, `filter` sequence diagram
+    * Add `add`, `edit`, `filter` activity diagrams, `filter` sequence diagram [\#221](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/221)
 
 * **Community**:
   * PRs reviewed (with non-trivial review comments): [\#78](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/78#discussion_r1540881872), [\#32](), [\#70](https://github.com/AY2324S2-CS2103T-F14-1/tp/pull/70#discussion_r1541268786)
