@@ -233,15 +233,15 @@ Alternative 2: New Person object is created and added to InternHub in model.
 
 The diagram below shows the class diagram for AddCommand.
 
-<puml src="diagrams/AddCommandClassDiagram.puml" width="550" />
+<puml src="diagrams/AddCommandClassDiagram.puml" />
 
 The diagram below shows the sequence diagram for AddCommand. All Initialization commands above are similar in their interactions with the [logic component](#33-logic-component) and [model component](#34-model-component).
 
-<puml src="diagrams/AddSequenceDiagram.puml" width="550" />
+<puml src="diagrams/AddSequenceDiagram.puml" />
 
 The following activity diagram shows how the user can interact with the Add Command.
 
-<puml src="diagrams/AddActivityDiagram.puml" width="550" />
+<puml src="diagrams/AddActivityDiagram.puml" />
 
 <div style="page-break-after: always;"></div>
 
@@ -289,7 +289,7 @@ The `EditCommand` allows users to modify the details of an existing internship a
 
 The diagram below shows the class diagram for EditCommand.
 
-<puml src="diagrams/EditCommandClassDiagram.puml" width="550" />
+<puml src="diagrams/EditCommandClassDiagram.puml" />
 
 <div style="page-break-after: always;"></div>
 
@@ -419,15 +419,15 @@ The following steps outline how the Note Command feature operates:
 
 The diagram below shows the class diagram for NoteCommand.
 
-<puml src="diagrams/NoteCommandClassDiagram.puml" width="550" />
+<puml src="diagrams/NoteCommandClassDiagram.puml" />
 
 The diagram below shows the sequence diagram for NoteCommand.
 
-<puml src="diagrams/NoteSequenceDiagram.puml" width="550" />
+<puml src="diagrams/NoteSequenceDiagram.puml" />
 
 The following activity diagram shows how the user can interact with the Note Command.
 
-<puml src="diagrams/NoteActivityDiagram.puml" width="550" />
+<puml src="diagrams/NoteActivityDiagram.puml" />
 
 <div style="page-break-after: always;"></div>
 
@@ -482,15 +482,15 @@ The following steps outline how the Filter Command feature operates:
 
 The diagram below shows the class diagram for FilterCommand.
 
-<puml src="diagrams/FilterCommandClassDiagram.puml" width="550" />
+<puml src="diagrams/FilterCommandClassDiagram.puml" />
 
 The diagram below shows the sequence diagram for FilterCommand.
 
-<puml src="diagrams/FilterSequenceDiagram.puml" width="550" />
+<puml src="diagrams/FilterSequenceDiagram.puml" />
 
 The following activity diagram shows how the user can interact with the FilterCommand
 
-<puml src="diagrams/FilterCommandActivityDiagram.puml" width="550" />
+<puml src="diagrams/FilterCommandActivityDiagram.puml" />
 
 <div style="page-break-after: always;"></div>
 
