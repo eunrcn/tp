@@ -268,7 +268,7 @@ Each contact is uniquely identified by the combination of **Company Name** and *
 
 ## 4.1 Basic Commands
 
-### 4.1.1 Adding an internship application: `add`
+### 4.1.1 Adding an internship application : `add`
 
 Add a new internship application into InternHub.
 
@@ -428,7 +428,7 @@ The image below shows the respective outcomes after executing both edit commands
 
 <box type="info">
 
-Notice how when we set the online assessment date for Happy Burger, the contact list dynamically rearranged to prioritize the latest interview at the top.<br>
+Notice how when we set the interview date for Happy Burger, the contact list dynamically rearranged to prioritize the latest interview at the top.<br>
  
 This dynamic sorting is based on the first interview date.
 
@@ -480,7 +480,7 @@ All internship applications will be shown on the left side of the window.
 
 <div style="page-break-after: always;"></div>
 
-### 4.2.2 Locating internship applications by name: `find`
+### 4.2.2 Locating internship applications by name : `find`
 
 Finding internship applications whose company names contain any of the given keywords.
 
