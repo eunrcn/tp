@@ -289,7 +289,7 @@ The `EditCommand` allows users to modify the details of an existing internship a
 
 The diagram below shows the class diagram for EditCommand.
 
-<puml src="diagrams/EditCommandClassDiagram.puml" />
+<puml src="diagrams/EditCommandClassDiagram.puml" width="550" />
 
 <div style="page-break-after: always;"></div>
 
@@ -487,6 +487,8 @@ The diagram below shows the class diagram for FilterCommand.
 The diagram below shows the sequence diagram for FilterCommand.
 
 <puml src="diagrams/FilterSequenceDiagram.puml" />
+
+<div style="page-break-after: always;"></div>
 
 The following activity diagram shows how the user can interact with the FilterCommand
 
