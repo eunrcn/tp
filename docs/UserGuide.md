@@ -309,7 +309,7 @@ add c/MediaCorp p/12345678 e/jobs@mediacorp-digital.com a/321 Media Lane, Singap
 
 **Expected Outcome**
 
-<img src="images/UserGuide/addCommandExample1.png" width="800"/>
+<img src="images/UserGuide/addCommandExample1.png" width="700"/>
 
 <div style="page-break-after: always;"></div>
 
