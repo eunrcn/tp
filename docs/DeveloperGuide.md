@@ -70,6 +70,8 @@ For example, the `Logic` component defines its API in the `Logic.java` interface
 
 The sections below give more details of each component.
 
+<div style="page-break-after: always;"></div>
+
 ## 3.2 UI component
 
 The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/java/seedu/internhub/ui/Ui.java)
@@ -86,6 +88,8 @@ The `UI` component,
 * listens for changes to `Model` data so that the UI can be updated with the modified data.
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
 * depends on some classes in the `Model` component, as it displays `Person` object residing in the `Model`.
+
+<div style="page-break-after: always;"></div>
 
 ## 3.3 Logic component
 
@@ -120,6 +124,7 @@ How the parsing works:
 * When called upon to parse a user command, the `InternHubParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `InternHubParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
+<div style="page-break-after: always;"></div>
 
 ## 3.4 Model component
 **API** : [`Model.java`](https://github.com/AY2324S2-CS2103T-F14-1/tp/blob/master/src/main/java/seedu/internhub/model/Model.java)
@@ -133,6 +138,8 @@ The `Model` component,
 * stores the currently 'selected' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
+
+<div style="page-break-after: always;"></div>
 
 ## 3.5 Storage component
 
@@ -156,7 +163,9 @@ Classes used by multiple components are in the `seedu.internhub.commons` package
 `util`: This package defines utility classes for certain operations, like file I/O, argument validation, and image processing.
 
 <div style="page-break-after: always;"></div>
+
 --------------------------------------------------------------------------------------------------------------------
+
 # 4. Implementation
 
 This section describes some noteworthy details on how certain features are implemented.
@@ -213,6 +222,8 @@ Alternative 2: New Person object is created and added to InternHub in model.
 - Pros: Command has no knowledge of Model and its attributes.
 
 - Cons: More prone to error.
+
+<div style="page-break-after: always;"></div>
 
 ### 4.1.4 Diagrams
 
@@ -276,6 +287,8 @@ The diagram below shows the class diagram for EditCommand.
 
 <puml src="diagrams/EditCommandClassDiagram.puml" width="550" />
 
+<div style="page-break-after: always;"></div>
+
 The diagram below shows the sequence diagram for EditCommand. 
 
 <puml src="diagrams/EditSequenceDiagram.puml" />
@@ -325,6 +338,8 @@ The following steps outline how the View Command feature operates :
 
 - Fetch `Person` object based on the index
 - Utilize the `CommandResult` to pass the `Person` object to the UI component
+
+<div style="page-break-after: always;"></div>
 
 ### 4.3.4 Diagrams
 
@@ -393,6 +408,9 @@ The following steps outline how the Note Command feature operates:
 - Cons:
     - An additional command has to be implemented
     - Essentially an abstracted & glorified edit feature
+
+<div style="page-break-after: always;"></div>
+
 ### 4.4.4 Diagrams
 
 The diagram below shows the class diagram for NoteCommand.
@@ -454,11 +472,13 @@ The following steps outline how the Filter Command feature operates:
 - Make use of the properties of `ObservableList` to filter the list of contacts using `MatchingTagPredicate` generated from user input
 - Utilize the `CommandResult` to pass the resulting `FilteredPersonList` to the UI component
 
+<div style="page-break-after: always;"></div>
+
 ### 4.5.4 Diagrams
 
 <!-- The diagram below shows the class diagram for FilterCommand. -->
 
-<puml src="diagrams/FilterCommandClassDiagram.puml" width="300" />
+<puml src="diagrams/FilterCommandClassDiagram.puml" />
 
 <!-- The diagram below shows the sequence diagram for FilterCommand. -->
 
@@ -786,15 +806,15 @@ Use case ends
 
 ## 6.5 Glossary
 
-**1. Main components**: Main, UI, Logic, Model, Storage, Commons.
-**2. Architecture Diagram**: High-level design overview.
-**3. UI component**: Manages app interface elements.
-**4. Logic component**: Executes user commands.
-**5. Model component**: Stores app data.
-**6. Storage component**: Handles data storage.
-**7. Common classes**: Shared utility classes.
-**8. Mainstream OS**: Windows, Linux, Unix, MacOS.
-**9. CLI**: Command Line Interface for user interaction.
+**1. Main components**: Main, UI, Logic, Model, Storage, Commons. <br>
+**2. Architecture Diagram**: High-level design overview. <br>
+**3. UI component**: Manages app interface elements. <br>
+**4. Logic component**: Executes user commands. <br>
+**5. Model component**: Stores app data. <br>
+**6. Storage component**: Handles data storage. <br>
+**7. Common classes**: Shared utility classes. <br>
+**8. Mainstream OS**: Windows, Linux, Unix, MacOS. <br>
+**9. CLI**: Command Line Interface for user interaction. <br>
 
 <div style="page-break-after: always;"></div>
 
