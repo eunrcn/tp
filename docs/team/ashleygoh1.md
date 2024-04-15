@@ -48,7 +48,7 @@ Given below are my contributions to the project.
   [7](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/7),
   [8](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/8),
   [9](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/9), 
-  [10](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/10)
+  [10](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/10))
 
 * **Tools**:
   * Set up codecov to the team repo

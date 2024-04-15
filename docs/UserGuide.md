@@ -128,8 +128,8 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 - Enter your commands in this box.
 
 **Result Display**
-- View the output message after each command here. 
-- For longer commands like `add`, the output text may get cut off, simply use our pink scroll bar to view the entire output.
+- View the output message after each command here.
+- For longer commands like `add`, the text found in the result display box may get cut off. Simply use our pink scroll bar to view the entire output.
 
 **List of Applications**
 - This panel displays a list of all internship applications.
@@ -288,6 +288,7 @@ Example of correct format: `add c/Happy Burger p/98765432 e/HappyBurger@example.
 <br> This internship application will be added in InternHub successfully.
 
 Example of incorrect format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 S(123456) t/I jd/Software Developer intern d/29-05-2024 1200 id/3 months s/1000 n/Company CEO is John Doe, tech team lead is Alex Yeoh `**`n/Company has 500 employee`**
+
 <br> An error message _"Multiple values specified for the following single-valued field(s): n/"_ will be shown on the result display box. 
 
 </box>
@@ -689,6 +690,9 @@ Advanced users are welcome to update data directly by editing that data file.
 **A**: The reason for this occurrence is likely due to invalid fields assigned to the internship applications. If you are able to identify the invalid field, by all means make your changes and upon the next run, InternHub should work as normal. However, if you are not sure, you can follow these steps to salvage your data:<br>
 1. Take a backup of `addressbook.json`.
 2. Run `clear` in InternHub and manually add the applications referencing the details from the `addressbook.json`.
+
+**Q**: **I copied a command from the UserGuide but when I paste and run on InternHub, it fails?**<br>
+**A**: When you copy from our UserGuide, do exercise caution as sometimes it can unfortunately concatenate or append the commands together, making the command invalid. When you paste the command, we urge you to verify if the format of the code is valid. You can take a look [here](#3-3-command-and-formatting-guidelines) for reference.
 
 --------------------------------------------------------------------------------------------------------------------
 
