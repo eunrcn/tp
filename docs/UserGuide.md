@@ -127,8 +127,8 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 - Enter your commands in this box.
 
 **Result Display**
-- View the output message after each command here. 
-- For longer commands like `add`, the output text may get cut off, simply use our pink scroll bar to view the entire output.
+- View the output message after each command here.
+- For longer commands like `add`, the text found in the result display box may get cut off. Simply use our pink scroll bar to view the entire output.
 
 **List of Applications**
 - This panel displays a list of all internship applications.
