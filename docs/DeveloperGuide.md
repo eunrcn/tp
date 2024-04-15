@@ -363,20 +363,9 @@ The following steps outline how the Note Command feature operates:
 
 
 ### 4.4.3 Design Considerations
-**Alternative 1 : Use edit to make changes to note attribute**
-- Pros:
-    - Easier implementation
-    - No need for new command to be created
-- Cons:
-    - Edit will **OVERWRITE** old data
 
-**Alternative 2 (Current Implementation) : Create `note` command**
-- Pros:
-    - Allows for editing and updating existing note content
-    - Will not overwrite old data
-- Cons:
-    - An additional command has to be implemented
-    - Essentially an abstracted & glorified edit feature
+- Fetch `Person` object based on the index
+- Utilize the `CommandResult` to pass the `Person` object to the UI component
 
 ### 4.4.4 Diagrams
 
@@ -430,18 +419,27 @@ The following steps outline how the Filter Command feature operates:
     - A `FilterCommand` is instantiated with the number of entries in the updated `FilteredPersonList`.
     - The `FilterCommand#execute(Model model)` is then called, passing the current application model
 4. Command Result
-    - The `FilterCommand` constructs a new `CommandResult` with the following params :
+    - The `FilterCommand` constructs a new `CommandResult` with the following parameters :
         - **feedbackToUser** : `[size of filtered list] persons listed`
 
 ### 4.5.3 Design Considerations
+
+- Make use of the properties of `ObservableList` to filter the list of contacts using `MatchingTagPredicate` generated from user input
+- Utilize the `CommandResult` to pass the resulting `FilteredPersonList` to the UI component
 
 ### 4.5.4 Diagrams
 
 <!-- The diagram below shows the class diagram for FilterCommand. -->
 
+<puml src="diagrams/FilterCommandClassDiagram.puml" width="300" />
+
 <!-- The diagram below shows the sequence diagram for FilterCommand. -->
 
+<puml src="diagrams/FilterCommandSequenceDiagram.puml" />
+
 <!-- The following activity diagram shows how the user can interact with the FilterCommand -->
+
+<puml src="diagrams/FilterCommandActivityDiagram.puml" />
 
 ## 4.6 Reminder Command
 
