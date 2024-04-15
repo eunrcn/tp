@@ -102,6 +102,7 @@ e.g. typing **`help`** and pressing Enter will open the help window.
 2. Please refer to the [Features](#4-features) for a full detailed list of each command.
 
 --------------------------------------------------------------------------------------------------------------------
+
 # 3. Product Overview
 
 Our team has carefully designed this user guide to be your one-stop solution for everything related to InternHub! 
@@ -167,8 +168,6 @@ Furthermore, we are providing guidelines for command formatting and contact deta
 | `a/`      | Physical Address    | -                                                                                                   | `a/123 Main St, City, Country`   | No       |
 | `d/`      | Interview Date      | Of format dd-mm-yyyy HHmm & cannot be earlier than current day                                      | `d/14-04-2024 1500`              | No       |
 | `n/`      | Notes               | -                                                                                                   | `n/Previous experience required` | No       |
-
-<div style="page-break-after: always;"></div>
 
 ### 3.4.1 Company Name
 
@@ -263,7 +262,10 @@ Each contact is uniquely identified by the combination of **Company Name** and *
 
   </box>
 
+<div style="page-break-after: always;"></div>
+
 --------------------------------------------------------------------------------------------------------------------
+
 # 4. Features
 
 ## 4.1 Basic Commands
@@ -290,8 +292,6 @@ Example of incorrect format: `add c/Happy Burger p/98765432 e/HappyBurger@exampl
 
 </box>
 
-<div style="page-break-after: always;"></div>
-
 **Example 1:**
 
 - This example represents an application for a Creative Design Internship position at MediaCorp.
@@ -306,7 +306,7 @@ add c/MediaCorp p/12345678 e/jobs@mediacorp-digital.com a/321 Media Lane, Singap
 
 **Expected Outcome**
 
-![add command example 1](images/UserGuide/addCommandExample1.png)
+<img src="images/UserGuide/addCommandExample1.png" width="800"/>
 
 <div style="page-break-after: always;"></div>
 
@@ -359,6 +359,8 @@ After we execute the delete command, the Grab entry is no longer in our list of 
 
 ![delete_example_full](images/UserGuide/deleteExample.png)
 
+<div style="page-break-after: always;"></div>
+
 ### 4.1.3  Editing an internship application : `edit`
 
 Edits an existing internship application detail in InternHub.
@@ -379,8 +381,6 @@ Edits an existing internship application detail in InternHub.
 When you edit any field with a new value, this will **OVERWRITE** the old value!
 
 </box>
-
-<div style="page-break-after: always;"></div>
 
 <box type="tip">
 
@@ -422,6 +422,8 @@ With the edit command, we can achieve this with the following command:
 
 `edit 3 t/R`
 
+<div style="page-break-after: always;"></div>
+
 The image below shows the respective outcomes after executing both edit commands: 
 
 ![edit_example](images/UserGuide/edit_example.png)
@@ -433,6 +435,8 @@ Notice how when we set the interview date for Happy Burger, the contact list dyn
 This dynamic sorting is based on the first interview date.
 
 </box>
+
+<div style="page-break-after: always;"></div>
 
 ### 4.1.4 Viewing an internship application : `view`
 
@@ -701,6 +705,8 @@ Advanced users are welcome to update data directly by editing that data file.
 5. **Leap Year Date Handling**, A defect has been identified in the Java Format library where certain invalid date inputs, such as "29 Feb 2023" which is not a leap year, are incorrectly accepted and silently converted to a valid date by the system. This behavior can result in incorrect date information being processed by the application. Hence, users are advised to manually verify the correctness of date inputs, especially around leap years, to ensure accuracy. The workaround in the future will be imposing a stricter validation check offered by the Java library `java.time.format.ResolverStyle` to correct this behaviour.
 
 6. **The order of applications without interview date**, may differ in the list of applications when you close and reopen InternHub. This is due to our list sorting algorithm only focuses on the interview date and is random otherwise.
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
