@@ -7,8 +7,8 @@ start
 :User executes filter command;
 :Retrieve tag from user input;
 if () then ([Valid tag])
-    :Fetch the filtered list of persons from model;
-    :Success message displayed to user;
+    :Update filtered list to contain entries with matching tag;
+    :Display success message;
     :Display contact details;
 else ([else])
     :Display error message for invalid command format;

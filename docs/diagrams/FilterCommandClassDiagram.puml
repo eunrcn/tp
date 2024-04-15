@@ -21,7 +21,7 @@ skinparam class {
 title "Filter Command Class Diagram"
 
 class "FilterCommand" as Object\FilterCommand {
-     - numberOfDays: int
+     - predicate: MatchingTagPredicate
      + FilterCommand(predicate: MatchingTagPredicate)
      + execute(model: Model) : CommandResult
      + equals(other: Object) : boolean
