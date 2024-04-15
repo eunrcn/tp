@@ -372,9 +372,19 @@ The following steps outline how the Note Command feature operates:
 
 ### 4.4.3 Design Considerations
 
-- Fetch `Person` object based on the index
-- Utilize the `CommandResult` to pass the `Person` object to the UI component
-
+**Alternative 1 : Use edit to make changes to note attribute**
+- Pros:
+    - Easier implementation
+    - No need for new command to be created
+- Cons:
+    - Edit will **OVERWRITE** old data
+**Alternative 2 (Current Implementation) : Create `note` command**
+- Pros:
+    - Allows for editing and updating existing note content
+    - Will not overwrite old data
+- Cons:
+    - An additional command has to be implemented
+    - Essentially an abstracted & glorified edit feature
 ### 4.4.4 Diagrams
 
 The diagram below shows the class diagram for NoteCommand.
