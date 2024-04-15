@@ -53,6 +53,8 @@ The bulk of the app's work is done by the following four components:
 
 [**`Commons`**](#common-classes) represents a collection of classes used by multiple other components.
 
+<div style="page-break-after: always;"></div>
+
 **How the architecture components interact with each other**
 
 The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete 1`.
@@ -107,6 +109,8 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 **Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
 </box>
+
+<div style="page-break-after: always;"></div>
 
 How the `Logic` component works:
 
@@ -408,7 +412,7 @@ The following steps outline how the Note Command feature operates:
 - Cons:
     - An additional command has to be implemented
     - Essentially an abstracted & glorified edit feature
-
+ 
 <div style="page-break-after: always;"></div>
 
 ### 4.4.4 Diagrams
@@ -419,11 +423,11 @@ The diagram below shows the class diagram for NoteCommand.
 
 The diagram below shows the sequence diagram for NoteCommand.
 
-<puml src="diagrams/NoteSequenceDiagram.puml" />
+<puml src="diagrams/NoteSequenceDiagram.puml" width="500" />
 
 The following activity diagram shows how the user can interact with the Note Command.
 
-<puml src="diagrams/NoteActivityDiagram.puml" />
+<puml src="diagrams/NoteActivityDiagram.puml" width="500" />
 
 <div style="page-break-after: always;"></div>
 
@@ -476,17 +480,17 @@ The following steps outline how the Filter Command feature operates:
 
 ### 4.5.4 Diagrams
 
-<!-- The diagram below shows the class diagram for FilterCommand. -->
+The diagram below shows the class diagram for FilterCommand.
 
-<puml src="diagrams/FilterCommandClassDiagram.puml" />
+<puml src="diagrams/FilterCommandClassDiagram.puml" width="500" />
 
-<!-- The diagram below shows the sequence diagram for FilterCommand. -->
+The diagram below shows the sequence diagram for FilterCommand.
 
-<puml src="diagrams/FilterSequenceDiagram.puml" />
+<puml src="diagrams/FilterSequenceDiagram.puml" width="500" />
 
-<!-- The following activity diagram shows how the user can interact with the FilterCommand -->
+The following activity diagram shows how the user can interact with the FilterCommand
 
-<puml src="diagrams/FilterCommandActivityDiagram.puml" />
+<puml src="diagrams/FilterCommandActivityDiagram.puml" width="500" />
 
 <div style="page-break-after: always;"></div>
 
