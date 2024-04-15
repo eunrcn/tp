@@ -10,6 +10,8 @@ _By F14-1, JAYME_
 <!-- * Table of Contents -->
 <page-nav-print />
 
+<div style="page-break-after: always;"></div>
+
 --------------------------------------------------------------------------------------------------------------------
 
 # 1. Acknowledgements
@@ -153,6 +155,7 @@ Classes used by multiple components are in the `seedu.internhub.commons` package
 
 `util`: This package defines utility classes for certain operations, like file I/O, argument validation, and image processing.
 
+<div style="page-break-after: always;"></div>
 --------------------------------------------------------------------------------------------------------------------
 # 4. Implementation
 
@@ -225,6 +228,7 @@ The following activity diagram shows how the user can interact with the Add Comm
 
 <puml src="diagrams/AddActivityDiagram.puml" />
 
+<div style="page-break-after: always;"></div>
 
 ## 4.2 Edit Command
 
@@ -280,6 +284,8 @@ The following activity diagram shows how the user can interact with the Edit Com
 
 <puml src="diagrams/EditActivityDiagram.puml" />
 
+<div style="page-break-after: always;"></div>
+
 ## 4.3 View Command
 
 ### 4.3.1 Command Structure
@@ -329,6 +335,8 @@ The following sequence diagram shows what happens when `view 3` is the command i
 The following activity diagram shows what the logic behind the command `view 3`.
 
 <puml src="diagrams/ViewActivityDiagram.puml" />
+
+<div style="page-break-after: always;"></div>
 
 ## 4.4 Note Command
 
@@ -399,6 +407,7 @@ The following activity diagram shows how the user can interact with the Note Com
 
 <puml src="diagrams/NoteActivityDiagram.puml" />
 
+<div style="page-break-after: always;"></div>
 
 ## 4.5 Filter Command
 
@@ -458,6 +467,8 @@ The following steps outline how the Filter Command feature operates:
 <!-- The following activity diagram shows how the user can interact with the FilterCommand -->
 
 <puml src="diagrams/FilterCommandActivityDiagram.puml" />
+
+<div style="page-break-after: always;"></div>
 
 ## 4.6 Reminder Command
 
@@ -524,6 +535,7 @@ The following activity diagram shows how the user can interact with the Reminder
 
 <puml src="diagrams/ReminderCommandActivityDiagram.puml" />
 
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -570,6 +582,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * `   | internship applicant | add a time to a company contact                         | record when a specific task or interaction needs to be done                                       |
 | `* `     | internship applicant | add notes to company contacts                           | include important details or information about specific interviews and what I can learn from them |
 
+<div style="page-break-after: always;"></div>
 
 ## 6.3 Use cases
 
@@ -726,6 +739,8 @@ Use case ends
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 ## 6.4 Non-Functional Requirements
 
 **1. Availability:**
@@ -781,7 +796,10 @@ Use case ends
 **8. Mainstream OS**: Windows, Linux, Unix, MacOS.
 **9. CLI**: Command Line Interface for user interaction.
 
+<div style="page-break-after: always;"></div>
+
 --------------------------------------------------------------------------------------------------------------------
+
 
 # 7. Appendix B: Planned Enhancements
 
@@ -821,6 +839,8 @@ Team size: 5
 8. Find command based on fields other than name:
 
     - Enhance the search functionality by implementing a find command that allows users to search for internship applications based on fields other than the applicant's name. This will provide users with more flexibility in locating specific applications based on various criteria such as company, date, or location.
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -999,6 +1019,8 @@ Expected: List all internship application in InternHub.
    
    iii. Test case: Modify the json format in which InternHub data file is stored.<br>
       Expected: If data file `addressbook.json` is still in the correct format, the app will run as per normal. However, if the data file becomes unreadable by the program, then the invalid data will be ignored when the app is run.
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
