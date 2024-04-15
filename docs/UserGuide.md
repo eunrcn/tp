@@ -217,6 +217,8 @@ When using tags to denote the status of internship applications, you can use bot
 
 We have intentionally omitted setting a minimum internship duration as there isn't a universally fixed minimum duration for internships.
 
+<div style="page-break-after: always;"></div>
+
 ### 3.4.6 Internship Date
 
 1. **Invalid Date** <br>
@@ -289,7 +291,7 @@ Example of correct format: `add c/Happy Burger p/98765432 e/HappyBurger@example.
 
 Example of incorrect format: `add c/Happy Burger p/98765432 e/HappyBurger@example.com a/311, Clementi Ave 2, #02-25 S(123456) t/I jd/Software Developer intern d/29-05-2024 1200 id/3 months s/1000 n/Company CEO is John Doe, tech team lead is Alex Yeoh `**`n/Company has 500 employee`**
 
-<br> An error message _"Multiple values specified for the following single-valued field(s): n/"_ will be shown on the result display box. 
+An error message _"Multiple values specified for the following single-valued field(s): n/"_ will be shown on the result display box. 
 
 </box>
 
