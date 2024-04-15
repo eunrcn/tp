@@ -215,11 +215,15 @@ Alternative 2: New Person object is created and added to InternHub in model.
 
 The diagram below shows the class diagram for AddCommand.
 
-<puml src="diagrams/AddCommandClassDiagram.puml" width="550" />
+<puml src="diagrams/AddCommandClassDiagram.puml" width="500" />
 
 The diagram below shows the sequence diagram for AddCommand. All Initialization commands above are similar in their interactions with the [logic component](#33-logic-component) and [model component](#34-model-component).
 
 <puml src="diagrams/AddSequenceDiagram.puml" />
+
+The following activity diagram shows how the user can interact with the Add Command.
+
+<puml src="diagrams/AddActivityDiagram.puml" />
 
 
 ## 4.2 Edit Command
@@ -271,6 +275,10 @@ The diagram below shows the class diagram for EditCommand.
 The diagram below shows the sequence diagram for EditCommand. 
 
 <puml src="diagrams/EditSequenceDiagram.puml" />
+
+The following activity diagram shows how the user can interact with the Edit Command.
+
+<puml src="diagrams/EditActivityDiagram.puml" />
 
 ## 4.3 View Command
 
@@ -382,13 +390,13 @@ The following steps outline how the Note Command feature operates:
 
 The diagram below shows the class diagram for NoteCommand.
 
-<puml src="diagrams/NoteCommandClassDiagram.puml" width="300" />
+<puml src="diagrams/NoteCommandClassDiagram.puml" width="500" />
 
 The diagram below shows the sequence diagram for NoteCommand.
 
 <puml src="diagrams/NoteSequenceDiagram.puml" />
 
-The following activity diagram shows how the user can interact with the Note Command
+The following activity diagram shows how the user can interact with the Note Command.
 
 <puml src="diagrams/NoteActivityDiagram.puml" />
 
@@ -439,9 +447,13 @@ The following steps outline how the Filter Command feature operates:
 
 <!-- The diagram below shows the class diagram for FilterCommand. -->
 
-<!-- The diagram below shows the sequence diagram for FilterCommand. -->
+The diagram below shows the sequence diagram for FilterCommand.
 
-<!-- The following activity diagram shows how the user can interact with the FilterCommand -->
+<puml src="diagrams/FilterSequenceDiagram.puml" />
+
+The following activity diagram shows how the user can interact with the FilterCommand
+
+<puml src="diagrams/FilterActivityDiagram.puml" />
 
 ## 4.6 Reminder Command
 
@@ -498,7 +510,7 @@ The following steps outline how the Reminder Command feature operates:
 
 The diagram below shows the class diagram for ReminderCommand.
 
-<puml src="diagrams/ReminderCommandClassDiagram.puml" width="300" />
+<puml src="diagrams/ReminderCommandClassDiagram.puml" width="500"/>
 
 The diagram below shows the sequence diagram for ReminderCommand. 
 
@@ -771,28 +783,40 @@ Use case ends
 
 Team size: 5
 
-**1. Handling of invalid date to be with accordance of Gregorian Calendar**:
+1. Handling of invalid date to be with accordance of Gregorian Calendar:
+    
     - Ensure that the system handles invalid date inputs according to the rules of the Gregorian calendar, providing better error handling and user feedback.
     - Currently, when InternHub encounter `29-02-yyyy` where it is not a leap year, it will automatically changes it to the closest valid date, which is `28-02-yyyy`.
     - We intend to make the system throw an error message instead to warn user about this invalid date and it is possible that they might have schedules an interview with a company on an non existent date.
-**2. Case sensitive for company name**:
+
+2. Case sensitive for company name:
+
     - Implement case sensitivity for company names to prevent potential duplication or confusion due to variations in casing.
-**3. Prevent duplicate phone number**:
+
+3. Prevent duplicate phone number:
+
     - Add validation logic to prevent the addition of internship applications with duplicate phone numbers, reducing data redundancy and maintaining data integrity.
-**4. Make company name less restrictive, allow special characters**:
+
+4. Make company name less restrictive, allow special characters:
+
     - Relax the restrictions on company names to allow for special characters, enabling users to input a wider range of company names without encountering validation errors.
-**5. In UI, make the view card scrollable for all labels**:
+
+5. In UI, make the view card scrollable for all labels:
+
     - Enhance the user interface by making the view card scrollable for all labels, ensuring that users can view all information associated with an internship application, even if it exceeds the visible area of the card.
-**6. More flexible Filter Command**:
+
+6. More flexible Filter Command:
+
     - We aim to make our filter command to work with all other fields like `address`, `salary`, `jobDescription` and so on, to allow greater flexibility for the user.
     - To achieve this, our team is working on incorporating prefixes in the filter command, for example: `filter a/Clementi t/I s/1200` would filter the applications that fit the provided filter-restrictions.
-**7. Countdown in UI reflecting the number of days until interview date**:
+
+7. Countdown in UI reflecting the number of days until interview date:
+
     - Implement a feature in the user interface to display a countdown for interviews, showing the number of days left. This provides users with quick access to important information.
-**8. Find command based on fields other than name**:
+
+8. Find command based on fields other than name:
+
     - Enhance the search functionality by implementing a find command that allows users to search for internship applications based on fields other than the applicant's name. This will provide users with more flexibility in locating specific applications based on various criteria such as company, date, or location.
-
-
-
 
 --------------------------------------------------------------------------------------------------------------------
 

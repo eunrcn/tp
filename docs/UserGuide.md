@@ -196,6 +196,7 @@ In InternHub, we aim to provide flexibility to users without imposing overly str
 
 ### 3.4.3 Email
 
+Allowed special characters are **+_.-**. <br>
 For emails with special characters, **multiple consecutive special characters are not allowed**.
 <br> Here's an example of a valid email: `abc+company@example.com`.
 <br> An invalid email example would be `abc+_company@example.com`.
@@ -403,14 +404,14 @@ Example of incorrect format: `edit 1 n/Company CEO is John Doe n/Company has 500
 </box>
 
 **Example 1**
-- We've received confirmation of an online assessment from a previously unresponsive company, Happy Burger.
+- We've received confirmation of an interview from a previously unresponsive company, Happy Burger.
 - We want to do the following:
-  - Change the status from "NR" to "OA"
-  - Set the online assessment date for Happy Burger to be 20 June 2024 at 9 am.
+  - Change the status from "NR" to "I"
+  - Set the interview date for Happy Burger to be 20 June 2024 at 9 am.
 
 With the edit command, we can achieve this with the following command: 
 
-`edit 3 t/OA d/20-06-2024 0900`
+`edit 3 t/I d/20-06-2024 0900`
 
 **Example 2**
 - Unfortunately, we've received a rejection email from DBS Bank.
@@ -578,6 +579,8 @@ It conveniently displays the interviews scheduled within the upcoming N days, ke
 - `reminder 0` : Shows you the interviews you have today.
 - `reminder 2` : Shows you the interviews you have in the next 2 days, including today.
 - `reminder 100` : Shows you the interviews you have in the next 100 days, including today.
+
+**Expected Outcome**
 
 ![reminder command](images/UserGuide/reminderCommand.png){ width=60% }
 
