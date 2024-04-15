@@ -690,6 +690,9 @@ Advanced users are welcome to update data directly by editing that data file.
 1. Take a backup of `addressbook.json`.
 2. Run `clear` in InternHub and manually add the applications referencing the details from the `addressbook.json`.
 
+**Q**: **I copied a command from the UserGuide but when I paste and run on InternHub, it fails?**<br>
+**A**: When you copy from our UserGuide, do exercise caution as sometimes it can unfortunately concatenate or append the commands together, making the command invalid. When you paste the command, we urge you to verify if the format of the code is valid. You can take a look [here](#3-3-command-and-formatting-guidelines) for reference.
+
 --------------------------------------------------------------------------------------------------------------------
 
 # 6. Known Issues
