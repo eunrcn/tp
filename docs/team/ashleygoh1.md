@@ -50,9 +50,19 @@ Given below are my contributions to the project.
   [9](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/9), 
   [10](https://github.com/ashleygoh1/CS2103-T-PE-Dry-run/issues/10))
 
+* **Challenges and Problem Solving**:
+  * I was in charge of adding new fields to the person model. This required many changes throughout the project. 
+  At the start, I thought this was a simple process but as I ran the code, errors started appearing, with more than 20% of the test cases failing.
+  Rather than editing everything at once, I broke down the error into smaller, manageable chunks. This allows me to test each change as I go to catch errors early and minimize the debugging effort.
+  After 2 days, I managed to update the code accordingly,  pass all test cases and improve the code coverage from 75.26% to 78.571%.
+
+  * I created a pull request (PR) at the same time as one team member. I merged my teammate's PR first and when I wanted to merge my PR, merge conflict was shown.
+  I was panicking as I am used to fixing the conflict on the GitHub website. Yet for this PR, GitHub showed that the conflict was too complicated and required me to fix it on my laptop. 
+  I kept myself calm and updated about the issue with my teammates. Thankfully, one of my team members was able to resolve the merge conflict by pulling the latest changes from the main branch to her local repository, manually resolving the conflict using a code editor, before successfully merging the PR without further issues.
+
 * **Tools**:
   * Set up codecov to the team repo
   * Set up UserGuide.md and DeveloperGuide.md
-  * Set up team's Github repo
+  * Set up team's GitHub repo
   
 
