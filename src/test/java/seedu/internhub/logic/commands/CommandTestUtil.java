@@ -42,8 +42,8 @@ public class CommandTestUtil {
     public static final String VALID_TAG_INTERVIEW = "I";
     public static final String VALID_JOB_DESCRIPTION_AMY = "Data Science intern";
     public static final String VALID_JOB_DESCRIPTION_BOB = "Front end developer intern";
-    public static final String VALID_INTERVIEW_DATE_AMY = "15-04-2024 0900";
-    public static final String VALID_INTERVIEW_DATE_BOB = "15-04-2024 1200";
+    public static final String VALID_INTERVIEW_DATE_AMY = "15-04-2025 0900";
+    public static final String VALID_INTERVIEW_DATE_BOB = "15-04-2025 1200";
     public static final String VALID_INTERN_DURATION_AMY = "6 months";
     public static final String VALID_INTERN_DURATION_BOB = "3 months";
     public static final String VALID_SALARY_AMY = "500";
